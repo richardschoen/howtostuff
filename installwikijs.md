@@ -3,16 +3,20 @@
 I have not written any specific instructions at this point. But here's a basic guide that might work for you.
 
 **Used the Windows install as a base**
+
 https://docs.requarks.io/install/windows
 
 Made sure to have Node 12 loaded and SQLite 3 from IBM Open Source packages. 
 
 Download the Node app file. I used the Windows package and it worked fine since it's Node https://github.com/Requarks/wiki/releases/download/2.3.81/wiki-js-windows.tar.gz
 
+
 **Upload tar file to root of IFS**
-/wiki-js-windows.tar.gz
+
+```/wiki-js-windows.tar.gz```
 
 **Run this from bash shell or qp2term or possibly strqsh**
+
 ```
 mkdir /wikijs
 mkdir /wikijs/database
@@ -22,6 +26,7 @@ tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
 ```
 
 ***Ran this to rebuild SQLite3 driver which I am using***
+
 ```npm rebuild sqlite3```
 
 ***Copy sample config file to actual config file***
@@ -45,5 +50,6 @@ Db
 ```http://systemip:3000```
 
 ***Use the rest of the basic WikiJS site instructions***
-
+```
 https://docs.requarks.io/guide/intro
+```
