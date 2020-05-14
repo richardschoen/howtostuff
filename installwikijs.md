@@ -24,21 +24,26 @@ tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
 ***Ran this to rebuild SQLite3 driver which I am using***
 ```npm rebuild sqlite3```
 
-Copy sample config file to actual config file 
+***Copy sample config file to actual config file***
+
 ```cp /wikijs/config.sampl.yml  /wikijs/config.yml```
 
-Edit config.yml file via your favorite PC file editor or WRKLNK I suppose.
+***Edit config.yml file via your favorite PC file editor or WRKLNK I suppose.***
+
 ```
 Db 
      type: sqlite
      storage: /wikijs/database/database.sqlite
 ```
 
-Run WikiJs
+***Run WikiJs***
+
 ```node server```
 
-Hit site via browser and config
+***Hit site via browser and config***
+
 ```http://systemip:3000```
 
-Use the rest of the basic WikiJS site instructions 
+***Use the rest of the basic WikiJS site instructions***
+
 https://docs.requarks.io/guide/intro
