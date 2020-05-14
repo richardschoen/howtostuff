@@ -25,7 +25,7 @@ cd /
 tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
 ```
 
-***Ran this to rebuild SQLite3 driver which I am using***
+***Ran this to rebuild SQLite3 driver binary I am using on IBM i (Only worked for node 12)***
 
 ```npm rebuild sqlite3```
 
