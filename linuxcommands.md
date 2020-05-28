@@ -63,5 +63,38 @@ https://www.computerhope.com/unix/urmdir.htm
 ex: rmdir /dirname
 ```
 
+***ifconfig*** - Check IP addresses
+
+https://www.journaldev.com/30052/linux-ifconfig-command-examples
+
+```
+Ex: ifconfig
+```
+
+# Additional samples links
+
+https://www.journaldev.com/24613/linux-ps-command
+
+crontab
+
+awk
+
+grep 
+
+sudo 
+
+cp 
+
+export
+
+nohup 
+
+alias
+
+zip
+
+unzip
+
+
 
 
