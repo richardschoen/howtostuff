@@ -1,7 +1,7 @@
 # Install and configure Postgresql DB Server on IBM i 
 
-// install postgres yum packages from IBMi ACS Open Source Packages
-
+Install postgres yum packages from IBMi ACS Open Source Packages
+```
 Package list:
 postgresql12
 postgresql12-contrib
@@ -11,16 +11,16 @@ postgresql12-libecpg
 postgresql12-libogtypes
 postgresql12-libpq
 postgresql12-server
+```
 
+Create IBMi user: POSTGRES and give it *ALLOBJ access (for now. YOu can probably remove later. Not tested.)
 
-// create IBMi user: POSTGRES
+Log in to SSH as IBMi user ***postgres*** to do setup
 
-// Log in to SSH as IBMi user postgres to do setup
+Start bash shell by typing ***bash*** unless bash is alresdy your default shell. 
 
-// Start bash shell by typing bash unless bash is alresdy your default shell. 
-
-// Run the following command sequence to initialize postgres database inthe /postgres IFS location
-
+Run the following command sequence to initialize postgres database inthe /postgres IFS location
+```
 cd /
 
 mkdir postgres
@@ -28,15 +28,16 @@ mkdir postgres
 export PGDATA=/postgres
 
 initdb -E UTF-8 -D /postgres
+```
 
-// After initdb you should see the following message:
-
+After initdb you should see the following message:
+```
 Success. You can now start the database server using:
     pg_ctl -D /postgres -l logfile start
-**** Do not start server yet until modifying /postgres/postgresql.conf *****
+```
+*** Do not start server yet until modifying /postgres/postgresql.conf ***
 	
-// use nano editor, vim or other editor to edit /postgres/postgresql.conf file 
-// so the server will listen on TCP/IP addresses. 
+Use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file so the server will listen on TCP/IP addresses. 
 // Enable access on all addresses
 
 edit /postgres/postgresql.conf
