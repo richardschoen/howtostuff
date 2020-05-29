@@ -13,11 +13,11 @@ postgresql12-libpq
 postgresql12-server
 ```
 
-Create IBM i user: ***POSTGRES*** (and give it *ALLOBJ access for now. You can probably remove later. Not tested.)
+Create IBM i user: ***POSTGRES*** and give it a password. (Also give it *ALLOBJ access for now. You can probably remove later and possibly even disable the IBM i POSTGRES user. ***Not tested.***)
 
-Log in to SSH as IBM i user ***postgres*** to do setup
+Log in to SSH as IBM i user ***POSTGRES*** to do server setup.
 
-Start bash shell by typing ***bash*** unless bash is already your default shell. 
+If not started, start the bash shell by typing ***bash*** unless bash is already your default shell. 
 
 Run the following shell command line sequence to initialize postgres database in the /postgres IFS directory location
 ```
