@@ -35,13 +35,14 @@ After initdb you should see the following message:
 Success. You can now start the database server using:
     pg_ctl -D /postgres -l logfile start
 ```
-*** Do not start server yet until modifying /postgres/postgresql.conf ***
+
+***Do not start server yet until modifying /postgres/postgresql.conf ***
 	
 Use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses
 ```
 edit /postgres/postgresql.conf
-uncomment listen_addresses and and change to: ***listen_addresses = '*'*** 
-uncomment ***port = 5432*** entry. 
+uncomment listen_addresses and and change to: listen_addresses = '*' 
+uncomment the port = 5432 entry. 
 save postgresql.conf
 ```
 	
@@ -49,6 +50,7 @@ Run the following command to start postgres database server.
 ```
 pg_ctl -D /postgres -l logfile start
 ```
+
 You should see the following messages:
 ```
 waiting for server to start.... done
@@ -119,16 +121,18 @@ psql
 
 Type the following sql and press Enter to set database access for postgres database user:
 ```
-grant all priviliges on database ibmidemo to postgres;
-``
+grant all privileges on database ibmidemo to postgres;
+```
+
 Type the following sql and press Enter to set the database server password for the postgres database user:
 ```
 alter user postgres with password 'postgres2020';
 ```
+
 Type: ***quit*** and press enter to exit the psql utility.
 
 
-Use Heidi or other Postgres client to connect to Postgres database. 
+Use Heidi, DBeaver or other Postgresql client to connect to Postgres database. 
 ```
 Host: IBMi host name or IP
 Port: 5432
@@ -137,19 +141,22 @@ Password: postgres2020
 Database: ibmidemo
 ```
 
-If desired, change the port that Postgresql server listens on to something other than 5432
+If desired, change the port that Postgresql server listens on to something other than 5432.
 
 use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file 
 
 ```
-Change port number. Ex: port = 60432 
+Change port number. 
+Ex: port = 60432 
 ```
 
 save postgresql.conf
 
 Stop and restart Postgres server
 
+Now refer to standard Postgresql documentation as needed. 
+
 # Links
 
-Postgres Site
+Postgresql Site
 https://www.postgresql.org
