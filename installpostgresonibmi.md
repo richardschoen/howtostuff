@@ -159,4 +159,14 @@ Now refer to standard Postgresql documentation as needed.
 # Links
 
 Postgresql Site
+
 https://www.postgresql.org
+
+Yips Site
+
+http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
+
+Role postgres does not exist
+
+https://dba.stackexchange.com/questions/221663/psql-fatal-role-postgres-does-not-exist
+
