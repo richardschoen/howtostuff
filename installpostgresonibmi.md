@@ -13,7 +13,7 @@ postgresql12-libpq
 postgresql12-server
 ```
 
-Create IBM i user: ***POSTGRES*** and give it a password. (Also give it *ALLOBJ access for now. You can probably remove later and possibly even disable the IBM i POSTGRES user. ***Not tested.***)
+Create IBM i user: ***POSTGRES*** and give it a password. It's important the user is named POSTGRES because the Postgresql server needs a default user of POSTGRES. At least that was my experience with it. (Also give it *ALLOBJ access for now. You can probably remove later and possibly even disable the IBM i POSTGRES user. ***Not tested.***)
 
 Log in to SSH as IBM i user ***POSTGRES*** to do server setup.
 
