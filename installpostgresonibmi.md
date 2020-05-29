@@ -96,7 +96,9 @@ host   all   all   0.0.0.0/0     password
 ```
 Note: This will enable password checking. You'll need to set a new password for the ***postgres*** user on the Postgresql server. See below.
 
-Save pg_hba.conf. Stop and then start Postgresql server as described previously. 
+Save pg_hba.conf. 
+
+Stop and then start Postgresql server as described previously. 
 
 From shell command line, create demo postgres database using the following command line command:
 ```
@@ -138,10 +140,16 @@ Database: ibmidemo
 If desired, change the port that Postgresql server listens on to something other than 5432
 
 use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file 
-```
-Change port number. Ex: port = 60432 
 
 ```
+Change port number. Ex: port = 60432 
+```
+
 save postgresql.conf
 
 Stop and restart Postgres server
+
+# Links
+
+Postgres Site
+https://www.postgresql.org
