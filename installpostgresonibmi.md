@@ -1,6 +1,6 @@
 # Install and configure Postgresql DB Server on IBM i 
 
-Install postgres yum packages from IBMi ACS Open Source Packages
+### Install postgres yum packages from IBMi ACS Open Source Packages
 ```
 Package list:
 postgresql12
@@ -13,11 +13,11 @@ postgresql12-libpq
 postgresql12-server
 ```
 
-Create IBMi user: POSTGRES and give it *ALLOBJ access (for now. YOu can probably remove later. Not tested.)
+### Create IBMi user: POSTGRES and give it *ALLOBJ access (for now. YOu can probably remove later. Not tested.)
 
-Log in to SSH as IBMi user ***postgres*** to do setup
+### Log in to SSH as IBMi user ***postgres*** to do setup
 
-Start bash shell by typing ***bash*** unless bash is alresdy your default shell. 
+### Start bash shell by typing ***bash*** unless bash is alresdy your default shell. 
 
 Run the following command sequence to initialize postgres database inthe /postgres IFS location
 ```
