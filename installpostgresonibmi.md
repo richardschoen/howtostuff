@@ -36,7 +36,7 @@ Success. You can now start the database server using:
     pg_ctl -D /postgres -l logfile start
 ```
 
-***Do not start server yet until modifying /postgres/postgresql.conf ***
+***Do not start server yet until after you modify /postgres/postgresql.conf***
 	
 Use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses
 ```
