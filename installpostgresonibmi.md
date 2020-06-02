@@ -169,3 +169,7 @@ https://dba.stackexchange.com/questions/221663/psql-fatal-role-postgres-does-not
 Yips Site - old stuff but might be worth reading
 
 http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
+
+Postgresql 12 docs 
+
+https://www.postgresql.org/docs/12/index.html
