@@ -124,7 +124,7 @@ Type the following sql and press Enter to set database access for postgres datab
 grant all privileges on database ibmidemo to postgres;
 ```
 
-Type the following sql and press Enter to set the database server password for the postgres database user:
+Type the following sql and press Enter to set the database server password for the postgres database user. My example uses a password of: ***postgres2020*** but you can use what you want for a password.
 ```
 alter user postgres with password 'postgres2020';
 ```
