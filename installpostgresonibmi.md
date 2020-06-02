@@ -8,7 +8,7 @@ postgresql12-contrib
 postgresql12-devel
 postgresql12-docs
 postgresql12-libecpg
-postgresql12-libogtypes
+postgresql12-libpgtypes
 postgresql12-libpq
 postgresql12-server
 ```
@@ -162,11 +162,10 @@ Postgresql Site
 
 https://www.postgresql.org
 
-Yips Site
-
-http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
-
 Role postgres does not exist
 
 https://dba.stackexchange.com/questions/221663/psql-fatal-role-postgres-does-not-exist
 
+Yips Site - old stuff but might be worth reading
+
+http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
