@@ -14,3 +14,7 @@ $ pip install gunicorn[eventlet]  # Or, using extra
 $ pip install gevent              # For gevent workers
 $ pip install gunicorn[gevent]    # Or, using extra
 ```
+
+gevent process was cancelled. Had to remove: /QOpenSys/pkgs/lib/python3.6/site-packages/zope*
+
+Trying to reinstall gevent. Taking a while. Will see if it completes.
