@@ -17,4 +17,8 @@ $ pip install gunicorn[gevent]    # Or, using extra
 
 gevent process was cancelled. Had to remove: /QOpenSys/pkgs/lib/python3.6/site-packages/zope*
 
+Link on why it takes so long to build gevent. Also how to install with verbose mode: 
+```pip install -vvv gevent```
+
 Trying to reinstall gevent. Taking a while. Will see if it completes.
+
