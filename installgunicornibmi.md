@@ -38,7 +38,7 @@ Trying to reinstall gevent. Taking a while. Will see if it completes.
 
 
 
-Notes that pointed to lubutil2 not being current (Thanks to Calvin)
+Notes that pointed to libutil2 not being current (Thanks to Calvin)
 ```
 Traceback (most recent call last):
   File "/QOpenSys/pkgs/bin/gunicorn", line 7, in <module>
