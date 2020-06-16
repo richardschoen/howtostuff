@@ -20,3 +20,7 @@ SELECT * FROM TABLE
 ```
 SELECT * FROM TABLE (QSYS2.OBJECT_STATISTICS('*ALL','ALL')) AS A 
 ```
+## Select TCP info for current connection. Good for getting local PC/Server client IP
+```
+SELECT * FROM QSYS2.TCPIP_INFO    
+```
