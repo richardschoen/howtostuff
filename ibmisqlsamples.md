@@ -24,3 +24,12 @@ SELECT * FROM TABLE (QSYS2.OBJECT_STATISTICS('*ALL','ALL')) AS A
 ```
 SELECT * FROM QSYS2.TCPIP_INFO    
 ```
+## Netstat Connection Info
+```
+SELECT * FROM QSYS2.NETSTAT_INFO 
+```
+## Netstat Connection Info. Check for Local Port 22 active on IPV4
+```
+SELECT * FROM QSYS2.NETSTAT_INFO WHERE 
+CONNECTION_TYPE = 'IPV4' and local_port=22                                                        
+```
