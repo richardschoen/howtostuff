@@ -32,6 +32,11 @@ java -jar gitbucket.war
 ## Wait a few minutes and try to access the Gitbucket URL from your IBM i 
 ```http://[hostname]:8080/```   User/pass: root/root
 
+## Where are work app files created in IFS
+By default the database and all application files and repository locations get extracted to or created in the ```/home/[userid]/.gitbucket``` directory for the user who ran the gitbucket server. 
+
+***It might be a good idea to create a GITBUCKET IBM i user to run the server nder for consistency.***
+
 ## See Gitbucket site or Gitbucket github site for more documentation
 
 https://gitbucket.github.io/
