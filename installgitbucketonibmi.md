@@ -13,16 +13,16 @@ Or view most recent releases
 
 https://github.com/gitbucket/gitbucket/releases
 
-## Create a /gitbucket directory and upload the gitbucket.war file to your IFS using your favorite binary file transfer method
-
-## Log in to IFS and from an SSH bash shell, QSH or QP2TERM, run the following commands
+## Log in to IFS and from an SSH bash shell, QSH or QP2TERM, run the following commands to create Gitbucket IFS dir
 ```
 cd /
 
 mkdir gitbucket
 ```
 
-## From a shell attempt to start Gitbucket with following commands
+## Upload the gitbucket.war file to the /gitbucketr IFS directory using your favorite binary file transfer method
+
+## From a shell attempt to start the Gitbucket server with following commands
 ```
 cd /gitbucket
 
@@ -38,7 +38,10 @@ https://gitbucket.github.io/
 
 https://github.com/gitbucket/gitbucket
 ```
+## Databases
+By default I believe Gitbucket uses an internal H2 database. You may want to install Postgres on your IBM i and use that as a database instead. See the Gitbucket site for config instructions once you have Postgres installed on your IBM i. 
 
+Feel free to use my instructions on this site to set up Postgres on IBM i. 
 
 
 
