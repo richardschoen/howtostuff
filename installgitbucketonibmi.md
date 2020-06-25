@@ -33,11 +33,11 @@ java -jar gitbucket.war
 ```http://[hostname]:8080/```   User/pass: root/root
 
 ## See Gitbucket site or Gitbucket github site for more documentation
-```
+
 https://gitbucket.github.io/
 
 https://github.com/gitbucket/gitbucket
-```
+
 ## Databases
 By default I believe Gitbucket uses an internal H2 database. You may want to install Postgres on your IBM i and use that as a database instead. See the Gitbucket site for config instructions once you have Postgres installed on your IBM i. 
 
