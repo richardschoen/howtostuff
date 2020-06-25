@@ -43,6 +43,16 @@ By default I believe Gitbucket uses an internal H2 database. You may want to ins
 
 Feel free to use my instructions on this site to set up Postgres on IBM i. 
 
+## Using with the new Java 11 on IBM i
+https://bitbucket.org/ibmi/opensource/src/master/docs/java11/JAVA11_EARLY_ACCESS.md
+
+## Setting the Java 11 path in a bash or other shell
+```
+JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11/
+export JAVA_HOME
+PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
+export PATH
+```
 
 
 
