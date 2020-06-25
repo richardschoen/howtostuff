@@ -52,6 +52,8 @@ JAVA_HOME=/QOpenSys/pkgs/lib/jvm/openjdk-11/
 export JAVA_HOME
 PATH=/QOpenSys/pkgs/lib/jvm/openjdk-11/bin:$PATH
 export PATH
+cd /gitbucket
+java -jar gitbucket.war
 ```
 
 
