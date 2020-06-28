@@ -28,6 +28,12 @@ cd /gitbucket
 
 java -jar gitbucket.war
 ```
+Start on alternate port 10001
+```
+cd /gitbucket
+
+java -jar gitbucket.war  --port-10001
+```
 
 ## Wait a few minutes and try to access the Gitbucket URL from your IBM i 
 ```http://[hostname]:8080/```   User/pass: root/root
