@@ -1,8 +1,13 @@
 # IBM i SQL Samples
 
-## Select all spool files matching a specific spool file name
+## Select all spool files matching a specific spool file name - Basic
 ```
 SELECT * FROM QSYS2.OUTPUT_QUEUE_ENTRIES_BASIC WHERE     
+SPOOLED_FILE_NAME like 'LABINV'                          
+```
+## Select all spool files matching a specific spool file name - Extended
+```
+SELECT * FROM QSYS2.OUTPUT_QUEUE_ENTRIES WHERE     
 SPOOLED_FILE_NAME like 'LABINV'                          
 ```
 
