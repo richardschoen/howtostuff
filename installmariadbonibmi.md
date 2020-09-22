@@ -38,117 +38,78 @@ cd '/QOpenSys/pkgs' ; /QOpenSys/pkgs/bin/mysqld_safe --datadir='/QOpenSys/var/li
 
 This following command can be used from any bash session to stop the server.
 ```
-pg_ctl -D /postgres -l logfile stop
+/QOpenSys/pkgs/bin/mysqladmin -u root -p shutdown
+Enter password: ********
 ```
 
 From a 5250 session, run WRKACTJOB and you should see the active server jobs and threads in the QUSRWRK subsystem
 ```
 --------------------------------------------------------------------------------
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
-QP0ZSPWP     POSTGRES    BCI      .0  PGM-postgres     SELW
+QP0ZSPWP     RICHARD     BCI      .0  PGM-mysqld       SELW 
 --------------------------------------------------------------------------------
 ```
 
-From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on port 5432. You should see an entry for Local Port 5432 which tells you the server is listening for connections. 
+From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on port 3306. You should see an entry for Local Port 3306 which tells you the server is listening for connections. 
 ```
 --------------------------------------------------------------------------------
                         Work with IPv4 Connection Status                   
-                                                             System:   SYS1
+                                                             System:   SYS
  Type options, press Enter.                                                
    3=Enable debug   4=End   5=Display details   6=Disable debug            
    8=Display jobs                                                          
                                                                            
       Remote           Remote     Local                                    
  Opt  Address          Port       Port       Idle Time  State              
-      *                *          5432       000:05:22  Listen             
+      *                *          3306       000:05:22  Listen             
 --------------------------------------------------------------------------------
 ```
 
-Allow remote access to server. You can change this by editing ***/postgres/pg_hba.conf*** 
-
-Add following entry to the pg_hba.conf file:
+Allow remote access to server from any host for the MariaDB root user for development using mysql command.
 ```
-host   all   all   0.0.0.0/0     password
+mysql -u root -p
+use mysql;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'YourPassword';
+select host,user from user;   (Wildcard should show)
 ```
-Note: This will enable password checking. You'll need to set a new password for the ***postgres*** user on the Postgresql server. See below.
+***Note: If this setting does not work, you may need to Stop and restart the MariaDB server after this change.***
 
-Save pg_hba.conf. 
-
-Stop and then start Postgresql server as described previously. 
-
-From shell command line, create demo postgres database using the following command line command:
-```
-createdb ibmidemo
-```
-
-The psql command utility can be used to provide permissions and do other server related maintenance. 
-
-For now we will just allow access for the postgres user to our new database as an example.
-We will also set a password for the postgres user. This sample uses 'postgres2020' for the password. 
-You should use a more secure password. 
-***NOTE: You should also review the Postgres site for appropriate Postgres security measures.***
-
-Start psql utility
-```
-psql 
-```
-
-Type the following sql and press Enter to set database access for postgres database user:
-```
-grant all privileges on database ibmidemo to postgres;
-```
-
-Type the following sql and press Enter to set the database server password for the postgres database user. My example uses a password of: ***postgres2020*** but you can use what you want for a password.
-```
-alter user postgres with password 'postgres2020';
-```
-
-Type: ***quit*** and press enter to exit the psql utility.
-
-
-Use Heidi, DBeaver or other Postgresql client to connect to Postgres database. 
+Use Heidi, DBeaver or other MySQL/MariaDB client to connect to MariaDB database. 
 ```
 Host: IBMi host name or IP
-Port: 5432
-User: postgres
-Password: postgres2020
-Database: ibmidemo
+Port: 3306
+User: root
+Password: yourpassword
 ```
 
-If desired, change the port that Postgresql server listens on to something other than 5432.
+If desired, change the port that MariaDB server listens on to something other than 3306.
 
-use nano editor, vim or other editor to edit ***/postgres/postgresql.conf*** file 
+use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/server.cnf*** file 
+
+Change port number or add a port entry under the ***[mysqld]*** section in ***server.cnf***
 
 ```
-Change port number. 
-Ex: port = 60432 
+Change port number or add a port entry under [mysqld] section:
+
+[mysqld]
+port = 3306 
 ```
 
-save postgresql.conf
+save server.cnf
 
-Stop and restart Postgres server
+Stop and restart MariaDB server
 
-Now refer to standard Postgresql documentation as needed. 
+Now refer to standard MariaDB documentation as needed. 
 
 # Links
 
-Postgresql Site
+MariaDB Site
 
-https://www.postgresql.org
+http://www.mariadb.com/
 
-Role postgres does not exist
+MariaDB Knowledgebase
 
-https://dba.stackexchange.com/questions/221663/psql-fatal-role-postgres-does-not-exist
+http://mariadb.com/kb
 
-Yips Site - old stuff but might be worth reading
+MariaDB Documentation
 
-http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
-
-Postgresql 12 docs 
-
-https://www.postgresql.org/docs/12/index.html
+https://mariadb.com/kb/en/documentation/
