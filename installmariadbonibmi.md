@@ -3,7 +3,7 @@
 Install MariaDB yum packages from IBM i ACS Open Source Package Management
 ```
 Package list:
-mariadb   (Not available on IBM repo yet) 
+mariadb   (Not available on IBM repo yet. Install from downloads via yum install mariadb*) 
 mariadb-server
 ```
 Log in to SSH as IBM i QSECOFR level user to do server setup.
