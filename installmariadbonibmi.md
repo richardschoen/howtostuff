@@ -14,11 +14,6 @@ Run the following shell command line sequence to initialize MariaDB database in 
 ```
 /QOpenSys/pkgs/bin/mysql_install_db --user=mysql
 ```
-# Server security - IMPORTANT
-This is a quick getting started document for testing and development. 
-
-This document does not cover production best practices. Best practices should be addressed with your security team or by researching MySql/MariaDB security best practices. 
-
 Set root user password as desired with your own password. (Replace yourpassword with the desired password.)
 ```
 /QOpenSys/pkgs/bin/mysqladmin mysqladmin -u root password yourpassword
@@ -105,6 +100,11 @@ save server.cnf
 Stop and restart MariaDB server and it should listen on the new port.
 
 Now refer to standard MariaDB documentation as needed. 
+
+# MariaDB Server Security - IMPORTANT
+This is a quick getting started document for testing and development. 
+
+This document does not cover production best practices. Best practices should be addressed with your security team or by researching MySql/MariaDB security best practices. 
 
 # Links
 
