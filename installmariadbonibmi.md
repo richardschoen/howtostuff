@@ -19,15 +19,16 @@ Set root user password as desired with your own password. (Replace yourpassword 
 /QOpenSys/pkgs/bin/mysqladmin mysqladmin -u root password yourpassword
 ```
 
-***Do not start server yet until after you modify /QOpenSys/etc/mariadb/server.cnf***
+***Do not start server yet if you need to modify /QOpenSys/etc/mariadb/my.cnf to change default port or bind a specific address***
 
-Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/server.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
+Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
 ```
-edit /QOpenSys/etc/mariadb/server.cnf
-uncomment: 
-#bind-address=0.0.0.0 
-so it looks like: 
-bind-address=0.0.0.0
+edit /QOpenSys/etc/mariadb/my.cnf
+Add following entries:
+
+bind-address=0.0.0.0 
+port=3306
+
 save server.cnf
 ```
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
@@ -36,7 +37,7 @@ Run the following mysqld_safe command to start MariaDB database server daemon.
 https://dev.mysql.com/doc/refman/8.0/en/mysqld-safe.html
 
 ```
-cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir='/QOpenSys/var/lib/mariadb/data'
+cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data
 ```
 ***The server start will lock up the terminal window so you may want to submit the job from a submitted job on the IBM i - (SAMPLE TODO)***
 
@@ -89,17 +90,16 @@ Password: yourpassword
 
 If desired, change the port that MariaDB server listens on to something other than 3306.
 
-use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/server.cnf*** file 
+use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file 
 
-Change port number or add a port entry under the ***[mysqld]*** section in ***server.cnf***
+Change port number or add a port entry in ***my.cnf***
 
 ```
-Change port number or add a port entry under [mysqld] section:
+Change port number or add a port entry:
 
-[mysqld]
 port = 3306 
 
-save server.cnf
+save my.cnf
 ```
 
 Stop and restart MariaDB server and it should listen on the new port.
