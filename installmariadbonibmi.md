@@ -14,6 +14,10 @@ Run the following shell command line sequence to initialize MariaDB database in 
 ```
 /QOpenSys/pkgs/bin/mysql_install_db --user=mysql
 ```
+# Server security - IMPORTANT
+This is a quick getting started document for testing and development. 
+
+This document does not cover production best practices. Best practices should be addressed with your security team or by researching MySql/MariaDB security best practices. 
 
 Set root user password as desired with your own password. (Replace yourpassword with the desired password.)
 ```
@@ -66,7 +70,7 @@ From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on por
 --------------------------------------------------------------------------------
 ```
 
-Allow remote access to server from any host for the MariaDB root user for development using mysql command.
+Allow remote access to server from any host for the MariaDB root user ***for development*** using mysql command.
 ```
 mysql -u root -p
 use mysql;
