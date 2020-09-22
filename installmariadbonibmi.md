@@ -29,7 +29,7 @@ Add following entries:
 bind-address=0.0.0.0 
 port=3306
 
-save server.cnf
+save my.cnf
 ```
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
 
