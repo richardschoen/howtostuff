@@ -32,7 +32,9 @@ save server.cnf
 ```
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
 
-Run the following command to start MariaDB database server daemon.
+Run the following mysqld_safe command to start MariaDB database server daemon.
+https://dev.mysql.com/doc/refman/8.0/en/mysqld-safe.html
+
 ```
 cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir='/QOpenSys/var/lib/mariadb/data'
 ```
