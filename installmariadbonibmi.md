@@ -24,7 +24,10 @@ Set root user password as desired with your own password. (Replace yourpassword 
 Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/server.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
 ```
 edit /QOpenSys/etc/mariadb/server.cnf
-uncomment #bind-address=0.0.0.0 so it looks like: bind-address=0.0.0.0
+uncomment: 
+#bind-address=0.0.0.0 
+so it looks like: 
+bind-address=0.0.0.0
 save server.cnf
 ```
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
