@@ -36,6 +36,8 @@ cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir='/QOpenSys/var/lib/
 ```
 ***The server start will lock up the terminal window so you may want to submit the job from a submitted job on the IBM i - SAMPLE TODO***
 
+***the mysqld starts as a background thread job so you can probably just close the terminal session also. (TBD)***
+
 This following command can be used from any bash session to stop the server.
 ```
 /QOpenSys/pkgs/bin/mysqladmin -u root -p shutdown
