@@ -94,11 +94,11 @@ Change port number or add a port entry under [mysqld] section:
 
 [mysqld]
 port = 3306 
-```
 
 save server.cnf
+```
 
-Stop and restart MariaDB server
+Stop and restart MariaDB server and it should listen on the new port.
 
 Now refer to standard MariaDB documentation as needed. 
 
