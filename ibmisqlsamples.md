@@ -42,8 +42,25 @@ CONNECTION_TYPE = 'IPV4' and local_port=22
 ## Select Active Jobs
 https://www.rpgpgm.com/2015/11/getting-active-jobs-data-using-sql.html
 ```
+// Select all jobs
 SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,                   
            ELAPSED_CPU_PERCENTAGE AS PERCENT                     
 FROM TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A   
-ORDER BY ELAPSED_CPU_PERCENTAGE DESC                             
+ORDER BY ELAPSED_CPU_PERCENTAGE DESC
+
+// Filtering by job status
+SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM
+    FROM TABLE(QSYS2.ACTIVE_JOB_INFO()) B
+   WHERE JOB_STATUS = 'MSGW'
+   ORDER BY JOB_NAME
+
+// Filtering by job name
+SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,
+         CPU_TIME
+    FROM TABLE(QSYS2.ACTIVE_JOB_INFO()) C
+   WHERE JOB_NAME LIKE '%SIMON%'
+   ORDER BY CPU_TIME DESC
+
+
+
 ```
