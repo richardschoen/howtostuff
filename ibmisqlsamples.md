@@ -38,3 +38,12 @@ SELECT * FROM QSYS2.NETSTAT_INFO
 SELECT * FROM QSYS2.NETSTAT_INFO WHERE 
 CONNECTION_TYPE = 'IPV4' and local_port=22                                                        
 ```
+
+## Select Active Jobs
+https://www.rpgpgm.com/2015/11/getting-active-jobs-data-using-sql.html
+```
+SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,                   
+           ELAPSED_CPU_PERCENTAGE AS PERCENT                     
+FROM TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A   
+ORDER BY ELAPSED_CPU_PERCENTAGE DESC                             
+```
