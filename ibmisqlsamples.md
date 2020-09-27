@@ -42,6 +42,7 @@ CONNECTION_TYPE = 'IPV4' and local_port=22
 ## Select Active Jobs
 https://www.rpgpgm.com/2015/11/getting-active-jobs-data-using-sql.html
 https://www.rpgpgm.com/2019/07/extracting-jobs-name-from-job-name.html
+https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_72/rzajq/rzajqudfactivejobinfo.htm
 ```
 // Select all jobs
 SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,                   
@@ -62,17 +63,18 @@ SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,
    WHERE JOB_NAME LIKE '%SIMON%'
    ORDER BY CPU_TIME DESC
 
-// Query and Parse Job Info
-SELECT ORDINAL_POSITION AS ORD,                                   
-SUBSTR(JOB_NAME,                                                  
-LOCATE_IN_STRING(JOB_NAME,'/',-1)+1) as JOBNAME,                  
-       SUBSTR(JOB_NAME,                                           
-LOCATE_IN_STRING(JOB_NAME,'/',1)+1,                               
-(LOCATE_IN_STRING(JOB_NAME,'/',-1)-1)                             
-- (LOCATE_IN_STRING(JOB_NAME,'/',1))) as JOBUSER,                 
-       SUBSTR(JOB_NAME,1,6) as JOBNUMBER,                         
-JOB_TYPE as JOBTYPE,JOB_STATUS as JOBSTATUS,                      
-SUBSYSTEM                                                         
-FROM                                                              
-TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A         
+// Query and Parse Job Info and filter on 26 character JOB_NAME 
+SELECT ORDINAL_POSITION AS ORD,                           
+SUBSTR(JOB_NAME,                                          
+LOCATE_IN_STRING(JOB_NAME,'/',-1)+1) as JOBNAME,          
+       SUBSTR(JOB_NAME,                                   
+LOCATE_IN_STRING(JOB_NAME,'/',1)+1,                       
+(LOCATE_IN_STRING(JOB_NAME,'/',-1)-1)                     
+- (LOCATE_IN_STRING(JOB_NAME,'/',1))) as JOBUSER,         
+       SUBSTR(JOB_NAME,1,6) as JOBNUMBER,                 
+JOB_TYPE as JOBTYPE,JOB_STATUS as JOBSTATUS,              
+SUBSYSTEM                                                 
+FROM                                                      
+TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A 
+where JOB_NAME LIKE '%%'                                        
 ```
