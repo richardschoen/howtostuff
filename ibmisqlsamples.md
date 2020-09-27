@@ -63,14 +63,16 @@ SELECT JOB_NAME,JOB_TYPE,JOB_STATUS,SUBSYSTEM,
    ORDER BY CPU_TIME DESC
 
 // Query and Parse Job Info
-SELECT SUBSTR(JOB_NAME,                                     
-LOCATE_IN_STRING(JOB_NAME,'/',-1)+1) as JOBNAME,            
-       SUBSTR(JOB_NAME,                                     
-LOCATE_IN_STRING(JOB_NAME,'/',1)+1,                         
-(LOCATE_IN_STRING(JOB_NAME,'/',-1)-1)                       
-- (LOCATE_IN_STRING(JOB_NAME,'/',1))) as JOBUSER,           
-       SUBSTR(JOB_NAME,1,6) as JOBNUMBER                    
-FROM                                                        
-TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A   
-
+SELECT ORDINAL_POSITION AS ORD,                                   
+SUBSTR(JOB_NAME,                                                  
+LOCATE_IN_STRING(JOB_NAME,'/',-1)+1) as JOBNAME,                  
+       SUBSTR(JOB_NAME,                                           
+LOCATE_IN_STRING(JOB_NAME,'/',1)+1,                               
+(LOCATE_IN_STRING(JOB_NAME,'/',-1)-1)                             
+- (LOCATE_IN_STRING(JOB_NAME,'/',1))) as JOBUSER,                 
+       SUBSTR(JOB_NAME,1,6) as JOBNUMBER,                         
+JOB_TYPE as JOBTYPE,JOB_STATUS as JOBSTATUS,                      
+SUBSYSTEM                                                         
+FROM                                                              
+TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A         
 ```
