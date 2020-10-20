@@ -71,6 +71,21 @@ https://www.journaldev.com/30052/linux-ifconfig-command-examples
 Ex: ifconfig
 ```
 
+***ip*** - Newer Replacement for ifconfig - Check IP addresses
+
+https://computingforgeeks.com/ifconfig-vs-ip-usage-guide-on-linux/#:~:text=%20ifconfig%20vs%20ip%20usage%20guide%20on%20Linux,ip%20and%20ifconfig%20commands.%20For%20this...%20More%20
+
+```
+Ex: ip address    (list ip addresses)
+```
+
+***systemctl*** - Linux Services
+
+```
+List all services active or not:
+systemctl list-units --all --type=service --no-pager
+```
+
 # Additional samples links
 
 https://www.journaldev.com/24613/linux-ps-command
