@@ -58,12 +58,12 @@ The following command submits the MKDOCS job to run as a batch server in subsyst
 ```
 SBMJOB CMD(QSHEXEC CMDLINE('cd /docproject1;mkdocs serve') PRTSPLF(MKDOCS) PRTUSRDTA(*YES)) JOB(MKDOCS) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                       
 ```  
-In order to use the QSHEXEC command run run MKDocs and other QShell/PASE commands, you must install the command from the following site: https://github.com/richardschoen/QshOni
+In order to use the QSHEXEC command to run the MKDocs server or other QShell/PASE commands, you must install the command from the following site: https://github.com/richardschoen/QshOni
 
 ## See MKDocs site for more documentation on building your documentation sites with markdown files
 https://www.mkdocs.org
 
-##Styling Your Docs with Themes
+## Styling Your Docs with Themes
 https://www.mkdocs.org/user-guide/styling-your-docs/
 
 ## 3rd Party Themes
