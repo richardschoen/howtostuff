@@ -6,11 +6,11 @@ https://www.mkdocs.org
 
 ## Pre-requisites
 
-Make sure Python 3 is installed and running on your IBM i system from the IBM Open Source Package Management optins in IBM ACS. 
+Make sure Python 3 is installed and running on your IBM i system from the IBM Open Source Package Management options in IBM ACS. 
 
 ## Install MKDocs using pip3
 
-Log in to IFS and from an SSH bash shell, QSH or QP2TERM, run the following commands to create Gitbucket IFS dir
+Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following commands to install MKDocs as part of your default Python 3 environment
 ```
 pip3 install mkdocs
 pip3 install lunr
