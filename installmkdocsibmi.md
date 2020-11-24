@@ -21,7 +21,7 @@ Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following 
 pip3 install mkdocs
 pip3 install lunr
 ```
-Install themes - Themes can be tweaked as desired.
+Install themes - Themes can be tweaked as desired. We will select yeti below when we edit the mkdocs.yml site configuration file.
 ```
 pip3 install mkdocs
 pip3 install lunr
