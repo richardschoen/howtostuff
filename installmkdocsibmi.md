@@ -1,6 +1,10 @@
 # How to install MKDocs on IBM i 
 MKDocs is an open source Python static site generator for creating documentation using Markdown syntax documents. No database required.
 
+This is a quick way to establish a departmental knowledgebase with shareable system and process documentation. 
+
+A MKDocs project directory structure could also be turned into a git project if desired so the entire site would be versioned in a git repository.
+
 ## Visit the MKDocs site
 https://www.mkdocs.org
 
@@ -36,7 +40,7 @@ Visit your new documentation site in the browser: http://ibmiaddress:8555
 
 ## Setting default host address and theme info in mkdoc.yml site config file
 
-edit /docproject1/mkdocs.yml file
+edit /docproject1/mkdocs.yml file and add the following contents. Tailor them to your liking.
 
 ```
 site_name: My IBM i Documentation
@@ -46,7 +50,7 @@ nav:
     - Home: index.md
     - About: about.md
 ```
-These settings assume you will create a new about.md markdown page in your project directory.
+These settings assume you will plan to create a new about.md markdown page in your project directory.
 
-## See MKDocs site for more documentation
+## See MKDocs site for more documentation on building your documentation sites with markdown files
 https://www.mkdocs.org
