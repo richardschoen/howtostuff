@@ -52,6 +52,14 @@ nav:
 ```
 These settings assume you will plan to create a new about.md markdown page in your project directory.
 
+## Submitting MKDocs to Run as A Batch Job
+
+The following command submits the MKDOCS job to run as a batch server in subsystem QSYSWRK via job queue QSYSNOMAX 
+```
+SBMJOB CMD(QSHEXEC CMDLINE('cd /docproject1;mkdocs serve') PRTSPLF(MKDOCS) PRTUSRDTA(*YES)) JOB(MKDOCS) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                       
+```  
+In order to use the QSHEXEC command run run MKDocs and other QShell/PASE commands, you must install the command from the following site: https://github.com/richardschoen/QshOni
+
 ## See MKDocs site for more documentation on building your documentation sites with markdown files
 https://www.mkdocs.org
 
