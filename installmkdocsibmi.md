@@ -12,6 +12,8 @@ https://www.mkdocs.org
 
 Make sure Python 3 is installed and running on your IBM i system from the IBM Open Source Package Management options in IBM ACS. 
 
+https://www.ibm.com/support/pages/getting-started-open-source-package-management-ibm-i-acs
+
 ## Install MKDocs using pip3
 
 Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following commands to install MKDocs as part of your default Python 3 environment
