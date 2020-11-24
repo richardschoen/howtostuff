@@ -19,7 +19,7 @@ Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following 
 pip3 install mkdocs
 pip3 install lunr
 ```
-Install themes
+Install themes - Themes can be tweaked as desired.
 ```
 pip3 install mkdocs
 pip3 install lunr
@@ -54,3 +54,9 @@ These settings assume you will plan to create a new about.md markdown page in yo
 
 ## See MKDocs site for more documentation on building your documentation sites with markdown files
 https://www.mkdocs.org
+
+##Styling Your Docs with Themes
+https://www.mkdocs.org/user-guide/styling-your-docs/
+
+## 3rd Party Themes
+https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes
