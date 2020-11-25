@@ -1,5 +1,7 @@
 # How to install MKDocs on IBM i 
-MKDocs is an open source Python static site generator for creating documentation using Markdown syntax documents. No database required.
+MKDocs is an open source Python static site generator for creating documentation using Markdown syntax documents. 
+
+No database required. And technically no web server either since the **build** option creates a static, standalone HTML site.
 
 This is a quick way to establish a departmental knowledgebase with shareable system and process documentation. 
 
@@ -53,13 +55,29 @@ nav:
 ```
 These settings assume you will plan to create a new about.md markdown page in your project directory.
 
-## Submitting MKDocs to Run as A Batch Job
+## Submitting MKDocs serve to Run as A Batch Job
 
 The following command submits the MKDOCS job to run as a batch server in subsystem QSYSWRK via job queue QSYSNOMAX 
 ```
 SBMJOB CMD(QSHEXEC CMDLINE('cd /docproject1;mkdocs serve') PRTSPLF(MKDOCS) PRTUSRDTA(*YES)) JOB(MKDOCS) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                       
 ```  
 In order to use the QSHEXEC command to run the MKDocs server or other QShell/PASE commands, you must install the command from the following site: https://github.com/richardschoen/QshOni
+
+## Building and Deploying your Static Site
+
+This example builds a site directory from a MkDocs project directory named: /docproject1. Once the site is built, simply deploy the /docproject1/site folder to your web site or view the site from a network directory by opening index.html. 
+
+Then you don't need anything special to access your site other than a web browser. 
+
+```
+cd /
+
+cd /docproject1
+
+mkdoc build
+```
+
+That's it. Your static site is ready to go.
 
 ## See MKDocs site for more documentation on building your documentation sites with markdown files
 https://www.mkdocs.org
