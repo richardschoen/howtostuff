@@ -23,8 +23,7 @@ pip3 install lunr
 ```
 Install themes - Themes can be tweaked as desired. We will select yeti below when we edit the mkdocs.yml site configuration file.
 ```
-pip3 install mkdocs
-pip3 install lunr
+pip3 install mkdocs-bootswatch
 ```
 **Note: There may be additional items needed that my system already had, but I have not identified if there are other specific requirements.**
 
