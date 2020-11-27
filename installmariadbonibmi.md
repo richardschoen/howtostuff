@@ -124,3 +124,7 @@ http://mariadb.com/kb
 MariaDB Documentation
 
 https://mariadb.com/kb/en/documentation/
+
+Tutorial Link
+
+https://powerwire.eu/hello-maria
