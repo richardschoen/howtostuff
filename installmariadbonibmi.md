@@ -1,4 +1,4 @@
-# Install and configure MariaDB DB Server on IBM i - DRAFT
+# Install and configure MariaDB DB Server on IBM i
 
 Install MariaDB yum packages from IBM i ACS Open Source Package Management
 ```
