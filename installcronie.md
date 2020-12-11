@@ -57,6 +57,12 @@ QP0ZSPWP     QSECOFR  BCI      .0  PGM-crond   SELW
 --------------------------------------------------------------------------------
 ```
 
+# Ending the crond daemon job
+
+Log in to SSH as IBM i QSECOFR level user.
+
+Type: ***kill `cat /QOpenSYs/etc/crond.pid`*** and press enter. 
+
 # crond daemon job startup script - startcrond.sh
 
 This script can be used to start the crond background job as an active job in the QUSRWRK subsystem.
