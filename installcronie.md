@@ -34,6 +34,8 @@ MAILTO=qsecofr
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
 ```
 
+See crontab configuration sample links below for site that can teach you more about setting up your cron jobs via the crontab configration files.
+
 ***Note: It appears that you must specify the user ID to run the selected job as. In the above example we are running the SNDMSG example as QSECOFR.***
 
 # Make sure crontab file and cron directories are owned by root user for running system jobs
