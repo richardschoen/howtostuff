@@ -91,6 +91,22 @@ This script can be used to end the crond background job if it's active. It used 
 kill `cat /QOpenSys/etc/crond.pid`
 ```
 
+# Start crond daemon job from QSHEXEC CL command
+
+This CL command example utilizes the QSHEXEC command which is part of the QSHONI library for running QSH/PASE jobs from a regular IBM i job. https://github.com/richardschoen/qshoni
+
+```
+ QSHONI/QSHEXEC CMDLINE('crond') LOGSTDOUT(*YES) 
+```
+
+# End crond daemon job from QSHEXEC CL command
+
+This CL command example utilizes the QSHEXEC command which is part of the QSHONI library for running QSH/PASE jobs from a regular IBM i job. https://github.com/richardschoen/qshoni
+
+```
+ QSHONI/QSHEXEC CMDLINE('kill ```cat /QOpenSys/etc/crond.pid```') LOGSTDOUT(*YES)
+```
+
 This document does not cover production best practices. Best practices should be addressed with your Administration team or by researching Cron security best practices. 
 
 # Links
