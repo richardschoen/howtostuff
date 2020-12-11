@@ -10,7 +10,7 @@ cronie-anacron
 ```
 # Setting up sample crontab system schedule file 
 
-From your favorite bash editor, edit the system crontab file: in ***/QopenSys/etc/crontab***
+From your favorite bash editor, edit the system crontab file: in ***/QOpenSys/etc/crontab***
 
 **The example listed below sends a message to QSYSOPR via calling an IBMi CL Command**
 ```
