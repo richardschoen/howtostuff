@@ -35,6 +35,7 @@ MAILTO=qsecofr
 ```
 
 See crontab configuration sample links below for site that can teach you more about setting up your cron jobs via the crontab configration files.
+https://github.com/richardschoen/howtostuff/blob/master/installcronie.md#links
 
 ***Note: It appears that you must specify the user ID to run the selected job as. In the above example we are running the SNDMSG example as QSECOFR.***
 
