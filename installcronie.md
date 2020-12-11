@@ -57,16 +57,22 @@ QP0ZSPWP     QSECOFR  BCI      .0  PGM-crond   SELW
 --------------------------------------------------------------------------------
 ```
 
-# Crond daemon startup script - startcrond.sh
+# crond daemon job startup script - startcrond.sh
+
+This script can be used to start the crond background job as an active job in the QUSRWRK subsystem.
+
 ```
 #!/QOpenSys/pkgs/bin/bash
 crond -s
 ```
 
-# Crond daemon end script - endcrond.sh
+# crond daemon job end script - endcrond.sh
+
+This script can be used to end the crond background job if it's active. It used the process id stored in file /QOpenSys/etc/crond.pid to locate and kill the system job.
+
 ```
 #!/QOpenSys/pkgs/bin/bash
-kill `cat /QOpenSYs/etc/crond.pid`
+kill `cat /QOpenSys/etc/crond.pid`
 ```
 
 This document does not cover production best practices. Best practices should be addressed with your Administration team or by researching Cron security best practices. 
