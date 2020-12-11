@@ -47,7 +47,7 @@ chown qsecofr cron.hourly
 
 Log in to SSH as IBM i QSECOFR level user.
 
-Type: ***crond*** and press enter. 
+Type: ```crond``` and press enter. 
 
 
 From a 5250 session, run ***WRKACTJOB SBS(QUSRWRK) JOB(QP0ZSPWP)*** and you should see the active server jobs and threads in the QUSRWRK subsystem
@@ -61,7 +61,7 @@ QP0ZSPWP     QSECOFR  BCI      .0  PGM-crond   SELW
 
 Log in to SSH as IBM i QSECOFR level user.
 
-Type: ***kill `cat /QOpenSYs/etc/crond.pid`*** and press enter. 
+Type: ```kill `cat /QOpenSYs/etc/crond.pid` ``` and press enter. 
 
 # crond daemon job startup script - startcrond.sh
 
