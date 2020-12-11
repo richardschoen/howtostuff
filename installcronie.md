@@ -29,10 +29,12 @@ MAILTO=qsecofr
 # |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
-# *  *  *  *  * user-name  command to be executed
+# *  *  *  *  * ibmi-user-name  command to be executed
 # Run a sample IBMi CL command every minute to send message to QSYSOPR
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
 ```
+
+***Note: It appears that you must specify the user ID to run the selected job as. In the above example we are running the SNDMSG example as QSECOFR.***
 
 # Make sure crontab file and cron directories are owned by root user for running system jobs
 
