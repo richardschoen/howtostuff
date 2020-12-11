@@ -32,6 +32,8 @@ MAILTO=qsecofr
 # *  *  *  *  * ibmi-user-name  command to be executed
 # Run a sample IBMi CL command every minute to send message to QSYSOPR
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
+# Run a sample IBMi CL command every minute to send message to QSYSOPR and log any stdout/stderr messages to custom log file /tmp/ibmicommand.log.
+  */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"  >> /tmp/ibmicommand.log 2>&1
 ```
 
 See crontab configuration sample links below for site that can teach you more about setting up your cron jobs via the crontab configration files.
