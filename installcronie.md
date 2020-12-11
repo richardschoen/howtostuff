@@ -32,7 +32,7 @@ MAILTO=qsecofr
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
 ```
 
-# Make sure crontab file is owned by root user for running system jobs
+# Make sure crontab file and cron directories are owned by root user for running system jobs
 
 Run the following commands from a SSH session to make sure root user (QSECOFR) owns the files and directories. Otherwise your crontab will not run correctly because of permission errors even though the crond daemon will start up.
 
@@ -50,12 +50,15 @@ Log in to SSH as IBM i QSECOFR level user.
 Type: ```crond``` and press enter. 
 
 
-From a 5250 session, run ***WRKACTJOB SBS(QUSRWRK) JOB(QP0ZSPWP)*** and you should see the active server jobs and threads in the QUSRWRK subsystem
+From a 5250 session, run ***WRKACTJOB SBS(QUSRWRK) JOB(QP0ZSPWP)*** and you should see the active server jobs and threads in the QUSRWRK subsystem. 
+
 ```
 --------------------------------------------------------------------------------
 QP0ZSPWP     QSECOFR  BCI      .0  PGM-crond   SELW 
 --------------------------------------------------------------------------------
 ```
+Tip: If your crontab jobs are not running, drill in to this job via ```option 5. Work with``` and then display the job log for the active crond daemon ```10. Display job log, if active, on job queue, or pending ```. Usually there will be an error listed if your crontab command line entries are bad or permissions aren't set right on your crond configuration files and directories.
+
 
 # Ending the crond daemon job
 
@@ -63,7 +66,7 @@ Log in to SSH as IBM i QSECOFR level user.
 
 Type: ```kill `cat /QOpenSYs/etc/crond.pid` ``` and press enter. 
 
-# crond daemon job startup script - startcrond.sh
+# Start crond daemon job bash script - startcrond.sh
 
 This script can be used to start the crond background job as an active job in the QUSRWRK subsystem.
 
@@ -72,7 +75,7 @@ This script can be used to start the crond background job as an active job in th
 crond -s
 ```
 
-# crond daemon job end script - endcrond.sh
+# End crond daemon job bash script - endcrond.sh
 
 This script can be used to end the crond background job if it's active. It used the process id stored in file /QOpenSys/etc/crond.pid to locate and kill the system job.
 
