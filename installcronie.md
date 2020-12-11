@@ -8,7 +8,9 @@ Package list:
 cronie   
 cronie-anacron
 ```
-# Setting up sample crontab system schedule file in /QopenSys/etc/crontab
+# Setting up sample crontab system schedule file 
+
+From your favorite bash editor, edit the system crontab file: in ***/QopenSys/etc/crontab***
 
 **The example listed below sends a message to QSYSOPR via calling an IBMi CL Command**
 ```
@@ -30,6 +32,17 @@ MAILTO=qsecofr
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
 ```
 
+# Make sure crontab file is owned by root user for running system jobs
+
+Run the following commands from a SSH session to make sure root user (QSECOFR) owns the files and directories. Otherwise your crontab will not run correctly because of permission errors even though the crond daemon will start up.
+
+```
+cd /QOpenSys/etc
+chown qsecofr crontab
+chown qsecofr cron.d
+chown qsecofr cron.hourly
+```
+
 # Starting the crond daemon to run schedule jobs
 
 Log in to SSH as IBM i QSECOFR level user.
@@ -42,6 +55,18 @@ From a 5250 session, run ***WRKACTJOB SBS(QUSRWRK) JOB(QP0ZSPWP)*** and you shou
 --------------------------------------------------------------------------------
 QP0ZSPWP     QSECOFR  BCI      .0  PGM-crond   SELW 
 --------------------------------------------------------------------------------
+```
+
+# Crond daemon startup script - startcrond.sh
+```
+#!/QOpenSys/pkgs/bin/bash
+crond -s
+```
+
+# Crond daemon end script - endcrond.sh
+```
+#!/QOpenSys/pkgs/bin/bash
+kill `cat /QOpenSYs/etc/crond.pid`
 ```
 
 This document does not cover production best practices. Best practices should be addressed with your Administration team or by researching Cron security best practices. 
