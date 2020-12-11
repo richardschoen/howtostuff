@@ -2,6 +2,8 @@
 
 From IBM: Now available for #IBMi: cron, via the 'cronie' RPM package! Anacron, too!
 
+This package can be a good way to schedule your open source jobs or CL commands to run on a regular basis. 
+
 Install cronie yum packages from IBM i ACS Open Source Package Management
 ```
 Package list:
