@@ -28,7 +28,7 @@ MAILTO=qsecofr
 # |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
 # |  |  |  |  |
 # *  *  *  *  * user-name  command to be executed
-# Run a sample IBMi CL command every minute
+# Run a sample IBMi CL command every minute to send message to QSYSOPR
   */1  *  *  *  *  QSECOFR system "SNDMSG MSG(CRONJOB) TOUSR(QSYSOPR)"
 ```
 
