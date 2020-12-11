@@ -95,3 +95,14 @@ This document does not cover production best practices. Best practices should be
 Cronie Github Site
 
 https://github.com/cronie-crond/cronie
+
+Crontab configuration examples
+https://phoenixnap.com/kb/set-up-cron-job-linux#:~:text=Cron%20Job%20Examples%20%20%20Cron%20Job%20,%2A%20%2A%20%2Froot%2Fbackup.sh%20%205%20more%20rows%20
+
+https://corenominal.org/2016/05/12/howto-setup-a-crontab-file/
+
+https://pimylifeup.com/cron-jobs-and-crontab/
+
+Let me know if you have a favorite cron setup link.
+
+
