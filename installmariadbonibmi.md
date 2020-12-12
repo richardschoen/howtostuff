@@ -70,6 +70,8 @@ cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/m
 # Setting the MariaDB root user password after starting server for the first time
 The server must be running before setting the new root user password and using the mysqladmin command.
 
+First open a new SSH/bash terminal window since starting the server took over your previous terminal session and you also may have closed it as noted above since mysqld starts as a background job.
+
 Set root user password as desired with your own password. (Replace yournewpassword with the actual desired password.)
 ```
 /QOpenSys/pkgs/bin/mysqladmin -u root password yournewpassword
