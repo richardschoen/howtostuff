@@ -60,6 +60,7 @@ https://dev.mysql.com/doc/refman/8.0/en/mysqld-safe.html
 cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data
 ```
 ***The bash server start will lock up the terminal window so you may want to start the MariaDB server job from a submitted job on the IBM i - (SAMPLE TODO)***
+
 ***Since the mysqld starts as a background thread job you can probably just close the SSH/bash terminal windows and the mysqld server daemon will stay running. (Need to Test)***
 
 # Setting the MariaDB root user password after starting server for the first time
