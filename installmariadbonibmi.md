@@ -194,7 +194,7 @@ The QSHEXEC command can be used to call QSH/PASE jobs from a regular IBM i job a
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC 
- CMDLINE('/QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data') 
+ CMDLINE('/QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data'))  
  PRTSTDOUT(*YES) PRTSPLF(STRMARIADB)) JOB(STRMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)
 ```
 
@@ -204,7 +204,7 @@ The mysqld server shutdown can be run interactively or submitted to job queue QS
 ```
 SBMJOB CMD(QSHONI/QSHEXEC 
  CMDLINE('/QOpenSys/pkgs/bin/mysqladmin --no-defaults --user=root +               
- --password=YourPassword shutdown') PRTSTDOUT(*YES) PRTSPLF(ENDMARIADB)         
+ --password=YourPassword shutdown')) PRTSTDOUT(*YES) PRTSPLF(ENDMARIADB)         
 ```
 
 # Links
