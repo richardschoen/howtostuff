@@ -40,7 +40,7 @@ bind-address=0.0.0.0
 port = 33306                                           
 ```
 
-Run the following shell command line sequence to initialize the MariaDB database
+Run the following shell command line sequence to initialize the MariaDB database in directory: /QOpenSys/var/lib/mariadb/data
 ```
 /QOpenSys/pkgs/bin/mysql_install_db --user=mysql
 ```
