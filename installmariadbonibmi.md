@@ -14,9 +14,9 @@ If not started, start the bash shell by typing ***bash*** unless bash is already
 
 # Setting the IP binding address and TCP port for the MariaDB server in my.cnf config file
 
-Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
+Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses. If you prefer using hte green screen you can use the following command to edit the configuration file: ```EDTF '/QOpenSys/etc/mariadb/my.cnf'```
 
-Edit /QOpenSys/etc/mariadb/my.cnf
+Edit ***/QOpenSys/etc/mariadb/my.cnf***
 Add the [mysqld] directive and the following 2 entries: bind-address and port:
 
 ```
@@ -28,7 +28,7 @@ Save the my.cnf file
 
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
 
-Example of what your actual /QOpenSys/etc/mariadb/my.cnf will look like after adding the bind-address and port entries.
+Example of what your actual ***/QOpenSys/etc/mariadb/my.cnf*** will look like after adding the bind-address and port entries.
 ```
 #                                                      
 # This group is read both by the client and the server 
@@ -48,7 +48,7 @@ port = 33306
 
 # First time database initialization in directory: /QOpenSys/var/lib/mariadb/data
 
-Run the following shell command line sequence to initialize the MariaDB database in directory: /QOpenSys/var/lib/mariadb/data
+Run the following shell command line sequence to initialize the MariaDB database in directory: ***/QOpenSys/var/lib/mariadb/data***
 ```
 /QOpenSys/pkgs/bin/mysql_install_db
 ```
