@@ -122,8 +122,26 @@ After login to the mysql command line app, run the following SQL commands to all
 ```
 use mysql;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'YourPassword';
-select host,user from user;   (Wildcard should show)
 ```
+If desired, run the following SQL query to see all the access entries for the MariaDB server. You should see the ***root*** user entry with a wildcard ***%*** for the host which means it should be able to access the server from anywhere.
+```
+select host,user from user; 
+```
+The following results should show
+```
++---------------------------------+------+
+| host                            | user |
++---------------------------------+------+
+| %                               | root |
+| 127.0.0.1                       | root |
+| ::1                             | root |
+| localhost                       |      |
+| localhost                       | root |
+| myibmi.com                      |      |
+| myibmi.com                      | root |
++---------------------------------+------+
+```
+
 ***Note: If you have trouble connecting to the MariaDB instance from another computer after changing this setting, you may need to Stop and restart the MariaDB server after the permission change.***
 
 Use Heidi, DBeaver or other MySQL/MariaDB client to connect to MariaDB database. 
