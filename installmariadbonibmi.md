@@ -193,9 +193,11 @@ The mysqld server startup command can be submitted to job queue QSYSNOMAX and wi
 The QSHEXEC command can be used to call QSH/PASE jobs from a regular IBM i job and handles all the threading set up and log capture. https://www.github.com/richardschoen/qshoni
 
 ```
-SBMJOB CMD(QSHONI/QSHEXEC 
- CMDLINE('/QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data'))  
- PRTSTDOUT(*YES) PRTSPLF(STRMARIADB)) JOB(STRMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)
+SBMJOB CMD(QSHONI/QSHEXEC             
+ CMDLINE('/QOpenSys/pkgs/bin/mysqld_safe 
+ --datadir=/QOpenSys/var/lib/mariadb/data') 
+ PRTSTDOUT(*YES) PRTSPLF(STRMARIADB)) 
+ JOB(STRMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)
 ```
 
 # Submitting MariaDB Server Shutdown/End via QSHEXEC CL Command
