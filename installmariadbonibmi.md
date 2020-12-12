@@ -78,7 +78,7 @@ The following command can be used from any bash session to stop the server. Make
 /QOpenSys/pkgs/bin/mysqladmin  --no-defaults --user=root --password=yourpassword shutdown
 ```
 
-# Checking for active MariadDB server instance
+# Checking for active MariaDB server instance
 
 From a 5250 session, run WRKACTJOB and you should see the active server jobs and threads in the QUSRWRK subsystem
 ```
@@ -87,7 +87,7 @@ QP0ZSPWP     RICHARD     BCI      .0  PGM-mysqld       SELW
 --------------------------------------------------------------------------------
 ```
 
-# Checking for active MariadDB server port
+# Checking for active MariaDB server port
 
 From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on port 3306. You should see an entry for Local Port 3306 which tells you the server is listening for connections. 
 ```
@@ -106,9 +106,9 @@ From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on por
 
 # Allow remote user access for MariaDB database development
 
-Allow remote access to server from any host for the MariaDB root user ***for development*** using mysql command.
+Allow remote access to server from any host for the MariaDB root user ***for development*** by running ***mysql*** PASE command. Make sure you know your MariaDB root user and password. 
 ```
-mysql -u root -p
+/QOpenSys/pkgs/bin/mysql -u root -p
 use mysql;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'YourPassword';
 select host,user from user;   (Wildcard should show)
