@@ -160,7 +160,7 @@ This document is mainly a quick getting started document for testing and develop
 This document does not cover production best practices. Best practices should be addressed with your security team or by researching MySql/MariaDB security best practices. 
 
 Listed below are a few things that I can think of top of mind for keeping your MariaDB data safe:
-* Limit access to the MariaDB data directories from the IFS
+* Limit access to the MariaDB data directories from the IFS. Perhaps create a MYSQL or MARIADB IBM i user that has access to the data directory ***/QOpenSys/var/lib/mariadb/data*** only and limit that users authority. Then when starting the MariaDB server submit the startup job as the MYSQL/MARIDB user to job queue QSYSNOMAX.
 * Make sure server is only listening on localhost/127.0.0.1
 * Make sure you've established a root password, but don't use it for production apps.
 * Create application MariaDB users/password so the root user does not get exposed.
