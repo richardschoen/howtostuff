@@ -115,11 +115,14 @@ From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is 
 Allow remote access to server from any host for the MariaDB root user ***for development*** by running the ***mysql*** PASE command. Make sure you know your MariaDB root user and password. You will be prompted for your password.
 ```
 /QOpenSys/pkgs/bin/mysql -u root -p
+```
+After login to the mysql command line app, run the following SQL commands to allow access to the MariaDB instance from toolsets outside of localhost/127.0.0.1. ***Later for security purposes you can revoke this access so only the IBM i apps can access the MariaDB server.*** 
+```
 use mysql;
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'YourPassword';
 select host,user from user;   (Wildcard should show)
 ```
-***Note: If this setting does not work, you may need to Stop and restart the MariaDB server after this change.***
+***Note: If you have trouble connecting to the MariaDB instance from another computer after changing this setting, you may need to Stop and restart the MariaDB server after the permission change.***
 
 Use Heidi, DBeaver or other MySQL/MariaDB client to connect to MariaDB database. 
 ```
