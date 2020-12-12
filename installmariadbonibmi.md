@@ -23,7 +23,7 @@ Save the my.cnf file
 
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
 
-Example of what your /QOpenSys/etc/mariadb/my.cnf will look like
+Example of what your actual /QOpenSys/etc/mariadb/my.cnf will look like after adding the bind-address and port entries.
 ```
 #                                                      
 # This group is read both by the client and the server 
@@ -57,7 +57,7 @@ cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/m
 
 Set root user password as desired with your own password. (Replace yourpassword with the desired password.)
 ```
-/QOpenSys/pkgs/bin/mysqladmin mysqladmin -u root password yourpassword
+/QOpenSys/pkgs/bin/mysqladmin -u root password yourpassword
 ```
 
 This following command can be used from any bash session to stop the server.
