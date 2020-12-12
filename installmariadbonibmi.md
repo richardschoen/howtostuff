@@ -211,6 +211,19 @@ SBMJOB CMD(QSHONI/QSHEXEC
   JOB(ENDMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                          
 ```
 
+# Hard kill the MariaDB mysqld instance immediately
+If you want to kill your MariaDB instance by using its process id file, locate the mysqld instance process id file in directory ***/QOpenSys/var/lib/mariadb/data***.
+
+The file name will have a .pid extension which will most likely match your IBM i system host name. 
+
+In this example we are trying to kill the mysqld server on a server named: youribmihostname.com
+
+If you are more comfortable doing an ENDJOB command from a regular IBM i 5250 session, do a WRKACTJOB to identify the mysqld job as mentioned above and do an ```ENDJOB *IMMED``` to kill the running MariaDB server instance immediately.
+
+```
+kill ``` cat /QOpenSys/var/lib/mariadb/data/youribmihostname.com.pid```
+```
+
 # Links
 
 MariaDB Site
