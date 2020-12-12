@@ -11,16 +11,16 @@ Log in to SSH as IBM i QSECOFR level user to do server setup.
 If not started, start the bash shell by typing ***bash*** unless bash is already your default shell. 
 
 Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
-```
-edit /QOpenSys/etc/mariadb/my.cnf
 
+Edit /QOpenSys/etc/mariadb/my.cnf
 Add following 2 entries: bind-address and port:
 
+```
 bind-address=0.0.0.0 
 port=3306
-
-save my.cnf
 ```
+Save the my.cnf file
+
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
 
 Example of what your /QOpenSys/etc/mariadb/my.cnf will look like
