@@ -113,7 +113,7 @@ From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is 
 # Allow remote user access for MariaDB database development
 
 ```diff
-By default all MariaDB server access can only be done from apps running natively on the IBM i server using the localhost host name or 127.0.0.1 IP address.
+- By default all MariaDB server access can only be done from apps running natively on the IBM i server using the localhost host name or 127.0.0.1 IP address.
 ```
 
 You can allow remote access to the MariaDB server from any host for the MariaDB root user or other users ***for development*** by running the ***mysql*** PASE command and a few related SQL commands. Make sure you know your MariaDB root user and password. You will be prompted for your password when you run the ***mysql*** command.
