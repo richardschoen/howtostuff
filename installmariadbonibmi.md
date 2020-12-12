@@ -114,7 +114,7 @@ From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is 
 
 By default all MariaDB server access can only be done from apps running natively on the IBM i server using the localhost host name or 127.0.0.1 IP address.
 
-You can allow remote access to the MariaDB server from any host for the MariaDB root user orother users ***for development*** by running the ***mysql*** PASE command and a few related SQL commands. Make sure you know your MariaDB root user and password. You will be prompted for your password when you run the ***mysql*** command.
+You can allow remote access to the MariaDB server from any host for the MariaDB root user or other users ***for development*** by running the ***mysql*** PASE command and a few related SQL commands. Make sure you know your MariaDB root user and password. You will be prompted for your password when you run the ***mysql*** command.
 ```
 /QOpenSys/pkgs/bin/mysql -u root -p
 ```
@@ -152,7 +152,7 @@ User: root
 Password: yourpassword
 ```
 
-# Changing the MariaDB listening port to something other than 3306***
+# Changing the MariaDB listening port to something other than 3306
 
 If desired, change the port that MariaDB server listens on to something other than 3306. This can be useful if you want to run multiple versions of MariaDB or you already have another MySql server running on your IBM i system.
 
@@ -175,16 +175,16 @@ Now refer to standard MariaDB documentation as needed.
 # MariaDB Server Security - IMPORTANT
 This document is mainly a quick getting started document for testing and development. 
 
-This document does not cover production best practices. Best practices should be addressed with your security team or by researching MySql/MariaDB security best practices. 
+This document does not cover all production best practices, but listed below are a few suggestions. Security best practices should be discussed and addressed with your security team or by researching MySql/MariaDB security best practices. 
 
 Listed below are a few things that I can think of top of mind for keeping your MariaDB data safe:
 * Limit access to the MariaDB data directories from the IFS. Perhaps create a MYSQL or MARIADB IBM i user that has access to the data directory ***/QOpenSys/var/lib/mariadb/data*** only and limit that users authority. Then when starting the MariaDB server submit the startup job as the MYSQL/MARIDB user to job queue QSYSNOMAX.
 * Make sure server is only listening on localhost/127.0.0.1
 * Make sure you've established a root password, but don't use it for production apps.
 * Create application MariaDB users/password so the root user does not get exposed.
-* Back up your MariaDB server regularly.
-* Stop server and back up your MariaDB data directory regularly. ***/QOpenSys/var/lib/mariadb/data***
-* Or leave MariaDB server running and use accepted MySql/MariaDB backup procedures. There are 3rd party MariaDB/MySQL backup tools available or you can use the ***mysqldump*** command. Search for ***mysql data backup*** or here's a sample link: https://serverguy.com/servers/how-to-backup-mysql-database
+* Back up your MariaDB server regularly using one of the methods below.
+  * Stop server and back up your MariaDB data directory regularly. ***/QOpenSys/var/lib/mariadb/data***
+  * Or leave MariaDB server running and use accepted MySql/MariaDB backup procedures. There are 3rd party MariaDB/MySQL backup tools available or you can use the ***mysqldump*** command. Search for ***mysql data backup*** or here's a sample link: https://serverguy.com/servers/how-to-backup-mysql-database
 
 # Links
 
