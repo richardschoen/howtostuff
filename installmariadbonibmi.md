@@ -10,21 +10,11 @@ Log in to SSH as IBM i QSECOFR level user to do server setup.
 
 If not started, start the bash shell by typing ***bash*** unless bash is already your default shell. 
 
-Run the following shell command line sequence to initialize MariaDB database in the /postgres IFS directory location
-```
-/QOpenSys/pkgs/bin/mysql_install_db --user=mysql
-```
-Set root user password as desired with your own password. (Replace yourpassword with the desired password.)
-```
-/QOpenSys/pkgs/bin/mysqladmin mysqladmin -u root password yourpassword
-```
-
-***Do not start server yet if you need to modify /QOpenSys/etc/mariadb/my.cnf to change default port or bind a specific address***
-
 Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
 ```
 edit /QOpenSys/etc/mariadb/my.cnf
-Add following entries:
+
+Add following 2 entries: bind-address and port:
 
 bind-address=0.0.0.0 
 port=3306
@@ -32,6 +22,28 @@ port=3306
 save my.cnf
 ```
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
+
+Example of what your /QOpenSys/etc/mariadb/my.cnf will look like
+```
+#                                                      
+# This group is read both by the client and the server 
+# use it for options that affect everything            
+#                                                      
+[client-server]                                        
+                                                       
+#                                                      
+# include *.cnf from the config directory              
+#                                                      
+!includedir /QOpenSys/etc/mariadb/my.cnf.d             
+                                                       
+bind-address=0.0.0.0                                   
+port = 33306                                           
+```
+
+Run the following shell command line sequence to initialize the MariaDB database
+```
+/QOpenSys/pkgs/bin/mysql_install_db --user=mysql
+```
 
 Run the following mysqld_safe command to start MariaDB database server daemon.
 https://dev.mysql.com/doc/refman/8.0/en/mysqld-safe.html
@@ -42,6 +54,11 @@ cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/m
 ***The server start will lock up the terminal window so you may want to submit the job from a submitted job on the IBM i - (SAMPLE TODO)***
 
 ***the mysqld starts as a background thread job so you can probably just close the terminal session also and server daemon will stay running. (TBD)***
+
+Set root user password as desired with your own password. (Replace yourpassword with the desired password.)
+```
+/QOpenSys/pkgs/bin/mysqladmin mysqladmin -u root password yourpassword
+```
 
 This following command can be used from any bash session to stop the server.
 ```
