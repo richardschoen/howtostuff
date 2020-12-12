@@ -14,7 +14,7 @@ If not started, start the bash shell by typing ***bash*** unless bash is already
 
 # Setting the IP binding address and TCP port for the MariaDB server in my.cnf config file
 
-*** This step must be done before starting the server for the first time***
+***This step must be done before starting the server for the first time***
 
 Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses. If you prefer using the green screen you can use the following CL command to edit the configuration file: ```EDTF '/QOpenSys/etc/mariadb/my.cnf'```
 
