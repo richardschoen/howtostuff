@@ -112,7 +112,7 @@ From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is 
 
 # Allow remote user access for MariaDB database development
 
-Allow remote access to server from any host for the MariaDB root user ***for development*** by running ***mysql*** PASE command. Make sure you know your MariaDB root user and password. 
+Allow remote access to server from any host for the MariaDB root user ***for development*** by running the ***mysql*** PASE command. Make sure you know your MariaDB root user and password. You will be prompted for your password.
 ```
 /QOpenSys/pkgs/bin/mysql -u root -p
 use mysql;
