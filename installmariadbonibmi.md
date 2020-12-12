@@ -17,9 +17,10 @@ If not started, start the bash shell by typing ***bash*** unless bash is already
 Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses.
 
 Edit /QOpenSys/etc/mariadb/my.cnf
-Add following 2 entries: bind-address and port:
+Add the [mysqld] directive and the following 2 entries: bind-address and port:
 
 ```
+[mysqld]
 bind-address=0.0.0.0 
 port=3306
 ```
@@ -39,7 +40,8 @@ Example of what your actual /QOpenSys/etc/mariadb/my.cnf will look like after ad
 # include *.cnf from the config directory              
 #                                                      
 !includedir /QOpenSys/etc/mariadb/my.cnf.d             
-                                                       
+                       
+[mysqld]                       
 bind-address=0.0.0.0                                   
 port = 33306                                           
 ```
