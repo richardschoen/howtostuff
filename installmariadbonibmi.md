@@ -51,7 +51,7 @@ Run the following shell command line sequence to initialize the MariaDB database
 
 # Starting the MariaDB server job - mysqld
 
-Run the following mysqld_safe command to start MariaDB database server daemon.
+Run the following mysqld_safe command to start MariaDB database server daemon. The server must be started before using the ***mysqladmin*** command to perform actions.
 https://dev.mysql.com/doc/refman/8.0/en/mysqld-safe.html
 
 ```
@@ -60,7 +60,7 @@ cd /QOpenSys/pkgs ; /QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/m
 ***The bash server start will lock up the terminal window so you may want to start the MariaDB server job from a submitted job on the IBM i - (SAMPLE TODO)***
 ***Since the mysqld starts as a background thread job you can probably just close the SSH/bash terminal windows and the mysqld server daemon will stay running. (Need to Test)***
 
-# Setting the MariaDB root user password
+# Setting the MariaDB root user password after starting server for the first time
 The server must be running before setting the new root user password and using the mysqladmin command.
 
 Set root user password as desired with your own password. (Replace yournewpassword with the actual desired password.)
@@ -68,11 +68,11 @@ Set root user password as desired with your own password. (Replace yournewpasswo
 /QOpenSys/pkgs/bin/mysqladmin -u root password yournewpassword
 ```
 
-# Stopping the MariaDB server job -mysqld
+# Stopping the MariaDB server job - mysqld
 
-The following command can be used from any bash session to stop the server. Make sure to specify your user and password when shutting down the server
+The following command can be used from any bash session to stop the server. Make sure to specify your root user and yourpassword when shutting down the server
 ```
-/QOpenSys/pkgs/bin/mysqladmin  --no-defaults --user=root --password=password shutdown
+/QOpenSys/pkgs/bin/mysqladmin  --no-defaults --user=root --password=yourpassword shutdown
 ```
 
 # Checking for active MariadDB server instance
