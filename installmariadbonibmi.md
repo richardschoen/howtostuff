@@ -203,8 +203,10 @@ The mysqld server shutdown can be run interactively or submitted to job queue QS
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC 
- CMDLINE('/QOpenSys/pkgs/bin/mysqladmin --no-defaults --user=root +               
- --password=YourPassword shutdown')) PRTSTDOUT(*YES) PRTSPLF(ENDMARIADB)         
+  CMDLINE('/QOpenSys/pkgs/bin/mysqladmin --no-defaults 
+  --user=root --password=YourPassword shutdown') 
+  SETPKGPATH(*YES) PRTSTDOUT(*YES) PRTSPLF(ENDMARIADB))                                 
+  JOB(ENDMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                          
 ```
 
 # Links
