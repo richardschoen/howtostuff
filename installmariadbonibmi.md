@@ -201,7 +201,7 @@ SBMJOB CMD(QSHONI/QSHEXEC
 ```
 
 # Submitting MariaDB Server Shutdown/End via QSHEXEC CL Command
-The mysqld server shutdown can be run interactively or submitted to job queue QSYSNOMAX and will run in the QUSRWRK subsystem unless your IBM i is configured differently. Make sure to specify your MariaDB root user and password. This job will typically only run a few seconds so it could be run without SBMJOB if desired.
+The mysqld server shutdown can be run interactively or submitted to job queue QSYSNOMAX and will run in the QUSRWRK subsystem unless your IBM i is configured differently. Make sure to specify your MariaDB root user and password. This job will typically only run a few seconds so it could be run without SBMJOB if desired. A shutdown operation can be delayed if there are several client threads connected to the MariaDB instance so you might need to explore other possible shutdown options such as killing the process using its process id if you have regular issues shutting down your MariaDB server. However shutting down a process via the kill command or ```ENDJOB *IMMED``` on the IBM i can cause data corruption if a server is shutdown while transactions are running.
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC 
