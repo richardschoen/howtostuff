@@ -112,7 +112,7 @@ From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is 
 
 # Allow remote user access for MariaDB database development
 
-By default all MariaDB server access can only be done from apps running natively on the IBM i server using the localhost host name or 127.0.0.1 IP address.
+***By default all MariaDB server access can only be done from apps running natively on the IBM i server using the localhost host name or 127.0.0.1 IP address.***
 
 You can allow remote access to the MariaDB server from any host for the MariaDB root user or other users ***for development*** by running the ***mysql*** PASE command and a few related SQL commands. Make sure you know your MariaDB root user and password. You will be prompted for your password when you run the ***mysql*** command.
 ```
@@ -173,6 +173,7 @@ Stop and restart MariaDB server and it should listen on the new port.
 Now refer to standard MariaDB documentation as needed. 
 
 # MariaDB Server Security - IMPORTANT
+
 This document is mainly a quick getting started document for testing and development. 
 
 This document does not cover all production best practices, but listed below are a few suggestions. Security best practices should be discussed and addressed with your security team or by researching MySql/MariaDB security best practices. 
