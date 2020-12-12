@@ -211,7 +211,7 @@ SBMJOB CMD(QSHONI/QSHEXEC
   JOB(ENDMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)                                          
 ```
 
-# Hard kill the MariaDB mysqld instance immediately
+# Hard Kill the MariaDB mysqld Instance Immediately
 If you want to kill your MariaDB instance by using its process id file, locate the mysqld instance process id file in directory ***/QOpenSys/var/lib/mariadb/data***.
 
 The file name will have a .pid extension and a name which will most likely match your IBM i system host name. 
