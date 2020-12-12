@@ -187,6 +187,24 @@ Listed below are a few things that I can think of top of mind for keeping your M
   * Stop server and back up your MariaDB data directory regularly. ***/QOpenSys/var/lib/mariadb/data***
   * Or leave MariaDB server running and use accepted MySql/MariaDB backup procedures. There are 3rd party MariaDB/MySQL backup tools available or you can use the ***mysqldump*** command. Search for ***mysql data backup*** or here's a sample link: https://serverguy.com/servers/how-to-backup-mysql-database
 
+# Submitting MariaDB Server Startup via QSHEXEC CL Command
+The mysqld server startup command will be submitted to job queue QSYSNOMAX and will run in the QUSRWRK subsystem unless your IBM i is configured differently. The QSHEXEC command can be used to call QSH/PASE jobs from a regular IBM i job. https://www.github.com/richardschoen/qshoni
+
+```
+SBMJOB CMD(QSHONI/QSHEXEC 
+ CMDLINE('/QOpenSys/pkgs/bin/mysqld_safe --datadir=/QOpenSys/var/lib/mariadb/data') 
+ PRTSTDOUT(*YES) PRTSPLF(STRMARIADB)) JOB(STRMARIADB) JOBQ(QSYSNOMAX) JOBMSGQFL(*WRAP)
+```
+
+# Submitting MariaDB Server Shutdown/End via QSHEXEC CL Command
+The mysqld server shutdown will be submitted to job queue QSYSNOMAX and will run in the QUSRWRK subsystem unless your IBM i is configured differently. Make sure to specify your MariaDB root user and password. This job will typically only run a few seconds so it could be run without SBMJOB if desired.
+
+```
+SBMJOB CMD(QSHONI/QSHEXEC 
+ CMDLINE('/QOpenSys/pkgs/bin/mysqladmin --no-defaults --user=root +               
+ --password=YourPassword shutdown') PRTSTDOUT(*YES) PRTSPLF(ENDMARIADB)         
+```
+
 # Links
 
 MariaDB Site
