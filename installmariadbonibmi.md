@@ -162,12 +162,12 @@ This document does not cover production best practices. Best practices should be
 Listed below are a few things that I can think of top of mind for keeping your MariaDB data safe:
 
 Limit access to the MariaDB data directories from the IFS
--Make sure server is only listening on localhost/127.0.0.1
--Make sure you've established a root password, but don't use it for production apps.
--Create application MariaDB users/password so the root user does not get exposed.
--Back up your MariaDB server regularly.
--Stop server and back up your MariaDB data directory regularly. ***/QOpenSys/var/lib/mariadb/data***
--Or leave MariaDB server running and use accepted MySql/MariaDB backup procedures. There are 3rd party MariaDB/MySQL backup tools available or you can use the ***mysqldump*** command. Search for ***mysql data backup*** or here's a sample link: https://serverguy.com/servers/how-to-backup-mysql-database
+* Make sure server is only listening on localhost/127.0.0.1
+* Make sure you've established a root password, but don't use it for production apps.
+* Create application MariaDB users/password so the root user does not get exposed.
+* Back up your MariaDB server regularly.
+* Stop server and back up your MariaDB data directory regularly. ***/QOpenSys/var/lib/mariadb/data***
+* Or leave MariaDB server running and use accepted MySql/MariaDB backup procedures. There are 3rd party MariaDB/MySQL backup tools available or you can use the ***mysqldump*** command. Search for ***mysql data backup*** or here's a sample link: https://serverguy.com/servers/how-to-backup-mysql-database
 
 # Links
 
