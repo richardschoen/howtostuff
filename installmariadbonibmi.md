@@ -6,6 +6,8 @@ Package list:
 mariadb   
 mariadb-server
 ```
+
+# Connecting via SSH terminal to complete install process
 Log in to SSH as IBM i QSECOFR level user to do server setup.
 
 If not started, start the bash shell by typing ***bash*** unless bash is already your default shell. 
