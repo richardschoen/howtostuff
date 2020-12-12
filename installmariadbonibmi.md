@@ -86,7 +86,7 @@ The following command can be used from any bash session to stop the server. Make
 
 # Checking for active MariaDB server instance
 
-From a 5250 session, run WRKACTJOB and you should see the active server jobs and threads in the QUSRWRK subsystem
+From a 5250 session, run the ***WRKACTJOB*** command or to be more specific to PASE jobs run ***WRKACTJOB SBS(QUSRWRK) JOB(QP0ZSPWP)*** and you should see the active server jobs and threads in the QUSRWRK subsystem. The entry below shows what you should see if the MariaDB server is running. 
 ```
 --------------------------------------------------------------------------------
 QP0ZSPWP     RICHARD     BCI      .0  PGM-mysqld       SELW 
@@ -95,7 +95,7 @@ QP0ZSPWP     RICHARD     BCI      .0  PGM-mysqld       SELW
 
 # Checking for active MariaDB server port
 
-From a 5250 session, run "NETSTAT *CNN" to verify the server is listening on port 3306. You should see an entry for Local Port 3306 which tells you the server is listening for connections. 
+From a 5250 session, run the ***NETSTAT *CNN*** command to verify the server is listening on port 3306. You should see an entry for Local Port 3306 which tells you the server is listening for connections. 
 ```
 --------------------------------------------------------------------------------
                         Work with IPv4 Connection Status                   
