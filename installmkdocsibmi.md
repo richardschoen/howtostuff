@@ -37,7 +37,7 @@ mkdocs new docproject1
 
 cd /docproject1
 
-mkdoc serve --dev-addr=0.0.0.0:8555
+mkdocs serve --dev-addr=0.0.0.0:8555
 ```
 Visit your new documentation site in the browser: http://ibmiaddress:8555
 
