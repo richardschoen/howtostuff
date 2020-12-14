@@ -16,6 +16,11 @@ Make sure Python 3 is installed and running on your IBM i system from the IBM Op
 
 https://www.ibm.com/support/pages/getting-started-open-source-package-management-ibm-i-acs
 
+:pushpin: This usually means installing the entire Python 3 option set via ACS, including python3-devel to make sure python.h is found.
+```
+yum install python3-devel
+```
+
 ## Install MKDocs using pip3
 
 Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following commands to install MKDocs as part of your default Python 3 environment
