@@ -1,7 +1,7 @@
 # curl command line examples
 This document lists some sample curl command examples. These can be run from a bash command line on in conjunction with the QSHEXEC command from the QSHONI library on IBM i. http://www.github.com/richardschoen/qshoni 
 
-The samples should also be compatible with Linux and other platforms, just remove the path qualifier (/QOpenSys/pkgs/bin) when not using IBM i. The reason I used the path qualifier is that if an older version of curl is loaded on the IBM i machine, it will get picked up by QShell or PASE, so we want to make sure we call the version in /QOpenSys/pkgs/bin always on IBM i.
+The bash commnad line samples should also be compatible with Linux and other platforms, just remove the path qualifier (/QOpenSys/pkgs/bin) when not using IBM i. The reason I used the path qualifier is that if an older version of curl is loaded on the IBM i machine, it will get picked up by QShell or PASE, so we want to make sure we call the version in /QOpenSys/pkgs/bin always on IBM i.
 
 ## Sample bash command line to download a save file of the QSHONI library with binary contents intact
 ```
