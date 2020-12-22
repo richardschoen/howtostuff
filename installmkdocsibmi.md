@@ -65,19 +65,26 @@ Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following 
 **Note:** We will set the path so Python 3.6 is picked up from /QOpenSys/pkgs/bin
 
 ```
-## Set the path so /QOpenSys/pkgs/bin is first
+## Set the path so /QOpenSys/pkgs/bin is first in the list
 PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
 export PATH
-## Check to make sure Python shows V3.6
+
+## Run pip upgrade to make sure pip3 is current. (Version 19, 20 or newer after upgrade should be good.)
+pip3 install --upgrade pip 
+
+## Check to make sure Python shows V3.6.x
 python3 -v    (to verify we are seeing Python 3.6)
+
 ## Run the MKDocs install process
 pip3 install mkdocs
+
 ```
 When install completes you should see something like the following
 ```
 Successfully built regex
 Installing collected packages: regex, nltk, lunr, mkdocs
 Successfully installed lunr-0.5.8 mkdocs-1.1.2 nltk-3.5 regex-2020.11.13
+
 ```
 Install themes - Themes can be tweaked as desired. We will install the Bootswatch theme and then select yeti below when we edit the mkdocs.yml site configuration file.
 ```
