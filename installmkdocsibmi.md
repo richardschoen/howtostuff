@@ -55,7 +55,7 @@ https://www.ibm.com/support/pages/getting-started-open-source-package-management
  python3-tkinter            
  python3-wheel              
 
-Or you could install gcc and python3 using the following commanda from bash: 
+Or you could install gcc and python3 using the following commands from bash: 
 yum install gcc*
 yum install python3*
 ```
