@@ -107,6 +107,19 @@ mkdocs serve --dev-addr=0.0.0.0:8555
 ```
 Visit your new documentation site in the browser: http://ibmiaddress:8555
 
+## If you get errors during startup of MkDocs
+```
+## I had an issue where the server didn't lke the livereload version and tornado versions.
+## I got the following error:
+##    raise VersionConflict(dist, req).with_context(dependent_req)
+##pkg_resources.ContextualVersionConflict: (tornado 6.1 (/QOpenSys/pkgs/lib/python3.6/site-packages), Requirement.parse('tornado<6'), {'livereload'})
+
+## The following pip upgrade fixed livereload and then I could run the mkdocs server
+## It uninstalled tornado v6.1 and installed v5.1.1. On another server I already have
+## tornado 6.1 and mkdocs works fine. Not sure why, but this solved the issue.
+pip3 install --upgrade livereload
+```
+
 ## Setting default host address and theme info in mkdoc.yml site config file
 
 edit /docproject1/mkdocs.yml file and add the following contents. Tailor them to your liking.
