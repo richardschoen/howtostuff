@@ -71,7 +71,7 @@ Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following 
 PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
 export PATH
 
-## Run pip upgrade to make sure pip3 is current. (Version 19, 20 or newer after upgrade should be good.)
+## Run pip upgrade to make sure pip3 is current. (Version 19, 20 or newer after upgrade should be good. Mine is 20.3.3 as of 12/19/2020)
 ## If pip is not current then the correct current version Python package versions may not install.
 pip3 install --upgrade pip 
 
