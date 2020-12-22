@@ -1,6 +1,6 @@
 # Install and configure gcc on IBM i and create Hello World App
 
-If you ever wanted to get started learning C for IBM i in less than 5 minutes, then here you go. 
+If you ever wanted to get started learning gcc C for creating IBM i PASE apps in less than 5 minutes, then here you go. 
 
 # Installing gcc
 Install gcc yum packages from IBM i ACS Open Source Package Management
