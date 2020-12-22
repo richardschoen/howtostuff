@@ -95,6 +95,22 @@ pip3 install mkdocs-bootswatch
 ```
 **Note: There may be additional items needed that my system already had, but I have not identified if there are other specific requirements.**
 
+## Make sure all your pip3 packages are installed correctly
+```
+## Run following command to check pip3 packages for Python3
+pip3 check
+```
+If it runs as expected you will see
+```
+No broken requirements found.
+```
+If any errors occur you will need to probably do a package update for the pip3 package out of sync or in error.
+```
+## This example shows how to run an upgrade if tornado shows out of sync.
+pip3 reinstall --upgrade <packagename>
+Ex: pip3 reinstall --upgrade tornado
+```
+
 ## Create and run your first documentation site on port 8555
 ```
 cd /
