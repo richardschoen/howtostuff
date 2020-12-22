@@ -54,5 +54,5 @@ Congratulations you're on your way to learning gcc
 gcc reference docs
 https://gcc.gnu.org/onlinedocs/
 
-Let me know if you have a favorite gcc setup link.
+Let me know if you have a favorite gcc sample or documentation link.
 
