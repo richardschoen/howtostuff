@@ -12,7 +12,7 @@ gcc-cpp-aix
 ```
 # Create and compile hello.c
 
-Open an SSH/bash terminal window and run the following commands
+Open a SSH/bash terminal window and run the following commands to create the empty hello.c file
 ```
 PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/sbin:/QOpenSys/usr/bin
 export PATH
@@ -22,7 +22,7 @@ cd /gccsamples
 touch hello.c
 ```
 
-From your favorite bash or IFS editor, create and edit the hello.c file in ***/gccsamples/hello.c*** and add the following code:
+From your favorite bash or IFS editor, create and edit the hello.c file in ***/gccsamples/hello.c*** and add the following code
 ```
 #include <stdio.h>
 int main(int argc, char *argv[])
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-Save the source member and then compile with the following commands
+Save the source member and compile the hello program with the following commands
 ```
 cd /gccsamples
 gcc -o hello hello.c
@@ -51,6 +51,8 @@ Congratulations you're on your way to learning gcc
 
 # Links
 
+gcc reference docs
+https://gcc.gnu.org/onlinedocs/
 
 Let me know if you have a favorite gcc setup link.
 
