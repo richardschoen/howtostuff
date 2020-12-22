@@ -105,10 +105,11 @@ If it runs as expected you will see
 No broken requirements found.
 ```
 If any errors occur you will need to probably do a package update for the pip3 package out of sync or in error.
+Then re-run ***pip check*** to make sure all package requirements are now in sync.
 ```
-## This example shows how to run an upgrade if tornado shows out of sync.
+## This example shows how to run an upgrade if livereload/tornado shows out of sync.
 pip3 reinstall --upgrade <packagename>
-Ex: pip3 reinstall --upgrade tornado
+Ex: pip3 reinstall --upgrade livereload
 ```
 
 ## Create and run your first documentation site on port 8555
