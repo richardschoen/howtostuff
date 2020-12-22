@@ -70,10 +70,11 @@ PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/us
 export PATH
 
 ## Run pip upgrade to make sure pip3 is current. (Version 19, 20 or newer after upgrade should be good.)
+## If pip is not current then the correct current version Python package versions may not install.
 pip3 install --upgrade pip 
 
 ## Check to make sure Python shows V3.6.x
-python3 -v    (to verify we are seeing Python 3.6)
+python3 -V    (to verify we are seeing Python 3.6.x. Current version 3.6.12 as of 12/19/2020)
 
 ## Run the MKDocs install process
 pip3 install mkdocs
@@ -84,8 +85,8 @@ When install completes you should see something like the following
 Successfully built regex
 Installing collected packages: regex, nltk, lunr, mkdocs
 Successfully installed lunr-0.5.8 mkdocs-1.1.2 nltk-3.5 regex-2020.11.13
-
 ```
+
 Install themes - Themes can be tweaked as desired. We will install the Bootswatch theme and then select yeti below when we edit the mkdocs.yml site configuration file.
 ```
 pip3 install mkdocs-bootswatch
