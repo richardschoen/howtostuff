@@ -60,17 +60,26 @@ Or you could install using the following command from bash: yum install python3*
 
 ## Install MKDocs using pip3
 
-In case you have the old version of Python installed via 5733OPS, you should either uninstall the 
-Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following commands to install MKDocs as part of your default Python 3 environment
+Log in to IFS from an SSH bash shell session, QSH or QP2TERM, run the following commands to install MKDocs as part of your default Python 3.6 environment installed in /QOpenSys/pkgs/bin
+
+**Note:** We will set the path so Python 3.6 is picked up from /QOpenSys/pkgs/bin
 
 ```
-PATH=/QOpenSys/pkgs/bin
+## Set the path so /QOpenSys/pkgs/bin is first
+PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin
 export PATH
-/QOpenSys/pkgs/bin/pip3 install regex
+## Check to make sure Python shows V3.6
+python3 -v    (to verify we are seeing Python 3.6)
+## Run the MKDocs install process
 pip3 install mkdocs
-pip3 install lunr
 ```
-Install themes - Themes can be tweaked as desired. We will install the Bootswtch theme and then select yeti below when we edit the mkdocs.yml site configuration file.
+When install completes you should see something like the following
+```
+Successfully built regex
+Installing collected packages: regex, nltk, lunr, mkdocs
+Successfully installed lunr-0.5.8 mkdocs-1.1.2 nltk-3.5 regex-2020.11.13
+```
+Install themes - Themes can be tweaked as desired. We will install the Bootswatch theme and then select yeti below when we edit the mkdocs.yml site configuration file.
 ```
 pip3 install mkdocs-bootswatch
 ```
