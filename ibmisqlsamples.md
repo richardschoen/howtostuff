@@ -78,3 +78,20 @@ FROM
 TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A 
 where JOB_NAME LIKE '%%'                                        
 ```
+
+## Set default shell to bash
+Nowadays, the best way to do this is to using QSYS2.SET_PASE_SHELL_INFO() SQL procedure.
+
+```
+-- set current user's shell
+CALL QSYS2.SET_PASE_SHELL_INFO('*CURRENT', '/QOpenSys/pkgs/bin/bash');
+
+-- set a specific user's shell
+-- (requires *SECADM special auth plus *USE and *OBJMGT to the user profile)
+CALL QSYS2.SET_PASE_SHELL_INFO('THATUSER', '/QOpenSys/pkgs/bin/bash');
+
+-- set the default shell which is returned for users that do not have
+-- (requires *SECADM special auth plus *USE and *OBJMGT to QSYS)
+CALL QSYS2.SET_PASE_SHELL_INFO('*DEFAULT', '/QOpenSys/pkgs/bin/bash');
+```
+https://stackoverflow.com/questions/23913957/set-default-pase-ibm-i-shell-for-individual-user
