@@ -79,6 +79,19 @@ TABLE(QSYS2.ACTIVE_JOB_INFO(JOB_NAME_FILTER => '*ALL')) A
 where JOB_NAME LIKE '%%'                                        
 ```
 
+## Select All Inquiry Messages from QSYSOPR Message Queue
+## Great way to monitor for selected messages and then respond
+SELECT MESSAGE_QUEUE_LIBRARY, MESSAGE_QUEUE_NAME, MESSAGE_ID,       
+MESSAGE_TYPE, MESSAGE_SUBTYPE,                                      
+CAST(MESSAGE_TEXT AS VARCHAR(1024)) MESSAGE_TEXT, SEVERITY,          
+MESSAGE_TIMESTAMP, MESSAGE_KEY, ASSOCIATED_MESSAGE_KEY, FROM_USER,  
+FROM_JOB, FROM_PROGRAM, MESSAGE_FILE_LIBRARY, MESSAGE_FILE_NAME,    
+MESSAGE_TOKENS,                                                     
+CAST( MESSAGE_SECOND_LEVEL_TEXT as varchar(4096)) MESSAGE_SECOND_LEVEL_TEXT    
+FROM QSYS2.MESSAGE_QUEUE_INFO WHERE MESSAGE_QUEUE_LIBRARY ='QSYS' and    
+message_queue_name = 'QSYSOPR' and                                      
+message_type = 'INQUIRY' 
+
 ## Set default shell to bash
 Nowadays, the best way to do this is to using QSYS2.SET_PASE_SHELL_INFO() SQL procedure.
 
