@@ -1,8 +1,7 @@
-# Installing Python Git Repository Viewer for IBM i Source
-
+# Installing Python Web Based Git Repository Viewer (for viewing IBM i Source)
 Klause is a Python based git repository viewer for viewing local file system repositories. 
 
-For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed by iForGit IBM i Git Client Users (http://www.mobigogo.net/files/docs/iforgit) 
+For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed ny **iForGit IBM i Git Client** Users (http://www.mobigogo.net/files/docs/iforgit). However any git repository can be viewed if listed in the runtime configuration. 
 
 Slogan from the Github site: 
 **klaus: a simple, easy-to-set-up Git web viewer that Just Works**
