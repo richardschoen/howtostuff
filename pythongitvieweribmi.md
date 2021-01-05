@@ -10,7 +10,7 @@ Github site for Klause
 https://github.com/jonashaag/klaus
 
 # Security
-There is no user security on the web server component by default. However the sites are read-only. 
+There is no user security on the web server component by default. However the specified **repositories are read-only**. 
 
 If you need some basic security you will possibly want to implement this with the Gunicorn web server and nginx. 
 
