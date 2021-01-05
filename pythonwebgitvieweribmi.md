@@ -1,5 +1,5 @@
 # Installing Python Web Based Git Repository Viewer
-Klause is a Python based git repository viewer for viewing local file system repositories. 
+Klaus is a Python based git repository viewer for viewing local file system repositories. 
 
 For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed ny **iForGit IBM i Git Client** Users (http://www.mobigogo.net/files/docs/iforgit). However any git repository can be viewed if listed in the runtime configuration. 
 
@@ -135,5 +135,5 @@ http {
 See the Klause site for further documentation
 https://github.com/jonashaag/klaus
 
-Nginx user/password set up
+Nginx user/password file set up
 https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
