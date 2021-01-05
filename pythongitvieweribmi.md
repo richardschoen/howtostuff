@@ -41,7 +41,7 @@ This example runs the Klaus git server over repositories GITTEST123 and GITTEST1
 The background job is submitted via SBMJOB using the QSHEXEC command. (http://www.github.com/richardschoen/qshoni)
 
 ```
-SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123') 
+SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
 SETPKGPATH(*YES) PRTSPLF(GITVEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
 ```
 
