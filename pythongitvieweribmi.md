@@ -87,19 +87,19 @@ http {
     #keepalive_timeout  0;
     keepalive_timeout  65;
 
-	#---------------------------------------------------
-	# Non SSL Reverse Proxy for Git Viewer 
-	# This example passes the incoming request on port 
-  # 4647 to the nginx server and passes the request 
-  # to internal Klaus Git Viewer localhost address on port 4646
-  #
-  # Enable user security
-  # - Uncomment auth_basic and auth_basic_user_file to enable user auth.
-  # - .httpasswd file must exist if uncommenting/enabling basic user/password checking.
-  # - Set up nginx .httpasswd file. See following web link for nginx user/pass setup example
-  #   https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
-	#---------------------------------------------------
-        server {
+    #---------------------------------------------------
+    # Non SSL Reverse Proxy for Git Viewer 
+    # This example passes the incoming request on port 
+    # 4647 to the nginx server and passes the request 
+    # to internal Klaus Git Viewer localhost address on port 4646
+    #
+    # Enable user security
+    # - Uncomment auth_basic and auth_basic_user_file to enable user auth.
+    # - .httpasswd file must exist if uncommenting/enabling basic user/password checking.
+    # - Set up nginx .httpasswd file. See following web link for nginx user/pass setup example
+    #   https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
+    #---------------------------------------------------
+    server {
             listen 4647;
             #auth_basic "Enter Git Viewer User Info";
             #auth_basic_user_file /QOpenSys/etc/nginx/.htpasswd;
