@@ -14,7 +14,7 @@ https://github.com/jonashaag/klaus
 # Security
 There is no user security on the web server component by default. If you need some basic security you will possibly want to implement this with the Gunicorn web server and nginx. 
 
-**TODO:** Gunicorn set up tutorial
+**TODO:** Gunicorn set up tutorial. See site for already available instructions: https://github.com/jonashaag/klaus
 
 # Prerequisites
 Make sure all Python 3 yum packages installed on IBM i via IBM ACS.
@@ -37,7 +37,7 @@ klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST1
 
 This example runs the Klaus git server over repositories GITTEST123 and GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
-The background job is submitted via SBMJOB and the QSHEXEC command. (http://www.github.com/qshoni)
+The background job is submitted via SBMJOB using the QSHEXEC command. (http://www.github.com/qshoni)
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123') 
