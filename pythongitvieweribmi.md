@@ -37,7 +37,7 @@ klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST1
 
 This example runs the Klaus git server over repositories GITTEST123 and GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
-The background job is submitted via SBMJOB using the QSHEXEC command. (http://www.github.com/qshoni)
+The background job is submitted via SBMJOB using the QSHEXEC command. (http://www.github.com/richardschoen/qshoni)
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123') 
