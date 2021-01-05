@@ -42,7 +42,7 @@ The background job is submitted via SBMJOB using the QSHEXEC command. (http://ww
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
-SETPKGPATH(*YES) PRTSPLF(GITVEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
+SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
 ```
 
 # Links
