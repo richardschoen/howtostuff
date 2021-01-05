@@ -14,6 +14,8 @@ There is no user security on the web server component by default. However the sp
 
 If you need some basic security you will possibly want to implement this with the Gunicorn web server and nginx. 
 
+**Sample nginx config file listed at bottom of article**
+
 See site for already available instructions: https://github.com/jonashaag/klaus
 
 **TODO:** Gunicorn set up for IBM i. 
@@ -51,6 +53,87 @@ Log in from any web browser with the following url and port where sysnameorip is
 Example using port 4646:
 ```http://sysnameorip:4646```
 
+# Sample nginx config for Klaus with user/password security enabled
+
+Sample nginx config file: **nginx-klaus.conf**
+
+```
+#user  nobody;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+	#---------------------------------------------------
+	# Non SSL Reverse Proxy for Git Viewer 
+	# This example passes the incoming request on port 
+  # 4647 to the nginx server and passes the request 
+  # to internal Klaus Git Viewer localhost address on port 4646
+  #
+  # Enable user security
+  # - Uncomment auth_basic and auth_basic_user_file to enable user auth.
+  # - .httpasswd file must exist if uncommenting/enabling basic user/password checking.
+  # - Set up nginx .httpasswd file. See following web link for nginx user/pass setup example
+  #   https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
+	#---------------------------------------------------
+        server {
+            listen 4647;
+            #auth_basic "Enter Git Viewer User Info";
+            #auth_basic_user_file /QOpenSys/etc/nginx/.htpasswd;
+            server_name mygitviewer.com;
+    
+            location / {
+                proxy_pass http://localhost:4646;
+                proxy_pass_request_headers on;
+                proxy_set_header        Host            $host;
+                proxy_set_header        X-Real-IP       $remote_addr;
+                proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                #proxy_redirect off;
+                proxy_cookie_domain localhost 127.0.0.1;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+            }
+            
+            error_page  404              /404.html;
+
+            # redirect server error pages to the static page /50x.html
+            #
+            error_page   500 502 503 504  /50x.html;
+            location = /50x.html {
+            root   html;
+            }
+
+        }
+	
+}
+```
+
 # Links
 See the Klause site for further documentation
 https://github.com/jonashaag/klaus
+
+Nginx user/password set up
+https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
