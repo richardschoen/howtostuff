@@ -1,4 +1,4 @@
-# Installing Python git viewer on IBM i 
+# Installing Python Git Repository Viewer on IBM i 
 
 Klause is a Python based git repository viewer for viewing local file system repositories. 
 
