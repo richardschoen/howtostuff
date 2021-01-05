@@ -24,7 +24,7 @@ Install the following Python modules
 ```
 pip3 install klaus
 ```
-**If you get any errors during install, please note them here.**
+**If you get any errors during install, please note them here by opening an issue.**
 
 # Running Klaus git viewer server from qsh/pase/bash
 
