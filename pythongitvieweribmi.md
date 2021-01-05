@@ -8,13 +8,14 @@ Slogan from the Github site:
 **klaus: a simple, easy-to-set-up Git web viewer that Just Works**
 
 Github site for Klause
-
 https://github.com/jonashaag/klaus
 
 # Security
 There is no user security on the web server component by default. If you need some basic security you will possibly want to implement this with the Gunicorn web server and nginx. 
 
-**TODO:** Gunicorn set up tutorial. See site for already available instructions: https://github.com/jonashaag/klaus
+See site for already available instructions: https://github.com/jonashaag/klaus
+
+**TODO:** Gunicorn set up for IBM i. 
 
 # Prerequisites
 Make sure all Python 3 yum packages installed on IBM i via IBM ACS.
