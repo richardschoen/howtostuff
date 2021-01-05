@@ -44,8 +44,12 @@ The background job is submitted via SBMJOB using the QSHEXEC command. (http://ww
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
 SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
 ```
+# Accessing Klaus Git Viewer Web Site
+Log in from any web browser with the following url and port where sysnameorip is your IBM i host IP address and port is the specified port number.
+
+Example using port 4646:
+```http://sysnameorip:4646```
 
 # Links
 See the Klause site for further documentation
-
 https://github.com/jonashaag/klaus
