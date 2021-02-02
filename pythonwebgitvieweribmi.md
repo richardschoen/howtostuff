@@ -14,7 +14,7 @@ There is no user security on the web server component by default. However the sp
 
 If you need some basic security you will possibly want to implement this with the Gunicorn web server and nginx. 
 
-**Sample nginx config file listed at bottom of article**
+**Sample nginx config file listed at bottom of article** (https://github.com/richardschoen/howtostuff/blob/master/pythonwebgitvieweribmi.md#links)
 
 See site for already available instructions: https://github.com/jonashaag/klaus
 
