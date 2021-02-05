@@ -32,6 +32,15 @@ SELECT * FROM QSYS2.TCPIP_INFO
 ## Netstat Connection Info
 ```
 SELECT * FROM QSYS2.NETSTAT_INFO 
+
+// This one is to list unsecured ports
+select *
+  from qsys2.netstat_job_info
+  where local_port not in
+        (9470, 9471, 9472, 9473, 9474, 9475, 9476, 448, 2005, 2010, 5544, 5566, 5577, 992, 22, 9480, 942)
+        and Local_Address <> ('127.0.0.1')
+        and Local_Address not like ('::%')
+        and Local_Address <> ('0.0.0.0')
 ```
 ## Netstat Connection Info. Check for Local Port 22 active on IPV4
 ```
