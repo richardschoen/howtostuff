@@ -103,6 +103,22 @@ message_queue_name = 'QSYSOPR' and
 message_type = 'INQUIRY' 
 ```
 
+## Select Active Job Info
+Great way to get info for active jos and subsystems they run in
+```
+SELECT * FROM TABLE(QSYS2.ACTIVE_JOB_INFO(SUBSYSTEM_LIST_FILTER => 'MONITOR')) A Or SELECT * FROM TABLE(QSYS2.ACTIVE_JOB_INFO(SUBSYSTEM_LIST_FILTER => 'QHTTPSVR')) A
+
+Obviously just change 'MONITOR' or QHTTPSVR to what is needed.
+
+select subsystem_description_library, subsystem_description, maximum_active_jobs,
+       current_active_jobs, subsystem_monitor_job, text_description,
+       controlling_subsystem, workload_group, signon_device_file_library,
+       signon_device_file, secondary_language_library, iasp_name
+  from qsys2.subsystem_info
+  where status = 'ACTIVE'
+  order by current_active_jobs desc;
+```
+
 ## Set default shell to bash
 Nowadays, the best way to do this is to using QSYS2.SET_PASE_SHELL_INFO() SQL procedure.
 
