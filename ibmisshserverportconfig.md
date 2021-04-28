@@ -1,4 +1,4 @@
-#Setting Up SSH Daemon on IBM i to Use Port Other Than 22
+# Setting Up SSH Daemon on IBM i to Use Port Other Than 22
 
 Log on to a 5250 session on your IBM i system. 
 
