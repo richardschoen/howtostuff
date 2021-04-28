@@ -63,5 +63,7 @@ Opt  Address          Port       Port       Idle Time  State
 
 You've completed the first step to securing your SSH server.
 
+You should now be able to connect to your IBM i using the selected SSH TCP/IP port.
+
 There are several OpenSSH server settings available, but the first step is getting SSH off of a non-standard port.
 
