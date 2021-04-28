@@ -60,3 +60,8 @@ Opt  Address          Port       Port       Idle Time  State
      *                *          2022       000:06:12  Listen 
 
 ```
+
+You've completed the first step to securing your SSH server.
+
+There are several OpenSSH server settings available, but the first step is getting SSH off of a non-standard port.
+
