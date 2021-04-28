@@ -4,7 +4,7 @@ Log on to a 5250 session on your IBM i system.
 
 Edit the SSH Daemon config file.
 
-On V7R3 the edit command would look as follows:
+The edit file command would look as follows:
 
 ```
 edtf '/QOpenSys/QIBM/UserData/SC1/OpenSSH/etc/sshd_config'
@@ -32,10 +32,15 @@ Add a new entry for the new port. Ex: Port 2022 and comment (#) the old entry if
 
 After adding the port entry for port 2022, you can press F3 to save and exit the config file editor.
 
+My preference is to put ports up in the 60000+ range.
+
 Stop and restart the SSH daemon with the following commands
 
-```ENDTCPSVR *SSHD
+```
+ENDTCPSVR *SSHD
+
 Wait 10 seconds
+
 STRTCPSVR *SSHD
 ```
 Run the following command to make sure port 2022 is active:
