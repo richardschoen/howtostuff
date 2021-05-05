@@ -2,7 +2,7 @@
 
 IBM i Open Source Developers can now connect directly to SQL Server using the FreeTDS Libraries and ODBC
 
-Overview from the FreeTDS site: http://www.fresstds.org
+Overview from the FreeTDS site: http://www.freetds.org
 
 FreeTDS is a set of libraries for Unix and Linux that allows your programs to natively talk to Microsoft SQL Server and Sybase databases.
 
