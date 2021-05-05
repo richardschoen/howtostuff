@@ -97,15 +97,17 @@ SQLRowCount returns 2
 
 **You should now be set to use the FreeTDS ODBC driver with your Python, Node, PHP or other apps. Enjoy**
 
-# DSN-less Connection String
+# DSN-less Connection String 
+https://www.freetds.org/userguide/dsnless.html
 ```
 DRIVER=FreeTDS;SERVER=<hostname>;PORT=1433;DATABASE=<databasename>;TDS_Version=7.2;UID=<user>;PWD=<pass>'
 ```
 
 # DSN-less Connection String Samples
 ```
+# Connect to mysqlserver.com database demodb on port 1433 
 DRIVER=FreeTDS;SERVER=mysqlserver.com;PORT=1433;DATABASE=demodb;TDS_Version=7.2;UID=sa;PWD=mypassword'
-
+# Connect to SQL Server on TCP address: 1.1.1.1 database demodb on port 1433 
 DRIVER=FreeTDS;SERVER=1.1.1.1;PORT=1433;DATABASE=demodb;TDS_Version=7.2;UID=sa;PWD=mypassword'
 ```
 
