@@ -10,7 +10,7 @@ Technically speaking, FreeTDS is an open source implementation of the TDS (Tabul
 
 **FreeTDS has many possible uses.** It has been used by Unix/Linux webservers to present data stored in SQL Server to the web, to port SQL Server database code from NT to Unix, to import data into SQL Server from a Unix source, and to provide database access on platforms (such as realtime systems) that have no native drivers.
 
-# IBM i Prerequisites for FressTDS
+# IBM i Prerequisites for FreeTDS
 
 Make sure open source package Management is installed on IBM i via ACS
 
