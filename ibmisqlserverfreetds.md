@@ -41,6 +41,58 @@ yum install freetds-devel
 yum install freetds-odbc
 ```
 
+# Testing ODBC connectivity to SQL Server
+
+For this example we're configuring a SQL Server running on Port 1433
+
+Edit the ODBC.ini file and create a data source entry for your SQL Server ```/QOpenSys/etc/odbc.ini```
+
+Sample entry for an SQL Server system: (Use IP address or host name)
+```
+[mysqlserver]                           
+Driver = FreeTDS                           
+Server = mysqlserver.com         
+Port = 1433                                
+TDS_Version = 7.2                          
+```
+
+Trying out the connection with isql from a shell session command line
+```
+isql -v mysqlserver user password
+```
+
+If the connection works, you should see the isql commmand line and Connected!:
+```
++---------------------------------------+
+| Connected!                            |
+|                                       |
+| sql-statement                         |
+| help [tablename]                      |
+| quit                                  |
+|                                       |
++---------------------------------------+
+SQL> 
+```
+
+Let's do a test query where we have a database named: ```testdb``` and a table named: ```names```. SQL server also puts user tables in the default: '''dbo'' schema unless you have changed something on your SQL server. 
+```
+select * from testdb.dbo.names
+```
+
+Results:
+```
++------------+---------------------------------------------------+---------------------------------------------------+
+| id         | firstname                                         | lastname                                          |
++------------+---------------------------------------------------+---------------------------------------------------+
+|  1         | Robert                                            | Johnston                                          |
+|  2         | Maddy                                             | Carbury                                           |
++------------+---------------------------------------------------+---------------------------------------------------+
+SQLRowCount returns 2
+2 rows fetched
+```
+
+**You should now be set to use the FreeTDS ODBC driver with your Python, Node, PHP or other apps. Enjoy**
+
 # Web Links on FreeTDS
 http://www.freetds.org
 https://stackoverflow.com/questions/33341510/how-to-install-freetds-in-linux
