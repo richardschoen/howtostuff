@@ -78,7 +78,7 @@ If the connection works, you should see the isql commmand line and Connected!:
 SQL> 
 ```
 
-Let's do a test query where we have a database named: ```testdb``` and a table named: ```names```. SQL server also puts user tables in the default: '''dbo'' schema unless you have changed something on your SQL server. 
+Let's do a test query where we have a database named: ```testdb``` and a table named: ```names```. SQL server also puts user tables in the default: ```dbo``` schema unless you have changed something on your SQL server. 
 ```
 select * from testdb.dbo.names
 ```
