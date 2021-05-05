@@ -8,13 +8,11 @@ FreeTDS is a set of libraries for Unix and Linux that allows your programs to na
 
 Technically speaking, FreeTDS is an open source implementation of the TDS (Tabular Data Stream) protocol used by these databases for their own clients. It supports many different flavors of the protocol and three APIs to access it. Additionally FreeTDS works with other software such as Perl and PHP, providing access from those languages as well.
 
-If you are looking for a Java implementation, we refer you to the jTDS project on SourceForge.
+**FreeTDS has many possible uses.** It has been used by Unix/Linux webservers to present data stored in SQL Server to the web, to port SQL Server database code from NT to Unix, to import data into SQL Server from a Unix source, and to provide database access on platforms (such as realtime systems) that have no native drivers.
 
-FreeTDS has many possible uses. It has been used by Unix/Linux webservers to present data stored in SQL Server to the web, to port SQL Server database code from NT to Unix, to import data into SQL Server from a Unix source, and to provide database access on platforms (such as realtime systems) that have no native drivers.
+# IBM i Prerequisites for FressTDS
 
-# IBM i Prerequisites
-
-Make sure open source package Management is installed on IBM i
+Make sure open source package Management is installed on IBM i via ACS
 
 Make sure all unixODBC yum packages installed on IBM i 
 
@@ -45,7 +43,13 @@ yum install freetds-odbc
 
 For this example we're configuring a SQL Server running on Port 1433
 
-Edit the ODBC.ini file and create a data source entry for your SQL Server ```/QOpenSys/etc/odbc.ini```
+From your favorite SSH editor (vi, nano, vscode, etc.) or a 5250 session Edit the ODBC.ini file and create a data source entry for your SQL Server. The save the file.
+
+File Name: ```/QOpenSys/etc/odbc.ini```
+
+Ex CL command to edit from a 5250 session: 
+
+```edtf '/QOpenSys/etc/odbc.ini' ```
 
 Sample entry for an SQL Server system: (Use IP address or host name)
 ```
