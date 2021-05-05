@@ -1,4 +1,4 @@
-# Connecting to Microsoft SQL Server from IBM i Using ODBC and FreeTDS
+# Connect to Microsoft SQL Server from IBM i Using ODBC and FreeTDS
 
 IBM i Open Source Developers can now connect directly to SQL Server using the FreeTDS Libraries and ODBC
 
