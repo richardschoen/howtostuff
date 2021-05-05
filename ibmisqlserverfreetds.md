@@ -99,6 +99,8 @@ SQLRowCount returns 2
 
 # DSN-less Connection String 
 https://www.freetds.org/userguide/dsnless.html
+
+https://www.freetds.org/userguide/OdbcConnAttr.html
 ```
 DRIVER=FreeTDS;SERVER=<hostname>;PORT=1433;DATABASE=<databasename>;TDS_Version=7.2;UID=<user>;PWD=<pass>'
 ```
