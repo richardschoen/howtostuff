@@ -101,3 +101,5 @@ SQLRowCount returns 2
 http://www.freetds.org
 
 https://stackoverflow.com/questions/33341510/how-to-install-freetds-in-linux
+
+Send me your favorite FreeTDS info links.
