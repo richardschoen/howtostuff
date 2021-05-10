@@ -69,6 +69,11 @@ Log in from any web browser with the following url and port where sysnameorip is
 Example using port 4646:
 ```http://sysnameorip:4646```
 
+# Finding GITVIEWER job so you can end it via option 4 (  Use ENDJOB OPTION(*IMMED)  )
+```
+WRKACTJOB JOB(GITVIEWER)
+```
+
 # Sample nginx config for Klaus with user/password security enabled
 
 Sample nginx config file: **nginx-klaus.conf**
