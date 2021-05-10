@@ -27,7 +27,7 @@ Make sure all Python 3 and gcc yum packages installed on IBM i via IBM ACS Open 
 # Set path to open source packages
 export PATH=/QOpenSys/pkgs/bin:$PATH
 
-# Install all Python 3 packages via yum command (Don't forget the asterisk ```*```)
+# Install all Python 3 packages via yum command (Don't forget the asterisk *)
 yum install python3*
 
 # Install gcc compiler
