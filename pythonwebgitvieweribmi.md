@@ -21,12 +21,25 @@ See site for already available instructions: https://github.com/jonashaag/klaus
 **TODO:** Gunicorn set up for IBM i. 
 
 # Prerequisites
-Make sure all Python 3 yum packages installed on IBM i via IBM ACS.
+Make sure all Python 3 and gcc yum packages installed on IBM i via IBM ACS Open Source Package Managementand /QOpenSys/pkgs/bin is in SSH search path
 
-Install the following Python modules
 ```
+# Set path to open source packages
+export PATH=/QOpenSys/pkgs/bin:$PATH
+
+# Install all Python 3 packages via yum command
+yum install python3
+
+# Install gcc compiler
+yum install gcc
+
+# Update Python pip installer
+pip3 install --upgrade pip
+
+# Install the following Python modules
 pip3 install klaus
 ```
+
 **If you get any errors during install, please note them here by opening an issue.**
 
 # Running Klaus git viewer server from qsh/pase/bash
