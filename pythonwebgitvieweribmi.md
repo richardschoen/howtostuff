@@ -27,8 +27,8 @@ Make sure all Python 3 and gcc yum packages installed on IBM i via IBM ACS Open 
 # Set path to open source packages
 export PATH=/QOpenSys/pkgs/bin:$PATH
 
-# Install all Python 3 packages via yum command
-yum install python3
+# Install all Python 3 packages via yum command (Don't forget the asterisk ```*```)
+yum install python3*
 
 # Install gcc compiler
 yum install gcc
@@ -36,7 +36,7 @@ yum install gcc
 # Install git
 yum install git
 
-# Update Python pip installer
+# Update Python pip installer (version should go from 9.0.1 to 21.1.1 or later during the process)
 pip3 install --upgrade pip
 
 # Install the following Python modules
@@ -47,7 +47,7 @@ pip3 install klaus
 
 # Running Klaus git viewer server from qsh/pase/bash
 
-This example runs the Klaus git server over repositories GITTEST123 and GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
+This example runs the Klaus git server over repositories /gitrepostest/GITTEST123 and /gitrepostest/GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
 ```
 klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124
@@ -57,7 +57,7 @@ klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST1
 
 This example runs the Klaus git server over repositories GITTEST123 and GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
-The background job is submitted via SBMJOB using the QSHEXEC command. (http://www.github.com/richardschoen/qshoni)
+The background job is submitted via SBMJOB using the QSHEXEC command. (Must install QSHONI library from: http://www.github.com/richardschoen/qshoni)
 
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
