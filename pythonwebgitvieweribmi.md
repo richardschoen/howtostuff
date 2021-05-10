@@ -21,7 +21,7 @@ See site for already available instructions: https://github.com/jonashaag/klaus
 **TODO:** Gunicorn set up for IBM i. 
 
 # Prerequisites
-Make sure all Python 3 and gcc yum packages installed on IBM i via IBM ACS Open Source Package Managementand /QOpenSys/pkgs/bin is in SSH search path
+Make sure all Python 3 and gcc yum packages installed on IBM i via IBM ACS Open Source Package Management and **/QOpenSys/pkgs/bin** is in SSH search path
 
 ```
 # Set path to open source packages
