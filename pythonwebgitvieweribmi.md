@@ -33,6 +33,9 @@ yum install python3
 # Install gcc compiler
 yum install gcc
 
+# Install git
+yum install git
+
 # Update Python pip installer
 pip3 install --upgrade pip
 
