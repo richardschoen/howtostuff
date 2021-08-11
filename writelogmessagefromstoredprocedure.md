@@ -46,6 +46,31 @@ ERRORS:
              ENDPGM                                                  
 ```
 
+## Sample Stored Procedure SpOpPgmMsg
+```
+CREATE OR REPLACE PROCEDURE
+    QGPL.SpOpPgmMsg
+    (
+    )
+    LANGUAGE SQL
+    MODIFIES SQL DATA
+    BEGIN
+        
+        DECLARE msgvar varchar(255);
+
+        set msgvar = 'I am a test message';
+                
+        Call QSYS2.QCMDEXC('RJSDEVMB/OPPGMMSG MSGDTA('''|| msgvar ||''')');
+
+    END
+;
+```
+
+## Call Sample Stored Procedure SpOpPgmMsg
+```
+call QGPL.SpOpPgmMsg();
+```
+
 
 
 
