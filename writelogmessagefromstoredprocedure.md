@@ -1,5 +1,9 @@
 # Write log message to selected message queue from stored procedure
 
+This sample creates a CL command, CL program and a stored procedure to test with from ACS or STRSQL. 
+
+Messages are written by default to message queue: QSYS/QSYSOPR, but can be overridden or the CL program can call an RPG program or any other code. 
+
 ## CL Command - OPPGMMSG.CMD
 ```
 * CRTCMD CMD(QGPL/OPPGMMSG)                  */                      
@@ -47,6 +51,7 @@ ERRORS:
 ```
 
 ## Sample Stored Procedure SpOpPgmMsg
+The stored procedure writes to message queue: QSYS/QSYSOPR
 ```
 CREATE OR REPLACE PROCEDURE
     QGPL.SpOpPgmMsg
@@ -60,7 +65,7 @@ CREATE OR REPLACE PROCEDURE
 
         set msgvar = 'I am a test message';
                 
-        Call QSYS2.QCMDEXC('RJSDEVMB/OPPGMMSG MSGDTA('''|| msgvar ||''')');
+        Call QSYS2.QCMDEXC('RJSDEVMB/OPPGMMSG MSGDTA('''|| msgvar ||''') MSGQ(QSYSOPR) MSGQLIB(QSYS)');
 
     END
 ;
