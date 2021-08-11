@@ -21,6 +21,8 @@ Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** 
 Edit ***/QOpenSys/etc/mariadb/my.cnf***
 Add the [mysqld] directive and the following 2 entries: bind-address and port:
 
+**Default port is 3306. I often change to a non-standard port like 33306 instead.**
+
 ```
 [mysqld]
 bind-address=0.0.0.0 
