@@ -76,6 +76,34 @@ CREATE OR REPLACE PROCEDURE
 call QGPL.SpOpPgmMsg();
 ```
 
+## Sending Message Back via Output Parmeter from Stored Procedure
+This example allows you to output any return parameters in the ACS message list at the bottom of the Run SQL Statements screen. 
 
+```
+--Sample Stored Procedure
+CREATE OR REPLACE PROCEDURE
+    QGPL.SpOpPgmMsg
+    (
+     OUT msgvar varchar(255)
+    )
+    LANGUAGE SQL
+    MODIFIES SQL DATA
+    BEGIN
+        
+        --DECLARE msgvar varchar(255);
 
+        set msgvar = 'I am a test message';
 
+    END
+;
+```
+
+##Call sproc with ? for output parameter. This will get ACS to output to its message window.
+```
+call QGPL/SpOpPgmMsg(?);
+```
+
+##This is what ACS shows after call to stored procedure
+Return Code = 0 
+**Output Parameter #1 (MSGVAR) = I am a test message**   
+Statement ran successfully   (152 ms)
