@@ -50,7 +50,7 @@ ERRORS:
              ENDPGM                                                  
 ```
 
-## Sample Stored Procedure SpOpPgmMsg
+## Sample Stored Procedure SpOpPgmMsg that uses OPPGMMSG CL command
 The stored procedure writes to message queue: QSYS/QSYSOPR
 ```
 CREATE OR REPLACE PROCEDURE
@@ -76,7 +76,7 @@ CREATE OR REPLACE PROCEDURE
 call QGPL.SpOpPgmMsg();
 ```
 
-## Sending Message Back via Output Parmeter from Stored Procedure
+## Sending Message Back via Output Parameter from Stored Procedure
 This example allows you to output any return parameters in the ACS message list at the bottom of the Run SQL Statements screen. 
 
 ```
