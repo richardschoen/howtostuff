@@ -98,12 +98,12 @@ CREATE OR REPLACE PROCEDURE
 ;
 ```
 
-##Call sproc with ? for output parameter. This will get ACS to output to its message window.
+## Call sproc with ? parameter marker/placeholder for output parameter. This will get ACS to output to its message window.
 ```
 call QGPL/SpOpPgmMsg(?);
 ```
 
-##This is what ACS shows after call to stored procedure
+## This is what ACS shows after call to stored procedure
 Return Code = 0 
 **Output Parameter #1 (MSGVAR) = I am a test message**   
 Statement ran successfully   (152 ms)
