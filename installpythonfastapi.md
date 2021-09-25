@@ -71,7 +71,7 @@ This will start your app on port 3434
 
 The following URL will display the Hello World response
 
-```http://[hostname]:3434/```   
+```http://[hostname]:3434```   
 
 The following URL will display the /items route response
 
