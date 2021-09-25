@@ -7,7 +7,7 @@ Uvicorn is a lightning fast ASGI web server
 https://fastapi.tiangolo.com
 
 ## Visit the Uvicorn site
-https://uvicorn.org
+http://www.uvicorn.org
 
 ## Installing on IBM i 
 
@@ -79,7 +79,7 @@ INFO:     Application startup complete.
 ## Exposing App to the Web
 If you plan to expose your web app to the Internet, it's probably a good idea to set up an NGINX web server as a web front end that also uses SSL for secure communications. NGINX can proxy/pass all web traffic to youe Uvicorn server. 
 
-Note: It's possible Uvicorn can be exposed without using NGINX, but I would recommend exploring this more on the Uvicorn web site and doing appropriate research before you expose your app server to the web. https://uvicorn.org/deployment
+Note: It's possible Uvicorn can be exposed without using NGINX, but I would recommend exploring this more on the Uvicorn web site and doing appropriate research before you expose your app server to the web. http://www.uvicorn.org/deployment
 
 
 ## Trying out your sample app from a web browser
