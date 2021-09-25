@@ -11,13 +11,14 @@ https://uvicorn.org
 
 ## Installing on IBM i 
 
-Pre-requisite
+**Pre-requisite**
 
 Make sure all ```Python 3``` options are installed by the ``Open Source Package Management``` menu option in ACS
 
 Log in to an IBM i SSH terminal session and make sure bash is the current shell
 
 **Install fastapi**
+
 ```pip3 install fastapi```
 
 **Install uvicorn (The lightning fast ASGI server). This will be our web app server component**
@@ -56,7 +57,7 @@ def read_item(item_id: int, q: Optional[str] = None):
 ```
 
 
-## Running Your App from the SSH/Bash Command Line
+## Running Your App from the IBM i SSH/Bash Command Line
 
 ```
 cd /pythonfastapi
@@ -69,13 +70,17 @@ This will start your app on port 3434
 ## Trying out your sample app from a web browser
 
 The following URL will display the Hello World response
+
 ```http://[hostname]:3434/```   
 
 The following URL will display the /items route response
+
 ```http://[hostname]:3434/items/1/q=SampleQuery```   
 
 Displaying Open API/Swagger Documentation and Testing API
+
 ```http://[hostname]:3434/docs```  
 
 Displaying ReDoc Documentation and Testing API
+
 ```http://[hostname]:3434/redoc```  
