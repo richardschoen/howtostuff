@@ -12,6 +12,7 @@ https://uvicorn.org
 ## Installing on IBM i 
 
 Pre-requisite
+
 Make sure all ```Python 3``` options are installed by the ``Open Source Package Management``` menu option in ACS
 
 Log in to an IBM i SSH terminal session and make sure bash is the current shell
@@ -20,6 +21,7 @@ Log in to an IBM i SSH terminal session and make sure bash is the current shell
 ```pip3 install fastapi```
 
 **Install uvicorn (The lightning fast ASGI server). This will be our web app server component**
+
 ```pip3 install uvicorn```  
 
 **Note: Dont install with the [standard] option. This will possibly cause errors when trying to build some of the wheels.**
