@@ -65,7 +65,22 @@ cd /pythonfastapi
 uvicorn main:app --reload  --port 3434
 ```
 
-This will start your app on port 3434
+This will start your app on port 3434. The results should look like the following. And the web app server will restart any time a page change is made.
+
+```
+INFO:     Will watch for changes in these directories: ['/home/RICHARD/richard/pythonfastapi']
+INFO:     Uvicorn running on http://0.0.0.0:3434 (Press CTRL+C to quit)
+INFO:     Started reloader process [2530954] using watchgod
+INFO:     Started server process [2530956]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+
+## Exposing App to the Web
+If you plan to expose your web app to the Internet, it's probably a good idea to set up an NGINX web server as a web front end that also uses SSL for secure communications. NGINX can proxy/pass all web traffic to youe Uvicorn server. 
+
+Note: It's possible Uvicorn can be exposed without using NGINX, but I would recommend exploring this more on the Uvicorn web site and doing appropriate research before you expose your app server to the web.
+
 
 ## Trying out your sample app from a web browser
 
