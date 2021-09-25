@@ -4,7 +4,7 @@ FastAPI is a Python high performance web framework
 Uvicorn is a lightning fast ASGI web server
 
 ## Visit the FastAPI site
-https://fastapi.tiangolo.com/#create-it
+https://fastapi.tiangolo.com
 
 ## Visit the Uvicorn site
 https://uvicorn.org
