@@ -1,12 +1,17 @@
-# How to install Pyhton FastAPI Framework and Get Started on IBM i 
-嵐Gitbucket is an open source Java based git server for IBM i 
+# How to install Python FastAPI Framework and Get Started on IBM i 
+FastAPI is a Python high performance web framework
+
+Uvicorn is a lightning fast ASGI web server
 
 ## Visit the FastAPI site
-
 https://fastapi.tiangolo.com/#create-it
+
+## Visit the Uvicorn site
+https://uvicorn.org
 
 ## Installing on IBM i 
 
+Pre-requisite
 Make sure all ```Python 3``` options are installed by the ``Open Source Package Management``` menu option in ACS
 
 Log in to an IBM i SSH terminal session and make sure bash is the current shell
