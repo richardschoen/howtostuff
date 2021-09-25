@@ -1,4 +1,4 @@
-# How to install Python FastAPI Framework and Get Started on IBM i 
+# How to install Python FastAPI Web Framework and Get Started on IBM i 
 FastAPI is a Python high performance web framework
 
 Uvicorn is a lightning fast ASGI web server
