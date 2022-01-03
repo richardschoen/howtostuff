@@ -11,4 +11,6 @@ MS Office
 LibreOffice
 Slack
 Webex
+Microsoft Visual Studio
+XCode
 ```
