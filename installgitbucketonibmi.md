@@ -67,6 +67,9 @@ cd /gitbucket
 java -jar gitbucket.war
 ```
 
+## Native IBM i Git Client for Managing Source Files in Git
+http://www/iforgit.com
 
+Use your favorite editor: SEU, PDM, RDi and VS Code.
 
 
