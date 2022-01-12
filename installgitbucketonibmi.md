@@ -1,5 +1,11 @@
 # How to install Gitbucket on IBM i 
-Gitbucket is an open source Java based git server for IBM i 
+Gitbucket is an open source Java based git server for IBM i.
+
+This Git server can host any of your git project source code and has many other features. 
+
+Gitbucket is a great way to keep all your git based source code in a single repository. 
+
+When used in conjunction with iForgit (http://www.iforgit.com) as a native IBM i client, you have a complete source management solution for all of your open source projects stored in the IFS and source memebers that are still managed via source physical files. 
 
 ## Visit the Gitbucket site
 
