@@ -70,6 +70,8 @@ java -jar gitbucket.war
 ## Native IBM i Git Client for Managing Source Files in Git
 http://www.iforgit.com
 
-Use your favorite editor: SEU, PDM, RDi and VS Code to edit your classis source members and then use iForGit as a native CL driven git client.
+Use your favorite editor: SEU, PDM, RDi and VS Code to edit your classic RPG, CL and COBOL source members and then use iForGit as a native CL driven git client.
+
+You'll make the auditors happy.
 
 
