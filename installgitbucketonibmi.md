@@ -5,7 +5,7 @@ This Git server can host any of your git project source code and has many other 
 
 Gitbucket is a great way to keep all your git based source code in a single repository. 
 
-When used in conjunction with iForgit (http://www.iforgit.com) as a native IBM i client, you have a complete source management solution for all of your open source projects stored in the IFS and source memebers that are still managed via source physical files. iForgit works as a native command based interface for SEU, PDM, RDi and VS Code developers and can manage all your RPG, CL, COBOL and other classic IBM i source members.
+When used in conjunction with iForgit (http://www.iforgit.com) as a native IBM i client, you have a complete source management solution for all of your open source language projects stored in the IFS and source members that are still managed via source physical files. iForgit works as a native command based interface for SEU, PDM, RDi and VS Code developers and can manage all your RPG, CL, COBOL and other classic IBM i source members.
 
 ## Visit the Gitbucket site
 
