@@ -1,5 +1,5 @@
 # Create IBM i DB2 Sample Database Tables
-The following commands can be run from IBM ACS Run SQL Scripts to create a sample IBM i library with sample tables in it. 
+The following commands can be run from IBM ACS Run SQL Scripts to create a sample IBM i library with sample DB2 tables in it. 
 
 Visit this IBM i site for info on the sample tables:
 
