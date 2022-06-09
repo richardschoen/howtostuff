@@ -372,3 +372,6 @@ Feel free to contribute links or other helpful tips.
 
 Rsync web site
 https://rsync.samba.org
+
+rsync - Linux man page
+https://linux.die.net/man/1/rsync
