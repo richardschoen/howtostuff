@@ -224,8 +224,10 @@ rsync command line to send/receive files with and without security
 port restrictions
 helpful links
 ```
+
 ## Set up sample **/etc/rsync.conf** file with NO security for initial test. Uncomment secrets file to enable security.
 
+```
 lock file = /QOpenSys/var/run/rsync.lock
 log file = /QOpenSys/var/log/rsyncd.log
 pid file = /QOpenSys/var/run/rsyncd.pid
@@ -255,7 +257,28 @@ pid file = /QOpenSys/var/run/rsyncd.pid
     # If auth users disabled, no password required
     auth users = rsyncclient
     secrets file = /etc/rsyncd.secrets
+```
 
+## Set up sample **/etc/rsync.secrets** file to hold user/password combinations
+
+```
+rsyncclient=password1
+sysop1=password2
+sysop3=password3
+```
+## rsync PASE/QSH daemon startup
+
+```
+rsync --deamon
+```
+
+## rsync PASE/QSH daemon ending
+
+```
+kill -QUIT $( cat /QOpenSys/var/run/rsyncd.pid )
+rm /QOpenSys/var/run/rsyncd.pid
+**Removing the pid file is optional as it will get overwritten on next startup
+```
 
 Now refer to standard rsync documentation or links below as needed for additional daemon or rsync command line options. 
 
@@ -263,6 +286,5 @@ Feel free to contribute links or other helpful tips.
 
 # Links
 
-rsync Site
-
+Rsync web site
 https://rsync.samba.org
