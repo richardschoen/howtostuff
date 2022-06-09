@@ -299,6 +299,8 @@ rsync -avz /tmp/test.txt rsync://rsyncclient@localhost/rsyncback1
 export RSYNC_PASSWORD=
 ```
 
+## Continue learning rsync
+
 Now refer to standard rsync documentation or links below as needed for additional daemon or rsync command line options. 
 
 Feel free to contribute links or other helpful tips. 
