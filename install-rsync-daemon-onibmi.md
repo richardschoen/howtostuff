@@ -279,6 +279,21 @@ kill -QUIT $( cat /QOpenSys/var/run/rsyncd.pid )
 rm /QOpenSys/var/run/rsyncd.pid
 **Removing the pid file is optional as it will get overwritten on next startup
 ```
+## Transfer a file on the same system (localhost) as a test using rsync daemon
+
+First create a file named ```/tmp/test.txt ``` or some other file with data in it.
+
+Then export the password for user: rsyncclient to an environment variable and run the rsync command. The rsync daemon users the RSYNC_PASSWORD environment variable. 
+
+After running rsync, cleanup environment variable.
+
+**Note: If you comment out the **auth users** section in your **rsyncd.config** file with a #, then no security is used by the rsync daemon. Therefore no password is required. However you open your system up to security exposure. Minimally you should maybe limit which host IP addresses can access the IBM i on ```TCP/IP port 873```
+
+```
+export RSYNC_PASSWORD=password1
+rsync -avz /tmp/test.txt rsync://rsyncclient@localhost/rsyncback1
+export RSYNC_PASSWORD=
+```
 
 Now refer to standard rsync documentation or links below as needed for additional daemon or rsync command line options. 
 
