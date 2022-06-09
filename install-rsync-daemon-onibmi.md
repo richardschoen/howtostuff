@@ -272,7 +272,7 @@ sysop3=password3
 rsync --deamon
 ```
 
-## Viewing active deamon job
+## Viewing active rsync deamon server job
 From a 5250 session, run "NETSTAT *CNN" to verify the rsync daemon server is listening on port 873. You should see an entry for Local Port 873 which tells you the server is listening for connections.  Use ```option 5 and then press F8``` to see active jobs for the rsync daemon.
 ```
 --------------------------------------------------------------------------------
@@ -287,6 +287,36 @@ From a 5250 session, run "NETSTAT *CNN" to verify the rsync daemon server is lis
       *                *          873        000:05:22  Listen             
 --------------------------------------------------------------------------------
 ```
+
+Active rsync daemon servr job
+
+```
+                         Display Jobs Using Connection                          
+                                                             System:   SYS1     
+ Connection type  . . . . . . :   *TCP                                          
+ Local address  . . . . . . . :   *                                             
+ Local port . . . . . . . . . :   873                                           
+ Remote address . . . . . . . :   *                                             
+ Remote port  . . . . . . . . :   *                                             
+                                                                                
+ Type options, press Enter.                                                     
+   5=Work with job                                                              
+                                                                                
+                                                            Current             
+ Opt     Name           User           Number     Type      User                
+         QP0ZSPWP       QSECOFR        495329     *BCH      RICHARD             
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                         Bottom 
+ F3=Exit   F5=Refresh   F6=Print   F9=Command line   F12=Cancel                 
+```                                                                                
+                                                                                
+
+
 
 ## rsync PASE/QSH daemon ending
 
