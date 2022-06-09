@@ -272,6 +272,22 @@ sysop3=password3
 rsync --deamon
 ```
 
+## Viewing active job
+From a 5250 session, run "NETSTAT *CNN" to verify the rsync daemon server is listening on port 873. You should see an entry for Local Port 873 which tells you the server is listening for connections.  Use ```option 5 and then press F8``` to see active jobs for the rsync daemon.
+```
+--------------------------------------------------------------------------------
+                        Work with IPv4 Connection Status                   
+                                                             System:   SYS1
+ Type options, press Enter.                                                
+   3=Enable debug   4=End   5=Display details   6=Disable debug            
+   8=Display jobs                                                          
+                                                                           
+      Remote           Remote     Local                                    
+ Opt  Address          Port       Port       Idle Time  State              
+      *                *          873        000:05:22  Listen             
+--------------------------------------------------------------------------------
+```
+
 ## rsync PASE/QSH daemon ending
 
 ```
