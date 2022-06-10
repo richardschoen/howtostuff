@@ -1,13 +1,13 @@
 # Install and configure rsync daemon on IBM i 
 
-rsync is a Unix/Linux based file syncronization tool. The rsync daemon allows rsync to run as a TCP server on port 873. 
+rsync is a Unix/Linux based file syncronization tool. The rsync daemon allows rsync to run as a TCP server on port 873 or on any other custom TCP/IP port. 
 rsync can also be used over samba or ssh file access, but this document focuses on the rsync daemon.
 There are a ton of configuration options available. This just focuses on simple examples to get you started.
 
 Install rsync yum packages from IBM i ACS Open Source Package Management
 ```
 Package list:
-rsync
+rsync - Current version: 3.2.3-1 
 ```
 Log in to SSH as an IBM i user
 
