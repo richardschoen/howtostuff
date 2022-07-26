@@ -135,3 +135,8 @@ CALL QSYS2.SET_PASE_SHELL_INFO('THATUSER', '/QOpenSys/pkgs/bin/bash');
 CALL QSYS2.SET_PASE_SHELL_INFO('*DEFAULT', '/QOpenSys/pkgs/bin/bash');
 ```
 https://stackoverflow.com/questions/23913957/set-default-pase-ibm-i-shell-for-individual-user
+
+## Check if any users have default user password
+```
+select * from qsys2.user_info where user_default_password = 'YES' and previous_signon < current date - 60 days
+```
