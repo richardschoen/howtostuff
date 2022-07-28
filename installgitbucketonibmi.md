@@ -20,9 +20,9 @@ After creating the profile view the profile via ```WRKUSRPRF GITBUCKET``` and ma
 If home directory dsoes not exist, run the following commands from 5250 to create the home directory for GITBUCKET user and set the user as owner of the home directory:
 
 ```
-MKDIR DIR('/home/GITBUCKET') DTAAUT(*RWX) OBJAUT(*ALL)  
+MKDIR DIR('/home/GITBUCKET') DTAAUT(*RWX) OBJAUT(*ALL)
  
-CHGOWN OBJ('/home/GITBUCKET') NEWOWN(GITBUCKET) RVKOLDAUT(*YES) SUBTREE(*ALL)                                                                          
+CHGOWN OBJ('/home/GITBUCKET') NEWOWN(GITBUCKET) RVKOLDAUT(*YES) SUBTREE(*ALL)
 ```
 
 ## Visit the Gitbucket site
