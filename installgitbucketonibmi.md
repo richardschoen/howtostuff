@@ -18,10 +18,12 @@ Give it a password so you can log on as the user when initially starting GitBuck
 After creating the profile view the profile via ```WRKUSRPRF GITBUCKET``` and make sure its home directory is: ```/home/GITBUCKET``` and the directory exists. 
 
 If home directory dsoes not exist, run the following commands from 5250 to create the home directory for GITBUCKET user and set the user as owner of the home directory:
+
 ```
 MKDIR DIR('/home/GITBUCKET') DTAAUT(*RWX) OBJAUT(*ALL)  
  
-CHGOWN OBJ('/home/GITBUCKET') NEWOWN(GITBUCKET) RVKOLDAUT(*YES) SUBTREE(*ALL)                                                                          ```
+CHGOWN OBJ('/home/GITBUCKET') NEWOWN(GITBUCKET) RVKOLDAUT(*YES) SUBTREE(*ALL)                                                                          
+```
 
 ## Visit the Gitbucket site
 
