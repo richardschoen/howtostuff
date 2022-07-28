@@ -15,7 +15,7 @@ Create a user profile named: GITBUCKET with QPGMR authority.
 
 Give it a password so you can log on as the user when initially starting GitBucket.
 
-After creating the profile view the profile via ```WRKUSRPRF GITBUCKET`` and make sure its home directory is: ```/home/GITBUCKET``` and the directory exists. 
+After creating the profile view the profile via ```WRKUSRPRF GITBUCKET``` and make sure its home directory is: ```/home/GITBUCKET``` and the directory exists. 
 
 If home directory dsoes not exist, run the following commands from 5250 to create the home directory for GITBUCKET user and set the user as owner of the home directory:
 ```
