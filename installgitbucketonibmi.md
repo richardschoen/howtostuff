@@ -1,9 +1,9 @@
-# How to install Gitbucket on IBM i 
-Gitbucket is an open source Java based git server for IBM i.
+# How to install GitBucket on IBM i 
+GitBucket is an open source Java based git server for IBM i.
 
 This Git server can host any of your git project source code and has many other features. 
 
-Gitbucket is a great way to keep all your git based source code in a single repository. 
+GitBucket is a great way to keep all your git based source code in a single repository. 
 
 When used in conjunction with iForgit (http://www.iforgit.com) as a native IBM i client, you have a complete source management solution for all of your open source language projects stored in the IFS and source members that are still managed via source physical files. iForgit works as a native command based interface for SEU, PDM, RDi and VS Code developers and can manage all your RPG, CL, COBOL and other classic IBM i source members. 
 
@@ -25,11 +25,11 @@ MKDIR DIR('/home/GITBUCKET') DTAAUT(*RWX) OBJAUT(*ALL)
 CHGOWN OBJ('/home/GITBUCKET') NEWOWN(GITBUCKET) RVKOLDAUT(*YES) SUBTREE(*ALL)
 ```
 
-## Visit the Gitbucket site
+## Visit the GitBucket site
 
 https://gitbucket.github.io/
 
-## Download the Gitbucket.war file 
+## Download the gitbucket.war file 
 
 https://github.com/gitbucket/gitbucket/releases/download/4.37.2/gitbucket.war
 
@@ -78,7 +78,7 @@ cd /gitbucket
 java -jar gitbucket.war  --port-10001
 ```
 
-## Wait a few minutes and try to access the Gitbucket URL from your IBM i 
+## Wait a few minutes and try to access the GitBucket URL from your IBM i 
 ```http://[hostname]:8080/```   User/pass: root/root
 
 Or altrenate port
@@ -91,14 +91,14 @@ By default the database and all application files and repository locations get e
 
 ***It might be a good idea to create a GITBUCKET IBM i user to run the server nder for consistency.***
 
-## See Gitbucket site or Gitbucket github site for more documentation
+## See GitBucket site or GitBucket github site for more documentation
 
 https://gitbucket.github.io/
 
 https://github.com/gitbucket/gitbucket
 
 ## Databases
-By default Gitbucket uses an internal H2 database. You may want to install Postgres on your IBM i and use that as a database instead. See the GitBucket site for config instructions once you have Postgres installed on your IBM i. 
+By default GitBucket uses an internal H2 database. You may want to install Postgres on your IBM i and use that as a database instead. See the GitBucket site for config instructions once you have Postgres installed on your IBM i. 
 
 Feel free to use my instructions on this site to set up Postgres on IBM i. 
 
