@@ -52,7 +52,7 @@ STRQSH
 
 java -version
 
-Output should look somethihg like this:
+Output should look somethihg like this and should be 1.8.x at least:
 
 ------------------------------------------------------------------------------------
 java version "1.8.0_161"                                                                
