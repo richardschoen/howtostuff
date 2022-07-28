@@ -46,6 +46,25 @@ mkdir gitbucket
 
 ## Upload the gitbucket.war file to the ```/gitbucket``` IFS directory using your favorite binary file transfer method
 
+## Determine Current Default Java Version for 5250 Sessions (Mainly for Reference)
+```
+STRQSH
+
+java -version
+
+Output should look somethihg like this:
+
+------------------------------------------------------------------------------------
+java version "1.8.0_161"                                                                
+Java(TM) SE Runtime Environment (build 8.0.5.10 - pap3280sr5fp10-20180214_01(SR5 FP10)) 
+IBM J9 VM (build 2.9, JRE 1.8.0 OS/400 ppc-32 20180208_378436 (JIT enabled, AOT enabled)
+OpenJ9   - 39bb844                                                                      
+OMR      - c04ccb2                                                                      
+IBM      - 2321a81)                                                                     
+JCL - 20180209_01 based on Oracle jdk8u161-b12                                      
+------------------------------------------------------------------------------------
+```
+
 ## From a shell logged in as GITBUCKET user profile, attempt to start the GitBucket server with following commands:
 ```
 cd /gitbucket
