@@ -15,7 +15,7 @@ https://gitbucket.github.io/
 
 ## Download the Gitbucket.war file 
 
-https://github.com/gitbucket/gitbucket/releases/download/4.33.0/gitbucket.war
+https://github.com/gitbucket/gitbucket/releases/download/4.37.2/gitbucket.war
 
 Or view most recent releases
 
