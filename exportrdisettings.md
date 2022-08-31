@@ -1,6 +1,6 @@
-# This article provides basic steps to export/import Rational Developer Settings 
+# Export and Import Rational Developer Settings (RDI)
 
-You may want to move RDI settings to another PC. Here's how
+You may want to move Rational Developer for i (RDI) settings to another PC. Here's how:
 
 ## Export RDI Settings
 To export current user config settings:
