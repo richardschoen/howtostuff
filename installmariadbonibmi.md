@@ -16,7 +16,7 @@ If not started, start the bash shell by typing ***bash*** unless bash is already
 
 ## This step must be done before starting the server for the first time
 
-Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses. If you prefer using the green screen you can use the following CL command to edit the configuration file: ```EDTF '/QOpenSys/etc/mariadb/my.cnf'```
+Use nano editor, vim or other editor to edit ***/QOpenSys/etc/mariadb/my.cnf*** file so the server will listen on TCP/IP addresses. We will enable access on all IP addresses. Also make a change to prevent problems with the `my.cnf.d` directory. If you prefer using the green screen you can use the following CL command to edit the configuration file: ```EDTF '/QOpenSys/etc/mariadb/my.cnf'```
 
 Edit ***/QOpenSys/etc/mariadb/my.cnf***
 Add the [mysqld] directive and the following 2 entries: bind-address and port:
@@ -26,6 +26,11 @@ Add the [mysqld] directive and the following 2 entries: bind-address and port:
 bind-address=0.0.0.0 
 port=3306
 ```
+Comment out the `!includedir` directive to prevent a startup error if the `/QOpenSys/etc/mariadb/my.cnf.d` directory is missing. This directory can get deleted on startup when it's empty, then causing an error if `!includedir` requires it.
+```
+#!includedir /QOpenSys/etc/mariadb/my.cnf.d             
+```
+
 Save the my.cnf file
 
 ***For a more secure server only listen on IP address 127.0.0.1/localhost***
@@ -42,8 +47,8 @@ Example of what your actual ***/QOpenSys/etc/mariadb/my.cnf*** will look like af
                                                        
 #                                                      
 # include *.cnf from the config directory              
-#                                                      
-!includedir /QOpenSys/etc/mariadb/my.cnf.d             
+# Comment out this directive if my.cnf.d is empty                                                     
+#!includedir /QOpenSys/etc/mariadb/my.cnf.d             
                        
 [mysqld]                       
 bind-address=0.0.0.0                                   
