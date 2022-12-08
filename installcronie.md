@@ -77,7 +77,7 @@ Tip: If your crontab jobs are not running, drill in to this job via ```option 5.
 
 Log in to SSH as IBM i QSECOFR level user.
 
-Type: ```kill `cat /QOpenSYs/etc/crond.pid` ``` and press enter. 
+Type: ```kill `cat /QOpenSys/etc/crond.pid` ``` and press enter. 
 
 # Start crond daemon job bash script - startcrond.sh
 
