@@ -40,6 +40,10 @@ See crontab configuration sample links below for site that can teach you more ab
 https://github.com/richardschoen/howtostuff/blob/master/installcronie.md#links
 
 ***Note: It appears that you must specify the user ID to run the selected job as. In the above example we are running the SNDMSG example as QSECOFR.***
+```Only /QOpenSys/etc/crontab and the files in /QOpenSys/etc/cron.d/ have a username field though. Ours on IBM i are prefixed with /QOpenSys obviously.```
+
+Reading link for more info on running as a specific user.   
+https://serverfault.com/questions/352835/crontab-running-as-a-specific-user  
 
 # Make sure crontab file and cron directories are owned by root user for running system jobs
 
