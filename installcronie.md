@@ -54,7 +54,7 @@ chown qsecofr cron.hourly
 
 # Starting the crond daemon to run schedule jobs
 
-Log in to SSH as IBM i QSECOFR level user.
+Log in to SSH as IBM i QSECOFR level user. ```QSECOFR or a user with *ALLOBJ authority.```
 
 Type: ```crond``` and press enter. 
 
