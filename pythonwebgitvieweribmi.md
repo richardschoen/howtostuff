@@ -1,7 +1,9 @@
 # Installing Python Web Based Git Repository Viewer - Klaus
 Klaus is a Python based git repository viewer for viewing local file system repositories. 
 
-For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed by **iForGit IBM i Git Client** users. (http://www.mobigogo.net/files/docs/iforgit) However any IFS based git repository can be viewed from a browser if listed in the runtime configuration. 
+Klaus is a nice companion web based git source viewer if using iForGit to version control your classic IBM i source physical files in IFS based git repositories. And you don't want to send them to a remote server such as GitHub, GitLab or Bitbucket. 
+
+For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed by **iForGit IBM i 5250 Git Client** users. (http://www.mobigogo.net/files/docs/iforgit) However any IFS based git repository can be viewed from a browser if listed in the runtime configuration. 
 
 Slogan from the Github site: 
 **klaus: a simple, easy-to-set-up Git web viewer that Just Works**
