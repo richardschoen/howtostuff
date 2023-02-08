@@ -105,7 +105,11 @@ WRKACTJOB JOB(GITVIEWER)
 
 # Sample nginx config for Klaus with user/password security enabled
 
-```When using nginx to proxy access to the Klause server, make sure klause listens on IP 127.0.0.1 instead of 0.0.0.0``` 
+| :exclamation:  When using nginx to proxy access to the Klaus server, make sure Klaus listens on IP 127.0.0.1 instead of 0.0.0.0   |
+|-----------------------------------------| 
+
+| :exclamation:  You should set up your nginx server to use SSL. This example does not.   | 
+|-----------------------------------------|
 
 Sample nginx config file: **nginx-klaus.conf**
 
