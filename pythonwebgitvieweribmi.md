@@ -88,7 +88,7 @@ SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*W
 ```
 Running Klaus server with nginx. Use localhost/127.0.0.1 since nginx will proxy calls to Klaus  
 ```
-SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
+SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 127.0.0.1 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
 SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
 ```
 
