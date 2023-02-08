@@ -1,4 +1,4 @@
-# Installing Python Web Based Git Repository Viewer - Klause
+# Installing Python Web Based Git Repository Viewer - Klaus
 Klaus is a Python based git repository viewer for viewing local file system repositories. 
 
 For this use-case we will be viewing repository source changes stored in the IBM IFS file system that may have been committed by **iForGit IBM i Git Client** users. (http://www.mobigogo.net/files/docs/iforgit) However any IFS based git repository can be viewed from a browser if listed in the runtime configuration. 
@@ -6,7 +6,7 @@ For this use-case we will be viewing repository source changes stored in the IBM
 Slogan from the Github site: 
 **klaus: a simple, easy-to-set-up Git web viewer that Just Works**
 
-Github site for Klause
+Github site for Klaus
 https://github.com/jonashaag/klaus
 
 # Installing from PyPI
@@ -16,12 +16,12 @@ https://pypi.org/project/klaus
 
 pip3 command line to install Klaus server  
 ```
-pip3 install klause
+pip3 install klaus
 ```
 
 pip3 command line to upgrade Klaus server  
 ```
-pip3 install klause --upgrade
+pip3 install klaus --upgrade
 ```
 
 
@@ -65,7 +65,7 @@ pip3 install klaus
 
 This example runs the Klaus git server over repositories /gitrepostest/GITTEST123 and /gitrepostest/GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
-Running Klause server on local IBM i and listening on any address (Insecure without nginx)  
+Running Klaus server on local IBM i and listening on any address (Insecure without nginx)  
 ```
 klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124
 ```
@@ -81,7 +81,7 @@ This example runs the Klaus git server over repositories GITTEST123 and GITTEST1
 
 The background job is submitted via SBMJOB using the QSHEXEC command. (Must install QSHONI library from: http://www.github.com/richardschoen/qshoni)
 
-Running Klause server on local IBM i and listening on any address. (Insecure without nginx)  
+Running Klaus server on local IBM i and listening on any address. (Insecure without nginx)  
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
 SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
@@ -188,7 +188,7 @@ http {
 ```
 
 # Links
-See the Klause site for further documentation
+See the Klaus site for further documentation
 https://github.com/jonashaag/klaus
 
 Nginx user/password file set up
