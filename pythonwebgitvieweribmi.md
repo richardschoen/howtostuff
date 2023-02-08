@@ -9,6 +9,22 @@ Slogan from the Github site:
 Github site for Klause
 https://github.com/jonashaag/klaus
 
+# Installing from PyPI
+
+PyPI Site  
+https://pypi.org/project/klaus
+
+pip3 command line to install Klaus server  
+```
+pip3 install klause
+```
+
+pip3 command line to upgrade Klaus server  
+```
+pip3 install klause --upgrade
+```
+
+
 # Security
 There is no user security on the web server component by default. However the specified **repositories are read-only**. 
 
@@ -49,8 +65,14 @@ pip3 install klaus
 
 This example runs the Klaus git server over repositories /gitrepostest/GITTEST123 and /gitrepostest/GITTEST124 on HTTP port 4646 and is listening on all IP addresses.
 
+Running Klause server on local IBM i and listening on any address (Insecure without nginx)  
 ```
 klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124
+```
+
+Running Klaus server with nginx. Use localhost/127.0.0.1 since nginx will proxy calls to Klaus  
+```
+klaus --host 127.0.0.1 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124
 ```
 
 # Running Klaus git viewer server from SBMJOB/QSHEXEC
@@ -59,10 +81,17 @@ This example runs the Klaus git server over repositories GITTEST123 and GITTEST1
 
 The background job is submitted via SBMJOB using the QSHEXEC command. (Must install QSHONI library from: http://www.github.com/richardschoen/qshoni)
 
+Running Klause server on local IBM i and listening on any address. (Insecure without nginx)  
 ```
 SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
 SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
 ```
+Running Klaus server with nginx. Use localhost/127.0.0.1 since nginx will proxy calls to Klaus  
+```
+SBMJOB CMD(QSHONI/QSHEXEC CMDLINE('klaus --host 0.0.0.0 --port 4646 /gitrepostest/GITTEST123 /gitrepostest/GITTEST124') 
+SETPKGPATH(*YES) PRTSPLF(GITVIEWER)) JOB(GITVIEWER) JOBQ(QUSRNOMAX) JOBMSGQFL(*WRAP)                                         
+```
+
 # Accessing Klaus Git Viewer Web Site
 Log in from any web browser with the following url and port where sysnameorip is your IBM i host IP address and port is the specified port number.
 
@@ -75,6 +104,8 @@ WRKACTJOB JOB(GITVIEWER)
 ```
 
 # Sample nginx config for Klaus with user/password security enabled
+
+```When using nginx to proxy access to the Klause server, make sure klause listens on IP 127.0.0.1 instead of 0.0.0.0``` 
 
 Sample nginx config file: **nginx-klaus.conf**
 
