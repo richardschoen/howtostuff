@@ -127,5 +127,27 @@ https://jsonplaceholder.typicode.com
 Postman - REST API testing.  
 https://www.postman.com
 
+## Virtual Machine Platforms 
+
+VMware.  
+https://www.vmware.com
+
+QEMU.  
+https://www.qemu.org
+
+UTM - Mac wrapper around QEMU.  
+https://mac.getutm.app
+
+Parallels.  
+https://www.parallels.com
+
+ProxMox   
+https://www.proxmox.com.  
+
+Virtual Box.  
+https://www.virtualbox.org
+
+OSBoxes - Prebuild Linux Virtual Machines for various flavors.  
+https://www.osboxes.org 
 
 
