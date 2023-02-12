@@ -1,4 +1,5 @@
 # Richard's Favorite Tools and Sites
+This is a list of my favorite tools. You might find it useful when you're tooling up.  
 
 if you have a suggestion, drop me a note: richard@richardschoen.net
 
@@ -65,6 +66,16 @@ https://obsproject.com
 
 Cross Platform Audio Recording.  
 https://www.audacityteam.org 
+
+Help and Manual and HelpXPlain- Create Help Documentation and Tutorials
+https://www.helpandmanual.com. 
+
+Markdown Monster - Markdown Editor (Windows). 
+https://markdownmonster.west-wind.com
+
+
+
+
 
 
 
