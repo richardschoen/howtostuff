@@ -36,7 +36,7 @@ Hex Workshop - Hex Editing.
 http://www.hexworkshop.com
 
 
-## IBM i/ AS400 Stuff
+## IBM i/ AS400 Technical Stuff
 
 IBM Access - Client Solutions (Emulator and ODBC Drivers).  
 https://www.ibm.com/support/pages/ibm-i-access-client-solutions
