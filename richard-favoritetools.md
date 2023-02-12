@@ -14,6 +14,9 @@ https://code.visualstudio.com
 Geany Editor.  
 https://www.geany.org
 
+Notepad++.  
+https://notepad-plus-plus.org/downloads/
+
 SSHFS - Visual Studio Code Plugin for SSH File Access.  
 https://marketplace.visualstudio.com/items?itemName=Kelvin.vscode-sshfs
 
@@ -28,6 +31,9 @@ https://mountainduck.io
 
 Remote Desktop Manager.  
 https://devolutions.net
+
+Hex Workshop - Hex Editing.  
+http://www.hexworkshop.com
 
 
 ## IBM i/ AS400 Stuff
@@ -45,7 +51,31 @@ QShell on i - Run QSH/PASE Apps from Traditional RPG/CL.
 https://github.com/richardschoen/qshoni
 
 Work with IBM i - Windows Replacement for PDM.  
-https://github.com/richardschoen/workwithibmipdm
+https://github.com/richardschoen/workwithibmipdm. 
+
+## IBM i Blogs and Periodicals
+
+Richard Schoen Blog.  
+http://blog.richardschoen.net
+
+Midrange.com. - Online IBM i Content and Forums.  
+https://midrange.com.  
+
+MCPress. - IBM i Books and Weekly Newsletter.  
+https://www.mcpress.com
+
+IT Jungle - IBM i Newsletter.  
+https://www.itjungle.com
+
+Scott Klement - IBM i related articles and content.  
+https://www.scottklement.com
+
+Built on Power  
+https://builtonpower.com  
+
+Simon Hutchinson - IBM i on Power Technical Blog.  
+https://www.rpgpgm.com.  
+
 
 ## Documentation / Presentation
 
@@ -67,10 +97,10 @@ https://obsproject.com
 Cross Platform Audio Recording.  
 https://www.audacityteam.org 
 
-Help and Manual and HelpXPlain- Create Help Documentation and Tutorials
+Help and Manual and HelpXPlain- Create Help Documentation and Tutorials.  
 https://www.helpandmanual.com. 
 
-Markdown Monster - Markdown Editor (Windows). 
+Markdown Monster - Markdown Editor (Windows).   
 https://markdownmonster.west-wind.com
 
 
