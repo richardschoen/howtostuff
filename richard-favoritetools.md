@@ -35,6 +35,9 @@ https://devolutions.net
 Hex Workshop - Hex Editing.  
 http://www.hexworkshop.com
 
+NSBasic - App Studio for Mobile Development.  
+https://www.nsbasic.com
+
 
 ## IBM i/ AS400 Technical Stuff
 
@@ -85,10 +88,10 @@ https://getgreenshot.org
 Draw.io Diagramming    
 https://drawio-app.com
 
-Record Screen, Edit and Save as GIF. 
+Record Screen, Edit and Save as GIF.  
 https://www.screentogif.com
 
-Camtasia/Snagit - Screen Capture and Video Editing. 
+Camtasia/Snagit - Screen Capture and Video Editing.   
 https://www.techsmith.com
 
 OBS - Open Broadcasting Video Studio   
@@ -103,6 +106,7 @@ https://www.helpandmanual.com.
 Markdown Monster - Markdown Editor (Windows).   
 https://markdownmonster.west-wind.com
 
+## Misc.  
 
 
 
