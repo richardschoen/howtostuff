@@ -56,6 +56,13 @@ https://github.com/richardschoen/qshoni
 Work with IBM i - Windows Replacement for PDM.  
 https://github.com/richardschoen/workwithibmipdm. 
 
+TN5250J - 5250 Emulator - Java.  
+http://tn5250j.org 
+
+Jasper Reports Server.  
+https://community.jaspersoft.com
+
+
 ## IBM i Blogs and Periodicals and Docs
 
 Richard Schoen Blog.  
@@ -108,6 +115,9 @@ https://www.helpandmanual.com.
 
 Markdown Monster - Markdown Editor (Windows).   
 https://markdownmonster.west-wind.com
+
+HelpNDoc - Help Authoring.  
+https://www.helpndoc.com
 
 ## Misc.  
 
