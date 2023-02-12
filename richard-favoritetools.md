@@ -3,7 +3,7 @@ This is a list of my favorite tools. You might find it useful when you're toolin
 
 if you have a suggestion, drop me a note: richard@richardschoen.net
 
-## Multi-Platform Development
+## Development
 
 DBeaver - Database Tool - Java based.   
 https://dbeaver.io/download
