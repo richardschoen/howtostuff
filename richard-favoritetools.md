@@ -56,10 +56,13 @@ https://github.com/richardschoen/qshoni
 Work with IBM i - Windows Replacement for PDM.  
 https://github.com/richardschoen/workwithibmipdm. 
 
-## IBM i Blogs and Periodicals
+## IBM i Blogs and Periodicals and Docs
 
 Richard Schoen Blog.  
 http://blog.richardschoen.net
+
+IBM i Open Source (OSS) Documentation.  
+https://ibmi-oss-docs.readthedocs.io/en/latest/README.html
 
 Midrange.com. - Online IBM i Content and Forums.  
 https://midrange.com.  
@@ -108,12 +111,11 @@ https://markdownmonster.west-wind.com
 
 ## Misc.  
 
+JSON Placeholder - Free fake API for testing and prototyping.   
+https://jsonplaceholder.typicode.com
 
-
-
-
-
-
+Postman - REST API testing.  
+https://www.postman.com
 
 
 
