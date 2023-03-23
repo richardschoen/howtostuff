@@ -4,7 +4,7 @@
 This example creates /pythonenv1   
 ```mkdir /pythonenv1```
 
-# Create avirtual environment
+# Create a virtual environment
 
 ## Create virtual environment with site packages (good idea to do it this way for IBM i. you can still install things in the venv)
 ```python3 -m venv /pythonenv1 --system-site-packages --copies```
@@ -57,3 +57,14 @@ Run any of your scripts or pip3 installs.
 
 # Deactivate Python venv
 ```deactivate ```
+
+# Misc - creating a custom gcc link for gcc10
+```
+mkdir mydir
+ln -s /QOpenSys/pkgs/bin/gcc-10 mydir/gcc
+ln -s /QOpenSys/pkgs/bin/g++-10 mydir/g++
+PATH=$PWD/mydir:$PATH
+
+Note: You may want to create above links in ~/bin directory instead of mydir
+```
+
