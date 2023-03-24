@@ -9,9 +9,9 @@ This example creates /pythonenv1
 ## Create virtual environment with site packages (good idea to do it this way for IBM i. you can still install things in the venv)
 ```python3 -m venv /pythonenv1 --system-site-packages --copies```
 
-This will include ibm-db which installed via yum packages.
+This will include ibm-db which installs via the python3 based yum packages.
 
-## Create virtual environment without site packages (good idea. you can still install things in the venv)   
+## Create virtual environment without site packages (You can still install things in the venv except for ibm-db which installs as a site package)   
 ```python3 -m venv /pythonenv1```
 
 # Activate the Python environment   
