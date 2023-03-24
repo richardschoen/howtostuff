@@ -1,4 +1,4 @@
-# IBM i Example to Create a Pyhton Virtual Environment in PASE
+# IBM i Example to Create a Python Virtual Environment in PASE
 
 # Make Python virtual environment directory
 This example creates /pythonenv1   
