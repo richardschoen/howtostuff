@@ -31,7 +31,9 @@ pip        22.0.4
 setuptools 58.1.0
 ```
 
-# Install any packages. 
+# Installing Python packages   
+
+```Pre V7R4``` you can simply install with pip3 command.      
 ```
 pip3 install pyodbc
 pip3 install flask
@@ -39,20 +41,21 @@ pip3 install itoolkit
 pip3 install ibm-db
 ```
 
-Note for V7R4 and V7R5 - requires gcc10 compiler to build so use beow prefix or set in environment      
+```For V7R4 and V7R5``` - pip3 processes require gcc10 compiler to build so use below prefix for installing ot or set the CC and CXX environment variable before installing with pip3.    
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install pyodbc```   
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install flask```
 
-Or export as an environment variable and then run pip3 stuff   
+Or export CC and CXX as an environment variable and then run pip3 stuff. 
+(Could also add the export of CC and CXX to your .bash_profile or .bashrc file)   
 ```export CC='gcc-10 -pthread' CXX='g++-10 -pthread'```   
 
-Then install your packages   
+After exporting the CC and CXX variables, install your pip3 packages   
 ```
 pip3 install pyodbc
 pip3 install flask
 ```
 
-# Run any python stuff
+# Run any python stuff 
 Run any of your scripts or pip3 installs. 
 
 # Deactivate Python venv
@@ -65,6 +68,6 @@ ln -s /QOpenSys/pkgs/bin/gcc-10 mydir/gcc
 ln -s /QOpenSys/pkgs/bin/g++-10 mydir/g++
 PATH=$PWD/mydir:$PATH
 
-Note: You may want to create above links in ~/bin directory instead of mydir
+Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try.
 ```
 
