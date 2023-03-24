@@ -39,8 +39,8 @@ pip3 install itoolkit
 pip3 install ibm-db
 ```
 
-Note for V7R4 and V7R5 - requires gcc10 compiler to build so use beow prefix or set in environment
-```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install pyodbc```
+Note for V7R4 and V7R5 - requires gcc10 compiler to build so use beow prefix or set in environment   
+```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install pyodbc```   
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install flask```
 
 Or export as an environment variable and then run pip3 stuff
