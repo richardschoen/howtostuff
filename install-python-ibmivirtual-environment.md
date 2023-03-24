@@ -33,7 +33,7 @@ setuptools 58.1.0
 
 # Installing Python packages   
 
-```Pre V7R4``` you can simply install with pip3 command.      
+```Pre V7R4``` you can simply install with pip3 command. gcc is used which is gcc v6.x.   
 ```
 pip3 install pyodbc
 pip3 install flask
