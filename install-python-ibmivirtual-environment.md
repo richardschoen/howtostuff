@@ -70,7 +70,7 @@ mkdir mydir
 ln -s /QOpenSys/pkgs/bin/gcc-10 mydir/gcc
 ln -s /QOpenSys/pkgs/bin/g++-10 mydir/g++
 PATH=$PWD/mydir:$PATH
-
-Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try. I think just setting the CC and CXX environment variables shoudl work fine.
 ```
+:star: Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try. I think just setting the CC and CXX environment variables should work fine.
+
 
