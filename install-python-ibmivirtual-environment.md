@@ -41,7 +41,7 @@ pip3 install itoolkit
 pip3 install ibm-db
 ```
 
-```For V7R4 and V7R5``` - pip3 processes require gcc10 compiler to build so use below prefix for installing ot or set the CC and CXX environment variable before installing with pip3.    
+```For V7R4 and V7R5``` - pip3 processes require gcc10 compiler to build so use CC/GCC prefixes below for installing pip3 packages. Or set the CC and CXX environment variable before installing packages with pip3.    
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install pyodbc```   
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install flask```
 
