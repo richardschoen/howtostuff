@@ -22,10 +22,11 @@ You can still install packages in the venv except for ibm-db which installs as a
 # Command prompt after activation   
 ```(pythonenv1) -bash-5.1$``` 
 
-# List installed packages in the virtual env   
+# List installed packages 
+This command works in the based Python environment or an active virtual environment.  
 ```pip3 list```
 
-Ex:
+Example package list:   
 ```
 Package    Version
 ---------- -------
