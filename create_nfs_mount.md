@@ -11,46 +11,48 @@ http://public.dhe.ibm.com/systems/power/docs/systemi/v5r4/en_US/rzahz.pdf
 ##  NFS Share Network Mount Example
 For our example we will assume we have a remote Windows or Linux Server on IP address: 1.1.1.1 with a remote NFS share of /nfsmount1 that will get mounted over an IFS directory named /nfsmount1 for consistency. It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
 
-Copying Files from and to NFS Shares using the CPY Command 
+### Copying Files from and to NFS Shares using the CPY Command 
 
-## Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
+#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
 ```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
-## Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
+#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
 ```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
 ## Qshell/Pase File Copy to NFS Shares
 
 Copying files is pretty much like copying any other file in Qsh/Pase.
 
-## Initial copy to NFS mount if file doesn't exist. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
+#### Initial copy to NFS mount if file doesn't exist. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
 ``` cpy /tmp/test.pdf  /nfsmount1/test.pdf ```
 
-## Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp cmmand is not CCSID aware.
+#### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp cmmand is not CCSID aware.
 ```
 cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
 cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test3.pdf.
 Operation not supported.$                                                   
 ```
 
-## Attempt to copy file to NFS mount if file exists already. The following options should work. Either use the -t switch option or first delete the remote NFS file with rm command. Then copy it as a new file via cp command and this should work.
+#### Attempt to copy file to NFS mount if file exists already. The following options should work. Either use the -t switch option or first delete the remote NFS file with rm command. Then copy it as a new file via cp command and this should work.
 
-## Copy file to NFS share and replace with -t switch 
-cp -t /tmp/test.pdf  /nfsmount1/test.pdf 
+#### Copy file to NFS share and replace with -t switch 
+```cp -t /tmp/test.pdf  /nfsmount1/test.pdf ```
 
-## Remove existing file and copy to NFS share
+#### Remove existing file and copy to NFS share
+```
 rm /nfsmount1/test.pdf
 cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
+```
 
-## Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
+#### Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
 An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and hte local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
 
 Note: Usually if mounting an NFS share over an IFS directory, it's probably a good idea to dedicate the IFS directory just for the the NFS mount and don't put any files in the local IFS directory. This will help avoid confusion that may occur where users may think local files have disappeared.
 
-## Create the IFS directory you will mount your NFS share over
+#### Create the IFS directory you will mount your NFS share over
 ```MKDIR  DIR('/nfsmount1') DTAAUT(*RWX) OBJAUT(*ALL)```
 
-## This example mounts to an NFS share on remote NFS server: 1.1.1.1 on share /nfsmount1
+#### This example mounts to an NFS share on remote NFS server: 1.1.1.1 on share /nfsmount1
 ```
 MOUNT TYPE(*NFS) MFS('1.1.1.1:/nfsmount1') +                  
 MNTOVRDIR('/nfsmount1') +                         
@@ -60,15 +62,15 @@ acdirmin=30,acdirmax=60,soft') +
 CODEPAGE(*BINARY *ASCII)                     
 ```
 
-## This example unmounts the NFS share that us mounted over IFS directory /nfsmount1
+#### This example unmounts the NFS share that us mounted over IFS directory /nfsmount1
 ```UNMOUNT TYPE(*NFS) MNTOVRDIR('/nfsmount1') ```
 
-## How to see if an NFS share is mounted
+#### How to see if an NFS share is mounted
 ```WRKLNK '/nfsmount1/*'```
 
 If you can see files, the share is mounted.
 
-// Another way to check NFS mount status. 
+#### Another way to check NFS mount status. 
 ```WRKLNK '/nfsmount1'```
 
 ```Take option 8``` and you will see the following on the Display Attributes Screen if the remote NFS share is mounted:
@@ -91,8 +93,8 @@ Need to archive (PC) . . . . . . . . . :   No
 Need to archive (System) . . . . . . . :   No            
 ```
 
-## In this example the IFS directory doesn't have anything mounted over it
-                                                   
+#### In this example the IFS directory doesn't have anything mounted over it
+```                                                   
 Object . . . . . . :   /nfsmount1                  
                                                    
 Type . . . . . . . . . . . . . . . . . :   DIR     
@@ -106,11 +108,11 @@ Coded character set ID . . . . . . . . :   37
 Hidden file  . . . . . . . . . . . . . :   No      
 PC system file . . . . . . . . . . . . :   No      
 Read only  . . . . . . . . . . . . . . :   No      
+```
 
+## General Setup for NFS File Sharing from Windows or Linux
 
-General Setup for NFS File Sharing from Windows or Linux
-
-## Sharing Windows Files via NFS
+#### Sharing Windows Files via NFS
 Install Windows Service for Uni
 https://www.serverlab.ca/tutorials/windows/storage-file-systems/configuring-an-nfs-server-on-windows-server-2012-r2/
 
@@ -136,6 +138,6 @@ In this example we explicitly set No Permissions for all machines and then add r
  
  
 
-## Sharing Linux Files via NFS
+#### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
 
