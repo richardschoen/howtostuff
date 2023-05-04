@@ -5,13 +5,12 @@ Mounting an NFS share over an IFS directory is a great way to provide access to 
 
 You can also limit access on your NFS shares to the IBM i IP address so this adds another level of security by limiting which machines can access the NFS shares.
 
-Qshell Documentation for V5R4   
-http://public.dhe.ibm.com/systems/power/docs/systemi/v5r4/en_US/rzahz.pdf
-
 ##  NFS Share Network Mount Example
-For our example we will assume we have a remote Windows or Linux Server on IP address: 1.1.1.1 with a remote NFS share of /nfsmount1 that will get mounted over an IFS directory named /nfsmount1 for consistency. It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
+For our example we will assume we have a remote Windows or Linux Server on IP address: 1.1.1.1 with a remote NFS share of /nfsmount1 that will get mounted over an IFS directory named /nfsmount1 for consistency.   
 
-### Copying Files from and to NFS Shares using the CPY Command 
+It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
+
+## Copying Files from and to NFS Shares using the CPY Command 
 
 #### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
 ```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
@@ -19,12 +18,12 @@ For our example we will assume we have a remote Windows or Linux Server on IP ad
 #### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
 ```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
-## Qshell/Pase File Copy to NFS Shares
+## QShell/PASE File Copy to NFS Shares
 
-Copying files is pretty much like copying any other file in Qsh/Pase.
+Copying files is pretty much like copying any other file in QSH/PASE. Use the ```cp``` command.
 
-#### Initial copy to NFS mount if file doesn't exist. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
-``` cpy /tmp/test.pdf  /nfsmount1/test.pdf ```
+#### Initial copy from IFS to NFS mount if file doesn't exist on remote NFS share. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
+```cp /tmp/test.pdf /nfsmount1/test.pdf```
 
 #### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp cmmand is not CCSID aware.
 ```
@@ -45,7 +44,7 @@ cp /tmp/test.pdf  /nfsmount1/test.pdf
 ```
 
 #### Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
-An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and hte local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
+An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and the local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
 
 Note: Usually if mounting an NFS share over an IFS directory, it's probably a good idea to dedicate the IFS directory just for the the NFS mount and don't put any files in the local IFS directory. This will help avoid confusion that may occur where users may think local files have disappeared.
 
@@ -118,10 +117,11 @@ https://www.serverlab.ca/tutorials/windows/storage-file-systems/configuring-an-n
 
 Sharing NFS Directory from Windows
 
-Directory to share on C: drive
- 
+Directory to share on C: drive   
+![image](https://user-images.githubusercontent.com/9791508/236312104-90748329-933d-4b11-8b3b-1ffd1fcd1bbf.png)
 
-Add Everyone user to the directory with permissions
+Add Everyone user to the directory with permissions   
+![image](https://user-images.githubusercontent.com/9791508/236312789-2cc6fa07-b5d1-4079-9a96-089c5dd0f955.png)
 
  
 
