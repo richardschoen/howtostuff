@@ -140,6 +140,26 @@ In this example we explicitly set No Permissions for all machines and then add r
 
 ![image](https://user-images.githubusercontent.com/9791508/236314063-1193d15a-4c9d-441d-b497-380ffe090c5d.png)
 
+## Allow unmapped user access via NFS for IBMi when accessing Windows NFS shares  
+
+You may need to do this on Windows 2016, 2019 and newer versions of Windows Server.  
+
+Put ```Everyone``` user on the Windows directory and NFS share if possible.   
+
+Add the ```Everyone``` user to ```NTFS permissions``` and give it ```Read/Write or Full Control```.  
+
+Then check ```Allow unmapped user access by UID/GID```.   
+
+Theoretically that should be what you need to do to make it work.   
+
+Then from PASE try copying a file with the ```cp``` command to test as noted above.   
+
+If that works, try copying files from a 5250 session via the ```CPY``` command as noted above.   
+
+You don't need QNTC or SAMBA then at all for sending and receiving files from/to Windows shares.      
+
+![image](https://user-images.githubusercontent.com/9791508/236316502-1e7cbe31-fffa-4514-aa95-c537cd2a31b2.png)
+
 #### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
 
