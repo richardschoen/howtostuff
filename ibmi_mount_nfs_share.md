@@ -7,6 +7,8 @@ You can also limit access on your NFS shares to the IBM i IP address so this add
 
 ❗ ```You SHOULD NOT need to start the IBM i NFS Server in order to mount an IFS directory over an NFS file share.```
 
+**Feel free to contribute any notes you have on accessing NFS file shares from IBM i.**
+
 ##  NFS Share Network Mount Example
 For our example we will assume we have a remote Windows or Linux Server on IP address: 1.1.1.1 with a remote NFS share of /nfsmount1 that will get mounted over an IFS directory named /nfsmount1 for consistency.   
 
