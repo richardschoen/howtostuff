@@ -92,7 +92,7 @@ Need to archive (PC) . . . . . . . . . :   No
 Need to archive (System) . . . . . . . :   No            
 ```
 
-#### In this example the IFS directory doesn't have anything mounted over it
+#### In this example the IFS directory doesn't have anything mounted over it 
 ```                                                   
 Object . . . . . . :   /nfsmount1                  
                                                    
