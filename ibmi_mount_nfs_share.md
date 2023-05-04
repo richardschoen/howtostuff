@@ -163,3 +163,15 @@ You don't need QNTC or SAMBA then at all for sending and receiving files from/to
 #### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
 
+#### Additional IBM i NFS LInks
+IBM i Network FIle System    
+https://www.ibm.com/docs/en/i/7.5?topic=systems-network-file-system-nfs     
+
+
+
+
+
+
+
+
+
