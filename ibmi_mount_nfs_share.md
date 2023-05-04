@@ -14,10 +14,10 @@ It's always a good idea to name your NFS shares and IFS directories consistently
 
 ## Copying Files from and to NFS Shares using the CPY Command 
 
-#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
+#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory from the IFS.
 ```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
-#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory.
+#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files from an nfs directory to the IFS.
 ```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
 ## QShell/PASE File Copy to NFS Shares
