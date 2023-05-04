@@ -123,20 +123,18 @@ Directory to share on C: drive
 Add Everyone user to the directory with permissions   
 ![image](https://user-images.githubusercontent.com/9791508/236312789-2cc6fa07-b5d1-4079-9a96-089c5dd0f955.png)
 
- 
+Right click directory and go to the NFS Sharing Tab      
 
-Right click directory and go to the NFS Sharing Tab
+Set the settings as shown.   
 
-Set the settings as shown.
+![image](https://user-images.githubusercontent.com/9791508/236313764-83a63f6c-ecf9-4977-9841-4da491fa98d9.png)
 
- 
+Click Permissions tab to provide No Access, Read Only or Read-Write permissions to a remote system.    
 
-Click Permissions tab to provide No Access, Read Only or Read-Write permissions to a remote system. 
+In this example we explicitly set No Permissions for all machines and then add read/write permissions to the IBM i on IP address 192.168.101.21   
+![image](https://user-images.githubusercontent.com/9791508/236313995-981ef380-8cf9-4590-a6da-e4009c640906.png)
 
-In this example we explicitly set No Permissions for all machines and then add read/write permissions to the IBM i on IP address 192.168.101.21
-
- 
- 
+![image](https://user-images.githubusercontent.com/9791508/236314063-1193d15a-4c9d-441d-b497-380ffe090c5d.png)
 
 #### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
