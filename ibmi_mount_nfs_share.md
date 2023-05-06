@@ -122,16 +122,18 @@ https://www.serverlab.ca/tutorials/windows/storage-file-systems/configuring-an-n
 Sharing NFS Directory from Windows
 
 Directory to share on C: drive   
-![image](https://user-images.githubusercontent.com/9791508/236312104-90748329-933d-4b11-8b3b-1ffd1fcd1bbf.png)
+![image](https://user-images.githubusercontent.com/9791508/236639390-40151a89-5c1c-422c-b2ee-3bb23e99f503.png)
+
 
 Add Everyone user to the directory with permissions   
-![image](https://user-images.githubusercontent.com/9791508/236312789-2cc6fa07-b5d1-4079-9a96-089c5dd0f955.png)
+![image](https://user-images.githubusercontent.com/9791508/236639457-fa2e7774-c153-47fc-b0d0-079df9009a39.png)
 
 Right click directory and go to the NFS Sharing Tab      
 
 Set the settings as shown.   
+![image](https://user-images.githubusercontent.com/9791508/236639534-32cab28a-f9c6-47c0-935f-9ef2ec7a9ce5.png)
 
-![image](https://user-images.githubusercontent.com/9791508/236313764-83a63f6c-ecf9-4977-9841-4da491fa98d9.png)
+![image](https://user-images.githubusercontent.com/9791508/236639572-87547451-53c4-4196-afe7-9642fdd86a40.png)
 
 Click Permissions tab to provide No Access, Read Only or Read-Write permissions to a remote system.    
 
