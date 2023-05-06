@@ -128,9 +128,10 @@ Directory to share on C: drive
 Add Everyone user to the directory with permissions   
 ![image](https://user-images.githubusercontent.com/9791508/236639457-fa2e7774-c153-47fc-b0d0-079df9009a39.png)
 
-Right click directory and go to the NFS Sharing Tab      
+Right click directory and go to the NFS Sharing Tab.
 
-Set the settings as shown.   
+Set the settings as shown.      
+
 ![image](https://user-images.githubusercontent.com/9791508/236639534-32cab28a-f9c6-47c0-935f-9ef2ec7a9ce5.png)
 
 ![image](https://user-images.githubusercontent.com/9791508/236639572-87547451-53c4-4196-afe7-9642fdd86a40.png)
