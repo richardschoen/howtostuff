@@ -52,7 +52,7 @@ Without the -t switch we get an error similar to the following:
 cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test.pdf. Operation not supported.
 ```   
 
-If the -t switch works for you, that's good. Otherwise you can always remove ```rm``` teh remote file before copying it with ```cp```. The fun of QShell/PASE.
+If the -t switch works for you, that's good. Otherwise you can always remove ```rm``` the remote file before copying it with ```cp```. The fun of QShell/PASE.
 
 #### Remove existing file and copy to NFS share
 
