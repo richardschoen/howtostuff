@@ -116,7 +116,7 @@ Read only  . . . . . . . . . . . . . . :   No
 ## General Setup for NFS File Sharing from Windows or Linux
 
 #### Sharing Windows Files via NFS
-Install Windows Service for Unix on Windows 2012
+Install Windows Service for Unix on Windows 2012     
 https://www.serverlab.ca/tutorials/windows/storage-file-systems/configuring-an-nfs-server-on-windows-server-2012-r2/
 
 Install NFS Server on Windows 2019   
@@ -124,9 +124,8 @@ https://computingforgeeks.com/install-and-configure-nfs-server-on-windows-server
 
 #### Sharing NFS Directory from Windows
 
-Directory to share on C: drive   
+Directory to share on C: drive    
 ![image](https://user-images.githubusercontent.com/9791508/236639390-40151a89-5c1c-422c-b2ee-3bb23e99f503.png)
-
 
 Add Everyone user to the directory with permissions   
 ![image](https://user-images.githubusercontent.com/9791508/236639457-fa2e7774-c153-47fc-b0d0-079df9009a39.png)
