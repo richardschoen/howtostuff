@@ -138,9 +138,9 @@ Set the settings as shown.
 Click Permissions tab to provide No Access, Read Only or Read-Write permissions to a remote system.    
 
 In this example we explicitly set No Permissions for all machines and then add read/write permissions to the IBM i on IP address 192.168.101.21   
-![image](https://user-images.githubusercontent.com/9791508/236313995-981ef380-8cf9-4590-a6da-e4009c640906.png)
+![image](https://user-images.githubusercontent.com/9791508/236639704-a944b5ad-bba7-4d97-98f7-cf23c5057d7d.png)
 
-![image](https://user-images.githubusercontent.com/9791508/236314063-1193d15a-4c9d-441d-b497-380ffe090c5d.png)
+![image](https://user-images.githubusercontent.com/9791508/236639713-5bb243ae-5bc8-424c-b563-5fb470293b97.png)
 
 ## Allow unmapped user access via NFS for IBMi when accessing Windows NFS shares  
 
