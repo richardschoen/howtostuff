@@ -64,7 +64,7 @@ cp /tmp/test.pdf  /nfsmount1/test.pdf
 #### Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
 An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and the local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
 
-Note: Usually if mounting an NFS share over an IFS directory, it's probably a good idea to dedicate the IFS directory just for the the NFS mount and don't put any files in the local IFS directory. This will help avoid confusion that may occur where users may think local files have disappeared.
+❗ Note: Usually if mounting an NFS share over an IFS directory, it's probably a good idea to dedicate the IFS directory just for the the NFS mount and don't put any files in the local IFS directory. This will help avoid confusion that may occur where users may think local files have disappeared.
 
 #### Create the IFS directory you will mount your NFS share over
 ```MKDIR  DIR('/nfsmount1') DTAAUT(*RWX) OBJAUT(*ALL)```
