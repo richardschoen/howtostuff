@@ -41,11 +41,21 @@ Operation not supported.$
 #### Copy file to NFS share and replace with -t switch 
 ```cp -t /tmp/test.pdf  /nfsmount1/test.pdf ```
 
-❗ I'm not exactly sure why the -t switch works since it's exact usage isn't documented. Without the -t switch we get an error similar to the following:   
+I'm not exactly sure why the -t switch works to replace the remote file since it's exact usage documantation says: 
 ```
-cp: 001-2230 Error found setting CCSID to 819 for file /nfsmount1/test.pdf. Operation not supported.                                                ```   
- 
+ -t, --target-directory=DIRECTORY
+              copy all SOURCE arguments into DIRECTORY
+```              
+Without the -t switch we get an error similar to the following:   
+
+```
+cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test.pdf. Operation not supported.
+```   
+
+If the -t switch works for you, that's good. Otherwise you can always remove ```rm``` teh remote file before copying it with ```cp```. The fun of QShell/PASE.
+
 #### Remove existing file and copy to NFS share
+
 ```
 rm /nfsmount1/test.pdf
 cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
