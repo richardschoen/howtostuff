@@ -14,53 +14,6 @@ For our example we will assume we have a remote Windows or Linux Server on IP ad
 
 It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
 
-## Copying Files from and to NFS Shares using the CPY CL Command 
-
-#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory from the IFS.
-```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
-
-#### Copy file from NFS to IFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files from an nfs directory to the IFS.
-```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
-
-## QShell/PASE IFS File Copy from and to NFS Shares
-
-Copying files is pretty much like copying any other file in QSH/PASE. Use the ```cp``` command.
-
-#### Initial copy from IFS to NFS mount if file doesn't exist on remote NFS share. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
-```cp /tmp/test.pdf /nfsmount1/test.pdf```
-
-#### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp command is not CCSID aware.
-```
-cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
-cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test3.pdf.
-Operation not supported.$                                                   
-```
-
-#### Attempt to copy file to NFS mount if file exists already. The following options should work. Either use the -t switch option or first delete the remote NFS file with rm command. Then copy it as a new file via cp command and this should work.
-
-#### Copy file to NFS share and replace with -t switch 
-```cp -t /tmp/test.pdf  /nfsmount1/test.pdf ```
-
-I'm not exactly sure why the -t switch works to replace the remote file since it's exact usage documantation says: 
-```
- -t, --target-directory=DIRECTORY
-              copy all SOURCE arguments into DIRECTORY
-```              
-Without the -t switch we get an error similar to the following:   
-
-```
-cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test.pdf. Operation not supported.
-```   
-
-If the -t switch works for you, that's good. Otherwise you can always remove ```rm``` the remote file before copying it with ```cp```. The fun of QShell/PASE.
-
-#### Remove existing file and copy to NFS share
-
-```
-rm /nfsmount1/test.pdf
-cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
-```
-
 #### Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
 An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and the local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
 
@@ -125,6 +78,54 @@ Coded character set ID . . . . . . . . :   37
 Hidden file  . . . . . . . . . . . . . :   No      
 PC system file . . . . . . . . . . . . :   No      
 Read only  . . . . . . . . . . . . . . :   No      
+```
+
+
+## Copying Files from and to NFS Shares using the CPY CL Command 
+
+#### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory from the IFS.
+```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
+
+#### Copy file from NFS to IFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files from an nfs directory to the IFS.
+```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
+
+## QShell/PASE IFS File Copy from and to NFS Shares
+
+Copying files is pretty much like copying any other file in QSH/PASE. Use the ```cp``` command.
+
+#### Initial copy from IFS to NFS mount if file doesn't exist on remote NFS share. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
+```cp /tmp/test.pdf /nfsmount1/test.pdf```
+
+#### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp command is not CCSID aware.
+```
+cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
+cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test3.pdf.
+Operation not supported.$                                                   
+```
+
+#### Attempt to copy file to NFS mount if file exists already. The following options should work. Either use the -t switch option or first delete the remote NFS file with rm command. Then copy it as a new file via cp command and this should work.
+
+#### Copy file to NFS share and replace with -t switch 
+```cp -t /tmp/test.pdf  /nfsmount1/test.pdf ```
+
+I'm not exactly sure why the -t switch works to replace the remote file since it's exact usage documantation says: 
+```
+ -t, --target-directory=DIRECTORY
+              copy all SOURCE arguments into DIRECTORY
+```              
+Without the -t switch we get an error similar to the following:   
+
+```
+cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test.pdf. Operation not supported.
+```   
+
+If the -t switch works for you, that's good. Otherwise you can always remove ```rm``` the remote file before copying it with ```cp```. The fun of QShell/PASE.
+
+#### Remove existing file and copy to NFS share
+
+```
+rm /nfsmount1/test.pdf
+cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
 ```
 
 ## General Setup for NFS File Sharing from Windows or Linux
