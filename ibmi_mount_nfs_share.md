@@ -14,7 +14,7 @@ For our example we will assume we have a remote Windows or Linux Server on IP ad
 
 It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
 
-## Copying Files from and to NFS Shares using the CPY Command 
+## Copying Files from and to NFS Shares using the CPY CL Command 
 
 #### Copy file from IFS to NFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files to an nfs directory from the IFS.
 ```CPY OBJ('/tmp/test.pdf') TOOBJ('/nfsmount1/test.pdf') TOCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
@@ -22,7 +22,7 @@ It's always a good idea to name your NFS shares and IFS directories consistently
 #### Copy file from NFS to IFS location.  Make sure to specify CCSID(437) and AUT(*INDIR) or you may get an authority error when copying files from an nfs directory to the IFS.
 ```CPY OBJ('/nfsmount1/test.pdf') TOOBJ('/tmp/test.pdf') FROMCCSID(437) DTAFMT(*BINARY) REPLACE(*YES) AUT(*INDIR)```
 
-## QShell/PASE File Copy to NFS Shares
+## QShell/PASE IFS File Copy from and to NFS Shares
 
 Copying files is pretty much like copying any other file in QSH/PASE. Use the ```cp``` command.
 
