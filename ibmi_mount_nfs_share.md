@@ -183,14 +183,15 @@ You don't need QNTC or SAMBA then at all for sending and receiving files from/to
 #### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
 
-#### Additional IBM i NFS LInks
+#### Additional IBM i NFS and Other NFS Links
 IBM i Network FIle System    
 https://www.ibm.com/docs/en/i/7.5?topic=systems-network-file-system-nfs     
 
+Windows Services for Network File Systems   
+https://forsenergy.com/en-us/nfs__lh/html/1f02f8b2-e653-4583-8391-84d3411badd1.htm
 
-
-
-
+Windows Services for NFS - Allow Root and Anonymous Access to Resources by NFS Clients    
+https://forsenergy.com/en-us/nfs__lh/html/47b01fb7-a6f7-4be0-ae99-2fbda7974a8b.htm
 
 
 
