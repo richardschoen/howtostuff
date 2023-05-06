@@ -193,6 +193,7 @@ https://forsenergy.com/en-us/nfs__lh/html/1f02f8b2-e653-4583-8391-84d3411badd1.h
 Windows Services for NFS - Allow Root and Anonymous Access to Resources by NFS Clients    
 https://forsenergy.com/en-us/nfs__lh/html/47b01fb7-a6f7-4be0-ae99-2fbda7974a8b.htm
 
-
+Windows - Deploy Network File System (NFS)   
+https://learn.microsoft.com/en-us/windows-server/storage/nfs/deploy-nfs
 
 
