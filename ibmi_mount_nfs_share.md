@@ -178,6 +178,8 @@ If that works, try copying files from a 5250 session via the ```CPY``` command a
 
 Now you don't need QNTC or SAMBA then at all for sending and receiving files from/to Windows shares.      
 
+Example NFS permissions screen for Windows 2016, 2019 and above.
+
 ![image](https://user-images.githubusercontent.com/9791508/236643431-f5cf657a-ab57-4b41-bc0b-f12f70f0d896.png)
 
 #### Sharing Linux Files via NFS
