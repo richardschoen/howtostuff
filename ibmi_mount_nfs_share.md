@@ -12,7 +12,7 @@ Mounting an NFS share over an IFS directory is a great way to provide access to 
 ##  NFS Share Network Mount Example
 For our example we will assume we have a remote Windows or Linux Server on IP address: 1.1.1.1 with a remote NFS share of /nfsmount1 that will get mounted over an IFS directory named /nfsmount1 for consistency.   
 
-It's always a good idea to name your NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
+It's always a good idea to name your remote Windows and Linux directories, NFS shares and IFS directories consistently so the names are easily recognizable by your applications and users.
 
 #### Mount NFS Share using NFS share named /nfsmount1 over IFS directory /nfsmount1
 An NFS share is always mounted over an existing IFS directory path which means once mounted the local IFS files in the directory cannot be seen because the IFS directory is mapped to a remote NFS share and the local files in the IFS folder are hidden because of the mount. Once unmounted, the local files in teh IFS directory can be accessed again. 
