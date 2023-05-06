@@ -176,9 +176,9 @@ Then from PASE try copying a file with the ```cp``` command to test as noted abo
 
 If that works, try copying files from a 5250 session via the ```CPY``` command as noted above.   
 
-You don't need QNTC or SAMBA then at all for sending and receiving files from/to Windows shares.      
+Now you don't need QNTC or SAMBA then at all for sending and receiving files from/to Windows shares.      
 
-![image](https://user-images.githubusercontent.com/9791508/236316502-1e7cbe31-fffa-4514-aa95-c537cd2a31b2.png)
+![image](https://user-images.githubusercontent.com/9791508/236643431-f5cf657a-ab57-4b41-bc0b-f12f70f0d896.png)
 
 #### Sharing Linux Files via NFS
 https://cloud.netapp.com/blog/azure-anf-blg-linux-nfs-server-how-to-set-up-server-and-client
