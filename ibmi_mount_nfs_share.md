@@ -29,7 +29,7 @@ Copying files is pretty much like copying any other file in QSH/PASE. Use the ``
 #### Initial copy from IFS to NFS mount if file doesn't exist on remote NFS share. If you do a WRKLNK option 8 on the file after copied, you will see a CCSID of 437. This can cause issues if you need to later replace the file on the remote NFS mount because the IBMi thinks it has a CCSID of 437.
 ```cp /tmp/test.pdf /nfsmount1/test.pdf```
 
-#### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp cmmand is not CCSID aware.
+#### Attempt to copy to NFS mount if file exists already. You may receive the following error because it appears the cp command is not CCSID aware.
 ```
 cp /tmp/test.pdf  /nfsmount1/test.pdf                                      
 cp: 001-2230 Error found setting CCSID to 437 for file /nfsmount1/test3.pdf.
