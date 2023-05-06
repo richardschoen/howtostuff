@@ -41,6 +41,10 @@ Operation not supported.$
 #### Copy file to NFS share and replace with -t switch 
 ```cp -t /tmp/test.pdf  /nfsmount1/test.pdf ```
 
+❗ I'm not exactly sure why the -t switch works since it's exact usage isn't documented. Without the -t switch we get an error similar to the following:   
+```
+cp: 001-2230 Error found setting CCSID to 819 for file /nfsmount1/test.pdf. Operation not supported.                                                ```   
+ 
 #### Remove existing file and copy to NFS share
 ```
 rm /nfsmount1/test.pdf
