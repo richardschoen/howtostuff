@@ -1,9 +1,9 @@
 # IBM i NFS Share Mount How-To Notes
 
 ## Overview
-Mounting an NFS share over an IFS directory is a great way to provide access to remote WIndows or Linux file directories without exposing them via NetServer, SMB and QTNC which can cause issues when user authentication doesn't match across systems.   
+Mounting an NFS share over an IFS directory is a great way to provide access to remote Windows or Linux file directories from IBM i and QShell/PASE without exposing them via NetServer, SMB and QTNC which can cause issues when user authentication doesn't match across systems.   
 
-You can also limit access on your NFS shares to the IBM i IP address so this adds another level of security by limiting which machines can access the NFS shares.
+❗ You should limit access to your NFS shares to the IBM i IP address so this adds another level of security by limiting which machines can access the NFS shares. This is done on your remote Windows or Linux NFS share configuration.
 
 ❗ ```You SHOULD NOT need to start the IBM i NFS Server in order to mount an IFS directory over an NFS file share.```
 
