@@ -14,11 +14,13 @@ Saving libraries or IFS files to save files and uploading to Amazon S3 storage.
 
 Downloading and restoring a library or IFS files from a save file stored on Amazon S3 storage.
 
-Uploading daily reports and other files to shared Amazon directories. (Similar to SharePoint).   
+Uploading daily reports and other files to shared Amazon directories. (Similar to SharePoint).    
 
-Uploading files to S3 storage so a trading partner can retrieve them. 
+Uploading files to S3 storage so a trading partner can retrieve them.    
 
-Upload working files from mobile devices to be picked up later by IBM i.
+Upload working files from mobile devices to be picked up later by IBM i.   
+
+Downloading files from S3 storage uploaded by a trading partner.    
 
 # Amazon CLI Usage Links  
 Link to Diego Kesselman's Linked in Article  (inspiration for this page)   
