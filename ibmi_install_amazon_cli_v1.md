@@ -8,7 +8,7 @@ Also there are other cloud providers now providing S3 cloud compatible storage s
 I took inspiration for this how-to from Diego Kesselman's article on LinkedIn to create this how-to.   
 
 # Potential use cases
-Here are a few potential use cases for S3 storage and the Amazon CLI.
+Here are a few potential use cases for S3 storage and the Amazon CLI:   
 
 Saving libraries or IFS files to save files and uploading to Amazon S3 storage.   
 
