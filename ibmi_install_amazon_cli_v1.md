@@ -39,16 +39,16 @@ Make sure all ```Python 3``` options are installed by the '``Open Source Package
 Log in to an IBM i SSH terminal session and make sure bash is the current shell.     
 
 ## Install the Amazon CLI in PASE  
-
+Run following command from SSH terminal.   
 ```pip3 install awscli```
 
 ## Set up your Amazon Credentials  
-
+Run following command from SSH terminal.   
  ```aws configure```
 
- You will be prompted for your ```aws_access_key``` and ```aws_secret_access_key and region info as well.
+ You will be prompted for your ```aws_access_key``` and ```aws_secret_access_key``` and region info as well. I only entered my access key and secret access key. 
 
-The settings get saved in the following file for each user: 
+The settings get saved in the following file for each user under their HOME directory:   
 ```~/.aws/credentials```
 
 ## Lets list our Amazon S3 Buckets 
