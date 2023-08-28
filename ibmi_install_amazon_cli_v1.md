@@ -101,7 +101,8 @@ Successful upload response:
 
 Error upload response when bucket not found:     
 ```
-upload failed: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket111/dir1/BACKUPIFS-20230827.zip An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+upload failed: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket111/dir1/BACKUPIFS-20230827.zip
+An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
 ```
 ## More to come
 As I play more with the Amazon CLI I will update this article. There are lots of potential uses for the aws CLI command from IBM i.  
