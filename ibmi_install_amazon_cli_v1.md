@@ -32,10 +32,11 @@ https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html
 # Installing on IBM i 
 
 ## Pre-requisite
+OS level should be IBM i V7R3 or above.   
+   
+Make sure all ```Python 3``` options are installed by the '``Open Source Package Management``` menu option in ACS.   
 
-Make sure all ```Python 3``` options are installed by the '``Open Source Package Management``` menu option in ACS
-
-Log in to an IBM i SSH terminal session and make sure bash is the current shell
+Log in to an IBM i SSH terminal session and make sure bash is the current shell.     
 
 ## Install the Amazon CLI in PASE  
 
