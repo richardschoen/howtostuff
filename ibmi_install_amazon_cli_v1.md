@@ -12,6 +12,8 @@ Here are a few potential use cases for S3 storage and the Amazon CLI.
 
 Saving libraries or IFS files to save files and uploading to Amazon S3 storage.   
 
+Downloading and restoring a library or IFS files from a save file stored on Amazon S3 storage.
+
 Uploading daily reports and other files to shared Amazon directories. (Similar to SharePoint).   
 
 Uploading files to S3 storage so a trading partner can retrieve them. 
