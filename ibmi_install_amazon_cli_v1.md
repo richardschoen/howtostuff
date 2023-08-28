@@ -7,16 +7,27 @@ Also there are other cloud providers now providing S3 cloud compatible storage s
   
 I took inspiration for this how-to from Diego Kesselman's article on LinkedIn to create this how-to.   
 
+# Potential use cases
+Here are a few potential use cases for S3 storage and the Amazon CLI.
+
+Saving libraries or IFS files to save files and uploading to Amazon S3 storage.   
+
+Uploading daily reports and other files to shared Amazon directories. (Similar to SharePoint).   
+
+Uploading files to S3 storage so a trading partner can retrieve them. 
+
+Upload working files from mobile devices to be picked up later by IBM i.
+
 # Amazon CLI Usage Links  
 Link to Diego Kesselman's Linked in Article  (inspiration for this page)   
 https://www.linkedin.com/pulse/ibm-i-having-fun-cloud-object-storage-cos-diego-kesselman    
 
-Amazon CLI V1 Documentation    
+Amazon CLI V1 Documentation  (There is a V2 API, but V1 is what is supported via Python3 currently)   
 https://docs.aws.amazon.com/cli/latest/reference/s3/ls.html     
 
 # Installing on IBM i 
 
-**Pre-requisite**
+## Pre-requisite
 
 Make sure all ```Python 3``` options are installed by the '``Open Source Package Management``` menu option in ACS
 
