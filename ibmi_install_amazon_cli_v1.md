@@ -65,7 +65,7 @@ Play around with the following aws list CLI commands.
 PRE dir1/
 PRE dir2/
 ```
-
+   
 ```aws s3 ls s3://mybucket1/dir1/``` will list all files and directories in mybucket1 under the dir1 directory.  
 ```
 2023-08-27 08:32:33     155232 BACKUPIFS-20230827.zip
@@ -76,27 +76,27 @@ The following example aws CLI commands can be used to download files from an S3 
 
 ```aws s3 cp s3://mybucket1/dir1/BACKUPIFS-20230827.zip   /tmp/BACKUPIFS-20230827.zip``` will download the ZIP backup file from S3 mybucket1/dir1 folder to the /tmp folder on our IFS.    
    
-Successful download response:    
-```download: s3://mybucket//dir1/BACKUPIFS-20230827.zip to ../../../tmp/BACKUPIFS-20230827.zip```
+Successful download response:     
+```download: s3://mybucket//dir1/BACKUPIFS-20230827.zip to ../../../tmp/BACKUPIFS-20230827.zip```   
    
-```aws s3 cp s3://mybucket1/dir1/BACKUPIFS-20230830.zip   /tmp/BACKUPIFS-20230830.zip``` will try to download the non-existent backup ZIP file from S3 mybucket1/dir1 to the /tmp folder on our IFS but will fail because no file is found on S3 with this name.
+```aws s3 cp s3://mybucket1/dir1/BACKUPIFS-20230830.zip   /tmp/BACKUPIFS-20230830.zip``` will try to download the non-existent backup ZIP file from S3 mybucket1/dir1 to the /tmp folder on our IFS but will fail because no file is found on S3 with this name.   
 
 Error download response when file not found:     
-```fatal error: An error occurred (404) when calling the HeadObject operation: Key "dir1/BACKUPIFS-20230830.zip" does not exist```
+```fatal error: An error occurred (404) when calling the HeadObject operation: Key "dir1/BACKUPIFS-20230830.zip" does not exist```   
 
 ## Let's upload an IFS file to our Amazon S3 bucket
-The following example aws CLI commands can be used to upload files to an S3 bucket from an IFS directory.  
+The following example aws CLI commands can be used to upload files to an S3 bucket from an IFS directory.   
 
-```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir1/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir1.   
+```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir1/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir1.    
 
-Successful upload response:
-```upload: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket//dir1/BACKUPIFS-20230827.zip```
+Successful upload response:    
+```upload: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket//dir1/BACKUPIFS-20230827.zip```   
    
-```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir3/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir3. (If dir3 does not exist in the bucket it will get automatically created.)  
+```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir3/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir3. (If dir3 does not exist in the bucket it will get automatically created.)     
 
-Successful upload response:
+Successful upload response:   
 ```upload: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket//dir3/BACKUPIFS-20230827.zip```
-
+   
 ```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket111/dir1/BACKUPIFS-20230827.zip``` will error while uploading the selected ZIP file from the /tmp IFS directory to S3 mybucket111/dir. (Bucket mybucket111 does not exist.)  
 
 Error upload response when bucket not found:     
