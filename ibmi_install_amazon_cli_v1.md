@@ -49,7 +49,7 @@ The settings get saved in the following file for each user:
 ```~/.aws/credentials```
 
 ## Lets list our Amazon S3 Buckets 
-Play around with the following commands.    
+Play around with the following aws list CLI commands.    
 
 ```aws s3 ls``` will display a list of all your available buckets at the command line.   
 ```
@@ -68,8 +68,41 @@ PRE dir2/
 2023-08-27 08:32:33     155232 BACKUPIFS-20230827.zip
 2023-08-28 14:31:26     155232 BACKUPIFS-20230828.zip
 ```
-## More to come
-As I play more with the Amazon CLI I will update this article. 
+## Let's download a file from our Amazon S3 bucket to the IFS
+The following example aws CLI commands can be used to download files from an S3 bucket to an IFS directory.   
 
-Feel free to send your updates to me for adding to the article by doing a pull request or creating an issue.   
+```aws s3 cp s3://mybucket1/dir1/BACKUPIFS-20230827.zip   /tmp/BACKUPIFS-20230827.zip``` will download the ZIP backup file from S3 mybucket1/dir1 folder to the /tmp folder on our IFS.    
+   
+Successful download response:    
+```download: s3://mybucket//dir1/BACKUPIFS-20230827.zip to ../../../tmp/BACKUPIFS-20230827.zip```
+   
+```aws s3 cp s3://mybucket1/dir1/BACKUPIFS-20230830.zip   /tmp/BACKUPIFS-20230830.zip``` will try to download the non-existent backup ZIP file from S3 mybucket1/dir1 to the /tmp folder on our IFS but will fail because no file is found on S3 with this name.
+
+Error download response when file not found:     
+```fatal error: An error occurred (404) when calling the HeadObject operation: Key "dir1/BACKUPIFS-20230830.zip" does not exist```
+
+## Let's upload an IFS file to our Amazon S3 bucket
+The following example aws CLI commands can be used to upload files to an S3 bucket from an IFS directory.  
+
+```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir1/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir1.   
+
+Successful upload response:
+```upload: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket//dir1/BACKUPIFS-20230827.zip```
+   
+```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket1/dir3/BACKUPIFS-20230827.zip``` will upload the selected ZIP file from the /tmp IFS directory to S3 mybucket1/dir3. (If dir3 does not exist in the bucket it will get automatically created.)  
+
+Successful upload response:
+```upload: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket//dir3/BACKUPIFS-20230827.zip```
+
+```aws s3 cp /tmp/BACKUPIFS-20230827.zip s3://mybucket111/dir1/BACKUPIFS-20230827.zip``` will error while uploading the selected ZIP file from the /tmp IFS directory to S3 mybucket111/dir. (Bucket mybucket111 does not exist.)  
+
+Error upload response when bucket not found:     
+```
+upload failed: ../../../tmp/BACKUPIFS-20230827.zip to s3://mybucket111/dir1/BACKUPIFS-20230827.zip An error occurred (NoSuchBucket) when calling the PutObject operation: The specified bucket does not exist
+```
+## More to come
+As I play more with the Amazon CLI I will update this article. There are lots of potential uses for the aws CLI command from IBM i.  
+
+Feel free to send your updates to me for adding to the article by doing a pull request or creating an issue.     
+
 
