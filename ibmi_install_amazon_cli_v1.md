@@ -109,4 +109,9 @@ As I play more with the Amazon CLI I will update this article. There are lots of
 
 Feel free to send your updates to me for adding to the article by doing a pull request or creating an issue.     
 
+## Watch Out For 
+As I was testing I found out that as of 8/8/2023, it appears that the version of the ```botocore``` framework used by ```awscli``` is a bit different than the version that is used by the ```s3fs``` Package I've used for other Python Amazon S3 processes.   
+
+Because of thie you may want to create a virtual environment for the awscli if you're also using something like s3fs. 
+
 
