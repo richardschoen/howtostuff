@@ -110,8 +110,39 @@ As I play more with the Amazon CLI I will update this article. There are lots of
 Feel free to send your updates to me for adding to the article by doing a pull request or creating an issue.     
 
 ## Watch Out For 
-As I was testing I found out that as of 8/8/2023, it appears that the version of the ```botocore``` framework used by ```awscli``` is a bit different than the version that is used by the ```s3fs``` Package I've used for other Python Amazon S3 processes.   
+As I was testing I found out that as of 8/28/2023, it appears that the version of the ```botocore``` framework used by ```awscli``` is a bit different than the version that is used by the ```s3fs``` Package I've used for other Python Amazon S3 processes.   
 
-Because of thie you may want to create a virtual environment for the awscli if you're also using something like s3fs. 
+As of 8/28/2023   
+```awscli``` uses the following botocore version: botocore==1.31.36 with Python 3.9 on IBM i   
+```s3fs``` uses the following botocore version: botocore==1.27.59 with Python 3.9 on IBM i   
+
+Because of thie you may want to create a separate virtual environment for the ```awscli``` if you're also using something like s3fs. 
+
+## Quickly create a virtual environment for awscli
+We will make a virtual environmnet for the aws cli in IFS directory ```/amazonclivenv```    
+
+Activate the environment   
+```source /awsclivenv/bin/activate```   
+
+Install Amazon aws cli in the virtual environment (venv)
+```pip3 install awscli``` 
+
+Run any aws cli commands after environment has been activated.   
+
+Deactivate environment when done   
+```deactivate``` 
+
+Single command line to activate and run AWS dir list command   
+```source /awsclivenv/bin/activate;aws s3 ls s3://mybucket1/;deactivate```   
+
+
+
+
+
+
+
+
+
+
 
 
