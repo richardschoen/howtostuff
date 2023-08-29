@@ -1,5 +1,5 @@
 # Installing and Using Amazon CLI on IBM i for S3 File/Object Management  
-The Amazon command line interface (CLI) allows IBM i developers to interact with their Amazon services from the IBM i PASE command line.   
+The Amazon command line interface (CLI) allows IBM i developers to interact with their Amazon services from the IBM i PASE command line..  
 
 Probably the most common use for the Amazon CLI might be to upload and download file objects from S3 storage buckets for use with IBM i. 
 
