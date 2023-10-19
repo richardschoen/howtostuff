@@ -36,7 +36,7 @@ Set nodejs20 as the default node version:
 Run following command: ```node -v``` and it should show: ```v20.8.1```
 
 ## NPM for nodejs20 doesn't seem to be found
-After cganging to nodejs20, the npm command does not seem to be found, even though it exists as: ```/QOpenSys/pkgs/lib/nodejs20/bin/npm```
+After changing to nodejs20, the npm command does not seem to be found, even though it exists as: ```/QOpenSys/pkgs/lib/nodejs20/bin/npm```
 
 Type: ```npm``` and press enter.   
 
