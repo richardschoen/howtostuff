@@ -36,6 +36,8 @@ Set nodejs20 as the default node version:
 Run following command: ```node -v``` and it should show: ```v20.8.1```
 
 ## NPM for nodejs20 doesn't seem to be found
+After cganging to nodejs20, the npm command does not seem to be found, even though it exists as: ```/QOpenSys/pkgs/lib/nodejs20/bin/npm```
+
 Type: ```npm``` and press enter.   
 
 You will probably see: ```-bash: npm: command not found```
@@ -44,7 +46,7 @@ For some reason the shortcut to the nodejs20 version of npm didn't get created c
 
 Not sure why, but I know how to make it work. 
 
-## Create shortcut link to nodejs version of npm
+## Create shortcut link to nodejs20 version of npm
 Type the following to put the npm version shipped with nodejs20: 
 ```
 ln -s /QOpenSys/pkgs/lib/nodejs20/bin/npm /QOpenSys/pkgs/bin/npm
@@ -88,5 +90,3 @@ Configuration fields: npm help 7 config
 
 npm@10.1.0 /QOpenSys/pkgs/lib/nodejs20/lib/node_modules/npm
 ```
-
-
