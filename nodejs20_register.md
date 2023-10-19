@@ -28,7 +28,7 @@ nodejs20 now shows as an alternative when running ```alternative --list node```
 /QOpenSys/pkgs/lib/nodejs20/bin/node
 ```
 
-## nodejs20 can now be set as an alternative
+## nodejs20 can now be set as an default version of node system wide   
 Set nodejs20 as the default node version:   
 ```alternatives  --set node /QOpenSys/pkgs/lib/nodejs20/bin/node```
 
