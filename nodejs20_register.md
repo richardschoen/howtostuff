@@ -12,7 +12,7 @@ Run the following command: ```alternatives --list node```
 ```
 nodejs20 did not show as an alternative. 
 
-## Install nodejs20 as an alternative along with slave apps
+## Install nodejs20 as an alternative along with associated apps (slave apps)
 The following command should be copied and pasted to an ssh/bash session as a single command
 ```
 update-alternatives  --install /QOpenSys/pkgs/node node /QOpenSys/pkgs/lib/nodejs20/bin/node 20  --slave  /QOpenSys/pkgs/bin/npm  npm  /QOpenSys/pkgs/lib/nodejs20/bin/npm  --slave /QOpenSys/pkgs/bin/npx  npx  /QOpenSys/pkgs/lib/nodejs20/bin/npx
