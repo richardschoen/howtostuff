@@ -10,7 +10,6 @@ Run the following command: ```alternatives --list node```
 /QOpenSys/pkgs/lib/nodejs14/bin/node
 /QOpenSys/pkgs/lib/nodejs16/bin/node
 /QOpenSys/pkgs/lib/nodejs18/bin/node
-/QOpenSys/pkgs/lib/nodejs20/bin/node
 ```
 nodejs20 did not show as an alternative. 
 
@@ -26,6 +25,7 @@ nodejs20 now shows as an alternative when running ```alternative --list node```
 /QOpenSys/pkgs/lib/nodejs14/bin/node
 /QOpenSys/pkgs/lib/nodejs16/bin/node
 /QOpenSys/pkgs/lib/nodejs18/bin/node
+/QOpenSys/pkgs/lib/nodejs20/bin/node
 ```
 
 ## nodejs20 can now be set as an alternative
