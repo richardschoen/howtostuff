@@ -15,7 +15,7 @@ nodejs20 did not show as an alternative.
 ## Install nodejs20 as an alternative along with slave apps
 The following command should be copied and pasted to an ssh/bash session as a single command
 ```
-update-alternatives  --install /QOpenSys/pkgs/node node /QOpenSys/pkgs/lib/nodejs20/bin/node 100  --slave  /QOpenSys/pkgs/bin/npm  npm  /QOpenSys/pkgs/lib/nodejs20/bin/npm  --slave /QOpenSys/pkgs/bin/npx  npx  /QOpenSys/pkgs/lib/nodejs20/bin/npx
+update-alternatives  --install /QOpenSys/pkgs/node node /QOpenSys/pkgs/lib/nodejs20/bin/node 20  --slave  /QOpenSys/pkgs/bin/npm  npm  /QOpenSys/pkgs/lib/nodejs20/bin/npm  --slave /QOpenSys/pkgs/bin/npx  npx  /QOpenSys/pkgs/lib/nodejs20/bin/npx
 ```
 nodejs20 now shows as an alternative when running ```alternative --list node```
 
@@ -36,13 +36,13 @@ This should display each node version and it's slave apps (associated apps to th
 This example shows node18 and node20 are installed.    
 ```
 Alternative: /QOpenSys/pkgs/lib/nodejs18/bin/node
-Priority: 100
+Priority: 18
 Slaves:
  npm /QOpenSys/pkgs/lib/nodejs18/bin/npm
  npx /QOpenSys/pkgs/lib/nodejs18/bin/npx
 
 Alternative: /QOpenSys/pkgs/lib/nodejs20/bin/node
-Priority: 100
+Priority: 20
 Slaves:
  npm /QOpenSys/pkgs/lib/nodejs20/bin/npm
  npx /QOpenSys/pkgs/lib/nodejs20/bin/npx
