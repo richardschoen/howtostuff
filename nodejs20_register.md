@@ -31,7 +31,9 @@ nodejs20 now shows as an alternative when running ```alternative --list node```
 ## You can also query to make sure the slave apps are set
 Run the following command: ```update-alternatives --query node```    
 
-This should display each node version and it's slave apps (associated apps to the selected node version).    
+This should display each node version and it's slave apps (associated apps to the selected node version).   
+
+This example shows node18 and node20 are installed.    
 ```
 Alternative: /QOpenSys/pkgs/lib/nodejs18/bin/node
 Priority: 100
