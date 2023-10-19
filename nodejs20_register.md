@@ -52,11 +52,11 @@ Slaves:
 Set nodejs20 as the default node version:   
 ```update-alternatives  --set node /QOpenSys/pkgs/lib/nodejs20/bin/node```
 
-## Check the default node version now
+## Check the current default node version now
 Run following command: ```node -v``` and it should show: ```v20.8.1```
 
-## Check the default npm version now
+## Check the current default npm version now
 Run following command: ```npm -v``` and it should show: ```v10.1.0```
 
-## Check the default npx version now
+## Check the current default npx version now
 Run following command: ```npx -v``` and it should show: ```v10.1.0```
