@@ -49,7 +49,7 @@ Type the following to put the npm version shipped with nodejs20:
 ln -s /QOpenSys/pkgs/lib/nodejs20/bin/npm /QOpenSys/pkgs/bin/npm
 ```
 
-Now if you run the ```npm``` command you will see the npm options and npm can be used with nodejs20.
+Now if you run the ```npm``` command you will see the npm options and npm can now be used with nodejs20.
 ```
 -bash-5.2$ npm 
 npm <command>
