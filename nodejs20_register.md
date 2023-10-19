@@ -1,4 +1,4 @@
-# Register Node20 with alternatives as an alternate version of node
+# Register nodejs20 with alternatives as an alternate version of node
 When I installed nodejs20 via the yum installer/Open Source Package Management to my IBM i, it didn't register itself as an alternative,
 so I used the following commands from a ssh/bash shell to set up the alternatives command for nodejs20.
 
