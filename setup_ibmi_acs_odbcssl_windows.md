@@ -17,9 +17,13 @@ My regular IBM i Access services (Java) such as Telnet were working fine with SS
 The ```CWBCO1050``` error usually occurs when you have SSL configured, but have not downloaded the public Certificate Authority certificate or the system Client/Server certificate to the PC key database. Or you have the public Certificate Authority certificate certificate downloaded but it's not marked marked as trusted in the PC key database."
 
 So initially I went through the instructions on the site listed below to make sure my certs were getting downloaded and placed into the IBM i Access Windows package key store file named: ```C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb```   
-https://www.ibm.com/support/pages/importing-certificates-use-ibm-i-access-client-solutions-windows-application-package-acs-winap  
+https://www.ibm.com/support/pages/importing-certificates-use-ibm-i-access-client-solutions-windows-application-package-acs-winap    
+
+Downloading and installing the certs to the PC seemed to be working fine.    
     
 Then I ran ```cwbping mysysname /ssl:1``` and kept getting: CWBCO1050 - "The system certificate is not trusted.```    
+
+Frustrating......
 
 ## How to finally solve this issue
 After several hours of playing around with this, in the end it's actually pretty easy if you have the right little bits of information: You need to make sure all the certs you have added to the IBM i Access Windows package key store file named: ```C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb```  are marked as ```Trusted```.    
