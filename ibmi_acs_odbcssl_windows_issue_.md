@@ -136,7 +136,7 @@ All entries in the cwbssldf.kdb cert file are now trusted.
 
 Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
 
-And you should now be able to create ODBC dta sources or DSN-less connections that use connection strings and they should all work fine with SSL as well.    
+And you should now be able to create ODBC data sources or DSN-less connections that use connection strings and they should all work fine with SSL as well.    
 
 If this didn't solve your issue, then you probably have something different happening in your environment.   
 
