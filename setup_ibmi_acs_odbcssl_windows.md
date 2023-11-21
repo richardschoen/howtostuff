@@ -74,7 +74,7 @@ So we need to mark those last 5 entries as trusted.
 !       "VeriSign Class 4 Public Primary Certification Authority - G2"
 !       "VeriSign Class 4 Public Primary Certification Authority - G3"
         "MYSYS.MYDDMAIN.COM - Tuesday, November 21, 2023 13:36:07"
-        "acs_import_Richard Schoen_71806731094500 CA - Tuesday, November 21, 2023 15:04:36"
+        "acs_import_RS_71806731094500 CA - Tuesday, November 21, 2023 15:04:36"
         "acs_import_*.mydomain.com_71806234456600 CA - Tuesday, November 21, 2023 15:04:35"
         "acs_import_Go Daddy Secure Certificate Authority - G2_71806484262100 CA - Tuesday, November 21, 2023 15:04:35"
         "acs_import_Go Daddy Root Certificate Authority - G2_71806571558600 CA - Tuesday, November 21, 2023 15:04:35"
@@ -83,8 +83,8 @@ So we need to mark those last 5 entries as trusted.
 ## Marking key entries as trusted
 Using our example above, the following 5 commands can be run from the DOS Window to mark our 5 untrusted entries as trusted:
 ```
-gsk8capicmd.exe -cert -modify -trust enable -label  "MYSYS.MYDDMAIN.COM - Tuesday, November 21, 2023 13:36:07" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
-gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_Richard Schoen_71806731094500 CA - Tuesday, November 21, 2023 15:04:36" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
+gsk8capicmd.exe -cert -modify -trust enable -label  "MYSYS.MYDOMAIN.COM - Tuesday, November 21, 2023 13:36:07" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
+gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_RS_71806731094500 CA - Tuesday, November 21, 2023 15:04:36" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
 gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_*.mydomain.com_71806234456600 CA - Tuesday, November 21, 2023 15:04:35" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
 gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_Go Daddy Secure Certificate Authority - G2_71806484262100 CA - Tuesday, November 21, 2023 15:04:35" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
 gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_Go Daddy Root Certificate Authority - G2_71806571558600 CA - Tuesday, November 21, 2023 15:04:35" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
@@ -128,7 +128,7 @@ All entries in the cwbssldf.kdb cert file are now trusted.
 !       "VeriSign Class 4 Public Primary Certification Authority - G2"
 !       "VeriSign Class 4 Public Primary Certification Authority - G3"
 !       "MYSYS.MYDDMAIN.COM - Tuesday, November 21, 2023 13:36:07"
-!       "acs_import_Richard Schoen_71806731094500 CA - Tuesday, November 21, 2023 15:04:36"
+!       "acs_import_RS_71806731094500 CA - Tuesday, November 21, 2023 15:04:36"
 !       "acs_import_*.mydomain.com_71806234456600 CA - Tuesday, November 21, 2023 15:04:35"
 !       "acs_import_Go Daddy Secure Certificate Authority - G2_71806484262100 CA - Tuesday, November 21, 2023 15:04:35"
 !       "acs_import_Go Daddy Root Certificate Authority - G2_71806571558600 CA - Tuesday, November 21, 2023 15:04:35"
