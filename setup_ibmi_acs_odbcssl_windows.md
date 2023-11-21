@@ -10,9 +10,9 @@ After installation and configuration you can usually configure a Telnet session 
 
 ***Until you want to use SSL to connect to your database via ODBC instead of unsecured access......***
 
-I was trying to set up my IBM i Access ODBC Driver with SSL on a Windows machine and every time I ran ```cwbping mysysname /ssl:1``` I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted.```     
+I was trying to set up my IBM i Access ODBC Driver with SSL on a Windows machine and every time I ran ```cwbping mysysname /ssl:1``` to test SSL connectivity for the ODBC driver I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted.```     
 
-My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Windows based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs.  The certificate store file for IBM i Access Winddows package is named: ```C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb``` and I believe it uses GSKit to encrypt and decrypt certificates. 
+My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Windows based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs.  The certificate store file for IBM i Access Windows package is named: ```C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb``` and I believe it uses GSKit to encrypt and decrypt certificates. 
 
 The ```CWBCO1050``` error usually occurs when you have SSL configured, but have not downloaded the public Certificate Authority certificate or the system Client/Server certificate to the PC key database. Or you have the public Certificate Authority certificate certificate downloaded but it's not marked marked as trusted in the PC key database."
 
@@ -24,19 +24,20 @@ Then I ran ```cwbping mysysname /ssl:1``` and kept getting: CWBCO1050 - "The sys
 ## How to finally solve this issue
 After several hours of playing around with this, in the end it's actually pretty easy if you have the right little bits of information: You need to make sure all the certs you have added to the IBM i Access Windows package key store file named: ```C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb```  are marked as ```Trusted```.    
 
-Let's look at a little example:
+Let's look at a little example:   
 First open a DOS terminal window and run the following commands:
 
-Set the path to the gsk8capicmd.exe which is used to list or make changes to the ```cwbssldf.kdb``` key store file. This change will only be in place while the DOS Window is open.
+Set the path to the gsk8capicmd.exe which is used to list or make changes to the ```cwbssldf.kdb``` key store file. This change will only be in place while the DOS Window is open.    
 ```set PATH=C:\Program Files (x86)\IBM\gsk8\bin;C:\Program Files (x86)\IBM\gsk8\lib;%PATH%```
 
-This command lists all the certs for IBM i Access for Windows key store (different than the Java keystore used by IBM i Access Client Solutions)   
+This command lists all the certs for IBM i Access for Windows key store (different than the Java keystore used by IBM i Access Client Solutions)     
 ```gsk8capicmd.exe -cert -list all -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400```
 
 Your results may likely look similar to below: All trusted entries are prefixed with an exclamation point ```!```      
 Also In my scenario Godaddy is the provider for my wildcard domain certificate, but that shouldn't matter.    
-In this list the bottm 5 entries are marked as untrusted due to the lack of the exclamation point. 
+In this list the bottom 5 entries are marked as untrusted due to the lack of the exclamation point. 
 So we need to mark those last 5 entries as trusted. 
+```You may have more or less entries marked as untrusted```
 ```
 !       "RSA Secure Server Certification Authority"
 !       "VeriSign Class 3 Secure Server CA"
@@ -76,7 +77,7 @@ So we need to mark those last 5 entries as trusted.
 ```
 
 ## Marking key entries as trusted
-Using our example above, the following 5 commands can be run fromthe DOS Window to mark our 5 entries as trusted:
+Using our example above, the following 5 commands can be run from the DOS Window to mark our 5 untrusted entries as trusted:
 ```
 gsk8capicmd.exe -cert -modify -trust enable -label  "MYSYS.MYDDMAIN.COM - Tuesday, November 21, 2023 13:36:07" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
 gsk8capicmd.exe -cert -modify -trust enable -label  "acs_import_Richard Schoen_71806731094500 CA - Tuesday, November 21, 2023 15:04:36" -db "C:\Users\Public\Documents\IBM\Client Access\cwbssldf.kdb" -pw ca400
@@ -129,7 +130,13 @@ All entries in the cwbssldf.kdb cert file are now trusted.
 !       "acs_import_Go Daddy Root Certificate Authority - G2_71806571558600 CA - Tuesday, November 21, 2023 15:04:35"
 ```
 
-Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver. 
+Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
+
+And you should now be able to create ODBC dta sources or DSN-less connections that use connection strings and they should all work fine with SSL as well.    
+
+If this didn't solve your issue, then you probably have something different happening in your environment.   
+
+
 
 
 
