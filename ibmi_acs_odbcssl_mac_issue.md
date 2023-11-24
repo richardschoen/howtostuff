@@ -11,7 +11,7 @@ After installation and configuration you can usually configure a Telnet session 
 ***Until you want to use SSL to connect to your database via ODBC instead of unsecured access......***
 
 I was trying to set up my IBM i Access ODBC Driver with SSL on a Mac M1 machine and every time I ran:   
-```cwbping mysysname /ssl:1``` to test SSL connectivity for the ODBC driver I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted.``` I got the same errors from the isql utility if I defined an ODBC data source with the ```SSL=1``` setting. Ex isql command to connect: ```isql -v mysysname user1 pass1```  
+```cwbping mysysname /ssl:1``` to test SSL connectivity for the ODBC driver I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted".``` I got the same errors from the isql utility if I defined an ODBC data source with the ```SSL=1``` setting. Ex isql command to connect: ```isql -v mysysname user1 pass1```  
 
 My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Mac based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently since unixodbc is installed byt HomeBrew, there is a related certificate store that needs to be used for trusted certiciates instead of the Mac Keychain. The certificate store directory used by HomeBrew is named: ```$HOMEBREW_PREFIX/etc/openssl@3/certs```. On my Mac that mapped to directory: ```/opt/homebrew/etc/openssl@3/certs```  
 
