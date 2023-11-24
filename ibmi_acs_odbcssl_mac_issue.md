@@ -13,12 +13,12 @@ After installation and configuration you can usually configure a Telnet session 
 I was trying to set up my IBM i Access ODBC Driver with SSL on a Mac M1 machine and every time I ran:   
 ```cwbping mysysname /ssl:1``` to test SSL connectivity for the ODBC driver I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted".``` I got the same errors from the isql utility if I defined an ODBC data source with the ```SSL=1``` setting. Ex isql command to connect: ```isql -v mysysname user1 pass1```  
 
-My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Mac based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently since unixodbc is installed byt HomeBrew, there is a related certificate store that needs to be used for trusted certiciates instead of the Mac Keychain. The certificate store directory used by HomeBrew is named: ```$HOMEBREW_PREFIX/etc/openssl@3/certs```. On my Mac that mapped to directory: ```/opt/homebrew/etc/openssl@3/certs```  
+My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Mac based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently since unixodbc is installed by HomeBrew (a package manager for MacOS), there is a related certificate store that needs to be used for trusted certificates instead of the Mac Keychain. The certificate store directory used by HomeBrew is named: ```$HOMEBREW_PREFIX/etc/openssl@3/certs```. On my Mac that mapped to directory: ```/opt/homebrew/etc/openssl@3/certs```  
 
 Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted HomeBrew to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.cer```    
 
 Then I copied the ```mysysname.cer``` file to the ```/opt/homebrew/etc/openssl@3/certs``` directory. I suppose you could just save your cert there during export as well to save a step.    
-Ex: ```cp ~/mysysname.cer /opt/homebrew/etc/openssl@3/certs/mysysname.cer``` 
+Ex: ```cp /tmp/mysysname.cer /opt/homebrew/etc/openssl@3/certs/mysysname.cer``` 
 
 The last step is to register the new cert file using the following command line:
 ```sudo $HOMEBREW_PREFIX/opt/openssl@3/bin/c_rehash```   
