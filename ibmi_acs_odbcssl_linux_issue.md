@@ -1,7 +1,7 @@
 # How to set up IBM i Access ODBC Driver for Linux to use an SSL Certificate 
 ```This article is not a full tutorial on setting up SSL on your IBM i. It covers the issue I had after SSL was set up and ODBC still was giving the CWBCO1050 certificate not trusted error on Linux.```
 
-Installing and using the ```IBM i Access Client Solutions``` Java based software (which provides 5250, File Transfer IFS, Run SQL utilities, etc) and the MacOS ODBC driver which is installed with the ```ACS Linux App Pkg``` is usually a pretty easy process.    
+Installing and using the ```IBM i Access Client Solutions``` Java based software (which provides 5250, File Transfer IFS, Run SQL utilities, etc) and the Linux ODBC driver which is installed with the ```ACS Linux App Pkg``` is usually a pretty easy process.    
 
 There are two separate installers for: ```IBM i Access Client Solutions``` and ```ACS Linux App Pkg``` available from the following download site if you have an IBM login:    
 https://www.ibm.com/support/pages/ibm-i-access-client-solutions   
