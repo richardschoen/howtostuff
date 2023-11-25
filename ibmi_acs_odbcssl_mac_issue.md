@@ -23,7 +23,7 @@ HOMEBREW_CELLAR=/opt/homebrew/Cellar
 HOMEBREW_REPOSITORY=/opt/homebrew
 ```   
 
-If you don't see any ```$HOMEBREW_``` prefixed environment variables in the env list, type: ```which brew``` and it should list the path to the ```brew``` executable. Ex: ```which brew``` on my system shows ```/opt/homenrew/bin/brew``` so the main path to HomeBrew is: ```/opt/homebrew```.   
+If you don't see any ```$HOMEBREW_``` prefixed environment variables in the env list, type: ```which brew``` and it should list the path to the ```brew``` executable. Ex: ```which brew``` on my system shows ```/opt/homebrew/bin/brew``` so the main path to HomeBrew is: ```/opt/homebrew```.   
 
 Once you've determined where your openssl@3 directory is located it's time to export your certificate authority.    
 
@@ -33,7 +33,9 @@ Then I copied the ```mysysname.cer``` file to the ```/opt/homebrew/etc/openssl@3
 Ex: ```cp /tmp/mysysname.cer /opt/homebrew/etc/openssl@3/certs/mysysname.cer``` 
 
 The last step is to register the new cert file using the following command line:   
-```sudo $HOMEBREW_PREFIX/opt/openssl@3/bin/c_rehash```   
+```sudo $HOMEBREW_PREFIX/opt/openssl@3/bin/c_rehash```     
+-or-   
+```sudo /opt/homebrew/opt/openssl@3/bin/c_rehash```     
 
 Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
 
