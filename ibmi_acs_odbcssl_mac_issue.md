@@ -35,7 +35,7 @@ Ex: ```cp /tmp/mysysname.cer /opt/homebrew/etc/openssl@3/certs/mysysname.cer```
 The last step is to register the new cert file using the following command line:   
 ```sudo $HOMEBREW_PREFIX/opt/openssl@3/bin/c_rehash```     
 -or-   
-```sudo /opt/homebrew/opt/openssl@3/bin/c_rehash```     
+```sudo /opt/homebrew/opt/openssl@3/bin/c_rehash``` (or whatever path you determined for your version of HomeBrew)     
 
 Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
 
