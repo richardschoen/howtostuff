@@ -23,7 +23,9 @@ HOMEBREW_CELLAR=/opt/homebrew/Cellar
 HOMEBREW_REPOSITORY=/opt/homebrew
 ```   
 
-If you don't see any ```$HOMEBREW_``` prefixed environment variables in the env list, type: ```which brew``` and it should list the path to the ```brew``` executable. Ex: ```which brew``` on my system shows ```/opt/homenrew/bin/brew``` so the main path to HomeBrew is: ```/opt/homebrew```
+If you don't see any ```$HOMEBREW_``` prefixed environment variables in the env list, type: ```which brew``` and it should list the path to the ```brew``` executable. Ex: ```which brew``` on my system shows ```/opt/homenrew/bin/brew``` so the main path to HomeBrew is: ```/opt/homebrew```.   
+
+Once you've determined where your openssl@3 directory is located it's time to export your certificate authority.    
 
 Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted HomeBrew to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.cer```    
 
