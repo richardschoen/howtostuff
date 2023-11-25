@@ -13,7 +13,17 @@ After installation and configuration you can usually configure a Telnet session 
 I was trying to set up my IBM i Access ODBC Driver with SSL on a Mac M1 machine and every time I ran:   
 ```cwbping mysysname /ssl:1``` to test SSL connectivity for the ODBC driver I got the following error: ```Error message CWBCO1050 - "The system certificate is not trusted".``` I got the same errors from the isql utility if I defined an ODBC data source with the ```SSL=1``` setting. Ex isql command to connect: ```isql -v mysysname user1 pass1```  
 
-My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Mac based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently since unixodbc is installed by HomeBrew (a package manager for MacOS), there is a related certificate store that needs to be used for trusted certificates instead of the Mac Keychain. The certificate store directory used by HomeBrew is named: ```$HOMEBREW_PREFIX/etc/openssl@3/certs```. On my Mac that mapped to directory: ```/opt/homebrew/etc/openssl@3/certs```  
+My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Mac based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently since unixodbc is installed by HomeBrew (a package manager for MacOS), there is a related certificate store that needs to be used for trusted certificates instead of the Mac Keychain. The certificate store directory used by HomeBrew is named: ```$HOMEBREW_PREFIX/etc/openssl@3/certs```. On my Mac the $HOMEBEW_PREFIX environment variable maps to directory: ```/opt/homebrew```.    
+
+If you want to get an idea of where HomeBrew maps to on your system, open a terminal window and type: ```env``` and press Enter to list your environment variables.    
+Example env list if you have any ```HOMEBREW_``` prefixed environment settings:
+```
+HOMEBREW_PREFIX=/opt/homebrew
+HOMEBREW_CELLAR=/opt/homebrew/Cellar
+HOMEBREW_REPOSITORY=/opt/homebrew
+```   
+
+If you don't see any ```$HOMEBREW_``` prefixed environment variables in the env list, type: ```which brew``` and it should list the path to the ```brew``` executable. Ex: ```which brew``` on my system shows ```/opt/homenrew/bin/brew``` so the main path to HomeBrew is: ```/opt/homebrew```
 
 Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted HomeBrew to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.cer```    
 
