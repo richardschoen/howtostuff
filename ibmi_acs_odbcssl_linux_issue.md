@@ -15,16 +15,23 @@ I was trying to set up my IBM i Access ODBC Driver with SSL on a Linux machine a
 
 My regular IBM i Access services (Java) such as Telnet were working fine with SSL, so I knew the issue had to be with the Linux based ODBC drivers (different technology - C/C++) and its need to use a different certificate store for SSL certs. Apparently on Linux, trusted certificate files need to be located in the following directory: ```/usr/local/share/ca-certificates```    
 
-Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted Linux to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.cer```    
+Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted Linux to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.crt```    
 
 Then I copied the ```mysysname.cer``` file to the ```/usr/local/share/ca-certificates``` directory. I suppose you could just save your cert there during export as well to save a step.    
-Ex: ```cp /tmp/mysysname.cer /usr/local/share/ca-certificates/mysysname.cer``` 
+Ex: ```cp /tmp/mysysname.crt /usr/local/share/ca-certificates/mysysname.crt``` 
 
 The last step is to register the new cert file using the following command line:  
 ```sudo update-ca-certificates```
 
-Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
+You should see a result similar to this indicating your certificate was added:
+```
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt,it does not contain exactly one certificate or CRL
+1 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+```
 
+Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any errors if your SSL certificates are working as expected with the IBM i Access ODBC Driver.    
 And you should now be able to create ODBC data sources or DSN-less connections that use connection strings and they should all work fine with SSL as well.    
 
 If this didn't solve your issue, then you probably have something different happening in your environment.   
