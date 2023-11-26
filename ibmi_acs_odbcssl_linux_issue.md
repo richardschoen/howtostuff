@@ -17,7 +17,9 @@ My regular IBM i Access services (Java) such as Telnet were working fine with SS
 
 Using the ```Key Management``` option from IBM i Access Client Solutions, I exported the trusted certificate file I wanted Linux to trust and saved it to a file. In this example we'll say we exported it to file: ```/tmp/mysysname.crt```    
 
-Then I copied the ```mysysname.cer``` file to the ```/usr/local/share/ca-certificates``` directory. I suppose you could just save your cert there during export as well to save a step.    
+**Make sure to use the .crt extension. My certificate would not add unless I used the .crt file extension instead of .cer**
+
+Then I copied the ```mysysname.crt``` file to the ```/usr/local/share/ca-certificates``` directory. I suppose you could just save your cert there during export as well to save a step.    
 Ex: ```cp /tmp/mysysname.crt /usr/local/share/ca-certificates/mysysname.crt``` 
 
 The last step is to register the new cert file using the following command line:  
