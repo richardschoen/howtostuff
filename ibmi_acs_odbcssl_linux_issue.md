@@ -28,3 +28,7 @@ Now if you run ```cwbping mysysname /ssl:1``` you should no longer see any error
 And you should now be able to create ODBC data sources or DSN-less connections that use connection strings and they should all work fine with SSL as well.    
 
 If this didn't solve your issue, then you probably have something different happening in your environment.   
+
+## Links
+ibm-iaccess for Linux ODBC Configuration   
+https://www.ibm.com/support/pages/ibm-iaccess-linux-odbc-configuration
