@@ -30,5 +30,5 @@ And you should now be able to create ODBC data sources or DSN-less connections t
 If this didn't solve your issue, then you probably have something different happening in your environment.   
 
 ## Links
-ibm-iaccess for Linux ODBC Configuration   
+ibm-iaccess for Linux ODBC Configuration.   
 https://www.ibm.com/support/pages/ibm-iaccess-linux-odbc-configuration
