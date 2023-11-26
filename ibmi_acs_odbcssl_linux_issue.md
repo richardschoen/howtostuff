@@ -20,7 +20,7 @@ Using the ```Key Management``` option from IBM i Access Client Solutions, I expo
 **Make sure to use the .crt extension. My certificate would not add unless I used the .crt file extension instead of .cer**
 
 Then I copied the ```mysysname.crt``` file to the ```/usr/local/share/ca-certificates``` directory. I suppose you could just save your cert there during export as well to save a step.    
-Ex: ```cp /tmp/mysysname.crt /usr/local/share/ca-certificates/mysysname.crt``` 
+Ex file copy: ```cp /tmp/mysysname.crt /usr/local/share/ca-certificates/mysysname.crt``` 
 
 The last step is to register the new cert file using the following command line:  
 ```sudo update-ca-certificates```
