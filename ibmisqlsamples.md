@@ -141,7 +141,7 @@ https://stackoverflow.com/questions/23913957/set-default-pase-ibm-i-shell-for-in
 select * from qsys2.user_info where user_default_password = 'YES' and previous_signon < current date - 60 days
 ```
 ## Query IFS Directory /tmp
-From RPGPGM.com  
+From rpgpgm.com  
 https://www.rpgpgm.com/2019/11/using-sql-to-list-directories-and-files.html
 ```
 SELECT PATH_NAME,OBJECT_TYPE,CREATE_TIMESTAMP,LAST_USED_TIMESTAMP,
