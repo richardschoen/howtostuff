@@ -45,5 +45,13 @@ And you should now be able to create ODBC data sources or DSN-less connections t
 
 If this didn't solve your issue, then you probably have something different happening in your environment.   
 
+## Another location I've found HomeBrew 
+On my other Macbook I believe I'm using the Rosetta version of HomeBrew, so the locations for my cert files are:
+```/usr/local/etc/openssl@3```   
+
+And the path for c_rehash is:
+```/usr/local/bin/c_rehash``` 
+
+
 ## Related links where I learned this: 
 https://formulae.brew.sh/formula/openssl@3
