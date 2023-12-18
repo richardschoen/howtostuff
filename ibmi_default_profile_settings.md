@@ -1,0 +1,116 @@
+# Set up default QSH/PASE/Bash Profile Settings
+In order to find open source pakcages in QShell, PASE or Bash you should have the following profile files created in you your home directory on IBM i.
+
+```
+.profile - QShell default settings for path info during login or STRQSH.
+.bash_profile - Bash default profile for path info during login.
+.bashrc - Bach default profile for path info if new bash session started.
+```
+## Listed below are sample file contents you can use to create your own default profiles
+
+### Make sure your user has a HOME directory 
+Run the following command from SSH terminal to make sure your user has a home directory. 
+
+Our examples use ```USERID``` as a sample user name. You should use your own user profile.   
+
+```mkdir /home/USERID```   
+
+It may say it already exists or it will get created. Either is fine.   
+
+### Create .profile file
+Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
+
+File name will be: ```/home/USERID/.profile```
+
+From SSH terminal you can create an empty file via the following:
+```
+touch /home/USERID/.profile
+```
+Then you can edit from 5250 via EDTF command or using hte nano or vi editors in SSH terminal
+
+```nano /home/USERID/.profile```
+
+Add the following date to the .profile file:
+```
+PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin:$PATH
+```
+If using the nano editor, after adding the line to the file you can press ```Control-X```, then press ```Y``` to save the file and press enter again once the file name is displayed.    
+
+Let's see the file contents by typing the following command:
+```
+cat /home/USERID/.profile
+```
+You should see the path echoed to the SSH terminal:
+```
+PATH=/QOpenSys/pkgs/bin:/QOpenSys/usr/bin:/usr/ccs/bin:/QOpenSys/usr/bin/X11:/usr/sbin:.:/usr/bin:$PATH
+```
+
+Now if you do a STRQSH command form the IBM i, after the shell starts you should be able to type: ```git``` or any other open source command and press Enter and the command line parameters should be shown letting you know that it found the command in the search path. You can type any open source command line option that exists in ```/QOpenSys/pkgs/bin``` and it should work now without qualifying the directory path.   
+
+### Create .bashrc file
+Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
+
+Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
+
+File name will be: ```/home/USERID/.bashrc```
+
+From SSH terminal you can create an empty file via the following:
+```
+touch /home/USERID/.bashrc
+```
+Then you can edit from 5250 via EDTF command or using hte nano or vi editors in SSH terminal
+
+```nano /home/USERID/.bashrc```
+
+Add the following data to the .bashrc file:
+```
+# Set bash path                                            
+export PATH=/QOpenSys/pkgs/bin:/QOpenSys/pkg/lib:$PATH     
+```
+If using the nano editor, after adding the line to the file you can press ```Control-X```, then press ```Y``` to save the file and press enter again once the file name is displayed.    
+
+Let's see the file contents by typing the following command:
+```
+cat /home/USERID/.bashrc
+```
+You should see the file data echoed to the SSH terminal.
+
+**Create the .bash_profile file before attempting to test if ```.bashrc``` works.** 
+
+### Create .bash_profile file
+Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
+
+Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
+
+File name will be: ```/home/USERID/.bash_profile```
+
+From SSH terminal you can create an empty file via the following:
+```
+touch /home/USERID/.bash_profile
+```
+Then you can edit from 5250 via EDTF command or using hte nano or vi editors in SSH terminal
+
+```nano /home/USERID/.bash_profile```
+
+Add the following data to the .bash_profile file:
+```
+export PATH=/QOpenSys/pkgs/bin:/QOpenSys/pkg/lib:$PATH           
+# Always execute the .bashrc script when logging in with bash as 
+# default profile which will execute .base_profile upon login.   
+# If default shell is QSH, .bashrc will execute when user calls  
+# the bash command.                                              
+# This keeps all actual path logic in the .bashrc file.          
+# non-shell user                                                 
+if [ -f ~/.bashrc ]; then                                        
+ . ~/.bashrc                                                     
+fi                                                               
+```
+If using the nano editor, after adding the line to the file you can press ```Control-X```, then press ```Y``` to save the file and press enter again once the file name is displayed.    
+
+Let's see the file contents by typing the following command:
+```
+cat /home/USERID/.bash_profile
+```
+You should see the file data echoed to the SSH terminal.
+
+Now if you start a NEW bash or logout and back in if bash is you default shell, all commands in directory ```/QOpenSys/pkgs/bin``` should be available to you. 
