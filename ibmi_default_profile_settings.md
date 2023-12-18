@@ -1,5 +1,10 @@
 # Set up default QSH/PASE/Bash Profile Settings for IBM i Users
-In order to find open source packages from the command line in QShell, PASE or Bash without qualifying the path to ```/QOpenSys/pkgs/bin``` you should have the following profile files created in you your home directory on IBM i.
+In order to find open source packages from the command line in QShell, PASE or Bash without qualifying the path to ```/QOpenSys/pkgs/bin``` you should have the following profile files created in you your home directory on IBM i.   
+
+```
+If you're doing any work with the IBM Open Source Packages you really want to make sure to set up your
+profile files to make life a little easier.
+```
 
 ```
 .profile - QShell default settings for path info during login or STRQSH.
