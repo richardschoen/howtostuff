@@ -8,14 +8,14 @@ In order to find open source pakcages in QShell, PASE or Bash you should have th
 ```
 ## Listed below are sample file contents you can use to create your own default profiles
 
-### Make sure your user has a HOME directory 
-Run the following command from SSH terminal to make sure your user has a home directory. 
+### Make sure your IBM i user has a HOME directory 
+Run the following command from an SSH terminal to make sure your user has a home directory. Or create from 5250 via the MKDIR command. 
 
 Our examples use ```USERID``` as a sample user name. You should use your own user profile.   
 
 ```mkdir /home/USERID```   
 
-It may say it already exists or it will get created. Either is fine.   
+It may say the directory already exists or the dir will get created. Either is fine.   
 
 ### Create .profile file
 Create in ```/home/USERID``` directory. (Where USERID is your user profile) 
