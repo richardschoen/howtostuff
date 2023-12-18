@@ -14,7 +14,7 @@ profile files to make life a little easier.
 .bashrc - Bach default profile for path info if new bash session started.
 ```
    
-** If you want to skip the steps below and simplify the process of creating SSH/Bash/QSHell profile files for your IBM i users, you should install the QShell on i library (QSHONI) https://www.github.com/richardschoen/qshoni  and use the ```QSHSETPROF``` CL command in the ```QSHONI``` library to make life easy when creating user profile files. Just run QSHSETPROF with the appropriate user name and it creates all the files automatically for you. **
+** If you want to skip the steps below and simplify the process of creating SSH/Bash/QShell profile files for your IBM i users, you should install the QShell on i library (QSHONI) https://www.github.com/richardschoen/qshoni  and use the ```QSHSETPROF``` CL command in the ```QSHONI``` library to make life easy when creating user profile files. Just run QSHSETPROF with the appropriate user name and it creates all the files automatically for you. **
 
 
 ## Listed below are sample file contents you can use to create your own default profiles
