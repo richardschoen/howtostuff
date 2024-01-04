@@ -121,16 +121,25 @@ Because of thie you may want to create a separate virtual environment for the ``
 ## Quickly create a virtual environment for awscli
 We will make a virtual environmnet for the aws cli in IFS directory ```/awsclivenv```    
 
-Create the environment   
+Create the environment without system packages (Recommended for a clean Python environment)   
 ```
 cd /
-python3.9 -m venv awsclienv --system-site-packages
+python3 -m venv awsclienv
+```
+
+If you want an environment with a copy of your system packages.   
+```
+cd /
+python3 -m venv awsclienv --system-site-packages
 ```
 
 Activate the environment   
 ```source /awsclivenv/bin/activate```   
 
-Install Amazon aws cli in the virtual environment (venv)
+List your pip packages installed after activation.   
+```pip3 list ```   
+
+Install Amazon aws cli or other needed pip packages in the virtual environment (venv)
 ```pip3 install awscli``` 
 
 Run any aws cli commands after environment has been activated.   
