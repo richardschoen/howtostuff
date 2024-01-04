@@ -119,12 +119,12 @@ As of 8/28/2023
 Because of thie you may want to create a separate virtual environment for the ```awscli``` if you're also using something like s3fs. 
 
 ## Quickly create a virtual environment for awscli
-We will make a virtual environmnet for the aws cli in IFS directory ```/amazonclivenv```    
+We will make a virtual environmnet for the aws cli in IFS directory ```/awsclivenv```    
 
 Create the environment   
 ```
 cd /
-python3.9 -m venv amazonclienv --system-site-packages
+python3.9 -m venv awsclienv --system-site-packages
 ```
 
 Activate the environment   
