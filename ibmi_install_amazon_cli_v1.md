@@ -121,6 +121,12 @@ Because of thie you may want to create a separate virtual environment for the ``
 ## Quickly create a virtual environment for awscli
 We will make a virtual environmnet for the aws cli in IFS directory ```/amazonclivenv```    
 
+Create the environment   
+```
+cd /
+python3.9 -m venv amazonclienv --system-site-packages
+```
+
 Activate the environment   
 ```source /awsclivenv/bin/activate```   
 
