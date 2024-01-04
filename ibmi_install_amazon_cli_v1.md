@@ -139,7 +139,7 @@ Activate the environment
 List your pip packages installed after activation.   
 ```pip3 list ```   
 
-Install Amazon aws cli or other needed pip packages in the virtual environment (venv)
+Install Amazon aws cli or other needed pip packages in the virtual environment (venv)   
 ```pip3 install awscli``` 
 
 Run any aws cli commands after environment has been activated.   
