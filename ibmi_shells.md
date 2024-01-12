@@ -43,7 +43,7 @@ https://www.ibm.com/docs/en/aix/7.2?topic=k-ksh-command
 Bourne Shell AIX Info   
 https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
 
-## bash - Bourne Again Shell
+## Bourne Again Shell - bash
 /QOpenSys/pkgs/bin/bash 
 
 ## Links
