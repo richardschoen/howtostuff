@@ -32,16 +32,10 @@ I generally use bash nowadays as my main shell.
 -points to-
 /QOpenSys/QIBM/ProdData/OS400/PASE/bin/ksh
 
-Korn Shell AIX Info   
-https://www.ibm.com/docs/en/aix/7.2?topic=k-ksh-command
-
 ## Bourne Shell - bsh - /QOpenSys/pkgs/bin/bsh
 /QOpenSys/usr/bin/bsh  
 -points to-
 /QOpenSys/QIBM/ProdData/OS400/PASE/bin/bsh
-
-Bourne Shell AIX Info   
-https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
 
 ## Bourne Again Shell - bash
 /QOpenSys/pkgs/bin/bash 
@@ -50,4 +44,11 @@ https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
 V7R5 PASE   
 https://www.ibm.com/docs/en/i/7.5?topic=i-pase-shells-utilities   
 
+Settingd Bash as You Default Shell
+https://ibmi-oss-docs.readthedocs.io/en/latest/troubleshooting/SETTING_BASH.html   
 
+Korn Shell AIX Info   
+https://www.ibm.com/docs/en/aix/7.2?topic=k-ksh-command
+
+Bourne Shell AIX Info   
+https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
