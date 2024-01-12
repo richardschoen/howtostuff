@@ -44,7 +44,7 @@ I generally use bash nowadays as my main shell.
 V7R5 PASE   
 https://www.ibm.com/docs/en/i/7.5?topic=i-pase-shells-utilities   
 
-Settingd Bash as You Default Shell
+Settingd Bash as You Default Shell   
 https://ibmi-oss-docs.readthedocs.io/en/latest/troubleshooting/SETTING_BASH.html   
 
 Korn Shell AIX Info   
