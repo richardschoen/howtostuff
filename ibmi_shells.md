@@ -1,4 +1,7 @@
 # List of IBM i Shells
+This is my brain dump on IBM i shells after poking around the IFS.    
+
+I generally use bash nowadays as my main shell. 
 
 ## CALL QP2TERM 
 /QOpenSys/usr/bin/-sh 
@@ -47,9 +50,4 @@ https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
 V7R5 PASE   
 https://www.ibm.com/docs/en/i/7.5?topic=i-pase-shells-utilities   
 
-
-
-
-
-I generally use bash nowadays as my main shell. 
 
