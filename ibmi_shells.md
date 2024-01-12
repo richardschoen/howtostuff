@@ -10,32 +10,46 @@
 /usr/bin/sh  -points to-
 /QSYS.LIB/QSHELL.LIB/QZSHSH.PGM
 
-## qsh - /usr/bin/qsh
+## QShell - qsh - /usr/bin/qsh
 /usr/bin/qsh -points to-
 /QSYS.LIB/QSHELL.LIB/QZSHSH.PGM
 
-## QShell - qsh
+## QShell - qsh - Run QShell commands from PASE
 /QOpenSys/usr/bin/qsh  
 -points to-
 /QOpenSys/QIBM/ProdData/OS400/PASE/bin/qsh
 
-## sh - /QOpenSys/pkgs/bin/sh
+## Korn Shell - sh - /QOpenSys/pkgs/bin/sh
 /QOpenSys/usr/bin/sh  
 -points to-
-/QOpenSys/QIBM/ProdData/OS400/PASE/bin/sh
+/QOpenSys/QIBM/ProdData/OS400/PASE/bin/ksh
 
-## ksh - /QOpenSys/pkgs/bin/ksh
+## Korn Shell - ksh - /QOpenSys/pkgs/bin/ksh
 /QOpenSys/usr/bin/ksh  
 -points to-
 /QOpenSys/QIBM/ProdData/OS400/PASE/bin/ksh
 
-## bsh - /QOpenSys/pkgs/bin/bsh
+Korn Shell AIX Info   
+https://www.ibm.com/docs/en/aix/7.2?topic=k-ksh-command
+
+## Bourne Shell - bsh - /QOpenSys/pkgs/bin/bsh
 /QOpenSys/usr/bin/bsh  
 -points to-
 /QOpenSys/QIBM/ProdData/OS400/PASE/bin/bsh
 
+Bourne Shell AIX Info   
+https://www.ibm.com/docs/en/aix/7.1?topic=shells-bourne-shell
+
 ## bash - Bourne Again Shell
 /QOpenSys/pkgs/bin/bash 
+
+## Links
+V7R5 PASE   
+https://www.ibm.com/docs/en/i/7.5?topic=i-pase-shells-utilities   
+
+
+
+
 
 I generally use bash nowadays as my main shell. 
 
