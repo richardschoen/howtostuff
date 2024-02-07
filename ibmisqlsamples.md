@@ -147,3 +147,33 @@ https://www.rpgpgm.com/2019/11/using-sql-to-list-directories-and-files.html
 SELECT PATH_NAME,OBJECT_TYPE,CREATE_TIMESTAMP,LAST_USED_TIMESTAMP,
 DATA_SIZE FROM TABLE(QSYS2.IFS_OBJECT_STATISTICS('/tmp','YES'))
 ```
+
+## Query Source Member Info
+https://www.rpgpgm.com/2021/12/searching-for-member-information-with.html
+```
+SELECT SYSTEM_TABLE_SCHEMA AS "Library",
+         SYSTEM_TABLE_NAME AS "File",
+         TO_CHAR(COUNT(*),'999G999') AS "No. mbrs"
+    FROM QSYS2.SYSPARTITIONSTAT
+   WHERE SYSTEM_TABLE_SCHEMA = 'QSHONI'
+     AND SOURCE_TYPE IS NOT NULL
+   GROUP BY SYSTEM_TABLE_SCHEMA,SYSTEM_TABLE_NAME 
+   ORDER BY 1,2;
+  
+   SELECT SYSTEM_TABLE_SCHEMA AS "Library",
+         SYSTEM_TABLE_NAME AS "File",
+         SYSTEM_TABLE_MEMBER AS "Member",
+         SOURCE_TYPE AS "Type",
+         TO_CHAR(NUMBER_ROWS,'999G999G999G999') AS "Records",
+         TO_CHAR(DATA_SIZE,'999G999G999G999') AS "Size",
+         CREATE_TIMESTAMP AS "Created",
+         LAST_SOURCE_UPDATE_TIMESTAMP AS "Last updated",
+         PARTITION_TEXT AS "Member text"
+    FROM QSYS2.SYSPARTITIONSTAT
+   WHERE SYSTEM_TABLE_SCHEMA = 'QSHONI'
+     AND SOURCE_TYPE IS NOT NULL 
+   ORDER BY 1,2,3;
+```
+
+
+
