@@ -2,8 +2,9 @@
 This is a nice article from Andy Youens. Check out the link below  
 https://powerwire.eu/use-ssh-keys-to-stop-user-password-access/
 
-Also the script below 
+Also the script is listed below.   
 
+sshsetup.sh   
 ```
 #!/QOpenSys/pkgs/bin/bash
 
