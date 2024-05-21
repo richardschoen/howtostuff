@@ -1,6 +1,14 @@
 # Configure NGINX with specific user without user needing *ALLOBJ Authority
-User was seeing the following error in their NGINX log file when trying to start or restart the NGINX server. 
+User was seeing the following error in their NGINX log file when trying to start or restart the NGINX server via:   
 
+Regular NGINX startup command   
+```nginx -c /qopensys/etc/nginx/nginx.conf```   
+-or-    
+NGINX reload command   
+```nginx -s reload```
+
+Errors showed up in the log file in file: ```/QOpenSys/var/log/nginx/error.log```    
+Accessing error.log from 5250 command line: ```WRKLNK '/QOpenSys/var/log/nginx/error.log'```     
 ```
 2024/05/21 13:00:46 [notice] 3215038#1: signal process started                 
 2024/05/21 13:00:46 [alert] 3214934#1: recvmsg() failed (13: Permission denied)
@@ -8,10 +16,11 @@ User was seeing the following error in their NGINX log file when trying to start
 2024/05/21 13:00:46 [alert] 3215041#1: recvmsg() failed (13: Permission denied)
 2024/05/21 13:00:46 [alert] 3215042#1: recvmsg() failed (13: Permission denied)
 ```
-
 This seems to be related to setting up an appropriate user profile to run the NGINX server and threads under. 
 
-By default the main thread user will be the ```user who started the NGINX server``` and thread jobs run under user profile: ```QTMHHTTP```.
+By default the main thread user will be the ```user who started the NGINX server```. And worker thread jobs run under user profile: ```QTMHHTTP``` by default.   
+
+What we want is for the main thread and worker threads to run under the ```same user profile```.
 
 # NGINX Configuration Steps
 Using latest NGINX version on IBM i, here's what I got to work which can eliminate the *ALLOBJ requirement I believe by running all NGINX jobs using the same user profile:
