@@ -63,4 +63,14 @@ I'm basing my theory on this:
 https://www.ibm.com/docs/api/v1/content/ssw_ibm_i_73/apis/qsysetui.htm
 
 I was reading this old NGINX thread on the IBMi open source site:   
-https://bitbucket.org/ibmi/opensource/issues/141/run-nginx-and-php-fpm-as-user-qtmhhttp
+https://bitbucket.org/ibmi/opensource/issues/141/run-nginx-and-php-fpm-as-user-qtmhhttp   
+
+Install NGINX on IBM i   
+https://www.ibm.com/support/pages/how-install-nginx-ibm-i   
+
+IBM OSS Docs - Installing NGINX   
+https://ibmi-oss-docs.readthedocs.io/en/latest/nginx/README.html#   
+
+
+
+
