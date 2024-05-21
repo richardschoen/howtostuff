@@ -71,6 +71,8 @@ https://www.ibm.com/support/pages/how-install-nginx-ibm-i
 IBM OSS Docs - Installing NGINX   
 https://ibmi-oss-docs.readthedocs.io/en/latest/nginx/README.html#   
 
+NGINX Documentation   
+https://docs.nginx.com      
 
 
 
