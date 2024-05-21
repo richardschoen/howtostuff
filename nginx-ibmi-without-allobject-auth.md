@@ -4,7 +4,14 @@
 Using latest NGINX version on IBMi, here's what I got to work which can eliminate the *ALLOBJ requirement I believe:
 - I created a userid. Let's call it ```NGINX1```.
 - I gave the user ```*NONE``` for special authorities.
-- I did some IFS permission setting for ```NGINX1``` for log dirs and a few others such as the NGINX dir.
+- I did some IFS permission setting for ```NGINX1``` for NGINX log dirs with the following CL command from a 5250 session.
+  ```
+   CHGAUT OBJ('/qopensys/var/log/nginx')  
+        USER(NGINX1)                    
+        DTAAUT(*RWX)                    
+        OBJAUT(*ALL)                    
+        SUBTREE(*ALL)
+  ```
 - I added ```user NGINX1;``` at the top of my NGINX config for the user.
 - I submit the NGINX startup to run as user ```NGINX1```. Should also work if logged in to SSH terminal as ```NGINX1``` user.
   I use the QSHEXEC command to submit my NGINX Process. (QSHEXEC is part of my QShell on i utilities)
