@@ -42,7 +42,7 @@ Using latest NGINX version on IBM i, here's what I got to work which can elimina
 $ nginx -v   
 Result: nginx version: nginx/1.23.0   
 ```
-- In my case a number of DB tables had to be authorized as well. Unless you have *PUBLIC authority on the objects.   
+- In my case a number of DB tables had to be authorized as well so my web apps could access those tables. Unless you have *PUBLIC authority set on the objects you will also need to authorize objects for access by user ```NGINX1```.
   
 The takeaway is you can run NGINX without *ALLOBJ with current NGINX. At least it worked for me.
 
