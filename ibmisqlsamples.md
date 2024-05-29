@@ -175,5 +175,10 @@ SELECT SYSTEM_TABLE_SCHEMA AS "Library",
    ORDER BY 1,2,3;
 ```
 
-
+## Generate a 24 month list of dates
+```
+SELECT DATE(CURRENT_DATE - 365 DAYS + (LEVEL - 1) DAY) AS DateValue
+FROM SYSIBM.SYSDUMMY1
+CONNECT BY LEVEL <= 731;
+```
 
