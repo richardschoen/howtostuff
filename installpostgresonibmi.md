@@ -158,7 +158,7 @@ Now refer to standard Postgresql documentation as needed.
 
 # Links
 
-Backup and Restore PostgreSQL databases   
+Backup and Restore PostgreSQL Databases from Command Line 
 https://github.com/richardschoen/howtostuff/blob/master/postgres-backup-restore.md   
 
 Postgresql Site   
