@@ -57,7 +57,7 @@ Create new empty database: ```mydatabase2```
 
 ```createdb -U postgres -W mydatabase2``` 
 
-## Restore mydatabase database from tar file as mydatabase2 using pg_restore
+### Restore mydatabase database from tar file as mydatabase2 using pg_restore
 ```pg_restore -d "mydatabase2" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```   
 
 If there are no errors, the command completed successfully and the mydatabase2 PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database that was saved in ```/tmp/mydatabase.tar```.  
