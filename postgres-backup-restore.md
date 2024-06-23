@@ -3,7 +3,7 @@ This document is a short guide that covers backing up and restoring Postgres dat
 
 ❗If you are an IBM i user and using PostgreSQL on i, you can find the ```PGDUMP``` and ```PGRESTORE``` CL commmand examples on the following page link listed below to integrate PostgreSQL with your traditional IBM i jobs.. These samples work in conjunction with the QShell on i utilities. https://github.com/richardschoen/QshOni/blob/master/samples   
 
-See examples of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrappers for pg_dump and pg_restore below. https://github.com/richardschoen/howtostuff/blob/master/postgres-backup-restore.md#ibm-i-cl-commands-pgdump-and-pgrestore-which-are-helpers-for-backuprestore-of-postgresql-database-on-i
+See example usage of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrappers for pg_dump and pg_restore below. https://github.com/richardschoen/howtostuff/blob/master/postgres-backup-restore.md#ibm-i-cl-commands-pgdump-and-pgrestore-which-are-helpers-for-backuprestore-of-postgresql-database-on-i
 
 ## Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar using pg_dump
 Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.   
