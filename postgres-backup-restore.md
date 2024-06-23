@@ -1,5 +1,5 @@
 # Backup and Restore PostgreSQL Database from Command Line
-This document covers backing up and restoring Postgres databases using the ```pg_dump``` and ```pg_restore``` PostgreSQL commands. 
+This document is a short guide that covers backing up and restoring Postgres databases using the ```pg_dump``` and ```pg_restore``` PostgreSQL commands. These utilities are available on Windows, Linux, Mac, IBM i and any other operating system that supports PostgreSQL.    
 
 ❗If you are an IBM i user and using PostgreSQL on i, you can find the ```PGDUMP``` and ```PGRESTORE``` CL commmand examples on the following page link listed below to integrate PostgreSQL with your traditional IBM i jobs.. These samples work in conjunction with the QShell on i utilities. https://github.com/richardschoen/QshOni/blob/master/samples   
 
