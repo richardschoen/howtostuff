@@ -22,12 +22,19 @@ It should list your files in the tar file something like this:
 -rw-------  0 postgres postgres 3149 Jun 22 16:45 restore.sql
 ```
 
-## Restore postgres database with the original database name and create it using pg_restore
+## Restore postgres database with the original database name and create it using pg_restore if the database does not already exist
 This examples restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist. You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.
 
 ```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
 
 ❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```
+
+## Restore postgres database with the original database name and replace database contents using pg_restore when database already exists
+This examples restores the database: ```mydatabase``` using it's original name and also clears the existing database on the PostgreSQL server before restore. The ```--clean``` switch clears the existing database before restore. 
+
+```pg_restore -C -d "mydatabase" -U postgres --clean --verbose "/tmp/mydatabase.tar"```
+
+❗If the database already exists, you can use the ```--clean``` switch to clear all tables and restore the entire backup to the original database.
 
 ## Restore backup of mydatabase database as different database: mydatabase2 using pg_restore
 ❗First you need to create the new mydatabase2 database as an empty database before restoring
