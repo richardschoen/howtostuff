@@ -7,10 +7,12 @@ See example usage of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrapp
 
 ❗```In my examples I am using mydatabase and mydatabase2, You would supply your own database names.```
 
+❗I also use the ```--verbose``` switch to list operations, but this switch is optional.   
+
 ## Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar using pg_dump
 Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.   
 
-```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
+```pg_dump -F t -d mydatabase -p 5432 -U postgres --verbose > /tmp/mydatabase.tar```     
 
 ❗If the tar file is 0 bytes, then something failed on you dump/backup operation. Otherwise the backup should have been successful with no errors. Next we will use the tar command to verify the tar file is not corrupted.
 
@@ -34,14 +36,14 @@ This example restores the database: ```mydatabase``` using it's original name an
 
 ❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```
 
-```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
+```pg_restore -C -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```
 
 If there are no errors, the command completed successfully and the mydatabase PostgreSQL database should now exist.   
 
 ## Restore postgres database with the original database name and replace database contents using pg_restore when database already exists
 This example restores the database: ```mydatabase``` using it's original name and also clears the existing database on the PostgreSQL server before restore. The ```--clean``` switch clears the existing database before restore. 
 
-```pg_restore -d "mydatabase" -U postgres --clean --verbose "/tmp/mydatabase.tar"```
+```pg_restore -d "mydatabase" -p 5432 -U postgres --clean --verbose "/tmp/mydatabase.tar"```
 
 ❗If the database already exists, you can use the ```--clean``` switch to clear all tables and restore the entire backup to the original database.
 
@@ -56,7 +58,7 @@ Create new empty database: ```mydatabase2```
 ```createdb -U postgres -W mydatabase2``` 
 
 ## Restore mydatabase database from tar file as mydatabase2 using pg_restore
-```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```   
+```pg_restore -d "mydatabase2" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```   
 
 If there are no errors, the command completed successfully and the mydatabase2 PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database that was saved in ```/tmp/mydatabase.tar```.  
 
