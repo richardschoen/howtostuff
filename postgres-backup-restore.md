@@ -5,6 +5,8 @@ This document is a short guide that covers backing up and restoring Postgres dat
 
 See example usage of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrappers for pg_dump and pg_restore below. https://github.com/richardschoen/howtostuff/blob/master/postgres-backup-restore.md#ibm-i-cl-commands-pgdump-and-pgrestore-which-are-helpers-for-backuprestore-of-postgresql-database-on-i
 
+❗```In my examples I am using mydatabase and mydatabase2, You would supply your own database names.```
+
 ## Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar using pg_dump
 Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.   
 
@@ -21,17 +23,22 @@ It should list your files in the tar file something like this:
 -rw-------  0 postgres postgres 3149 Jun 22 16:45 restore.sql
 ```
 
-## Restore postgres database with the original database name and create it using pg_restore if the database does not already exist
-This examples restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist. You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.
+❗If the tar file list completes successfully your tar file should technically be error-free, but no guarantees.
 
-```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
+## Restore postgres database with the original database name and create it using pg_restore if the database does not already exist
+This example restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist.   
+❗You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.
 
 ❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```
 
-## Restore postgres database with the original database name and replace database contents using pg_restore when database already exists
-This examples restores the database: ```mydatabase``` using it's original name and also clears the existing database on the PostgreSQL server before restore. The ```--clean``` switch clears the existing database before restore. 
+```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
 
-```pg_restore -C -d "mydatabase" -U postgres --clean --verbose "/tmp/mydatabase.tar"```
+
+
+## Restore postgres database with the original database name and replace database contents using pg_restore when database already exists
+This example restores the database: ```mydatabase``` using it's original name and also clears the existing database on the PostgreSQL server before restore. The ```--clean``` switch clears the existing database before restore. 
+
+```pg_restore -d "mydatabase" -U postgres --clean --verbose "/tmp/mydatabase.tar"```
 
 ❗If the database already exists, you can use the ```--clean``` switch to clear all tables and restore the entire backup to the original database.
 
@@ -49,10 +56,10 @@ Create new empty database: ```mydatabase2```
 ## IBM i CL commands PGDUMP and PGRESTORE which are helpers for backup/restore of PostgreSQL database on i  
 The PGDUMP and PGRESTORE commands are wrappers around the QSHBASH utility for running pg_dump and pg_restore to backup and restore a Postgres database on IBM i 
 
-The PGDUMP and PGRESTORE CL commanda and programs PGDUMPC/PGRESTOREC are located at the following link and must be created on your IBM i system.   
+❗The PGDUMP and PGRESTORE CL commands and programs PGDUMPC/PGRESTOREC are located at the following link and must be created on your IBM i system.   
 https://github.com/richardschoen/QshOni/blob/master/samples
 
-The QShell on i library ```QSHONI``` is also a requirement to use these CL commands. 
+❗The QShell on i library ```QSHONI``` is also a requirement to use these CL commands. 
 
 QShell on i install info:   
 https://github.com/richardschoen/QshOni
@@ -68,6 +75,8 @@ PGDUMP DATABASE(mydatabase)
        PROMPT(*NO)                               
        REPLACE(*YES)
 ```
+   
+If there are no errors, the backup/dump command completed successfully and the tar file was verified.   
 
 ### Restore database named: mydatabase from tar file /tmp/mydatabase.tar with PGRESTORE CL command if database does not exist yet
 Use the PGRESTORE CL command to restore your database from a tar formatted file if it does not already exist and you want to restore it to the same or a new system.    
@@ -81,6 +90,7 @@ PGRESTORE DATABASE(postgres)
           PROMPT(*YES)                                  
           DSPSTDOUT(*YES)                               
 ```
+If there are no errors, the command completed successfully and the mydatabase PostgreSQL database should now exist.   
 
 ### Restore database named: mydatabase from tar file /tmp/mydatabase.tar with PGRESTORE CL command if database already exists - replace
 Use the PGRESTORE CL command to restore your database from a tar formatted file and replace your existing database of the same name if you want to clear and refresh an existing database from a backup.
@@ -96,14 +106,15 @@ PGRESTORE DATABASE(mydatabase)
           DSPSTDOUT(*YES)                               
 ```
 
+If there are no errors, the command completed successfully and the refreshed mydatabase PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database.  
+
 ### Restore database named: mydatabase from tar file /tmp/mydatabase.tar as mydatabase2 with PGRESTORE CL command 
 Use the PGRESTORE CL command to restore your database from a tar formatted file as a new name. The database with the new name must first be created. 
 
-This example calls createdb to create a new empty database named: mydatabase2   
-```QSHONI/QSHBASH CMDLINE('createdb -U postgres  -p 55432 mydatabase2') DSPSTDOUT(*YES) PRTSPLF(CREATEDB)```
+This example calls PostgreSQL utility ```createdb``` to create a new empty database named: ```mydatabase2```  
+```QSHONI/QSHBASH CMDLINE('createdb -U postgres  -p 5432 mydatabase2') DSPSTDOUT(*YES) PRTSPLF(CREATEDB)```
 
-Example of restoring mydatabase from /tmp/mydatabase.tar as mydatabase2 via PGRESTORE command which calls pg_restore.   
-When run you specify the -C option to create the database and specify postgres as the database. Then mydatabase should get restored and auto-created. 
+Example of restoring ```mydatabase``` from ```/tmp/mydatabase.tar``` as ```mydatabase2``` via PGRESTORE command which calls pg_restore.   
 ```
 PGRESTORE DATABASE(mydatabase2)                        
           INPUTFILE('/tmp/mydatabase.tar')             
@@ -111,6 +122,8 @@ PGRESTORE DATABASE(mydatabase2)
           PROMPT(*YES)                               
           DSPSTDOUT(*YES)                            
 ```
+
+If there are no errors, the command completed successfully and the mydatabase2 PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database that was saved in ```/tmp/mydatabase.tar```.  
 
 ## Misc / Reading Links
 
