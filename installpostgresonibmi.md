@@ -158,18 +158,17 @@ Now refer to standard Postgresql documentation as needed.
 
 # Links
 
-Postgresql Site
+Backup and Restore PostgreSQL databases   
+https://github.com/richardschoen/howtostuff/blob/master/postgres-backup-restore.md   
 
+Postgresql Site   
 https://www.postgresql.org
 
-Role postgres does not exist
-
+Role postgres does not exist   
 https://dba.stackexchange.com/questions/221663/psql-fatal-role-postgres-does-not-exist
 
-Yips Site - old stuff but might be worth reading
-
+Yips Site - old stuff but might be worth reading   
 http://yips.idevcloud.com/wiki/index.php/Databases/PostgreSQL
 
-Postgresql 12 docs 
-
+Postgresql 12 docs    
 https://www.postgresql.org/docs/12/index.html
