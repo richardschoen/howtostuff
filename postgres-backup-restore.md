@@ -12,6 +12,8 @@ Use pg_dump to backup/dump your database in tar format with the ```-F t``` switc
 
 ```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
 
+❗If the tar file is 0 bytes, then something failed on you dump/backup operation.
+
 ## Verify backup tar file /tmp/mydatabase.tar with tar command    
 ```tar -tvf /tmp/richard.tar```   
 
