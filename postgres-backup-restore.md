@@ -4,16 +4,15 @@ This document covers backing up and restoring Postgres databases.
 If you are an IBM i user and using Postgres on i, you can find the ```pgdump``` and ```pgrestore`` CL commmand examples on the following page. These samples work in conjunction with the QShell on i utilizies.   
 https://github.com/richardschoen/QshOni/blob/master/samples   
 
-
-## Backup/Dump database named: mydatabase to tar file /mydatabase.tar
+## Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar
 Use pg_dump to backup/dump your database in tar format wiuth the ```-F t``` switch.   
 
 ```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
 
-## Verify backup tar file   
+## Verify backup tar file /tmp/mydatabase.tar   
 ```tar -tvf /tmp/richard.tar```   
 
-It should list your files in the tar file like this:
+It should list your files in the tar file something like this:
 ```
 -rw-------  0 postgres postgres 2898 Jun 22 16:45 toc.dat
 -rw-------  0 postgres postgres   50 Jun 22 16:45 3192.dat
@@ -39,6 +38,58 @@ Create new empty database: ```mydatabase2```
 
 ## Restore mydatabase database from tar file as mydatabase2
 ```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```
+
+## IBM i CL commands PGDUMP and PGRESTORE which are helpers for backup/restore of PostgreSQL database on i  
+The PGDUMP and PGRESTORE commands are wrappers around the QSHBASH utility for running pg_dump and pg_restore to backup and restore a Postgres database on IBM i 
+
+PGDUMP CL command and program PGDUMPC are located here and must be created on your IBM i system. QShell on i library ```QSHONI``` is also a requirement to use these CL commands. 
+https://github.com/richardschoen/QshOni/blob/master/samples
+
+QShell on i install info:   
+https://github.com/richardschoen/QshOni
+
+### Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar with PGDUMP CL command
+Use the PGDUMP CL command to backup/dump your database in tar format wiuth the ```-F t``` switch.  
+
+Example of backing up mydatabase to /tmp/mydatabase.tar via PGDUMP command which calls pg_dump   
+```
+PGDUMP DATABASE(mydatabase)                        
+       OUTPUTFILE('/tmp/mydatabase.tar')           
+       OPTIONS('-p 5432 -U postgres')           
+       PROMPT(*NO)                               
+       REPLACE(*YES)
+```
+
+### Restore database named: mydatabase from tar file /tmp/mydatabase.tar with PGRESTORE CL command if it does not exist yet
+Use the PGRESTORE CL command to restore your database from a tar formatted file if it does not already exist. 
+
+If the database already exists
+
+Example of restoring mydatabase from /tmp/mydatabase.tar via PGRESTORE command which calls pg_restore.   
+When run you specify the -C option to create the database and specify postgres as the database. Then mydatabase should get restored and auto-created. 
+```
+PGRESTORE DATABASE(postgres)                            
+          INPUTFILE('/tmp/mydatabase.tar')                
+          OPTIONS('-C -p 5432 -U postgres')            
+          PROMPT(*YES)                                  
+          DSPSTDOUT(*YES)                               
+```
+
+### Restore database named: mydatabase from tar file /tmp/mydatabase.tar as mydatabase2 with PGRESTORE CL command 
+Use the PGRESTORE CL command to restore your database from a tar formatted file as a new name. The database with the new name must first be created. 
+
+This example calls createdb to create a new empty database named: mydatabase2   
+```QSHONI/QSHBASH CMDLINE('createdb -U postgres  -p 55432 mydatabase2') DSPSTDOUT(*YES) PRTSPLF(CREATEDB)```
+
+Example of restoring mydatabase from /tmp/mydatabase.tar as mydatabase2 via PGRESTORE command which calls pg_restore.   
+When run you specify the -C option to create the database and specify postgres as the database. Then mydatabase should get restored and auto-created. 
+```
+PGRESTORE DATABASE(mydatabase2)                        
+          INPUTFILE('/tmp/mydatabase.tar')             
+          OPTIONS('-p 5432 -U postgres')            
+          PROMPT(*YES)                               
+          DSPSTDOUT(*YES)                            
+```
 
 ## Misc / Reading Links
 
