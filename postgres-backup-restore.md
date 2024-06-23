@@ -1,58 +1,64 @@
 # Backup and Restore Postgres Database from Command Line
+This document covers backing up and restoring Postgres databases.   
 
-## Backup/Dump database named: mydatabase to tar file /mydatabase.tar   
+## Backup/Dump database named: mydatabase to tar file /mydatabase.tar
+Use pg_dump to backuo/dump your database in tart format wiuth the ```-F t``` switch.   
+
 ```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
 
 ## Verify backup tar file   
 ```tar -tvf /tmp/richard.tar```   
 
-## Restore postgres database to system with same name
+It should list your files in the tar file like this:
+```
+-rw-------  0 postgres postgres 2898 Jun 22 16:45 toc.dat
+-rw-------  0 postgres postgres   50 Jun 22 16:45 3192.dat
+-rw-------  0 postgres postgres    5 Jun 22 16:45 3190.dat
+-rw-------  0 postgres postgres 3149 Jun 22 16:45 restore.sql
+```
 
-Make sure database doesn't exist on target system. or drop it first in psql. ```drop database mydatabase```
+## Restore postgres database to with the same database name
+This examples restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist. You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.
+
+```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
+
+❗Make sure database doesn't exist on target system. or you'll need to drop it or rename itfirst in psql. ```drop database mydatabase```
 
 
 ## Restore backup of mydatabase database as different database: mydatabase2
+❗First you need to create the new mydatabase2 database as an empty database before restoring
 
-## But first create the new richard2 database as empty database.
+### Create mydatabase2 database
+Create new empty database: ```mydatabase2```
 
-## Create richard2 database
-/Applications/Postgres.app/Contents/Versions/12/bin/createdb -U postgres -W richard2
+```createdb -U postgres -W mydatabase2``` 
 
-## Restore richard database as richard2
-/Applications/Postgres.app/Contents/Versions/12/bin/pg_restore -d "richard2" -U postgres --verbose "/tmp/richard.tar"
+## Restore mydatabase database from tar file as mydatabase2
+```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```
 
+## Misc / Reading Links
 
-# https://serverfault.com/questions/115051/how-to-restore-postgresql-database-from-tar-file
+### Restoring from a tar file  
+https://serverfault.com/questions/115051/how-to-restore-postgresql-database-from-tar-file
 
-/Applications/Postgres.app/Contents/Versions/12/bin/pg_restore --dbname "richard" --verbose "/tmp/richard.tar"
+### psql commmands
+https://www.atlassian.com/data/admin/how-to-list-databases-and-tables-in-postgresql-using-psql   
 
-# List databases
-# https://www.atlassian.com/data/admin/how-to-list-databases-and-tables-in-postgresql-using-psql
-
+```
 \l - lists database
 \c dbname - connect to database
 \q - quit psql
+```
 
-drop database dbname
+### Dropping a database in psql  
+```
+drop database dbname   
 commit
+```
 
-## https://stackoverflow.com/questions/40784677/pg-restore-with-c-option-does-not-create-the-database
+### Problems with the -C option on restore  
+https://stackoverflow.com/questions/40784677/pg-restore-with-c-option-does-not-create-the-database
 
-## Restore backup of richard database and create the richard database wih -C
-## Specifying -d postgres is selecting a db that always exists.
-/Applications/Postgres.app/Contents/Versions/12/bin/pg_restore -C -d "postgres" -U postgres --verbose "/tmp/richard.tar"
-
-## Restore backup of richard database as richard2. 
-## But first create the new richard2 database as empty database.
-
-## Create richard2 database
-/Applications/Postgres.app/Contents/Versions/12/bin/createdb -U postgres -W richard2
-
-## Restore richard database as richard2
-/Applications/Postgres.app/Contents/Versions/12/bin/pg_restore -d "richard2" -U postgres --verbose "/tmp/richard.tar"
-
-
-# Postgres Backups
-
-# https://www.dbvis.com/thetable/a-complete-guide-to-pg-dump-with-examples-tips-and-tricks/
+### Postgres Backups  
+https://www.dbvis.com/thetable/a-complete-guide-to-pg-dump-with-examples-tips-and-tricks/
 
