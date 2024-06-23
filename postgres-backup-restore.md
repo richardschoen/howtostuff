@@ -1,6 +1,10 @@
 # Backup and Restore Postgres Database from Command Line
 This document covers backing up and restoring Postgres databases.   
 
+If you are an IBM i user and using Postgres on i, you can find the ```pgdump``` and ```pgrestore`` CL commmand examples on the following page. These samples work in conjunction with the QShell on i utilizies.   
+https://github.com/richardschoen/QshOni/blob/master/samples   
+
+
 ## Backup/Dump database named: mydatabase to tar file /mydatabase.tar
 Use pg_dump to backuo/dump your database in tart format wiuth the ```-F t``` switch.   
 
@@ -37,6 +41,9 @@ Create new empty database: ```mydatabase2```
 ```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```
 
 ## Misc / Reading Links
+
+### Backup and Restore of PostgreSQL Database   
+https://www.tecmint.com/backup-and-restore-postgresql-database    
 
 ### Restoring from a tar file  
 https://serverfault.com/questions/115051/how-to-restore-postgresql-database-from-tar-file
