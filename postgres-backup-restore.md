@@ -12,7 +12,7 @@ Use pg_dump to backup/dump your database in tar format with the ```-F t``` switc
 
 ```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
 
-❗If the tar file is 0 bytes, then something failed on you dump/backup operation.
+❗If the tar file is 0 bytes, then something failed on you dump/backup operation. Otherwise the backup should have been successful with no errors. Next we will use the tar command to verify the tar file is not corrupted.
 
 ## Verify backup tar file /tmp/mydatabase.tar with tar command    
 ```tar -tvf /tmp/richard.tar```   
@@ -28,8 +28,9 @@ It should list your files in the tar file something like this:
 ❗If the tar file list completes successfully your tar file should technically be error-free, but no guarantees.
 
 ## Restore postgres database with the original database name and create it using pg_restore if the database does not already exist
-This example restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist.   
-❗You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.
+This example restores the database: ```mydatabase``` using it's original name and also creates it on the PostgreSQL server. The ```-C``` switch auto-creates the database but you have to specify an existing database name with the ```-d``` switch or you'll get an error when restoring. So the examples I found said to use the ```-d "postgres"``` setting when using ```-C``` to create the database on restore because the ```postgres``` database should always exist.      
+
+❗You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.   
 
 ❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```
 
@@ -117,7 +118,8 @@ If there are no errors, the command completed successfully and the refreshed myd
 ### Restore database named: mydatabase from tar file /tmp/mydatabase.tar as mydatabase2 with PGRESTORE CL command 
 Use the PGRESTORE CL command to restore your database from a tar formatted file as a new name. The database with the new name must first be created. 
 
-This example calls PostgreSQL utility ```createdb``` to create a new empty database named: ```mydatabase2```  
+This example call to QSHBASH calls the PostgreSQL utility ```createdb``` to create a new empty database named: ```mydatabase2```    
+
 ```QSHONI/QSHBASH CMDLINE('createdb -U postgres  -p 5432 mydatabase2') DSPSTDOUT(*YES) PRTSPLF(CREATEDB)```
 
 Example of restoring ```mydatabase``` from ```/tmp/mydatabase.tar``` as ```mydatabase2``` via PGRESTORE command which calls pg_restore.   
