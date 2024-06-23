@@ -155,7 +155,7 @@ This is a good way to see what tables exist in the database uder various schema'
 SELECT *
 FROM pg_catalog.pg_tables
 WHERE schemaname != 'pg_catalog' AND 
-    schemaname != 'information_schema';
+schemaname != 'information_schema';
 ```
 
 ## Misc / Reading Links
