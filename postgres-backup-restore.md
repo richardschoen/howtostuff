@@ -78,7 +78,7 @@ Example of backing up mydatabase to /tmp/mydatabase.tar via PGDUMP command which
 ```
 PGDUMP DATABASE(mydatabase)                        
        OUTPUTFILE('/tmp/mydatabase.tar')           
-       OPTIONS('-p 5432 -U postgres')           
+       OPTIONS('-p 5432 -U postgres --verbose')           
        PROMPT(*NO)                               
        REPLACE(*YES)
 ```
@@ -93,7 +93,7 @@ You can specify the -C option to create the database and then just specify ```po
 ```
 PGRESTORE DATABASE(postgres)                            
           INPUTFILE('/tmp/mydatabase.tar')                
-          OPTIONS('-C -p 5432 -U postgres')            
+          OPTIONS('-C -p 5432 -U postgres --verbose')            
           PROMPT(*YES)                                  
           DSPSTDOUT(*YES)                               
 ```
@@ -108,7 +108,7 @@ Example of restoring mydatabase from /tmp/mydatabase.tar via PGRESTORE command w
 ```
 PGRESTORE DATABASE(mydatabase)                            
           INPUTFILE('/tmp/mydatabase.tar')                
-          OPTIONS('-p 5432 -U postgres --clean')       
+          OPTIONS('-p 5432 -U postgres --clean --verbose')       
           PROMPT(*YES)                                  
           DSPSTDOUT(*YES)                               
 ```
@@ -126,12 +126,21 @@ Example of restoring ```mydatabase``` from ```/tmp/mydatabase.tar``` as ```mydat
 ```
 PGRESTORE DATABASE(mydatabase2)                        
           INPUTFILE('/tmp/mydatabase.tar')             
-          OPTIONS('-p 5432 -U postgres')            
+          OPTIONS('-p 5432 -U postgres --verbose')            
           PROMPT(*YES)                               
           DSPSTDOUT(*YES)                            
 ```
 
 If there are no errors, the command completed successfully and the mydatabase2 PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database that was saved in ```/tmp/mydatabase.tar```.  
+
+## Useful psql commands
+
+### List databases
+```\list - list database info```
+
+### List databse names with SQL
+```SELECT datname FROM pg_database;```
+
 
 ## Misc / Reading Links
 
