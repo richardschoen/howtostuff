@@ -6,7 +6,7 @@ https://github.com/richardschoen/QshOni/blob/master/samples
 
 
 ## Backup/Dump database named: mydatabase to tar file /mydatabase.tar
-Use pg_dump to backuo/dump your database in tart format wiuth the ```-F t``` switch.   
+Use pg_dump to backup/dump your database in tar format wiuth the ```-F t``` switch.   
 
 ```pg_dump -F t mydatabase > /tmp/mydatabase.tar```     
 
