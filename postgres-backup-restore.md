@@ -35,7 +35,7 @@ This example restores the database: ```mydatabase``` using it's original name an
 
 ```pg_restore -C -d "postgres" -U postgres --verbose "/tmp/mydatabase.tar"```
 
-
+If there are no errors, the command completed successfully and the mydatabase PostgreSQL database should now exist.   
 
 ## Restore postgres database with the original database name and replace database contents using pg_restore when database already exists
 This example restores the database: ```mydatabase``` using it's original name and also clears the existing database on the PostgreSQL server before restore. The ```--clean``` switch clears the existing database before restore. 
@@ -43,6 +43,8 @@ This example restores the database: ```mydatabase``` using it's original name an
 ```pg_restore -d "mydatabase" -U postgres --clean --verbose "/tmp/mydatabase.tar"```
 
 ❗If the database already exists, you can use the ```--clean``` switch to clear all tables and restore the entire backup to the original database.
+
+If there are no errors, the command completed successfully and the refreshed mydatabase PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database.  
 
 ## Restore backup of mydatabase database as different database: mydatabase2 using pg_restore
 ❗First you need to create the new mydatabase2 database as an empty database before restoring
@@ -53,7 +55,9 @@ Create new empty database: ```mydatabase2```
 ```createdb -U postgres -W mydatabase2``` 
 
 ## Restore mydatabase database from tar file as mydatabase2 using pg_restore
-```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```
+```pg_restore -d "mydatabase2" -U postgres --verbose "/tmp/mydatabase.tar"```   
+
+If there are no errors, the command completed successfully and the mydatabase2 PostgreSQL database should now exist with all the restored tables and other objects for the PostgreSQL database that was saved in ```/tmp/mydatabase.tar```.  
 
 ## IBM i CL commands PGDUMP and PGRESTORE which are helpers for backup/restore of PostgreSQL database on i  
 The PGDUMP and PGRESTORE commands are wrappers around the QSHBASH utility for running pg_dump and pg_restore to backup and restore a Postgres database on IBM i 
