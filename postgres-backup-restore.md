@@ -197,4 +197,6 @@ https://stackoverflow.com/questions/40784677/pg-restore-with-c-option-does-not-c
 https://www.dbvis.com/thetable/a-complete-guide-to-pg-dump-with-examples-tips-and-tricks/
 
 ### Varchar and text fields with no specific length
-https://dba.stackexchange.com/questions/20254/postgresql-data-type-text-vs-varchar-without-length
+https://dba.stackexchange.com/questions/20254/postgresql-data-type-text-vs-varchar-without-length   
+https://www.sprinkledata.com/blogs/postgresql-text-vs-varchar-choosing-the-right-data-type-for-your-database   
+
