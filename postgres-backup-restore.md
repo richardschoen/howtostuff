@@ -84,6 +84,14 @@ PGDUMP DATABASE(mydatabase)
        PROMPT(*NO)                               
        REPLACE(*YES)
 ```
+Example of backing up mydatabase to /tmp/pgbackup directory with auto-timestamped IFS file name ```/tmp/pgbackup/mydatabase-yyyymmdd-hhmmssfff.tar``` via PGDUMP command which calls pg_dump. *DBTEMPDATETIME creates the file in the ```/tmp/pgbackup``` directory or whatever value exists in data area ```QGPL/PGBACKDIR```
+```
+PGDUMP DATABASE(mydatabase)                        
+       OUTPUTFILE(*DBTEMPDATETIME)           
+       OPTIONS('-p 5432 -U postgres --verbose')           
+       PROMPT(*NO)                               
+       REPLACE(*YES)
+```
    
 If there are no errors, the backup/dump command completed successfully and the tar file was verified.   
 
