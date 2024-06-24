@@ -149,13 +149,22 @@ If there are no errors, the command completed successfully and the mydatabase2 P
 ### List databse names with SQL
 ```SELECT datname FROM pg_database;```
 
-### List all table in database that are not part of pg_catalog or information_schema schema
-This is a good way to see what tables exist in the database uder various schema's. Tables will normally exist in the ```public``` schema
+### List all tables in the database that are not part of pg_catalog or information_schema schema
+This is a good way to see what tables exist in the database under various schema's. Tables will normally exist in the ```public``` schema.
 ```
 SELECT *
 FROM pg_catalog.pg_tables
 WHERE schemaname != 'pg_catalog' AND 
 schemaname != 'information_schema';
+```
+
+### Check if the selected table exists in the specified schema   
+This is a good way to see what tables exist in the selected schema. This example checks for table: ```accounts``` in the ```public``` schema.
+```
+SELECT *
+FROM pg_catalog.pg_tables
+WHERE schemaname = 'public' AND 
+    tablename = 'accounts';
 ```
 
 ## Misc / Reading Links
