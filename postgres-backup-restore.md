@@ -175,6 +175,12 @@ WHERE schemaname = 'public' AND
     tablename = 'accounts';
 ```
 
+## My Python Postgres Backup and Restore Scripts
+Check out the following repository for a set of Python Backup and Restore scripts that utilize the backup and restore commands listed in this article.    
+
+Python Postgres Backup Utility    
+https://github.com/richardschoen/pythonpostgresbackup
+
 ## Misc / Reading Links
 
 ### Backup and Restore of PostgreSQL Database   
