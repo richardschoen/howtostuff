@@ -176,7 +176,7 @@ WHERE schemaname = 'public' AND
 ```
 
 ## My Python Postgres Backup and Restore Scripts
-Check out the following repository for a set of Python Backup and Restore scripts that utilize the backup and restore commands listed in this article.    
+Check out the following repository for a set of Python Backup and Restore scripts I created that utilize the backup and restore commands listed in this article. These scripts should work with PostgreSQL on any platform.   
 
 Python Postgres Backup Utility    
 https://github.com/richardschoen/pythonpostgresbackup
