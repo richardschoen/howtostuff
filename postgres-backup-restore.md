@@ -154,7 +154,7 @@ If there are no errors, the command completed successfully and the mydatabase2 P
 ### List databases
 ```\list - list database info```
 
-### List databse names with SQL
+### List all database names with SQL
 ```SELECT datname FROM pg_database;```
 
 ### List all tables in the database that are not part of pg_catalog or information_schema schema
