@@ -1,5 +1,13 @@
 # IBM i Example to Create a Python Virtual Environment in PASE
 
+# Make sure the IBM i environment is set up for Python development
+```
+# Install the Development Group Tools (gcc, git, cmake, tar etc.)
+  yum group install 'Development tools'
+# Install Python 3.6 and Python 3.9
+  yum install python3*
+```
+
 # Make Python virtual environment directory
 This example creates /pythonenv1   
 ```mkdir /pythonenv1```
