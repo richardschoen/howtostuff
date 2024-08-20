@@ -89,20 +89,23 @@ This example creates /pythonenv1
 # Create a virtual environment
 
 ## Create virtual environment with site packages (Recommended)
-It's a good idea to install with the site packages for IBM i because your get all the base packages installed via yum. Plus you can still install specific Python pip packages in the virtual environment  (venv).    
-```python3 -m venv /pythonenv1 --system-site-packages --copies```
-
-:star: This will include ibm-db and itoolkit which installs via the python3 based yum packages.
-:star: Any of these base packages should not be installed via pip as they are part of the Python yum RPMs.
-:star: pip should not be upgraded directly via pip as the support level of pip is part of the Python yum RPMs.
-
-### You can also specifically set up the environment to use Python 3.6 or 3.9
+It's a good idea to install with the site packages for IBM i because your get all the base packages installed via yum. Plus you can still install specific Python pip package versions in the virtual environment  (venv).    
+```python3 -m venv /pythonenv1 --system-site-packages --copies```  (Installs using default version of Python3.)   
+### You can also specifically set up the new virtual environment to use Python 3.6 or 3.9
+Use the appropriate python command variant if desired:   
 ```python3.6 -m venv /pythonenv1 --system-site-packages --copies```   
 ```python3.9 -m venv /pythonenv1 --system-site-packages --copies```   
 
+:star: This will include ibm-db and itoolkit which installs via the python3 based yum packages.   
+:star: Any of these base packages should not be installed via pip as they are part of the Python yum RPMs.   
+:star: pip should not be upgraded directly via pip as the support level of pip is part of the Python yum RPMs.   
+
+
 ## Create virtual environment without site packages 
-You can still install packages in the venv except for ibm-db which installs as a site package. SO if you don't need any of the yum-based Python packages this method can be used if desired.    
-```python3 -m venv /pythonenv1```
+You can install your new virtual environment without site packages. You can still install other pip packages in the venv except for ibm-db, itoolkit and possibly the other packages that get installed as part of the Python yum site package installers. SO if you don't need any of the yum-based Python site packages, this method can be used if desired for a lighter weight virtual enviornment.  
+```python3 -m venv /pythonenv1```  (Installs using default version of Python3.)     
+```python3.6 -m venv /pythonenv1```   
+```python3.9 -m venv /pythonenv1```   
 
 # Activate the Python environment   
 ```source /pythonenv1/bin/activate```
@@ -110,8 +113,8 @@ You can still install packages in the venv except for ibm-db which installs as a
 # Command prompt after activation   
 ```(pythonenv1) -bash-5.1$``` 
 
-# List installed packages 
-This command works in the based Python environment or an active virtual environment.  
+# List installed Python packages globally or when a virtual environment is activated   
+This command works in the base Python environment or an active virtual environment.    
 ```pip3 list```
 
 Example package list:   
@@ -122,7 +125,7 @@ pip        22.0.4
 setuptools 58.1.0
 ```
 
-# Installing Python packages   
+# Installing Python packages with pip - potential issues with V7R4 and V7R5     
 
 ```Pre V7R4``` you can simply install with pip3 command. gcc is used which is gcc v6.x.   
 ```
@@ -147,9 +150,9 @@ pip3 install flask
 ```
 
 # Run any python stuff 
-Run any of your scripts or pip3 installs. 
+Run any of your scripts or pip3 installs once the environment has been activated.    
 
-# Deactivate Python venv
+# Deactivate the active Python venv
 ```deactivate ```
 
 # Misc - creating a custom gcc link for gcc10
