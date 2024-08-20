@@ -2,9 +2,14 @@
 
 # Make sure the IBM i environment is set up for Python development
 
-### Install the Development Group Tools (gcc, git, cmake, tar etc.)   
+### Install the Development Group Tools (gcc, git, cmake, tar etc.)     
 ``` yum group install 'Development tools' ```   
-### Install Python 3.6 and Python 3.9 Packeges   
+### Install Unix ODBC Driver   
+``` yum install unixODBC ```   
+``` yum install unixODBC-devel ```   
+### Install IBM i Access ODBC Driver   
+``` yum install ibm-iaccess* ```   
+### Install Python 3.6 and Python 3.9 Packages    
 ``` yum install python3* ```   
 
 ### List installed Python base site packages for Python 3.6   
@@ -110,7 +115,7 @@ You can install your new virtual environment without site packages. You can stil
 # Activate the Python environment   
 ```source /pythonenv1/bin/activate```
 
-# Command prompt after activation   
+# Command prompt looks like this after virtual environment (venv) activation   
 ```(pythonenv1) -bash-5.1$``` 
 
 # List installed Python packages globally or when a virtual environment is activated   
@@ -148,6 +153,22 @@ After exporting the CC and CXX variables, install your pip3 packages
 pip3 install pyodbc
 pip3 install flask
 ```
+
+# Installing specific pip packages in your active virtual environment
+Create a requirements.txt file in your **virtual environment directory** in a subdirectory called **src**. You could also place the requirements.txt in your desired app directoy.   
+
+Ex: ```/pythonenv1/src/requirements.txt```
+
+Example requirements.txt file:    
+```
+pyodbc>=5.1.0
+```
+
+
+
+
+
+
 
 # Run any python stuff 
 Run any of your scripts or pip3 installs once the environment has been activated.    
