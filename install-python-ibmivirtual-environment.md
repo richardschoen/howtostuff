@@ -4,7 +4,7 @@
 
 ### Install the Development Group Tools (gcc, git, cmake, tar etc.)   
 ``` yum group install 'Development tools' ```   
-### Install Python 3.6 and Python 3.9   
+### Install Python 3.6 and Python 3.9 Packeges   
 ``` yum install python3* ```   
 
 # Make Python virtual environment directory
