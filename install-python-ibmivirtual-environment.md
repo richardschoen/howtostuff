@@ -19,6 +19,10 @@ It's a good idea to do it this way for IBM i because your get all the base packa
 
 :star: This will include ibm-db which installs via the python3 based yum packages.
 
+### You can also specifically set up the environment to use Python 3.6 or 3.9
+```python3.6 -m venv /pythonenv1 --system-site-packages --copies```   
+```python3.9 -m venv /pythonenv1 --system-site-packages --copies```   
+
 ## Create virtual environment without site packages 
 You can still install packages in the venv except for ibm-db which installs as a site package. SO if you don't need any of the yum-based Python packages this method can be used if desired.    
 ```python3 -m venv /pythonenv1```
