@@ -14,7 +14,7 @@ This example creates /pythonenv1
 # Create a virtual environment
 
 ## Create virtual environment with site packages (Recommended)
-It's a good idea to do it this way for IBM i because your get all the base packages installed via yum. Plus you can still install packages in the virtual environment  (venv).    
+It's a good idea to install with the site packages for IBM i because your get all the base packages installed via yum. Plus you can still install specific Python pip packages in the virtual environment  (venv).    
 ```python3 -m venv /pythonenv1 --system-site-packages --copies```
 
 :star: This will include ibm-db which installs via the python3 based yum packages.
