@@ -7,6 +7,81 @@
 ### Install Python 3.6 and Python 3.9 Packeges   
 ``` yum install python3* ```   
 
+### List installed Python base site packages for Python 3.6   
+Run following command to list base packages to see what pip packages are installed: **pip3.6 list**. The list should look similar to the list below:   
+```
+Package         Version
+--------------- --------
+asn1crypto      0.24.0
+bcrypt          3.1.4
+cffi            1.11.5
+cryptography    2.8
+ibm-db          2.0.5.12
+idna            2.8
+itoolkit        1.6.1
+Jinja2          2.11.2
+lxml            4.2.1
+MarkupSafe      1.1.1
+numpy           1.15.4
+pandas          0.22.0
+paramiko        2.6.0
+Pillow          5.0.0
+pip             21.1.2
+psutil          5.5.1
+psycopg2        2.8.5
+pycparser       2.19
+PyNaCl          1.2.1
+pyodbc          4.0.27
+python-dateutil 2.8.0
+pytz            2018.5
+PyYAML          5.3.1
+pyzmq           17.1.2
+scikit-learn    0.19.1
+scipy           1.1.0
+setuptools      57.0.0
+six             1.10.0
+wheel           0.36.2
+```
+
+### List installed Python base packages for Python 3.9   
+Run following command to list base packages to see what pip packages are installed: **pip3.9 list**. The list should look similar to the list below:   
+```
+Package         Version
+--------------- --------
+bcrypt          3.2.0
+beniget         0.4.1
+cffi            1.14.5
+cryptography    3.4.7
+Cython          0.29.24
+gast            0.5.3
+ibm-db          2.0.5.15
+itoolkit        1.7.0
+joblib          1.1.0
+lxml            4.6.3
+numpy           1.21.4
+pandas          1.3.4
+paramiko        2.7.2
+Pillow          8.3.1
+pip             21.1.2
+ply             3.11
+psutil          5.8.0
+psycopg2        2.9.1
+pybind11        2.8.1
+pycparser       2.20
+PyNaCl          1.4.0
+pyodbc          4.0.31
+python-dateutil 2.8.1
+pythran         0.10.0
+pytz            2021.1
+pyzmq           22.1.0
+scikit-learn    1.0.1
+scipy           1.7.3
+setuptools      57.0.0
+six             1.16.0
+threadpoolctl   3.0.0
+wheel           0.36.2
+```
+
 # Make Python virtual environment directory
 This example creates /pythonenv1   
 ```mkdir /pythonenv1```
