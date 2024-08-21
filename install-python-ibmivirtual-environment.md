@@ -13,7 +13,8 @@
 ``` yum install python3* ```   
 
 ### List installed Python base site packages for Python 3.6   
-Run following command to list base packages to see what pip packages are installed: **pip3.6 list**. The list should look similar to the list below:   
+Run following command to list base packages to see what pip packages are installed: **pip3.6  list**.    
+The list should look similar to the list below:     
 ```
 Package         Version
 --------------- --------
@@ -49,7 +50,8 @@ wheel           0.36.2
 ```
 
 ### List installed Python base packages for Python 3.9   
-Run following command to list base packages to see what pip packages are installed: **pip3.9 list**. The list should look similar to the list below:   
+Run following command to list base packages to see what pip packages are installed: **pip3.9  list**.    
+The list should look similar to the list below:   
 ```
 Package         Version
 --------------- --------
