@@ -189,7 +189,7 @@ PATH=$PWD/mydir:$PATH
 :star: Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try. I think just setting the CC and CXX environment variables should work fine.
 
 # Misc - Running your Python script from a classic IBM i job
-This example runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHPYRUN** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni      
+This example runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHPYRUN** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual enviornment is activated and then deactivated aftr the python script has run.
 ```
 QSHONI/QSHPYRUN SCRIPTDIR('/python')         
                 SCRIPTFILE(hello.py)                         
@@ -197,3 +197,15 @@ QSHONI/QSHPYRUN SCRIPTDIR('/python')
                 VENVPATH('/pythonenv1')                           
                 DSPSTDOUT(*YES)                                   
 ```                                                                  
+
+# Misc - Same sequence as above to run script in a selected virtual environmnet via bash command line     
+```
+source /pythonenv1/bin/activate
+python3 /python/hello.py
+deactivate
+
+```
+
+
+
+
