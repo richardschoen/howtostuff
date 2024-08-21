@@ -101,7 +101,7 @@ Use the appropriate python command variant if desired:
 ```python3.6 -m venv /pythonenv1 --system-site-packages --copies```   
 ```python3.9 -m venv /pythonenv1 --system-site-packages --copies```   
 
-:star: This will include ibm-db and itoolkit which installs via the python3 based yum packages.   
+:star: Creating a venv with site packages will include ibm-db and itoolkit which installs via the python3 based yum packages.   
 :star: Any of these base packages should not be installed via pip as they are part of the Python yum RPMs.   
 :star: pip should not be upgraded directly via pip as the support level of pip is part of the Python yum RPMs.   
 
