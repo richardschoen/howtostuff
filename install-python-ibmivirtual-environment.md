@@ -161,7 +161,7 @@ Create a **requirements.txt** file in your **virtual environment directory** in 
 
 Ex: ```/pythonenv1/src/requirements.txt```
 
-Example requirements.txt file wiht one or more pip packages listed:    
+Example **requirements.txt** file with one or more pip packages listed. This example just has **Flask** listed. You can find the various pip package versions available by going to the https://pypi.org site.        
 ```
 flask>=3.0.0
   #Install flask and associated requirements
@@ -173,7 +173,7 @@ Run the following command line to change to the requirements.txt directory and i
 cd /pythonenv1/src
 pip3 install -r requirements.txt 
 ```
-This command line example will install flask and any specifically needed pre-requisites in the active virtual environment or globally if you happended to deactivate your virtual environment.    
+This command line example will install flask and any specifically needed pre-requisites in the active virtual environment or globally if you happened to deactivate your virtual environment.    
 
 # Run any python app script you want to test or run    
 Run any of your scripts or additional pip3 installs needed in the environment once the environment has been activated.    
@@ -190,7 +190,7 @@ PATH=$PWD/mydir:$PATH
 ```
 :star: Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try. I think just setting the CC and CXX environment variables should work fine.
 
-# Misc - Running your Python script from a classic IBM i job
+# Misc - Running your Python script from a classic IBM i CL job or job scheduler
 This example runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHPYRUN** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual enviornment is activated and then deactivated aftr the python script has run.
 ```
 QSHONI/QSHPYRUN SCRIPTDIR('/python')         
@@ -200,7 +200,7 @@ QSHONI/QSHPYRUN SCRIPTDIR('/python')
                 DSPSTDOUT(*YES)                                   
 ```                                                                  
 
-# Misc - Same sequence as above to run script in a selected virtual environmnet via bash command line     
+# Misc - Same sequence as above to run script in a selected virtual environment via bash command line or bash script
 ```
 source /pythonenv1/bin/activate
 python3 /python/hello.py
