@@ -161,7 +161,7 @@ Ex: ```/pythonenv1/src/requirements.txt```
 
 Example requirements.txt file:    
 ```
-pyodbc>=5.1.0
+flask>=3.0.0
 ```
 
 
