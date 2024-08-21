@@ -154,24 +154,27 @@ pip3 install pyodbc
 pip3 install flask
 ```
 
-# Installing specific pip packages in your active virtual environment
-Create a requirements.txt file in your **virtual environment directory** in a subdirectory called **src**. You could also place the requirements.txt in your desired app directoy.   
+# Installing specific default pip packages in your active virtual environment
+Create a **requirements.txt** file in your **virtual environment directory** in a subdirectory called **src**. You could also place the requirements.txt in your desired app directory instead. it doesn't really matter as long as your virtual environment has been activated. Just don't put them in the root of the virtual environment directory. (Ex: /pythonenv1)      
 
 Ex: ```/pythonenv1/src/requirements.txt```
 
-Example requirements.txt file:    
+Example requirements.txt file wiht one or more pip packages listed:    
 ```
 flask>=3.0.0
+  #Install flask and associated requirements
 ```
 
+Run the following command line to change to the requirements.txt directory and install the pip requirements for flask in your active virtual environment:   
 
+```
+cd /pythonenv1/src
+pip3 install -r requirements.txt 
+```
+This command line example will install flask and any specifically needed pre-requisites in the active virtual environment or globally if you happended to deactivate your virtual environment.    
 
-
-
-
-
-# Run any python stuff 
-Run any of your scripts or pip3 installs once the environment has been activated.    
+# Run any python app script you want to test or run    
+Run any of your scripts or additional pip3 installs needed in the environment once the environment has been activated.    
 
 # Deactivate the active Python venv
 ```deactivate ```
