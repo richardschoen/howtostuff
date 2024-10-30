@@ -11,3 +11,6 @@ https://www.mcpressonline.com/security/ibm-i-os400-i5os/controlling-access-to-ss
 
 ### Configuring the IBM i ssh, sftp, and scp clients to use public-key authentication
 https://www.ibm.com/support/pages/configuring-ibm-i-ssh-sftp-and-scp-clients-use-public-key-authentication
+
+### 5 Actions for IBM i Administrators in the New Yea
+https://www.mcpressonline.com/security/ibm-i-os400-i5os/5-actions-for-ibm-i-administrators-in-the-new-year   
