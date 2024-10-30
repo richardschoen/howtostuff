@@ -24,5 +24,13 @@ https://www.youtube.com/watch?v=FaXn-96K65U
 ### Setting up SSH Access to IBM i   
 https://www.shieldadvanced.com/Blog/setting-up-ssh-access-to-ibm-i   
 
+### How to Set Up a SSH Banner on IBM i: A Professional Guide  
+https://www.youtube.com/watch?v=p-7QsBd3UPQ  
+
+### SSH on the IBM i with BASH, PUTTY and WINSCP   
+https://www.youtube.com/watch?v=OwkgpH0zm8Y
+
+
+
 
 
