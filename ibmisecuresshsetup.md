@@ -38,3 +38,6 @@ https://www.ibm.com/support/pages/sshd-can-use-unix-syslog-facilities-logging
 
 ### IBM i OSS - Setup SSH and VS Code and Configure Bash
 https://www.youtube.com/watch?v=DxfM3MUPT9k
+
+### Conquer the IBM i World with OpenSSH!!
+https://www.tug.ca/tec/Sessions/Handouts/PDF/23B-Conquer%20the%20IBM%20i%20World%20with%20OpenSSH.pdf
