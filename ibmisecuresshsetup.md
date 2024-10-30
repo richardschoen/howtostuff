@@ -33,6 +33,6 @@ https://www.youtube.com/watch?v=OwkgpH0zm8Y
 ### Syslog Daemon
 https://www.ibm.com/support/pages/syslog-syslogd-pase-ibm-i
 
-
-
+### SSHD can use Syslog   
+https://www.ibm.com/support/pages/sshd-can-use-unix-syslog-facilities-logging   
 
