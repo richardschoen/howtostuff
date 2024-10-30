@@ -30,6 +30,8 @@ https://www.youtube.com/watch?v=p-7QsBd3UPQ
 ### SSH on the IBM i with BASH, PUTTY and WINSCP   
 https://www.youtube.com/watch?v=OwkgpH0zm8Y
 
+### Syslog Daemon
+https://www.ibm.com/support/pages/syslog-syslogd-pase-ibm-i
 
 
 
