@@ -14,3 +14,6 @@ https://www.ibm.com/support/pages/configuring-ibm-i-ssh-sftp-and-scp-clients-use
 
 ### 5 Actions for IBM i Administrators in the New Year
 https://www.mcpressonline.com/security/ibm-i-os400-i5os/5-actions-for-ibm-i-administrators-in-the-new-year   
+
+### Expert Tips for Setting Up Public Key Authentication on IBM i   
+https://www.youtube.com/watch?v=FaXn-96K65U  
