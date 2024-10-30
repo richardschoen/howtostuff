@@ -36,3 +36,5 @@ https://www.ibm.com/support/pages/syslog-syslogd-pase-ibm-i
 ### SSHD can use Syslog   
 https://www.ibm.com/support/pages/sshd-can-use-unix-syslog-facilities-logging   
 
+### IBM i OSS - Setup SSH and VS Code and Configure Bash
+https://www.youtube.com/watch?v=DxfM3MUPT9k
