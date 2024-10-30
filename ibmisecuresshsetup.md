@@ -20,3 +20,9 @@ https://www.mcpressonline.com/security/ibm-i-os400-i5os/5-actions-for-ibm-i-admi
 
 ### Expert Tips for Setting Up Public Key Authentication on IBM i   
 https://www.youtube.com/watch?v=FaXn-96K65U  
+
+### Setting up SSH Access to IBM i   
+https://www.shieldadvanced.com/Blog/setting-up-ssh-access-to-ibm-i   
+
+
+
