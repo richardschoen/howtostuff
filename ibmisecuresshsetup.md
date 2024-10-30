@@ -1,5 +1,8 @@
 # Links for Setting up IBM i SSH Server Securely 
 
+### Security Bulletin: OpenSSH for IBM i is vulnerable to a machine-in-the-middle attack due to a flaw in the SSH transport protocol. [CVE-2023-48795]    
+https://www.ibm.com/support/pages/security-bulletin-openssh-ibm-i-vulnerable-machine-middle-attack-due-flaw-ssh-transport-protocol-cve-2023-48795
+
 ### How to configure and use SSH on IBM i    
 https://www.seidengroup.com/how-to-configure-and-use-ssh-on-ibm-i    
 
