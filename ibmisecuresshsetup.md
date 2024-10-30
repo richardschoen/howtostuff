@@ -3,6 +3,9 @@
 ### How to configure and use SSH on IBM i    
 https://www.seidengroup.com/how-to-configure-and-use-ssh-on-ibm-i    
 
+### Autostart SSH Daemon with TCP/IP   
+https://www.ibm.com/support/pages/how-setup-ibm-i-ssh-daemon-autostart-tcpip
+
 ### Open Source and IBM i Security   
 https://www.mcpressonline.com/security/ibm-i-os400-i5os/open-source-and-ibm-i-security   
 
