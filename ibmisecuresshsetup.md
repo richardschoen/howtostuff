@@ -3,5 +3,10 @@
 ### How to configure and use SSH on IBM i    
 https://www.seidengroup.com/how-to-configure-and-use-ssh-on-ibm-i    
 
+### Open Source and IBM i Security   
+https://www.mcpressonline.com/security/ibm-i-os400-i5os/open-source-and-ibm-i-security   
+
+### Controlling Access to SSH on IBM i 
+https://www.mcpressonline.com/security/ibm-i-os400-i5os/controlling-access-to-ssh-on-ibm-i   
 
 
