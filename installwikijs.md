@@ -2,26 +2,30 @@
 
 I have not written any specific instructions at this point. But here's a basic guide that might work for you.
 
-**Used the Windows install as a base**
-
+**Use the Windows install as a base download**   
 https://docs.requarks.io/install/windows
 
-Made sure to have Node 12 loaded and SQLite 3 from IBM Open Source packages. 
+Made sure to have at least Node 12 loaded and SQLite 3 from IBM Open Source packages.   
+```Current version of Node is V22.x.```
 
-Download the Node app file. I used the Windows package and it worked fine since it's Node https://github.com/Requarks/wiki/releases/download/2.3.81/wiki-js-windows.tar.gz
+Manually download the latet WikiJS app file. I used the Windows package and it worked fine since it's Node based   
+https://github.com/Requarks/wiki/releases/latest/download/wiki-js-windows.tar.gz
 
-
-**Upload tar file to root of IFS**
+**Upload tar file to the /tmp off the root of IFS**
 
 ```/wiki-js-windows.tar.gz```
 
-**Run this from bash shell or qp2term or possibly strqsh**
+**Another option to get the file quickly is to run the wget command from an SSH terminal**
+```
+wget https://github.com/Requarks/wiki/releases/latest/download/wiki-js-windows.tar.gz -P /tmp
+```
+**Run this from bash shell, qp2term or possibly strqsh**
 
 ```
 mkdir /wikijs
 mkdir /wikijs/database
 mkdir /wikijs/backups
-cd /
+cd /tmp
 tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
 ```
 
