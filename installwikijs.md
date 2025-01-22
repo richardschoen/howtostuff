@@ -35,7 +35,7 @@ tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
 
 ***Copy sample config file to actual config file***
 
-```cp /wikijs/config.sampl.yml  /wikijs/config.yml```
+```cp /wikijs/config.sample.yml  /wikijs/config.yml```
 
 ***Edit config.yml file via your favorite PC file editor or WRKLNK I suppose.***
 
