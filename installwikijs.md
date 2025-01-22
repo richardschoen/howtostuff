@@ -26,7 +26,9 @@ mkdir /wikijs
 mkdir /wikijs/database
 mkdir /wikijs/backups
 cd /tmp
-tar xzf wiki-js-windows.tar.gz  -C  /wikijs cd /wikijs
+tar xzf wiki-js-windows.tar.gz  -C  /wikijs
+(After tar completes change to wikijs dir)
+cd /wikijs
 ```
 
 ***Ran this to rebuild SQLite3 driver binary I am using on IBM i (Only worked for node 12)***
