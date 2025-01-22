@@ -35,7 +35,7 @@ cd /wikijs
 
 ```npm rebuild sqlite3```
 
-❗You will need to use postgres for your database. The abolve npm rebuild fails for sqllite3 on V7R5. Postgres seems to work fine.
+❗You will need to use postgres for your database. The above npm rebuild fails for sqllite3 on V7R5. Postgres seems to work fine.
 
 ***Copy sample config file to actual config file***
 
