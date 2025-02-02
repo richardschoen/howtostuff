@@ -27,6 +27,7 @@ https://www.ibm.com/support/pages/ibm-i-access-acs-getting-started
 ## Files    
 **accessclientsolutions_dataxfer.pdf** - Craig Pelkie Ocean presentation on ACS - 2012    
 
+
 ## QShell on i Examples using QSHEXEC command  
 
 ### Run an SQL Select statement and output to Excel file in the IFS   
@@ -35,5 +36,20 @@ QSHEXEC CMDLINE('cd /home/richard/acsautomation;java -jar acsbundle.jar
 /PLUGIN=cldownload /system=localhost /userid=USER1
 /sql="select * from qiws.qcustcdt"  /clientfile=/tmp/test.xlsx')    
 DSPSTDOUT(*NO)     
+```
+   
+### Download physical file QIWS/QCUSTCDT to Excel file using Data Transfer Request File
+```
+QSHEXEC CMDLINE('java -jar /home/richard/acsautomation/acsbundle.jar 
+/PLUGIN=download /home/richard/acsautomation/testout.dtfx')                           
+DSPSTDOUT(*YES)                                          
+```
+
+   
+### Upload Excel file from IFS to physical file QIWS/QCUSTCDT using Data Transfer Request File
+```
+QSHEXEC CMDLINE('java -jar /home/richard/acsautomation/acsbundle.jar 
+/PLUGIN=upload /home/richard/acsautomation/testout.dttx')                           
+DSPSTDOUT(*YES)                                          
 ```
 
