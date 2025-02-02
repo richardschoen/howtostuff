@@ -7,19 +7,19 @@ You can download directly to Excel or CSV.
 
 You can upload from Excel or CSV as long as you have saved your transfer definition field definitions to an ```.fdfx``` file. 
 
-Saved **file download definitions** get saved to files ending in ```.dtfx```.   
+Saved **file download request definitions** get saved to files ending in ```.dtfx```.   
 
-Saved **file upload definitions** get saved to files ending in ```.dttx```.   
+Saved **file upload request definitions** get saved to files ending in ```.dttx```.   
 
 ## General steps to set up a file download or upload profile  
 
 ### Install acsbundle.jar file to IFS  
 Install the ```acsbundle.jar``` file into IFS directory ```/acsautomation```.  
 
-### File download definition profile - .dtfx
+### File download request profile - .dtfx
 If you want to set up an automated download, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions and save your download definition to a ```.dtfx``` file. You should also save the field definitions to a ```.fdfx``` file if you plan to upload data from an Excel or CSV file in the IFS.
 
-### File upload definition profile - .dttx
+### File upload request profile - .dttx
 If you want to set up an automated upload, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions to do an upload and then save your download definition to a ```.dttx``` file. You should also specify a previously saved field definition ```.fdfx``` file since it's required with Excel uploads and possibly CSV uploads as well.
 
 ## Links   
