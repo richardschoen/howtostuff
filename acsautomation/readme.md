@@ -20,10 +20,10 @@ Saved **file upload request definitions** get saved to files ending in ```.dttx`
 Install the ```acsbundle.jar``` file into IFS directory ```/acsautomation```.  
 
 ### File download request profile - .dtfx
-If you want to set up an automated download, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions and save your download definition to a ```.dtfx``` file. You should also save the field definitions to a ```.fdfx``` file if you plan to upload data from an Excel or CSV file in the IFS.
+If you want to set up an automated download, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions and save your download definition to a ```.dtfx``` file. You should also save the field definitions to a ```.fdfx``` file if you plan to upload data from an Excel or CSV file in the IFS. Copy your request definition file (.dtfx) and field definition file (.fdfx) to an IFS folder where you would like to run the profile from.   
 
 ### File upload request profile - .dttx
-If you want to set up an automated upload, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions to do an upload and then save your download definition to a ```.dttx``` file. You should also specify a previously saved field definition ```.fdfx``` file since it's required with Excel uploads and possibly CSV uploads as well.
+If you want to set up an automated upload, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions to do an upload and then save your download definition to a ```.dttx``` file. You should also specify a previously saved field definition ```.fdfx``` file since it's required with Excel uploads and possibly CSV uploads as well. Copy your request definition file (.dttx) and field definition file (.fdfx) to an IFS folder where you would like to run the profile from.
 
 ## Links   
 IBM documentation on using ACS upload and download    
