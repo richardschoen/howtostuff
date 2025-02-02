@@ -35,6 +35,7 @@ https://www.ibm.com/support/pages/ibm-i-access-acs-getting-started
 
 ### Run an SQL Select statement and output to Excel file in the IFS 
 Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
+Use a transfer request file stored in ```/acsautomation/profiles```.
 ```
 QSHEXEC CMDLINE('cd /acsautomation;java -jar acsbundle.jar
 /PLUGIN=cldownload /system=localhost /userid=USER1
@@ -44,18 +45,20 @@ DSPSTDOUT(*NO)
    
 ### Download physical file QIWS/QCUSTCDT to Excel file using Data Transfer Request File
 Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
+Use a transfer request file stored in ```/acsautomation/profiles```.
 ```
 QSHEXEC CMDLINE('cd /acsautomation;java -jar acsbundle.jar 
-/PLUGIN=download /home/richard/acsautomation/testout.dtfx')                           
+/PLUGIN=download /acsautomation/profiles/testout.dtfx')                           
 DSPSTDOUT(*NO)                                          
 ```
 
    
 ### Upload Excel file from IFS to physical file QIWS/QCUSTCDT using Data Transfer Request File
 Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
+Use a transfer request file stored in ```/acsautomation/profiles```.
 ```
-QSHEXEC CMDLINE('java -jar /home/richard/acsautomation/acsbundle.jar 
-/PLUGIN=upload /home/richard/acsautomation/testout.dttx')                           
+QSHEXEC CMDLINE('cd //acsautomation;java -jar acsbundle.jar 
+/PLUGIN=upload /acsautomation/profiles/testout.dttx')                           
 DSPSTDOUT(*NO)                                          
 ```
 
