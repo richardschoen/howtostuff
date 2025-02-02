@@ -48,6 +48,7 @@ DSPSTDOUT(*NO)
 ### Download physical file QIWS/QCUSTCDT to Excel file using Data Transfer Request File
 Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
 Use a transfer request file stored in ```/acsautomation/profiles```.
+File to download and field definition file name (.fdfx) names stored in the (.dtfx) file.   
 ```
 QSHEXEC CMDLINE('cd /acsautomation;java -jar acsbundle.jar 
 /PLUGIN=download /acsautomation/profiles/testout.dtfx')                           
@@ -58,6 +59,7 @@ DSPSTDOUT(*NO)
 ### Upload Excel file from IFS to physical file QIWS/QCUSTCDT using Data Transfer Request File
 Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
 Use a transfer request file stored in ```/acsautomation/profiles```.
+File to upload and field definition file name (.fdfx) names stored in the (.dtfx) file.   
 ```
 QSHEXEC CMDLINE('cd //acsautomation;java -jar acsbundle.jar 
 /PLUGIN=upload /acsautomation/profiles/testout.dttx')                           
