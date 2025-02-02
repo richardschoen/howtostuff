@@ -13,6 +13,14 @@ Saved **file upload request definitions** get saved to files ending in ```.dttx`
 
 ## General steps to set up a file download or upload profile  
 
+### Create a working copy of QIWS/QCUSTCDT to QIWS/QCUSTUPLD for testing
+```
+CPYF FROMFILE(QIWS/QCUSTCDT)     
+     TOFILE(QIWS/QCUSTUPLD)      
+     MBROPT(*REPLACE)            
+     CRTFILE(*YES)               
+```
+
 ### Use ACS Data Transfer to Download, Upload and set up definition files
 <img width="652" alt="image" src="https://github.com/user-attachments/assets/e3313ce5-361b-4584-b894-b4df4dd781b7" />
 
