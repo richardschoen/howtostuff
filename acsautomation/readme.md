@@ -25,7 +25,9 @@ If you want to set up an automated upload, you need to use the ```Data Transfer`
 ## Links   
 IBM documentation on using ACS upload and download    
 https://www.ibm.com/support/pages/ibm-i-access-acs-getting-started   
-
+   
+Ocean Presentation on ACS   
+https://www.oceanusergroup.org/assets/accessclientsolutions_dataxfer.pdf   
 
 ## Files    
 **accessclientsolutions_dataxfer.pdf** - Craig Pelkie Ocean presentation on ACS - 2012    
