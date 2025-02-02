@@ -13,6 +13,9 @@ Saved **file upload definitions** get saved to files ending in ```.dttx```.
 
 ## General steps to set up a file download or upload profile  
 
+### Install acsbundle.jar file to IFS  
+Install the ```acsbundle.jar``` file into IFS directory ```/acsautomation```.  
+
 ### File download definition profile - .dtfx
 If you want to set up an automated download, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions and save your download definition to a ```.dtfx``` file. You should also save the field definitions to a ```.fdfx``` file if you plan to upload data from an Excel or CSV file in the IFS.
 
@@ -30,26 +33,29 @@ https://www.ibm.com/support/pages/ibm-i-access-acs-getting-started
 
 ## QShell on i Examples using QSHEXEC command  
 
-### Run an SQL Select statement and output to Excel file in the IFS   
+### Run an SQL Select statement and output to Excel file in the IFS 
+Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
 ```
-QSHEXEC CMDLINE('cd /home/richard/acsautomation;java -jar acsbundle.jar
+QSHEXEC CMDLINE('cd /acsautomation;java -jar acsbundle.jar
 /PLUGIN=cldownload /system=localhost /userid=USER1
 /sql="select * from qiws.qcustcdt"  /clientfile=/tmp/test.xlsx')    
 DSPSTDOUT(*NO)     
 ```
    
 ### Download physical file QIWS/QCUSTCDT to Excel file using Data Transfer Request File
+Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
 ```
-QSHEXEC CMDLINE('java -jar /home/richard/acsautomation/acsbundle.jar 
+QSHEXEC CMDLINE('cd /acsautomation;java -jar acsbundle.jar 
 /PLUGIN=download /home/richard/acsautomation/testout.dtfx')                           
-DSPSTDOUT(*YES)                                          
+DSPSTDOUT(*NO)                                          
 ```
 
    
 ### Upload Excel file from IFS to physical file QIWS/QCUSTCDT using Data Transfer Request File
+Set DSPSTDOUT(*YES) to see stdout log info if you are testing interactivly.    
 ```
 QSHEXEC CMDLINE('java -jar /home/richard/acsautomation/acsbundle.jar 
 /PLUGIN=upload /home/richard/acsautomation/testout.dttx')                           
-DSPSTDOUT(*YES)                                          
+DSPSTDOUT(*NO)                                          
 ```
 
