@@ -1,7 +1,7 @@
 # Automating IBM i ACS Uploads and Downloads
-How to automate uploads and downloads with IBM i Access Client Solutions.
+This area covers how to automate uploads and downloads with IBM i Access Client Solutions and the Java based ```acsbundle.jar``` file.
 
-As part of IBM Access Client Solutions you have the ability to use acsbundle.jar to automatically file uploads and downloads using the file upload/download capabilities.   
+As part of IBM Access Client Solutions you have the ability to use ```acsbundle.jar``` to automatically file uploads and downloads using the file upload/download capabilities.   
 
 You can download directly to Excel or CSV.
 
@@ -11,7 +11,7 @@ Saved **file download definitions** get saved to files ending in ```.dtfx```.
 
 Saved **file upload definitions** get saved to files ending in ```.dttx```.   
 
-## General steps
+## General steps to set up a file download or upload profile  
 
 ### File download definition profile - .dtfx
 If you want to set up an automated download, you need to use the ```Data Transfer``` option in IBM i Access Client Solutions and save your download definition to a ```.dtfx``` file. You should also save the field definitions to a ```.fdfx``` file if you plan to upload data from an Excel or CSV file in the IFS.
@@ -26,3 +26,14 @@ https://www.ibm.com/support/pages/ibm-i-access-acs-getting-started
 
 ## Files    
 **accessclientsolutions_dataxfer.pdf** - Craig Pelkie Ocean presentation on ACS - 2012    
+
+## QShell on i Examples using QSHEXEC command  
+
+### Run an SQL Select statement and output to Excel file in the IFS   
+```
+QSHEXEC CMDLINE('cd /home/richard/acsautomation;java -jar acsbundle.jar
+/PLUGIN=cldownload /system=localhost /userid=USER1
+/sql="select * from qiws.qcustcdt"  /clientfile=/tmp/test.xlsx')    
+DSPSTDOUT(*NO)     
+```
+
