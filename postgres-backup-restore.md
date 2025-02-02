@@ -13,6 +13,8 @@ See example usage of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrapp
 Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.     
 ```export PGPASSWORD=password1```   
 ```pg_dump -F t -d mydatabase -p 5432 -U postgres --verbose > /tmp/mydatabase.tar```      
+or with host name     
+```pg_dump --h localhost F t -d mydatabase -p 5432 -U postgres --verbose > /tmp/mydatabase.tar```      
 
 ❗If the tar file is 0 bytes, then something failed on you dump/backup operation. Otherwise the backup should have been successful with no errors. Next we will use the tar command to verify the tar file is not corrupted.
 
@@ -36,7 +38,9 @@ This example restores the database: ```mydatabase``` using it's original name an
 
 ❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```   
 ```export PGPASSWORD=password1```   
-```pg_restore -C -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```   
+```pg_restore -C -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"``` 
+or with host name     
+```pg_restore -C -h localhost -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"``` 
 
 If there are no errors, the command completed successfully and the mydatabase PostgreSQL database should now exist.   
 
