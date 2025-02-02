@@ -10,9 +10,9 @@ See example usage of the ```PGDUMP``` and ```PGRESTORE``` IBM i CL command wrapp
 ❗I also use the ```--verbose``` switch to list operations, but this switch is optional.   
 
 ## Backup/Dump database named: mydatabase to tar file /tmp/mydatabase.tar using pg_dump
-Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.   
-
-```pg_dump -F t -d mydatabase -p 5432 -U postgres --verbose > /tmp/mydatabase.tar```     
+Use pg_dump to backup/dump your database in tar format with the ```-F t``` switch.     
+```export PGPASSWORD=password1```   
+```pg_dump -F t -d mydatabase -p 5432 -U postgres --verbose > /tmp/mydatabase.tar```      
 
 ❗If the tar file is 0 bytes, then something failed on you dump/backup operation. Otherwise the backup should have been successful with no errors. Next we will use the tar command to verify the tar file is not corrupted.
 
@@ -34,9 +34,9 @@ This example restores the database: ```mydatabase``` using it's original name an
 
 ❗You'll notice that user ```postgres``` is the owner of the database so you may need to assign appropriate permissions after restoring the database.   
 
-❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```
-
-```pg_restore -C -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```
+❗Make sure database doesn't exist on target system. or you'll need to drop it or rename it first in psql utility. ```DROP DATABASE mydatabase;```   
+```export PGPASSWORD=password1```   
+```pg_restore -C -d "postgres" -p 5432 -U postgres --verbose "/tmp/mydatabase.tar"```   
 
 If there are no errors, the command completed successfully and the mydatabase PostgreSQL database should now exist.   
 
@@ -145,10 +145,12 @@ If there are no errors, the command completed successfully and the mydatabase2 P
 
 ## Useful psql commands
 
-### Starting psql not connected to a specific database   
+### Starting psql not connected to a specific database 
+```export PGPASSWORD=password1```
 ```psql -U postgres -p 5432```     
 
 ### Starting psql connected to a specific database   
+```export PGPASSWORD=password1```
 ```psql -U postgres -p 5432 -d mydatabase```   
 
 ### List databases
