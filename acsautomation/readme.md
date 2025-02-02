@@ -13,6 +13,9 @@ Saved **file upload request definitions** get saved to files ending in ```.dttx`
 
 ## General steps to set up a file download or upload profile  
 
+### Use ACS Data Transfer to Download, Upload and set up definition files
+<img width="652" alt="image" src="https://github.com/user-attachments/assets/e3313ce5-361b-4584-b894-b4df4dd781b7" />
+
 ### Install acsbundle.jar file to IFS  
 Install the ```acsbundle.jar``` file into IFS directory ```/acsautomation```.  
 
