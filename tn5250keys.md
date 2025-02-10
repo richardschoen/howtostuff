@@ -1,3 +1,6 @@
+# Keys for tn5250
+https://github.com/luca-vercelli/tn5250
+```
 Inside session, you can type:
 
 ^H = Left (backspace)
@@ -47,3 +50,4 @@ PRINT 	f6
 RBS 	f8 
 
 Field Exit key = Shift Delete Down-Arrow-Key
+```
