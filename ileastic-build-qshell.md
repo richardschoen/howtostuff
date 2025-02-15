@@ -20,7 +20,7 @@ https://github.com/sitemule/ILEastic
 
 - Sign on to a 5250 command line session with a user that has permissions to build code.
 
-- Set the multi-threaded env variable **before starting/entering the QShell terminal**.
+- Set the multi-threaded env variable **before starting/entering the QShell terminal**.    
 ```ADDENVVAR ENVVAR('QIBM_MULTI_THREADED') VALUE('Y') CCSID(*JOB) LEVEL(*JOB) REPLACE(*YES)```
 
 - Start QShell terminal via ```STRQSH``` command.
