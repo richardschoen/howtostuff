@@ -69,47 +69,7 @@ ILEASTIC    *BNDDIR
 JSONXML     *BNDDIR                                                   
 NOXDB       *BNDDIR
 ```
-
-- If all works as expected, the NOXDB library should exist with the following list of objects (```WRKOBJPDM NOXDB```):
-```
-PARSETEST   *PGM        RPGLE                                
-JSONXML     *SRVPGM                                          
-DATAGEN     *MODULE     CLE                                  
-DATAINTO    *MODULE     CLE                                  
-GENERIC     *MODULE     CLE                                  
-HTTP        *MODULE     CLE                                  
-ITERATOR    *MODULE     CLE                                  
-JSONPARSER  *MODULE     CLE
-MEM001      *MODULE     CLE       
-NOXDB       *MODULE     CLE       
-PARMS       *MODULE     CLE       
-READER      *MODULE     CLE       
-RTVSYSVAL   *MODULE     CLE       
-SEGMENTS    *MODULE     CLE       
-SERIALIZER  *MODULE     CLE       
-SNDPGMMSG   *MODULE     CLE
-SQLIO       *MODULE     CLE  
-SQLWRAPPER  *MODULE     CLE  
-STREAM      *MODULE     CLE  
-TIMESTAMP   *MODULE     CLE  
-TRACE       *MODULE     CLLE 
-TRYCATCH    *MODULE     CLE  
-UTL100      *MODULE     CLE  
-VARCHAR     *MODULE     CLE
-XLATE       *MODULE     CLE           
-XMLPARSER   *MODULE     CLE           
-XMLSERIAL   *MODULE     CLE           
-EVFEVENT    *FILE       PF-DTA        
-H           *FILE       PF-SRC        
-QCLLESRC    *FILE       PF-SRC        
-QRPGLEREF   *FILE       PF-SRC        
-QSRVSRC     *FILE       PF-SRC
-SQLTRACE    *DTAARA                 SQL trace enabled 
-JSONXML     *BNDDIR                                   
-NOXDB       *BNDDIR                                   
-```
-
-Now that the ILEASTIC and NOXDB libraies exist you are ready to start building HTTP server apps with ILEastic.
+Now that the ILEASTIC library exists you are ready to start building HTTP server apps with ILEastic.
 
 Re-visit the site to continue: https://github.com/sitemule/ILEastic   
 
