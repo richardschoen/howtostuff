@@ -1,28 +1,35 @@
 # Instructions to successfully build ILEAstic from GitHub
 It appears there is an issue building the ILEAstic and NOXDB applications from the initial git close using an SSH terminal.
 
+However the build process does seem to work via a QShell terminal.  Not sure wht but it works.   
+
 The open project issue is: Install gmake issue #153   
 https://github.com/sitemule/ILEastic/issues/153   
 
 Site for ILEAstic   
 https://github.com/sitemule/ILEastic   
 
-## My instructions for building the ILEAstic and NOXDB Library Components. 
-- First I made sure that the open source packages were in my search path. However when I tried the build steps as listed on the readme.md page from SSH, the build failed based on same error as issue #53 above.
+## The issue with building from an SSH terminal
+- Before trying to QSH install I tried building via a bash session via an SSH terminal.  I made sure that the ```/QOpenSys/pkgs/bin``` open source packages were in my search path. However when I tried the build steps as listed on the readme.md page from SSH, the build failed based on same error as issue #53 above.
 
-- Based on the issue, what I found is that I could build the apps from the green screen using the QSH terminal interface.   
+- Based on the issue, what I learned from the #53 issue  is that I could build the ILEASTIC and NOXDB app libraries from the green screen using the QShell terminal interface.   
   ❗I'm not sure why this works from QShell and not SSH, but it does build.  
 
-## Clone and build steps from a 5250 session.
-- First review the readme.md on teh ILEAstic site for build prerequisite requirements: https://github.com/sitemule/ILEastic   
+## Clone and build steps from a 5250 session for building ILEASTIC
+- First review the readme.md on the ILEAstic site for build prerequisite requirements: https://github.com/sitemule/ILEastic   
+
 - Sign on to a 5250 command line session with a user that has permissions to build code.
+
 - Set the multi-threaded env variable **before starting/entering the QShell terminal**.
 ```ADDENVVAR ENVVAR('QIBM_MULTI_THREADED') VALUE('Y') CCSID(*JOB) LEVEL(*JOB) REPLACE(*YES)```
+
 - Start QShell terminal via ```STRQSH``` command.
+
 - Set your path with following export statement from within QSH terminal:
 ```
 export PATH=/QOpenSys/pkgs/bin:$PATH
 ```
+
 - Run the following commands from the QSH terminal to clone and build the project. Same steps as the ILEAstic site uses.
 ```
 mkdir /prj
@@ -99,6 +106,12 @@ SQLTRACE    *DTAARA                 SQL trace enabled
 JSONXML     *BNDDIR                                   
 NOXDB       *BNDDIR                                   
 ```
+
+Now that the ILEASTIC and NOXDB libraies exist you are ready to start building HTTP server apps with ILEastic.
+
+Re-visit the site to continue: https://github.com/sitemule/ILEastic   
+
+
 
 
 
