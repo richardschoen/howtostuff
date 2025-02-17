@@ -12,7 +12,7 @@ https://github.com/sitemule/ILEastic
 ## The issue with building from an SSH terminal
 - Before trying to QSH install I tried building via a bash session via an SSH terminal.  I made sure that the ```/QOpenSys/pkgs/bin``` open source packages were in my search path. However when I tried the build steps as listed on the readme.md page from SSH, the build failed based on same error as issue #53 above.
 
-- Based on the issue, what I learned from the #53 issue  is that I could build the ILEASTIC and NOXDB app libraries from the green screen using the QShell terminal interface.   
+- Based on the issue, what I learned from the #153 issue  is that I could build the ILEASTIC and NOXDB app libraries from the green screen using the QShell terminal interface.   
   ❗I'm not sure why this works from QShell and not SSH, but it does build.  
 
 ## Clone and build steps from a 5250 session for building ILEASTIC
