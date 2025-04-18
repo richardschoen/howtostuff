@@ -17,10 +17,14 @@ Make sure all ```Python 3``` options are installed by the ``Open Source Package 
 
 Log in to an IBM i SSH terminal session and make sure bash is the current shell
 
-**Install fastapi**
+**Install fastapi - latest**
 
 ```pip3 install fastapi```
 
+**Install fastapi for Python 3.9**   
+   
+```pip3 install fastapi==0.110.1```   
+    
 **Install uvicorn (The lightning fast ASGI server). This will be our web app server component**
 
 ```pip3 install uvicorn```  
