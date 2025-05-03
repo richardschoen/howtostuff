@@ -18,7 +18,7 @@ The following example creates this prompt:
 ```
 PS1="\n\[\e[0;32m\]┌─[\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;32m\] @ \[\e[0m\]\[\e[1;33m\]\h\[\e[0m\]\[\e[0;32m\]]─[\[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;32m\]]\[\e[0;32m\]─[\[\e[0m\]\[\e[0;31m\]\!\[\e[0m\]\[\e[0;32m\]]\[\e[0m\]\n\[\e[0;32m\]└─[\[\e[0m\]\[\e[1;37m\]\$\[\e[0m\]\[\e[0;32m\]]› \[\e[0m\]"
 ```
-The [503] is the bash history line.   
+The [503] is the bash history line that can be used to re-run the bash command from history by its line number.   
 
 ![image](https://github.com/user-attachments/assets/eb56f73a-515a-4c25-a4cc-ef06b80288f8)
 
