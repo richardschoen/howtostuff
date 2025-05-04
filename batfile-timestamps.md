@@ -21,5 +21,25 @@ set hour=%datetime:~8,2%
 set minute=%datetime:~10,2%
 set second=%datetime:~12,2%
 set timestamp=%year%%month%%day%_%hour%%minute%%second%
+REM Display the timestamp value for our demo 
 echo %timestamp%
 ```
+Example usage to create an output file with a timestamped name:   
+```
+for /f "delims=" %%a in ('wmic os get localdatetime ^| find "."') do set datetime=%%a
+set year=%datetime:~0,4%
+set month=%datetime:~4,2%
+set day=%datetime:~6,2%
+set hour=%datetime:~8,2%
+set minute=%datetime:~10,2%
+set second=%datetime:~12,2%
+set timestamp=%year%%month%%day%_%hour%%minute%%second%
+REM Set output text file
+set outputfilename = c:\temp\outputfile_%timestamp%.txt
+REM Display the timestamped file name value for our demo 
+echo %outputfilename%
+```
+
+
+
+
