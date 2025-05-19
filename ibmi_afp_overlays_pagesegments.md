@@ -13,4 +13,5 @@ https://wiki.midrange.com/index.php/Creating_Overlays_and_Page_Segments
 ## AFP Driver - Creating a Page Segment
 https://afpdriver.com/AFPUserGuide/index.html?creating_a_page_segment.htm
 
-
+## Ricoh - FREE AFP Viewer
+https://resources.ricohsoftware.com/cta/afp-viewer  
