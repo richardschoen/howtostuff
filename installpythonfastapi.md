@@ -7,7 +7,10 @@ Uvicorn is a lightning fast ASGI web server
 https://fastapi.tiangolo.com
 
 ## Visit the Uvicorn site
-http://www.uvicorn.org
+http://www.uvicorn.org  
+
+## Sample site from Niels Liisberg  
+https://github.com/NielsLiisberg/Python-FastAPI-demo     
 
 ## Installing on IBM i 
 
