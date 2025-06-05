@@ -120,7 +120,7 @@ Displaying ReDoc Documentation and Testing API
 ``` pip3 install fastapi==0.83.0``` (You may just be able install 0.110.3)     
 ``` pip3 install fastapi==0.110.3```
 ``` pip3 install uvicorn```
-``` pip3.9 install flask``` (Not actually needed for FastAPI, but I use flask as well)    
+``` pip3.9 install flask``` (Flask not actually needed for FastAPI, but I use flask as well so I commonly install Flask as well.)    
 
 
 
