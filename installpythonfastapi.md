@@ -116,10 +116,11 @@ Displaying ReDoc Documentation and Testing API
 
 ## Sample Packages Needed for Fast API
 ``` pip3.9 install pyodbc```   
-``` pip3.9 install flask```  
 ``` pip3.9 install itoolkit```   
-```pip3 install fastapi==0.83.0``` (You may just be able install 0.110.3)     
-```pip3 install fastapi==0.110.3```    
+``` pip3 install fastapi==0.83.0``` (You may just be able install 0.110.3)     
+``` pip3 install fastapi==0.110.3```
+``` pip3 install uvicorn```
+``` pip3.9 install flask``` (Not actually needed for FastAPI, but I use flask as well)    
 
 
 
