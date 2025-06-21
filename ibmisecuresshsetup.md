@@ -44,3 +44,6 @@ https://www.youtube.com/watch?v=DxfM3MUPT9k
 
 ### Conquer the IBM i World with OpenSSH!!
 https://www.tug.ca/tec/Sessions/Handouts/PDF/23B-Conquer%20the%20IBM%20i%20World%20with%20OpenSSH.pdf
+
+### Securing SSH on IBM i   
+https://all4power.dev/securing-ssh-on-ibm-i/   
