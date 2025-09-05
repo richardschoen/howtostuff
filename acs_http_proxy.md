@@ -25,7 +25,24 @@ java -jar /usr/local/ibmiaccess/acsbundle.jar /PLUGIN=httpproxyui
 java -jar /opt/ibm/iAccessClientSolutions/acsbundle.jar /PLUGIN=httpproxyui
 ```
 
-### Sample script file for Windows - stacshttpproxy.bat
+A dialog will appear. Select your system and enter the credentials needed to log onto SSH. Make sure the SSH daemon is running.   
+
+This command launches an HTTP Proxy program that connects to the internet. ACS will then connect using the proxy.
+
+To aid in installing open source, the HTTP Proxy window also provides commands that allow an SSH terminal to use the proxy. When you copy and paste these commands into an SSH terminal, programs in that session will use the HTTP proxy. For example, you can run yum commands on an IBM i system that couldn’t connect to the repository otherwise, and it’ll proxy through your own computer to reach that repository.
+
+Example SSH commands needed from any SSH command line once the proxy is started:    
+```
+Proxy Initialized
+To use this proxy, run the following commands in an SSH terminal:
+https_proxy=http://5e11383af7d34ffcb886:0cc51e1a08e2@localhost:47807
+export https_proxy
+http_proxy=http://5e11383af7d34ffcb886:0cc51e1a08e2@localhost:47807
+export http_proxy
+```
+Once the proxy is running you should be able to run any commands suuch as ```yum```, ```wget``` or ```pip``` that need http or https access.  
+
+## Sample Windows bat script file - stracshttpproxy.bat
 ```
 REM https://www.seidengroup.com/php-documentation/offline-installation-of-communityplus-php/
 REM Proxy Server https
