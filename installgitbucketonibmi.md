@@ -75,7 +75,7 @@ Example to Start on alternate port 10001
 ```
 cd /gitbucket
 
-java -jar gitbucket.war  --port-10001
+java -jar gitbucket.war  --port=10001
 ```
 
 ## Wait a few minutes and try to access the GitBucket URL from your IBM i 
