@@ -102,7 +102,21 @@ By default GitBucket uses an internal H2 database. You may want to install Postg
 
 Feel free to use my instructions on this site to set up Postgres on IBM i. 
 
-## Using with the new Java 11 on IBM i if desired
+## Using with the Native Java 11 on IBM i if desired
+
+## Setting the Java 11 path in a bash or other shell
+This is the licensed program release for Java 11
+
+```
+JAVA_HOME=/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit
+export JAVA_HOME
+PATH=/QOpenSys/QIBM/ProdData/JavaVM/jdk11/64bit/bin:$PATH
+export PATH
+cd /gitbucket
+java -jar gitbucket.war
+```
+
+## Using with the new Open Source Java 11 on IBM i if desired (experimental)
 https://bitbucket.org/ibmi/opensource/src/master/docs/java11/JAVA11_EARLY_ACCESS.md
 
 ## Setting the Java 11 path in a bash or other shell
