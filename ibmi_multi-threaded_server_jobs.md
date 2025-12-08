@@ -226,12 +226,16 @@ QUSRWRK        QSYS        SBS      .0                   DEQW
 ```
 
 ## Reading Links
+Great article on this technique and using prestart jobs with QSH and PASE   
 https://techchannel.com/i-can-blog/qp0zspwp-jobs/   
 
+Old Midrange.com thread I found   
 https://archive.midrange.com/midrange-l/201507/msg00266.html     
 
+IBM i docs on prestart jobs    
 https://www.ibm.com/docs/en/i/7.6.0?topic=subsystems-use-prestart-jobs   
 
+An older article on generating joblogs from background jobs and causing issues with Job Tables   
 https://ibm-power-systems.ideas.ibm.com/ideas/IBMI-I-2180   
 
 
