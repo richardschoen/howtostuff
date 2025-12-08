@@ -9,7 +9,7 @@ However it doesn't make the IBM i CPU core itself any faster.
 
 This technique may work for other subsystems that use PASE jobs such as running PHP jobs, but may need to be tweaked if those subsystems don't use the QUSRWRK subsystem.
 
-❗I only tested this on a development system with subsystem QUSRWRK. You will want to validate this technique is accurate before rolling it out on a production system. But for me it helped in my testing on a small machine so on larger machines with more memory and CPU your mileage may vary.
+❗WARNING: I only tested this on a development system with subsystem QUSRWRK. You will want to validate this technique is accurate before rolling it out on a production system. But for me it helped in my testing on a small machine so on larger machines with more memory and CPU your mileage may vary.
 
 ## Using VS Code on a low power IBM i CPU
 This was my experience using the VS Code for i plugin on a low power CPU even once it was tweaked to run PASE threads faster.
