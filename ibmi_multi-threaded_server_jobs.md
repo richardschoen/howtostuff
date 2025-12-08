@@ -3,7 +3,7 @@ I was doing some open-source testing on an IBM i system that had 8gb of memory b
 
 I found this scenaro to be pretty slow, so I wanted to see if I could juice up the processing speed by making the PASE thread jobs re-usable. 
 
-For my test scenario I found that this little known technique of setting up prestart jobs seems to speed up PASE jobs such as the SSH server and running Yum and Python threads. 
+For my test scenario I found that this little known technique of setting up prestart jobs for programs: QP0ZSPWP or QP0ZSPWT seems to speed up PASE jobs such as the SSH server and running Yum and Python threads. 
 
 However it doesn't make the IBM i CPU core itself any faster. 
 
