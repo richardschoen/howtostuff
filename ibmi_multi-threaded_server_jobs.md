@@ -182,7 +182,7 @@ CHGJOBD JOBD(QGPL/QDFTSVR)
          ALWMLTTHD(*NO)    
 ```
 
-- Remove the prestart job entries for QP0ZSPWP and QP0ZSPWt thread jobs   
+- Remove the prestart job entries for QP0ZSPWP and QP0ZSPWT thread jobs   
 ```
 RMVPJE SBSD(QUSRWRK)         
        PGM(QSYS/QP0ZSPWP)    
