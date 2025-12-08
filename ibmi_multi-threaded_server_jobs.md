@@ -85,6 +85,19 @@ ADDPJE SBSD(QUSRWRK)
 
 Now when you use SSH or PASE commands from putty or other terminal, or if you run Yum commands, Python jobs, etc the thread jobs should now get re-used. 
 
+- Do a WRKACTJOB on subsystem QUSRWRK and you should see this:   
+```WRKACTJOB SBS(QUSRWRK)```     
+
+Job name: ```QP0ZSPWT``` and type: ```PJ```   
+```
+Subsystem/Job  User        Type  CPU %  Function        Status
+QUSRWRK        QSYS        SBS      .0                   DEQW 
+  QP0ZSPWT     QPMGR       PJ       .0  PGM-bash         SELW 
+  QP0ZSPWT     QPGMR       PJ       .0  PGM-tmux         SELW 
+  QP0ZSPWT     QSECOFR     PJ       .0  PGM-sshd         SELW
+```
+
+
 ## Check to see if thread jobs are being re-used
 These command let you see what's happening with prestart jobs.    
 
@@ -199,6 +212,18 @@ RMVPJE SBSD(QUSRWRK)
 
 - Start the SSH server    
 ``` STRTCPSVR **SSHD```     
+
+- Do a WRKACTJOB on subsystem QUSRWRK and you should see this:   
+```WRKACTJOB SBS(QUSRWRK)```     
+
+Job name: ```QP0ZSPWP``` and type: ```BCI```    
+```
+Subsystem/Job  User        Type  CPU %  Function        Status
+QUSRWRK        QSYS        SBS      .0                   DEQW 
+  QP0ZSPWP     QPMGR       BCI      .0  PGM-bash         SELW 
+  QP0ZSPWP     QPGMR       BCI      .0  PGM-tmux         SELW 
+  QP0ZSPWP     QSECOFR     BCI      .0  PGM-sshd         SELW
+```
 
 ## Reading Links
 https://techchannel.com/i-can-blog/qp0zspwp-jobs/   
