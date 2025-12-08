@@ -25,9 +25,9 @@ This will probably not be an issue on larger IBMI i systems, but for me it made 
 ## Setup steps to enable multithreading for server thread jobs QP0ZSPWP or QP0ZSPWT   
 We will be adding prestart jobs to QUSRWRK to speed up multithreaded jobs for programs QP0ZSPWP or QP0ZSPWT which are used to start thread for PASE jobs.   
 
-- Set the system level environment variable to use PASE prestart thread jobs.
-As far as I now this is the only way to utilize this setting so that any PASE job threads use the prestart thread jobs.
-**You will need to make sure** this setting doesn't have a negative effect on any other jobs running in QSYSWRK that use PASE.         
+- Set the system level environment variable to use PASE prestart thread jobs.   
+As far as I now this is the only way to utilize this setting so that any PASE job threads use the prestart thread jobs.   
+**You will need to make sure** this setting doesn't have a negative effect on any other jobs running in QSYSWRK that use PASE.            
 ```
 ADDENVVAR ENVVAR(QIBM_PASE_USE_PRESTART_JOBS)   
           VALUE(Y)                              
@@ -46,7 +46,8 @@ CHGJOBD JOBD(QGPL/QDFTSVR)
          ALWMLTTHD(*YES)    
 ```
 
-- Add the prestart job entries for QP0ZSPWP and QP0ZSPWt thread jobs   
+- Add the prestart job entries for QP0ZSPWP and QP0ZSPWT thread jobs. I went with prestarting 100 thread jobs and allowing each one to be re-used 200 times.   
+❗On one of the forums I read that they recommended MAXUSE(1) so each thread ends after usage. This would mirror closer to the real-world before using prestart jobs, but I would think a larger number of re-uses could be a good thing unless QP0ZSPWP and QP0ZSPWT jobs do something that doesn't make them good candidates for re-use more than 1 time.    
 ```
 ADDPJE SBSD(QUSRWRK)       
        PGM(QSYS/QP0ZSPWP)  
@@ -80,13 +81,33 @@ ADDPJE SBSD(QUSRWRK)
 - Start the SSH server    
 ``` STRTCPSVR **SSHD```     
 
-Now when you use SSH or PASE commands from putty or other terminal, or if you run YUM commands, Python jobs, etc the thread jobs should now get re-used. 
+Now when you use SSH or PASE commands from putty or other terminal, or if you run Yum commands, Python jobs, etc the thread jobs should now get re-used. 
 
 ## Check to see if thread jobs are being re-used
-See what's happening with prestart jobs.    
+These command let you see what's happening with prestart jobs.    
 
-- Watch active jobs threads during subsystem startup or once active.  You can actually see all the pre-start jobs start up if you press F5 fast enough.    
+- Watch active jobs threads during subsystem startup or once active. You can actually see all the pre-start jobs start up if you press F5 fast enough.    
 ```WRKACTJOB SBS(QUSRWRK)```   
+
+You'll also see your jobs should have a type of ```PJ``` for prestart jobs.
+
+```
+Subsystem/Job  User        Type  CPU %  Function        Status
+QUSRWRK        QSYS        SBS      .0                   DEQW 
+  QP0ZSPWT     QPMGR       PJ       .0  PGM-bash         SELW 
+  QP0ZSPWT     QPGMR       PJ       .0  PGM-tmux         SELW 
+  QP0ZSPWT     QSECOFR     PJ       .0  PGM-sshd         SELW
+```
+
+When prestart jobs were disabled the WRKACTJOB probably looked more like this. You can see the jobs are started as type: ```BCI```
+
+```
+Subsystem/Job  User        Type  CPU %  Function        Status
+QUSRWRK        QSYS        SBS      .0                   DEQW 
+  QP0ZSPWP     QPMGR       BCI      .0  PGM-bash         SELW 
+  QP0ZSPWP     QPGMR       BCI      .0  PGM-tmux         SELW 
+  QP0ZSPWP     QSECOFR     BCI      .0  PGM-sshd         SELW
+```
 
 - Display active prestart jobs and statistics
 These two commands will display prestart job usage.    
