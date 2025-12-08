@@ -53,7 +53,7 @@ CHGJOBD JOBD(QGPL/QDFTSVR)
 ```
 
 - Add the prestart job entries for QP0ZSPWP and QP0ZSPWT thread jobs. I went with prestarting 100 thread jobs and allowing each one to be re-used 200 times.   
-❗On one of the forums I read that they recommended MAXUSE(1) so each thread ends after usage. This would mirror closer to the real-world before using prestart jobs, but I would think a larger number of re-uses could be a good thing unless QP0ZSPWP and QP0ZSPWT jobs do something that doesn't make them good candidates for re-use more than 1 time.    
+❗Apparently PASE threads never get re-used regardless of the MAXUSE setting, so just use MAXUSE(1). Mentioned by @kadler.
 ```
 ADDPJE SBSD(QUSRWRK)       
        PGM(QSYS/QP0ZSPWP)  
@@ -64,7 +64,7 @@ ADDPJE SBSD(QUSRWRK)
        MAXJOBS(*NOMAX)     
        JOB(QP0ZSPWP)       
        JOBD(QGPL/QDFTSVR)  
-       MAXUSE(200)           
+       MAXUSE(1)           
        CLS(QINTER)
 ```        
 ```
@@ -77,7 +77,7 @@ ADDPJE SBSD(QUSRWRK)
        MAXJOBS(*NOMAX)     
        JOB(QP0ZSPWT)       
        JOBD(QGPL/QDFTSVR)  
-       MAXUSE(200)           
+       MAXUSE(1)           
        CLS(QINTER)         
 ```
 
