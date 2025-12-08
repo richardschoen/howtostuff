@@ -18,7 +18,7 @@ This was my experience using the VS Code for i plugin on a low power CPU even on
 
 Even once I tuned the system I was testing the VS Code file open and saves were taking 15-20 seconds which was painful. 
 
-By contract I was testing my Work with IBM i app and it was taking only 1-4 seconds to upload or download a source member. RDI was also pretty fast, but it doesn't use SSH. The only thing I can attribute this to is the overhead of the VS Code for i plugin and it becomes painfully apparent on a slow IBM i CPU core.   
+By contrast I was testing my Work with IBM i app (https://github.com/richardschoen/workwithibmipdm), which also uses SSH, and it was taking only 1-4 seconds to upload or download a source member. RDI was also pretty fast, but it doesn't use SSH. The only thing I can attribute this to is the overhead of the VS Code for i plugin and it becomes painfully apparent on a slow IBM i fractional CPU core.   
 
 This will probably not be an issue on larger IBMI i systems, but for me it made VS Code unusable on the low-end IBM i system I was testing with.    
 
