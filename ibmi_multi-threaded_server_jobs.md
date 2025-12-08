@@ -9,6 +9,10 @@ However it doesn't make the IBM i CPU core itself any faster.
 
 This technique may work for other subsystems that use PASE jobs such as running PHP jobs, but may need to be tweaked if those subsystems don't use the QUSRWRK subsystem.
 
+Jobs that typically run in QUSRWRK are the SSH server and other SSH terminal or bash jobs.   
+
+One of the articles listed below by Dawn May covers setting this up for QShell in QINTER, but that's out of scope for this particular document.  I'm mainly focusing on QUSRWRK for the moment.      
+
 ❗WARNING: I only tested this on a development system with subsystem QUSRWRK. You will want to validate this technique is accurate before rolling it out on a production system. But for me it helped in my testing on a small machine so on larger machines with more memory and CPU your mileage may vary.
 
 ## Using VS Code on a low power IBM i CPU
