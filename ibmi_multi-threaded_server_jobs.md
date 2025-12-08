@@ -116,8 +116,56 @@ These two commands will display prestart job usage.
 DSPACTPJ SBS(QUSRWRK) PGM(QSYS/QP0ZSPWT)          
 DSPACTPJ SBS(QUSRWRK) PGM(QSYS/QP0ZSPWP) 
 ```
+
+The screen probably looks a lot like this:
+```
+                          Display Active Prestart Jobs                 SYS1     
+                                                         12/08/25  09:26:18 CST 
+ Subsystem  . . . . . :   QUSRWRK         Reset date . . . . . :   12/05/25     
+ Program  . . . . . . :   QP0ZSPWT        Reset time . . . . . :   16:29:52     
+   Library  . . . . . :     QSYS          Elapsed time . . . . :   0064:56:26   
+                                                                                
+ Prestart jobs:                                                                 
+   Current number . . . . . . . . . . . . . . . . :   50                        
+   Average number . . . . . . . . . . . . . . . . :   50.0                      
+   Peak number  . . . . . . . . . . . . . . . . . :   50                        
+                                                                                
+ Prestart jobs in use:                                                          
+   Current number . . . . . . . . . . . . . . . . :   3                         
+   Average number . . . . . . . . . . . . . . . . :   3.2                       
+   Peak number  . . . . . . . . . . . . . . . . . :   13                        
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                        More...
+```
+```
+                         Display Active Prestart Jobs                 SYS1    
+                                                        12/08/25  09:26:18 CST
+Subsystem  . . . . . :   QUSRWRK         Reset date . . . . . :   12/05/25    
+Program  . . . . . . :   QP0ZSPWT        Reset time . . . . . :   16:29:52    
+  Library  . . . . . :     QSYS          Elapsed time . . . . :   0064:56:26  
+                                                                              
+Program start requests:                                                       
+  Current number waiting . . . . . . . . . . . . :   0                        
+  Average number waiting . . . . . . . . . . . . :   .0                       
+  Peak number waiting  . . . . . . . . . . . . . :   0                        
+  Average wait time  . . . . . . . . . . . . . . :   00:00:00.0               
+  Number accepted  . . . . . . . . . . . . . . . :   849                      
+  Number rejected  . . . . . . . . . . . . . . . :   0                        
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                              
+                                                                        Bottom
+```
+
+
 ## Disabling the prestart jobs for server thread jobs QP0ZSPWP or QP0ZSPWT   
-If you want to set things back to the way they were before using the prestart threasd jobs, do the following steps.
+After testing if you want to set things back to the way they were before using the prestart threasd jobs, do the following steps.   
 
 - Remove the system level environment variable to use PASE prestart thread jobs.
 ```
