@@ -52,7 +52,7 @@ CHGJOBD JOBD(QGPL/QDFTSVR)
          ALWMLTTHD(*YES)    
 ```
 
-- Add the prestart job entries for QP0ZSPWP and QP0ZSPWT thread jobs. I went with prestarting 100 thread jobs and allowing each one to be re-used 200 times.   
+- Add the prestart job entries for QP0ZSPWP and QP0ZSPWT thread jobs. I went with prestarting 100 thread jobs and allowing each one to be re-used 1 time.      
 ❗Apparently PASE threads never get re-used regardless of the MAXUSE setting, so just use MAXUSE(1). Mentioned by @kadler.
 ```
 ADDPJE SBSD(QUSRWRK)       
