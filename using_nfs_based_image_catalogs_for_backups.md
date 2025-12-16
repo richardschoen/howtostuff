@@ -218,3 +218,6 @@ Immage Catalog over NFS - Discussion on midrange.com
 https://archive.midrange.com/midrange-l/202012/msg00377.html
 
 ## Footnotes 
+ 1. Configuration in SST is also possible, but the menu item numbers and labels are slightly different.
+ 2. We recommend the one with the numerically higher Resource Name. This is a purely cosmetic decision.
+ 3. Will If this is not done, the subsequent automatic backup will fail.
