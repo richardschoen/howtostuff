@@ -26,7 +26,7 @@ On IBM i, you need to establish a ''service tools adapter''. This is a virtual n
 
 NFS traffic for image catalogs exclusively runs through this adapter, being managed by SLIC. The "upper layer" OS components are not involved. Access to NFS catalogs is working in restricted mode, with TCP/IP being unavailable.
 
-## Configuring the NFS-Server ==
+## Configuring the NFS-Server 
 This setup guide assumes a Linux based NFS server as backup destination.
 * Install NFS server,
 * configure NFS server by editing ''/etc/exports'',
