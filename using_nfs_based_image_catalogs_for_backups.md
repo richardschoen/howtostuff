@@ -15,7 +15,7 @@ Pro:
 Con:
 * Full restores require a D-mode manual IPL from the last ''Save 21''. This can be handled through copying that image to the HMC or VIOS storage, so it can be tied to an emulated optical drive. Depending on the image size, this simply might not fit onto the available space, or takes unacceptably long long to be copied. It should be possible to import the NFS exported backup directory to VIOS as an installation image collection to spare the lengthy copy, but this has not yet been tested.
 
-== Configuring the service tools adapter on IBM i ==
+## Configuring the service tools adapter on IBM i 
 On IBM i, you need to establish a ''service tools adapter''. This is a virtual network IOA which is just added to the LPAR and otherwise not referenced in the OS with a line description. Configuration of this adapter is done in DST.<ref>Configuration in SST is also possible, but the menu item numbers and labels are slightly different.</ref>:
 * <tt>5. Service tools device IDs</tt>,
 * <tt>F13</tt>,
@@ -26,7 +26,7 @@ On IBM i, you need to establish a ''service tools adapter''. This is a virtual n
 
 NFS traffic for image catalogs exclusively runs through this adapter, being managed by SLIC. The "upper layer" OS components are not involved. Access to NFS catalogs is working in restricted mode, with TCP/IP being unavailable.
 
-== Configuring the NFS-Server ==
+## Configuring the NFS-Server ==
 This setup guide assumes a Linux based NFS server as backup destination.
 * Install NFS server,
 * configure NFS server by editing ''/etc/exports'',
@@ -49,7 +49,7 @@ Using sparse files as images works and is highly recommended. It saves time and 
 This quickly creates a file with initially 0 Bytes in size, with a maximum size of 4&thinsp;GiB. The suffix ''-1'' designates this file as a differential backup to the last full save.
 
 You can use this example shell script to create images with ''cron'' on Linux before the backup job runs on IBM i:
-<syntaxhighlight lang=shell>
+```
 #!/bin/bash
   
 TODAY="$(date '+%Y%m%d')"
@@ -67,26 +67,26 @@ if [ ! -f "${DIR}"/"${TODAY}"-1.udf ]; then
 fi
 
 exit 0
-</syntaxhighlight>
-You can name it ''create-imgclge-daily''.
+```
+You can name it ```create-imgclge-daily```.
 
 The image catalog logic automatically on IBM i automatically loads the first entry in ''VOLUME_LIST''. Hence the shown script inserts new images at the beginning of the file.
 
-== Configuring IBM i ==
+##  Configuring IBM i 
 With remote, NFS-based image catalogs, an image catalog is tied to a device file. We create the device ''optbkup01'' for that purpose:
- crtdevopt devd(optbkup01) online(*no) rsrcname(*vrt) lclintneta(*srvlan) rmtintneta('192.168.0.11') netimgdir('/backups/i-backups')
+ ```crtdevopt devd(optbkup01) online(*no) rsrcname(*vrt) lclintneta(*srvlan) rmtintneta('192.168.0.11') netimgdir('/backups/i-backups')```
 
 192.168.0.11 is the IP address of the NFS server.
 
 Next, we can vary on the device:
- vrycfg cfgobj(optbkup01) cfgtype(*dev) status(*on)
+ ```vrycfg cfgobj(optbkup01) cfgtype(*dev) status(*on)```
 
 Finally, we can look at the catalog entries:
- wrkimgclge imgclg(*dev) dev(optbkup01)
+ ```wrkimgclge imgclg(*dev) dev(optbkup01)```
 
 Always make sure that you vary off the image catalog after usage, so changes to ''VOLUME_LIST'' will be recognized at next vary on.
 
-== Differential saves ==
+## Differential saves 
 Running an incremental save basically runs these steps:
 
 * Create new image, and update ''VOLUME_LIST'' on the NFS server
@@ -173,7 +173,7 @@ These are also called ''Save 21'', because it is run through item 21 in the ''sa
    ENDPGM
 ```
 
-This CL code can be saved into e.&thinsp;g. ''qgpl/qclsrc.prepsav21'', compiled, and run manually after the you manually have created the new full save image.
+This CL code can be saved into e.g. ```qgpl/qclsrc.prepsav21```, compiled, and run manually after the you manually have created the new full save image.
 
 Since Save 21 is an inherently manual process, four steps are necessary:
 * Create the new full save image, and an appropriate entry in ''VOLUME_LIST'':
