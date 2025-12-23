@@ -1,4 +1,4 @@
-# System Job Tables fill up when running LIBSRCEXP or when exporting many source members
+# System Job Tables fill up not allowing any more jobs to start 
 On some systems job descriptions may be set up to always produce a joblog which 
 can cause a system job table issue when many QShell/PASE jobs are run in sequence.   
 
@@ -8,11 +8,9 @@ The system job tables can fill up and force a system IPL.
 And when a job produces a spool file or has a joblog in *PENDING status, the job may still take 
 up a job count entry even though the job may have ended and technically disappeared.
 
-This relates directly to iForGit because iForGit runs many instances of the ```git``` command via QShell/PASE when the ```LIBSRCEXP``` command is run against one or more libraries.    
-
 It's probably a good idea to check your ```max jobs system value``` setting and ```job descriptions``` to make sure they are not always creating a joblog. 
 
-❗If exporting a large number of source members and a job produces a joblog (if LOG value set to 4/00/*MSG or 4/00/*SECLVL), there's a chance the system job tables could fill up.
+❗If running a lot of QShell or PASE jobs and a job produces a joblog (if LOG value set to 4/00/*MSG or 4/00/*SECLVL), there's a chance the system job tables could fill up because the system often puts them into a state of joblog pending rather than actually producing the joblog.
 
 ## Checking for potential issues
 
@@ -21,7 +19,7 @@ Command to display system value for max jobs
 ```
 DSPSYSVAL SYSVAL(QMAXJOB)
 ```
-The max value this can be set to a max of 970000 jobs. Keep it down around 400000 is possible. 
+The max value this can be set to a max of 970000 jobs. Keep it down around ```400000``` or less is possible. 
 If you run into a system lock condition because of the system job tables filling up, the QMAXJOB system value can be raised to 900000 temporarily if needed. 
 
 ❗Avoid 970000 if possible as once this limit is reached it's possible the system won't be able to be IPLed.
@@ -87,7 +85,7 @@ WRKJOBD JOBD(QSYS/QSRVJOB) and view the settings for QSRVJOB jobd.
 ```
 If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool files to get created or joblogs to be pending. The LOG setting should be set to ```4/00/*NOLIST``` so a joblog doesn't get generated for normal completion of server job command calls. (This particular jobd may not be related to what we need but doesn't hurt to change it if it's *MSG or *SECLVL.)
 
-### Check each user job description who runs the iForGit CL commands to make sure it's not 4/00/*MSG or 4/00/*SECLVL
+### Check each user job description who runs QShell or PASE commands to make sure it's not 4/00/*MSG or 4/00/*SECLVL
 ```
 WRKJOBD JOBD(LIB/USERJOBLOG) and view the settings for the user jobd.    
 Ex: This example assumes the IBM i user has a joblog named: USERJOBLOG in library: LIB.
@@ -96,5 +94,5 @@ If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool fil
 
 If you change this setting, log off and log back on for any users who will run iForGit commands so the new job description settings get picked up.
 
-If you are still having issues with pending joblog you will need to do additionzl research to determine the cause before doing any mass source member exporting to Git with LIBSRCEXP or SRCTOGIT CL commands.
+If you are still having issues with pending joblog you will need to do additional research to determine the cause before doing any mass source member exporting to Git with LIBSRCEXP or SRCTOGIT CL commands.
 
