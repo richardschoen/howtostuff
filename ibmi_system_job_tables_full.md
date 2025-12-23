@@ -1,16 +1,18 @@
 # System Job Tables fill up not allowing any more jobs to start 
-On some systems job descriptions may be set up to always produce a joblog which 
+Chances are you've never even heard of the system job tables, but they are a real thing and can halt your system under the wrong conditions.  
+
+On some IBM i systems job descriptions (such as QDFTSVR) may have been changed to always produce a joblog which 
 can cause a system job table issue when many QShell/PASE jobs are run in sequence.   
 
 The system job tables can fill up and force a system IPL. 
 
 **Cause:** The IBM i system can only have a select maximum number of jobs (based on QMAXJOB system value). 
 And when a job produces a spool file or has a joblog in *PENDING status, the job may still take 
-up a job count entry even though the job may have ended and technically disappeared.
+up a job count entry even though the job may have ended and technically disappeared. The best word to describe the *PENDING joblog is that it's in limbo. It's no longer living, but hasn't died completely either.
 
 It's probably a good idea to check your ```max jobs system value``` setting and ```job descriptions``` to make sure they are not always creating a joblog. 
 
-❗If running a lot of QShell or PASE jobs and a job produces a joblog (if LOG value set to 4/00/*MSG or 4/00/*SECLVL), there's a chance the system job tables could fill up because the system often puts them into a state of joblog pending rather than actually producing the joblog.
+❗If running a lot of QShell or PASE jobs and a job produces a joblog (if LOG value set to 4/00/*MSG or 4/00/*SECLVL), there's a chance the system job tables could fill up because the system often puts them into a state of joblog pending limbo state rather than actually producing the joblog.
 
 ## Checking for potential issues
 
@@ -67,11 +69,11 @@ WRKJOBLOG JOBLOGSTT(*PENDING) JOB(*ALL/*ALL/*ALL)
 ### Clearing output queues to end old jobs can also help.
 If you have output queues with lots of old spool files these can be cleared if desired and that should open up some job slots in the system job tables.  
 
-### Check server job description for ssh to make sure it's not 4/00/*MSG or 4/00/*SECLVL
+### Check server job description QDFTSVR used by ssh and other server jobs to make sure it's not 4/00/*MSG or 4/00/*SECLVL
 ```
 WRKJOBD JOBD(QGPL/QDFTSVR) and view the settings for QDFTSVR jobd.
 ```
-If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool files to get created or joblogs to be pending. The LOG setting should be set to ```4/00/*NOLIST``` so a joblog doesn't get generated for normal completion of git command calls.
+If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool files to get created or joblogs to be pending. The LOG setting should be set to ```4/00/*NOLIST``` so a joblog doesn't get generated for normal completion of QShell/PASE commands.
 
 If you change this job desc, restart SSH server afterwards.
 ```
@@ -90,9 +92,8 @@ If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool fil
 WRKJOBD JOBD(LIB/USERJOBLOG) and view the settings for the user jobd.    
 Ex: This example assumes the IBM i user has a joblog named: USERJOBLOG in library: LIB.
 ```
-If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool files to get created or joblogs to be pending. The LOG setting should be set to ```4/00/*NOLIST``` so a joblog doesn't get generated for normal completion of git/ssh command calls.
+If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool files to get created or joblogs to be pending. The LOG setting should be set to ```4/00/*NOLIST``` so a joblog doesn't get generated for normal completion of QShell/PASE command calls.
 
-If you change this setting, log off and log back on for any users who will run iForGit commands so the new job description settings get picked up.
+If you change this setting, log off and log back on for any users who will run QShell/PASE commands so the new job description settings get picked up.
 
-If you are still having issues with pending joblog you will need to do additional research to determine the cause before doing any mass source member exporting to Git with LIBSRCEXP or SRCTOGIT CL commands.
-
+If you are still having issues with pending joblog you will need to do additional research to determine the cause.
