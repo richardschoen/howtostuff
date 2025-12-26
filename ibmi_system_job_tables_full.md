@@ -97,3 +97,8 @@ If the LOG setting was set to *MSG or *SECLVL, this job desc can cause spool fil
 If you change this setting, log off and log back on for any users who will run QShell/PASE commands so the new job description settings get picked up.
 
 If you are still having issues with pending joblog you will need to do additional research to determine the cause.
+
+### Links
+Interesting article from Dawn May discussing ```joblog pending``` and ```QLOGOUTPUT``` system value   
+https://techchannel.com/i-can-blog/take-advantage-of-job-log-pending   
+
