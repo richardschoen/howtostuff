@@ -34,7 +34,7 @@ Did a stepped install of each of these versions. You might just be able to insta
 ```pip3.9 install fastapi==0.100.1```   
 ```pip3.9 install fastapi==0.108.0```   
 ```pip3.9 install fastapi==0.110.3```   
-As of 1/22/2026, the following works on V7R5
+As of 1/22/2026, the following works on V7R5    
 ```pip3.9 install fastapi==0.125.0```   
     
 **Install uvicorn (The lightning fast ASGI server). This will be our web app server component**
