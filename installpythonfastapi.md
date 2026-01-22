@@ -24,8 +24,8 @@ Log in to an IBM i SSH terminal session and make sure bash is the current shell
 
 ```pip3.9 install fastapi```
 
-**Install fastapi for Python 3.9 - Use fastapi Version 0.110.3**   
-Did a stepped install of each of these versions. You might just be able to install ```0.110.3```
+**Install fastapi for Python 3.9 - Use fastapi Version 0.125.0**   
+Did a stepped install of each of these versions. You might just be able to install ```0.125.0```
 ```pip3.9 install fastapi==0.83.0```   
 ```pip3.9 install fastapi==0.84.0```   
 ```pip3.9 install fastapi==0.89.0```   
@@ -119,8 +119,8 @@ Displaying ReDoc Documentation and Testing API
 ## Sample Packages Needed for Fast API
 ``` pip3.9 install pyodbc```   
 ``` pip3.9 install itoolkit```   
-``` pip3 install fastapi==0.83.0``` (You may just be able install 0.110.3)     
-``` pip3 install fastapi==0.110.3```    
+``` pip3 install fastapi==0.83.0``` (You may just be able install 0.125.0)     
+``` pip3 install fastapi==0.125.0```    
 ``` pip3 install uvicorn```    
 ``` pip3.9 install flask``` (Flask not actually needed for FastAPI, but I use flask as well so I commonly install Flask as well.)    
 
