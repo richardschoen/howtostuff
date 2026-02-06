@@ -1,5 +1,5 @@
 # Compiling SQLRPGLE Programs that Contain Long SQL Lines
-I had a need to create some SQL in the IBM ACS ```Run SQL Scripts``` and then wanted to transplant that code into an SQLRPGLE member for processing.   
+I had a need to create some SQL in the IBM ACS ```Run SQL Scripts``` and then wanted to transplant that code into an SQLRPGLE member for processing.    
 
 When I compiled the SQLRPGLE program the SQL preprocessor was giving me odd pre-processor errors. 
 
