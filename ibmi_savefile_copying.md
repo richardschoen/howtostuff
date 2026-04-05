@@ -2,11 +2,13 @@
 These examples can be used for downloading binary save files directly to the IFS or directly 
 to a save file from a web site or from another IFS file.
 
-Data can also be copied from a save files to a binary file in the IFS as well.
+Data can also be directly copied from a save file to a binary file in the IFS as well.
 
-In this example we will use an app save file named: ```mylib.savf```
+❗ It turns out that when copying a save file into a library file object directly, the operating system will automatically create the save file object for you. 
 
-## Download the file directly to the target save file and auto-create the save file if nout found.
+In this example we will use an example downloaded app save file binary file named: ```mylib.savf```
+
+## Download the file directly to the target save file and auto-create the save file if not found.
 ```
 curl https://www.yoursite.net/files/mylib.savf --output /qsys.lib/qgpl.lib/mylib.file
 ```
@@ -35,15 +37,16 @@ cp /tmp/mylib.savf /qsys.lib/qgpl.lib/mylib.file
 
 -or-
 
-# Copy the downloaded save file to the target save file via CPYFRMSTMF. 
-# It should auto-create the target IBM i save file object if it doesn't exist.
+## Copy the downloaded save file to the target save file via CPYFRMSTMF. 
+It should auto-create the target IBM i save file object if it doesn't exist.
 ```
 CPYFRMSTMF FROMSTMF('/tmp/mylib.savf')                        
            TOMBR('/qsys.lib/qgpl.lib/mylib.file')            
            MBROPT(*REPLACE)                                    
 ```
 
-# Restore the selected library file to the desired library from save file MYLIB
+## Restore the selected library from save file MYLIB
+This example uses RSTLIB, but RSTOBJ and RST commands will also work depending on your save file contents.
 ```
 RSTLIB SAVLIB(MYLIB)     
         DEV(*SAVF)          
@@ -53,8 +56,12 @@ RSTLIB SAVLIB(MYLIB)
         ALWOBJDIF(*ALL)     
 ```        
 
-# Clean up temporary IFS save files
+## Clean up temporary IFS save files via the (rm) remove command
+```
 rm /tmp/mylib.savf
+```
 
-# Clean up MYLIB temporary save file object from library QGPL
+## Clean up MYLIB temporary save file object from library QGPL via the (rm) remote commands
+```
 rm /qsys.lib/qgpl.lib/mylib.file
+```
