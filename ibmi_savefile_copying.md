@@ -8,7 +8,8 @@ Data can also be directly copied from a save file to a binary file in the IFS as
 
 These IBM i examples take advantage of the PASE commands: ```cp```, ```rm```, ```wget```, ```curl``` and assume you're working in a PASE terminal session.
 
-In this example we will use an example downloaded IBM i app save file binary file named: ```mylib.savf```
+In this example we will use an example downloaded IBM i app save file binary file named: ```mylib.savf```.    
+And its actual save file alter-ego is: ```QGPL/MYLIB``` or in IFS naming: ```/qsys.lib/qgpl.lib/mylib.file```
 
 ## Download the file directly to the target save file and auto-create the save file if not found.
 ```
