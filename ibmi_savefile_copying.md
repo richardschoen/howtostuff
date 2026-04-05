@@ -6,7 +6,9 @@ Data can also be directly copied from a save file to a binary file in the IFS as
 
 ❗ It turns out that when copying a save file into a library file object directly, the operating system will automatically create the save file object for you. 
 
-In this example we will use an example downloaded app save file binary file named: ```mylib.savf```
+These IBM i examples take advantage of the PASE commands: ```cp```, ```rm```, ```wget```, ```curl``` and assume you're working in a PASE terminal session.
+
+In this example we will use an example downloaded IBM i app save file binary file named: ```mylib.savf```
 
 ## Download the file directly to the target save file and auto-create the save file if not found.
 ```
@@ -43,6 +45,7 @@ It should auto-create the target IBM i save file object if it doesn't exist.
 CPYFRMSTMF FROMSTMF('/tmp/mylib.savf')                        
            TOMBR('/qsys.lib/qgpl.lib/mylib.file')            
            MBROPT(*REPLACE)                                    
+          CVTDTA(*NONE)
 ```
 
 ## Restore the selected library from save file MYLIB
@@ -55,6 +58,19 @@ RSTLIB SAVLIB(MYLIB)
         MBROPT(*ALL)        
         ALWOBJDIF(*ALL)     
 ```        
+
+## Copy save file to the IFS via CPYTOSTMF
+```
+CPYTOSTMF FROMMBR('/qsys.lib/qgpl.lib/mylib.file')    
+          TOSTMF('/tmp/mylib.savf')                    
+          STMFOPT(*REPLACE)                             
+          CVTDTA(*NONE)
+```
+
+## Copy save file to the IFS via cp command
+```
+cp /qsys.lib/qgpl.lib/mylib.file /tmp/mylib.savf
+```
 
 ## Clean up temporary IFS save files via the (rm) remove command
 ```
