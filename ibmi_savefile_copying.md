@@ -60,6 +60,7 @@ RSTLIB SAVLIB(MYLIB)
 ```        
 
 ## Copy save file to the IFS via CPYTOSTMF
+Once the file exists as an IFS file object it can be downloaded or distributed via any network share or FTP folder.
 ```
 CPYTOSTMF FROMMBR('/qsys.lib/qgpl.lib/mylib.file')    
           TOSTMF('/tmp/mylib.savf')                    
@@ -68,6 +69,7 @@ CPYTOSTMF FROMMBR('/qsys.lib/qgpl.lib/mylib.file')
 ```
 
 ## Copy save file to the IFS via cp command
+Once the file exists as an IFS file object it can be downloaded or distributed via any network share or FTP folder.
 ```
 cp /qsys.lib/qgpl.lib/mylib.file /tmp/mylib.savf
 ```
