@@ -13,9 +13,12 @@
 ``` yum install ibm-iaccess* ```   
 ### Install Python 3.6 and Python 3.9 Packages    
 ``` yum install python3* ```   
+### Install Python 3.13 Packages to use Python 3.13
+``` yum install python313* ```   
 
 ### List installed Python base pip packages for Python 3.6   
-Run following command to list base packages to see what pip packages are installed: **pip3.6  list**    
+Run following command to list base packages to see what pip packages are installed:   
+**pip3.6  list**    
 The list should look similar to the list below:     
 ```
 Package         Version
@@ -102,8 +105,9 @@ It's a good idea to install with the site packages for IBM i because your get al
 ```python3 -m venv /pythonenv1 --system-site-packages --copies```  (Installs using default version of Python3.)   
 ### You can also specifically set up the new virtual environment to use Python 3.6 or 3.9
 Use the appropriate python command variant if desired:   
-```python3.6 -m venv /pythonenv1 --system-site-packages --copies```   
-```python3.9 -m venv /pythonenv1 --system-site-packages --copies```   
+```python3.6 -m venv /pythonenv36 --system-site-packages --copies```   
+```python3.9 -m venv /pythonenv39 --system-site-packages --copies```   
+```python3.13 -m venv /pythonenv313 --system-site-packages --copies```   
 
 :star: Creating a venv with site packages will include ibm-db and itoolkit which installs via the python3 based yum packages.   
 :star: Any of these base packages should not be installed via pip as they are part of the Python yum RPMs.   
@@ -112,15 +116,20 @@ Use the appropriate python command variant if desired:
 
 ## Create virtual environment without site packages 
 You can install your new virtual environment without site packages. You can still install other pip packages in the venv except for ibm-db, itoolkit and possibly the other packages that get installed as part of the Python yum site package installers. SO if you don't need any of the yum-based Python site packages, this method can be used if desired for a lighter weight virtual enviornment.  
-```python3 -m venv /pythonenv1```  (Installs using default version of Python3.)     
-```python3.6 -m venv /pythonenv1```   
-```python3.9 -m venv /pythonenv1```   
+```python3 -m venv /pythonenv3```  (Installs using default version of Python3.)     
+```python3.6 -m venv /pythonenv36```   
+```python3.9 -m venv /pythonenv39```   
+```python3.13 -m venv /pythonenv313```   
 
-# Activate the Python environment   
-```source /pythonenv1/bin/activate```
+# Activate the desired Python environment   
+```source /pythonenv36/bin/activate```
+```source /pythonenv39/bin/activate```
+```source /pythonenv313/bin/activate```
 
 # Command prompt looks like this after virtual environment (venv) activation   
-```(pythonenv1) -bash-5.1$``` 
+```(pythonenv36) -bash-5.1$``` 
+```(pythonenv39) -bash-5.1$``` 
+```(pythonenv313) -bash-5.1$``` 
 
 # List installed Python packages globally or when a virtual environment is activated   
 This command works in the base Python environment or an active virtual environment.    
@@ -143,6 +152,9 @@ pip3 install flask
 pip3 install itoolkit
 pip3 install ibm-db
 ```
+
+** You can also use pip command for your environment if desired:    
+ex: ```pip3.6, pip3.9, pip3.13```   
 
 ```For V7R4 and V7R5``` - pip3 processes **MAY require** gcc10 compiler to build so use CC/GCC prefixes below for installing pip3 packages. Or set the CC and CXX environment variable before installing packages with pip3.    
 ```CC='gcc-10 -pthread' CXX='g++-10 -pthread'  pip3 install pyodbc```   
