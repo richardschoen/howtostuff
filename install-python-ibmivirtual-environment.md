@@ -12,9 +12,10 @@
 ### Install IBM i Access ODBC Driver   
 ``` yum install ibm-iaccess* ```   
 ### Install Python 3.6 and Python 3.9 Packages    
-``` yum install python3* ```   
+``` yum install python3* ```
+``` yum install python39* ```
 ### Install Python 3.13 Packages to use Python 3.13
-``` yum install python313* ```   
+``` yum install python3.13* ```   
 
 ### List installed Python base pip packages for Python 3.6   
 Run following command to list base packages to see what pip packages are installed:   
@@ -94,9 +95,13 @@ threadpoolctl   3.0.0
 wheel           0.36.2
 ```
 
-# Make Python virtual environment directory
-This example creates /pythonenv1   
-```mkdir /pythonenv1```
+# Optional: Make Python virtual environment directory
+This example creates /pythonenv36   
+```mkdir /pythonenv36```    
+```mkdir /pythonenv39```   
+```mkdir /pythonenv313```    
+
+❗Virtual environment dir will also auto-create so this is totally optional.   
 
 # Create a virtual environment
 
