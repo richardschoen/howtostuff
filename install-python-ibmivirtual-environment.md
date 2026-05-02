@@ -209,15 +209,21 @@ PATH=$PWD/mydir:$PATH
 ```
 :star: Note: You may want to create above links in ~/bin directory instead of mydir. I have not tried this but it was recommended as something to try. I think just setting the CC and CXX environment variables should work fine.
 
-# Misc - Running your Python script from a classic IBM i CL job or job scheduler
-This example runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHPYRUN** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual enviornment is activated and then deactivated aftr the python script has run.
+# Misc - Running your Python script from a classic IBM i CL job or job scheduler with QSHBASH command
+This example activates a Python virtual environment and runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHBASH** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual environment is activated and then deactivated after the python script has run.
+```
+QSHONI/QSHBASH CMDLINE('source /python313/bin/activate;python3 hello.py;deactivate')
+DSPSTDOUT(*YES)
+```                                                                  
+# Misc - Running your Python script from a classic IBM i CL job or job scheduler with QSHPYRUN command
+This example runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHPYRUN** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual environment is activated and then deactivated after the python script has run. The **QSHPYRUN** command eliminates the need to put the activate and deactivate commands before and after the command line. Although ***QSHBASH*** gives you full control of the entire base command line.    
 ```
 QSHONI/QSHPYRUN SCRIPTDIR('/python')         
                 SCRIPTFILE(hello.py)                         
                 PYVERSION(3.9)                                    
                 VENVPATH('/pythonenv1')                           
                 DSPSTDOUT(*YES)                                   
-```                                                                  
+```
 
 # Misc - Same sequence as above to run script in a selected virtual environment via bash command line or bash script
 ```
