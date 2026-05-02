@@ -5,7 +5,9 @@
 ### Install the Development Group Tools (gcc, git, cmake, tar etc.)     
 ``` yum group install 'Development tools' ```  
 ``` yum install gcc10*```   
-``` yum install gcc12*```   
+``` yum install gcc12*```    
+Add this to your environment via .bashrc or .bash_profile for the object build:    
+```export OBJECT_MODE=64```
 ### Install Unix ODBC Driver   
 ``` yum install unixODBC ```   
 ``` yum install unixODBC-devel ```   
