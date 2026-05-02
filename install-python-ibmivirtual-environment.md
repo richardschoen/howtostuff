@@ -212,7 +212,7 @@ PATH=$PWD/mydir:$PATH
 # Misc - Running your Python script from a classic IBM i CL job or job scheduler with QSHBASH command
 This example activates a Python virtual environment and runs a Python script named: **hello.py** from the /python directory using virtual environment **/pythonenv1** and the **QSHBASH** command which is part of the QShell on i utilities. https://github.com/richardschoen/qshoni  The virtual environment is activated and then deactivated after the python script has run.
 ```
-QSHONI/QSHBASH CMDLINE('source /python313/bin/activate;python3 hello.py;deactivate')
+QSHONI/QSHBASH CMDLINE('source /pythonenv1/bin/activate;python3 hello.py;deactivate')
 DSPSTDOUT(*YES)
 ```                                                                  
 # Misc - Running your Python script from a classic IBM i CL job or job scheduler with QSHPYRUN command
