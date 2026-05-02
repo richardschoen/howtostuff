@@ -217,7 +217,7 @@ QSHONI/QSHPYRUN SCRIPTDIR('/python')
 # Misc - Same sequence as above to run script in a selected virtual environment via bash command line or bash script
 ```
 source /pythonenv1/bin/activate
-python3 /python/hello.py
+python3.9 /python/hello.py
 deactivate
 
 ```
