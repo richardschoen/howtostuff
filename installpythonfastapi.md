@@ -25,7 +25,8 @@ Log in to an IBM i SSH terminal session and make sure bash is the current shell
 ```pip3.9 install fastapi```
 
 **Install fastapi for Python 3.9 and 3.13 - Use fastapi Version 0.125.0**   
-Did a stepped install of each of these versions. You might just be able to install ```0.125.0```
+Did a stepped install of each of these versions. You might just be able to install ```0.125.0```.   
+If using Python 3.13, use: ```pip3.13```. If using Python 3.9, use: ```pip3.9```.  
 ```pip3.9 install fastapi==0.83.0```   
 ```pip3.9 install fastapi==0.84.0```   
 ```pip3.9 install fastapi==0.89.0```   
