@@ -24,7 +24,7 @@ Log in to an IBM i SSH terminal session and make sure bash is the current shell
 
 ```pip3.9 install fastapi```
 
-**Install fastapi for Python 3.9 - Use fastapi Version 0.125.0**   
+**Install fastapi for Python 3.9 and 3.13 - Use fastapi Version 0.125.0**   
 Did a stepped install of each of these versions. You might just be able to install ```0.125.0```
 ```pip3.9 install fastapi==0.83.0```   
 ```pip3.9 install fastapi==0.84.0```   
@@ -34,7 +34,7 @@ Did a stepped install of each of these versions. You might just be able to insta
 ```pip3.9 install fastapi==0.100.1```   
 ```pip3.9 install fastapi==0.108.0```   
 ```pip3.9 install fastapi==0.110.3```   
-As of 1/22/2026, the following works on V7R5    
+As of 1/22/2026, the following works on V7R5. As of 7/16/2026, the following works on V7R6.      
 ```pip3.9 install fastapi==0.125.0```   
     
 **Install uvicorn (The lightning fast ASGI server). This will be our web app server component**
