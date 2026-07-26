@@ -14,10 +14,10 @@ Add this to your environment via .bashrc or .bash_profile for the object build:
 ### Install IBM i Access ODBC Driver   
 ``` yum install ibm-iaccess* ```   
 ### Install Python 3.6 and Python 3.9 Packages    
-``` yum install python3* ```
-``` yum install python39* ```
+``` yum install python3-* ```
+``` yum install python39-* ```
 ### Install Python 3.13 Packages to use Python 3.13
-``` yum install python3.13* ```   
+``` yum install python3.13-* ```   
 
 ### List installed Python base pip packages for Python 3.6   
 Run following command to list base packages to see what pip packages are installed:   
