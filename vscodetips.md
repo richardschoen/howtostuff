@@ -1,4 +1,5 @@
 # Misc VS Code Tips
+This page is where I will aggregate miscellaneous VS Code tips and extensions.
 
 ## Get rid of that annoying preview window
 Some people like the preview mode, but I don't. I like each selected source member to open on double click.
