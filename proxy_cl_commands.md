@@ -1,5 +1,5 @@
 # Create safe short versions of system commands
-If you want to create safe versions of your favorite CL commands, check out the ```CRTPRXCMD``` CL command. 
+If you want to create safe versions of your favorite CL commands, check out the ```CRTPRXCMD``` CL command to create a CL Proxy Command.
 
 ## Examples
 These examples are created in QGPL but you probably want to use your own work library.  
