@@ -22,6 +22,13 @@ An NFS share is always mounted over an existing IFS directory path which means o
 #### Create the IFS directory you will mount your NFS share over
 ```MKDIR  DIR('/nfsmount1') DTAAUT(*RWX) OBJAUT(*ALL)```
 
+#### This change is optional and may allow you to ski 437 on CPY commands
+```
+CHGATR OBJ('/nfsmount1')  
+       ATR(*CCSID)        
+       VALUE(437)
+```
+
 #### This example mounts to an NFS share on remote NFS server: 1.1.1.1 on share /nfsmount1
 ```
 MOUNT TYPE(*NFS) MFS('1.1.1.1:/nfsmount1') +                  
